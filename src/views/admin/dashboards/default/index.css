@@ -1,0 +1,49 @@
+.dataBox .nftData {
+  display: none;
+}
+.dataBox .defiData {
+  display: none;
+}
+.dataBox .active {
+  display: flex;
+}
+.dataBox .css-wiypqd[aria-selected='true'],
+.dataBox .css-wiypqd[data-selected] {
+  color: #fff;
+  background-image: linear-gradient(to right, #868cff, #4318ff) !important;
+}
+.dataBox .css-wiypqd {
+  color: #fff !important;
+}
+.dataBox .css-zvfk7x {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+.dataBox .css-a5mhaz {
+  padding: 0px !important;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  margin-top: 19px;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.woff2?t=1651733187254') format('woff2'), url('iconfont.woff?t=1651733187254') format('woff'), url('iconfont.ttf?t=1651733187254') format('truetype');
+}
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 0px !important;
+}
+.icon-Overview {
+  font-size: 25px;
+}
+.css-wiypqd:focus,
+.css-wiypqd[data-focus] {
+  box-shadow: unset !important;
+}
+.css-wiypqd[aria-selected='true'],
+.css-wiypqd[data-selected] {
+  background: unset !important;
+}

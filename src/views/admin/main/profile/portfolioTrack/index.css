@@ -1,0 +1,28 @@
+.PortfolioText {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 54px;
+  line-height: 54px;
+  text-align: center;
+  letter-spacing: -1.08px;
+  margin-top: 52px;
+  color: #FFFFFF;
+}
+.VisualizeText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+  color: #A3AED0;
+  margin-top: 15px;
+  text-align: center;
+}
+.css-1xerquu[aria-checked=true],
+.css-1xerquu[data-checked] {
+  color: #FFFFFF !important;
+}
+.css-1xerquu:focus,
+.css-1xerquu[data-focus] {
+  box-shadow: none !important;
+}

@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3377203 */
+  src: url('iconfont.woff2?t=1652682385834') format('woff2'),
+       url('iconfont.woff?t=1652682385834') format('woff'),
+       url('iconfont.ttf?t=1652682385834') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-a-Game1:before {
+  content: "\e604";
+}
+
+.icon-Game1:before {
+  content: "\e603";
+}
+
+.icon-Game:before {
+  content: "\e602";
+}
+
+.icon-Icon:before {
+  content: "\e601";
+}
+
+.icon-huaban:before {
+  content: "\e610";
+}
+
+.icon-a-1iconbeifen:before {
+  content: "\e611";
+}
+
+.icon-a-huabanbeifen3:before {
+  content: "\e612";
+}
+
+.icon-a-huabanbeifen2:before {
+  content: "\e613";
+}
+
+.icon-a-bianzubeifen3:before {
+  content: "\e614";
+}
+
+.icon-Iconbeifen:before {
+  content: "\e615";
+}
+
+.icon-Activitybeifen:before {
+  content: "\e616";
+}
+
+.icon-huabanbeifen:before {
+  content: "\e617";
+}
+
+.icon-Searchbeifen:before {
+  content: "\e618";
+}
+
+.icon-a-Logonewbeifen:before {
+  content: "\e619";
+}
+
