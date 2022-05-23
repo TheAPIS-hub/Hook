@@ -15,6 +15,7 @@ import {
   Text,
   Grid,
   Icon,
+  
 } from "@chakra-ui/react";
 import {
   VSeparator,
@@ -38,7 +39,104 @@ export default function GameCard() {
       Volume: "32,2342,4242",
       TotalNFT: "453,5354,324",
     },
+    {
+      gameName: "The Results Are Now – Call of Duty",
+      //   img: gameThree,
+      img: gameThree,
+      followers: "8.1M",
+      players: "34K",
+      creatorHeader: Headers,
+      creatorName: "Call of Duty",
+      RIO: "45353",
+      Volume: "32,2342,4242",
+      TotalNFT: "453,5354,324",
+    },
+    {
+      gameName: "The Results Are Now – Call of Duty",
+      //   img: gameThree,
+      img: gameThree,
+      followers: "8.1M",
+      players: "34K",
+      creatorHeader: Headers,
+      creatorName: "Call of Duty",
+      RIO: "45353",
+      Volume: "32,2342,4242",
+      TotalNFT: "453,5354,324",
+    },
+    {
+      gameName: "The Results Are Now – Call of Duty",
+      //   img: gameThree,
+      img: gameThree,
+      followers: "8.1M",
+      players: "34K",
+      creatorHeader: Headers,
+      creatorName: "Call of Duty",
+      RIO: "45353",
+      Volume: "32,2342,4242",
+      TotalNFT: "453,5354,324",
+    },
+    {
+      gameName: "The Results Are Now – Call of Duty",
+      //   img: gameThree,
+      img: gameThree,
+      followers: "8.1M",
+      players: "34K",
+      creatorHeader: Headers,
+      creatorName: "Call of Duty",
+      RIO: "45353",
+      Volume: "32,2342,4242",
+      TotalNFT: "453,5354,324",
+    },
+    {
+      gameName: "The Results Are Now – Call of Duty",
+      //   img: gameThree,
+      img: gameThree,
+      followers: "8.1M",
+      players: "34K",
+      creatorHeader: Headers,
+      creatorName: "Call of Duty",
+      RIO: "45353",
+      Volume: "32,2342,4242",
+      TotalNFT: "453,5354,324",
+    },
+    {
+      gameName: "The Results Are Now – Call of Duty",
+      //   img: gameThree,
+      img: gameThree,
+      followers: "8.1M",
+      players: "34K",
+      creatorHeader: Headers,
+      creatorName: "Call of Duty",
+      RIO: "45353",
+      Volume: "32,2342,4242",
+      TotalNFT: "453,5354,324",
+    },
+    {
+      gameName: "The Results Are Now – Call of Duty",
+      //   img: gameThree,
+      img: gameThree,
+      followers: "8.1M",
+      players: "34K",
+      creatorHeader: Headers,
+      creatorName: "Call of Duty",
+      RIO: "45353",
+      Volume: "32,2342,4242",
+      TotalNFT: "453,5354,324",
+    },
+    {
+      gameName: "The Results Are Now – Call of Duty",
+      //   img: gameThree,
+      img: gameThree,
+      followers: "8.1M",
+      players: "34K",
+      creatorHeader: Headers,
+      creatorName: "Call of Duty",
+      RIO: "45353",
+      Volume: "32,2342,4242",
+      TotalNFT: "453,5354,324",
+    },
   ]);
+  const [show, isshow] = useState(false);
   return (
     <Box>
       <Box
@@ -56,6 +154,8 @@ export default function GameCard() {
       <Box
         style={{
           textAlign: "right",
+          marginBottom: '32px',
+        marginRight:'2px'
         }}
       >
         <DateUploaded></DateUploaded>
@@ -70,22 +170,23 @@ export default function GameCard() {
             base: "repeat(3, 1fr)",
             lg: "1fr",
           }}
-          gap={{ base: "20px", xl: "20px" }}
+          gap={{ base: "43px", xl: "43px" }}
         >
           {GameCardData.map((item, index) => {
             return (
               <Box
                 style={{
-                  width: "306.25px",
+                  width: "306px",
                   borderRadius: "24px",
                   marginBottom: "39px",
                   background: "rgba(17,28,68,1)",
+                
                 }}
               >
                 <Box>
                   <img
                     style={{
-                      width: "306.25px",
+                      width: "316px",
                       height: "170px",
                       borderRadius: "24px 24px 0 0",
                     }}
@@ -236,12 +337,13 @@ export default function GameCard() {
                       alignItems: "center",
                     }}
                   >
-                    <Box
+                    <Box type="primary" onClick={() => isshow(!show)}
                       style={{
                         color: "rgba(128,129,145,1)",
                         fontSize: "12px",
                         fontWeight: " 400",
                         marginRight: "7px",
+                        
                       }}
                     >
                       Hide
@@ -254,7 +356,7 @@ export default function GameCard() {
                     />
                   </Box>
                 </Box>
-                <Box
+                <Box hidden={show}
                   style={{
                     padding: "13px 21px 21px 20px",
                     boxSizing: " border-box",

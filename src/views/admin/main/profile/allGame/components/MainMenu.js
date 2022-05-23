@@ -76,13 +76,13 @@ export default function Banner(props) {
               <Text style={{ color: 'rgba(128,129,145,1)',
  fontSize: '14px',
  fontWeight: '700',
-}}>Date uploaded</Text>
+}}>GAME GENRES</Text>
         <Icon as={MdKeyboardArrowDown} color={iconColor} w='24px' h='24px' />
           </Flex>
         
       </MenuButton>
       <MenuList
-        w='150px'
+        w='90pxpx'
         minW='unset'
         maxW='150px !important'
         border='transparent'
@@ -90,6 +90,7 @@ export default function Banner(props) {
         bg={bgList}
         boxShadow={bgShadow}
         borderRadius='20px'
+    
         p='15px'>
         <MenuItem
           transition='0.2s linear'
@@ -105,9 +106,9 @@ export default function Banner(props) {
           }}
           mb='10px'>
           <Flex align='center'>
-            <Icon as={MdOutlinePerson} h='16px' w='16px' me='8px' />
+          
             <Text fontSize='sm' fontWeight='400'>
-              Panel 1
+            Strategy
             </Text>
           </Flex>
         </MenuItem>
@@ -125,9 +126,9 @@ export default function Banner(props) {
           }}
           mb='10px'>
           <Flex align='center'>
-            <Icon as={MdOutlineCardTravel} h='16px' w='16px' me='8px' />
+          
             <Text fontSize='sm' fontWeight='400'>
-              Panel 2
+            Shooters
             </Text>
           </Flex>
         </MenuItem>
@@ -145,9 +146,8 @@ export default function Banner(props) {
           }}
           mb='10px'>
           <Flex align='center'>
-            <Icon as={MdOutlineLightbulb} h='16px' w='16px' me='8px' />
             <Text fontSize='sm' fontWeight='400'>
-              Panel 3
+            Sandbox
             </Text>
           </Flex>
         </MenuItem>
@@ -164,9 +164,8 @@ export default function Banner(props) {
             bg: "transparent",
           }}>
           <Flex align='center'>
-            <Icon as={MdOutlineSettings} h='16px' w='16px' me='8px' />
             <Text fontSize='sm' fontWeight='400'>
-              Panel 4
+            MOBA
             </Text>
           </Flex>
         </MenuItem>

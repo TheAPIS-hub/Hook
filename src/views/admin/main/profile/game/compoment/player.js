@@ -6,10 +6,11 @@ export default function Players({ src }) {
     <div className={styles.videobox}>
       <iframe
         width="731"
-        height="492"
+        height="532"
         src={src}
         title="Hook"
         frameborder="0"
+        bordeRadius='32px'
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
