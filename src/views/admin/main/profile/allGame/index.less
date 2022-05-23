@@ -1,6 +1,19 @@
-.css-1wv9e55 {
-  // padding-top:  56px !important;
-  // padding-bottom: 24px !important;
-  // padding-left: 60px !important;
-  // padding-right: 32px !important;
+.TwitterBigBoxOverflow {
+  position: relative;
+}
+.TwitterBigBoxOverflow::after {
+  bottom: 0;
+  // width: 240px;
+  height: 1200px;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.001),
+    blue
+  ); /* 溢出部分那显示渐变 */
+  pointer-events: none;
+}
+.textScroll {
+  overflow-y: scroll;
+  // width: 240px;
+  height: 1200px;
+  padding: 15px 0;
 }

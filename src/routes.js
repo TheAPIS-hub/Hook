@@ -14,7 +14,7 @@ import {
 // Admin Imports
 import DashboardsDefault from 'views/admin/dashboards/default'
 import Game from 'views/admin/main/profile/game'
-
+import gameDetailPage from 'views/admin/main/profile/gameDetail/index.jsx'
 import DashboardsCarInterface from 'views/admin/dashboards/carInterface'
 import DashboardsSmartHome from 'views/admin/dashboards/smartHome'
 
@@ -695,7 +695,16 @@ const routes = [
     isShow:false,
     items: [],
   },
- 
+  {
+    name: 'gameDetail',
+    layout: '/admin',
+    path: '/profile/gameDetail',
+    icon: <></>,
+    component: gameDetailPage,
+    collapse: false,
+    isShow:false,
+    items: [],
+  },
   {
     name: 'none',
     layout: '/auth',

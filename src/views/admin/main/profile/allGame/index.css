@@ -1,0 +1,15 @@
+.TwitterBigBoxOverflow {
+  position: relative;
+}
+.TwitterBigBoxOverflow::after {
+  bottom: 0;
+  height: 1200px;
+  background: linear-gradient(rgba(255, 255, 255, 0.001), blue);
+  /* 溢出部分那显示渐变 */
+  pointer-events: none;
+}
+.textScroll {
+  overflow-y: scroll;
+  height: 1200px;
+  padding: 15px 0;
+}
