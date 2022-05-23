@@ -11,9 +11,11 @@ import {
   MenuItem,
   MenuList,
   useDisclosure,
-  Grid,
-} from '@chakra-ui/react'
-import gameThree from '../../../../../../assets/img/logo/gameThree.png'
+  Button,
+  Grid
+} from "@chakra-ui/react";
+import '../index.css'
+import gameThree from "../../../../../../assets/img/logo/gameThree.png";
 export default function TrendingGames() {
   const [TrendingData, setTrendingData] = useState([
     {
@@ -77,16 +79,17 @@ export default function TrendingGames() {
         {TrendingData.map((item, index) => {
           return (
             <Box
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                height: '100px',
-                marginBottom: '24px',
-              }}
-            >
-              <Box>
-                <img
-                  style={{
+            _hover={{bgColor:'rgba(228, 228, 228, 0.1)'}}
+             style={{
+                display:'flex',
+                alignItems:'center',
+                width: '491px',
+      height: '100px',
+      marginBottom:'24px',
+      
+            }}>
+              <Box  >
+                <img style={{
                     width: '115.05px',
                     height: '100px',
                     borderRadius: '12px',
@@ -130,7 +133,7 @@ export default function TrendingGames() {
         })}
       </Grid>
       <Box
-        style={{
+       className="DiscoverBtn" style={{
           height: '56px',
           borderRadius: '16px',
           background: 'rgba(108,93,211,1)',

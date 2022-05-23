@@ -24,7 +24,6 @@ import DateUploaded from '../components/MainMenu'
 import Headers from '../../../../../../assets/img/logo/Header.png'
 import gameThree from '../../../../../../assets/img/logo/gameThree.png'
 import { MdHelpOutline, MdKeyboardArrowDown } from 'react-icons/md'
-import Waterfall from 'waterfalljs-layout/react'
 export default function GameCard() {
   const [GameCardData, setGameCardData] = useState([
     {

@@ -16,11 +16,7 @@
   -o-transition: All 0.4s ease-in-out;
 }
 .CreateBtn:hover {
-  transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  -ms-transform: scale(1.2);
+  background: rgba(207, 200, 255, 0.7) !important;
 }
 .challenge {
   width: 347px;
@@ -40,24 +36,7 @@
   -o-transition: All 0.4s ease-in-out;
 }
 .VIewBtn:hover {
-  transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-}
-.ExploreBtn {
-  transition: All 0.4s ease-in-out;
-  -webkit-transition: All 0.4s ease-in-out;
-  -moz-transition: All 0.4s ease-in-out;
-  -o-transition: All 0.4s ease-in-out;
-}
-.ExploreBtn:hover {
-  transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  -ms-transform: scale(1.2);
+  background: rgba(117, 81, 255, 0.7) !important;
 }
 .swiper-slide-active {
   box-shadow: #7551ff96 0px -24px 150px -15px !important;

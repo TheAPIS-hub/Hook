@@ -1,19 +1,35 @@
-.TwitterBigBoxOverflow {
-  position: relative;
-}
-.TwitterBigBoxOverflow::after {
-  bottom: 0;
-  // width: 240px;
-  height: 1200px;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.001),
-    blue
-  ); /* 溢出部分那显示渐变 */
-  pointer-events: none;
+
+
+.TwitterBigBoxOverflow::after{
+    bottom: 0;
+    width: 240px;
+    height: 1212px;
+    background: linear-gradient(rgba(255, 255, 255, 0.001),blue) !important; /* 溢出部分那显示渐变 */
+    pointer-events: none;
 }
 .textScroll {
-  overflow-y: scroll;
-  // width: 240px;
-  height: 1200px;
-  padding: 15px 0;
+    overflow-y: scroll;
+    // width: 240px;
+    height: 1212px;
+    padding: 15px 0;
+   
+    
+  }
+  .DiscoverBtn{
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+  }
+  .DiscoverBtn:hover{
+      background: rgba(108,93,211,0.7) !important;
+  }
+  .chatFrame{
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+  }
+  .chatFrame:hover{
+    background: #3F8CFF !important;
 }

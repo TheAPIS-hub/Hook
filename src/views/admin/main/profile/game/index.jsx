@@ -221,7 +221,7 @@ marginRight:'12px'
         
       </Flex>
         <Link href="#/admin/profile/allGame">
-      <Box className="ExploreBtn" style={ {     width: '244px',
+      <Box className="VIewBtn"  style={ {     width: '244px',
         height: '71.76px',
         borderRadius: '24.959999084472656px',
         background: 'rgba(117,81,255,1)',

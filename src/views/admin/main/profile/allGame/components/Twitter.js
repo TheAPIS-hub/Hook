@@ -83,110 +83,88 @@ export default function Twitter() {
         Twitter
       </Box>
       <Grid
-        Grid
-        gridTemplateColumns={{
-          base: '1fr',
-          '2xl': '1fr',
-          md: '1fr 1fr',
-          sm: '1fr',
-        }}
-        className="TwitterBigBoxOverflow"
-      >
-        <Box className="textScroll">
-          {TwitterData.map((item, index) => {
-            return (
-              <Box
-                style={{
-                  display: 'flex',
-                  verticalAlign: 'top',
-                  marginBottom: '37px',
-                }}
-              >
-                <Box>
-                  <img
-                    style={{
-                      width: '56px',
-                      height: '56px',
-                      borderRadius: '50%',
-                      marginRight: '20px',
-                    }}
-                    src={item.img}
-                    alt=""
-                  />
-                </Box>
-                <Box>
-                  <Box
-                    style={{
-                      marginBottom: '21px',
-                      display: 'flex',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <Text
-                      style={{
-                        color: 'rgba(255,255,255,1)',
-                        fontSize: '14px',
-                        fontWeight: ' 700',
-                        textAlign: 'left',
-                        marginRight: '6px',
-                      }}
-                    >
-                      {item.name}
-                    </Text>
-                    <Text
-                      style={{
-                        color: 'rgba(178,179,189,1)',
-                        fontSize: '13px',
-                        fontWeight: '400',
-                        textAlign: 'left',
-                        marginRight: '6px',
-                      }}
-                    >
-                      @{item.TwitterName}
-                    </Text>
-                    <Text
-                      style={{
-                        color: 'rgba(178,179,189,1)',
-                        fontSize: '13px',
-                        fontWeight: '400',
-                        textAlign: 'left',
-                      }}
-                    >
-                      .{item.Time}ago
-                    </Text>
-                  </Box>
-                  <Box
-                    style={{
-                      width: ' 349px',
-                      borderRadius: '20px 20px 20px 4px',
-                      background: ' rgba(228,228,228,0.1)',
-                      padding: '16px 24px',
-                      boxSizing: 'border-box',
-                      //   index === 1 ? {background: "blue"} : { background:'rgba(228,228,228,0.1)'}
-                    }}
-                  >
-                    <Box
-                      style={{
-                        color: 'rgba(255,255,255,0.6)',
-                        fontSize: '14px',
-                        fontWeight: ' 400',
-                        textAlign: ' left',
-                        lineHeight: '24px',
-                      }}
-                    >
-                      {item.content}
-                      <img
-                        style={{
-                          width: '306px',
-                          marginTop: '7px',
-                        }}
-                        src={item.contentImg}
-                        alt=""
-                      />
-                    </Box>
-                  </Box>
-                </Box>
-              </Box>
+           gridTemplateColumns={{
+            base: '1fr',
+            '2xl': '1fr',
+            md: '1fr 1fr',
+            sm: '1fr',
+          }}
+          className="TwitterBigBoxOverflow"
+          >
+          <Box className="textScroll" >
+             {TwitterData.map((item,index)=>{
+              return(
+                  <Box   style={{
+                    display:'flex',
+                    verticalAlign: 'top',
+                    marginBottom:'37px'
+                  }}>
+                      <Box>
+                      <img style={{
+                    width: '56px',
+                    height: '56px',
+                    borderRadius: '50%',
+                    marginRight:'20px'
+                }}  src={item.img} alt="" />
+                      </Box>
+                      <Box >
+                          <Box style={{
+                              marginBottom:'21px',
+                              display:'flex',
+                              alignItems:'center',
+
+                          }}>
+                              <Text style={{
+                                   color: 'rgba(255,255,255,1)',
+                                   fontSize: '14px',
+                                   fontWeight:' 700',
+                                   textAlign: 'left',
+                                   marginRight:'6px'
+                              }}>{item.name}</Text>
+                              <Text style={{
+                                   color: 'rgba(178,179,189,1)',
+                                   fontSize: '13px',
+                                   fontWeight: '400',
+                                   textAlign: 'left',
+                                   marginRight:'6px'
+                              }}>@{item.TwitterName}</Text>
+                              <Text style={{
+                                   color: 'rgba(178,179,189,1)',
+                                   fontSize: '13px',
+                                   fontWeight: '400',
+                                   textAlign: 'left',
+                              }}>.{item.Time}ago</Text>
+                          </Box>
+                          <Box 
+                           className="chatFrame"
+                          style={{
+                              width:' 349px',
+                              borderRadius: '20px 20px 20px 4px',
+                              background:' rgba(228,228,228,0.1)',
+                              padding:'16px 24px',
+                              boxSizing:'border-box',
+                            //   index === 1 ? {background: "blue"} : { background:'rgba(228,228,228,0.1)'}
+                          }}
+                          
+                          
+                          >
+                              <Box style={{
+                                  color: 'rgba(255,255,255,0.6)',
+                                  fontSize: '14px',
+                                  fontWeight:' 400',
+                                  textAlign:' left',
+                                  lineHeight: '24px',
+                              }}>
+                                  {item.content}
+                                  <img style={{
+                    width: '306px',
+                 marginTop:'7px'
+                }}  src={item.contentImg} alt="" />
+                              </Box>
+                          </Box>
+                      </Box>
+                      </Box>
+                 
             )
           })}
         </Box>
