@@ -122,7 +122,8 @@ export default function TrendingGames() {
           textAlign:' center',
           lineHeight: '56px',
           marginTop:'65px'
-      }}>
+      }}
+      >
       Discover More
       </Box>
     </Box>

@@ -14,7 +14,7 @@ import {
   } from "@chakra-ui/react";
   import TwitterHeader from '../../../../../../assets/img/logo/Header.png'
   import contentImg from '../../../../../../assets/img/logo/gameThree.png'
-
+  import '../index.css'
   export default function Twitter(){
     const [TwitterData, setTwitterData] = useState([
         {
@@ -82,8 +82,9 @@ import {
       >
        Twitter
       </Box>
-      <Box>
-          {TwitterData.map((item,index)=>{
+      <Box className="TwitterBigBoxOverflow">
+          <Box className="textScroll" >
+             {TwitterData.map((item,index)=>{
               return(
                   <Box style={{
                     display:'flex',
@@ -156,7 +157,9 @@ import {
               )
           })
 
-          }
+          }  
+          </Box>
+         
       </Box>
           </Box>
       )
