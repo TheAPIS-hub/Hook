@@ -3,7 +3,6 @@
   width: 240px;
   height: 1212px;
   background: linear-gradient(rgba(255, 255, 255, 0.001), blue) !important;
-  /* 溢出部分那显示渐变 */
   pointer-events: none;
 }
 .textScroll {
@@ -27,5 +26,5 @@
   -o-transition: All 0.4s ease-in-out;
 }
 .chatFrame:hover {
-  background: #3F8CFF !important;
+  background: #3f8cff !important;
 }

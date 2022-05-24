@@ -1,6 +1,14 @@
 import React from 'react'
 // Chakra imports
-import { Box, Flex, Text, Badge, LightMode, Image,Link } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  Text,
+  Badge,
+  LightMode,
+  Image,
+  Link,
+} from '@chakra-ui/react'
 import LineChart from 'components/charts/LineChart'
 import Vector from '../../../assets/img/logo/Vector.png'
 // Custom components
@@ -19,7 +27,6 @@ export default function SidebarDocs() {
       position="relative"
       width="228px"
       height="190px"
-    
     >
       <Flex
         width="94px"
@@ -39,7 +46,12 @@ export default function SidebarDocs() {
         />
       </Flex>
       <Flex marginTop="26px" marginBottom="10px" textAlign="center">
-        <Link    fontSize="16px" color="#FFFFFF" fontWeight="700"  href="https://www.theapis.xyz/hook-pass" >
+        <Link
+          fontSize="16px"
+          color="#FFFFFF"
+          fontWeight="700"
+          href="https://www.theapis.xyz/hook-pass"
+        >
           Get Hook Pass
         </Link>
       </Flex>

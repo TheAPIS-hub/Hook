@@ -39,7 +39,7 @@ export function SidebarLinks(props) {
   // this function creates the links and collapses that appear in the sidebar (left menu)
   const createLinks = (routes) => {
     return routes.map((route, key) => {
-      if (!route.isShow ) {
+      if (!route.isShow) {
         return
       }
       if (route.collapse) {

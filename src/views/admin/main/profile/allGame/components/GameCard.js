@@ -24,6 +24,7 @@ import DateUploaded from '../components/MainMenu'
 import Headers from '../../../../../../assets/img/logo/Header.png'
 import gameThree from '../../../../../../assets/img/logo/gameThree.png'
 import { MdHelpOutline, MdKeyboardArrowDown } from 'react-icons/md'
+import Masonry from 'react-masonry-css'
 export default function GameCard() {
   const [GameCardData, setGameCardData] = useState([
     {
@@ -161,7 +162,7 @@ export default function GameCard() {
         <DateUploaded></DateUploaded>
       </Box>
       <Box>
-        <Grid
+        {/* <Grid
           templateColumns={{
             base: '1fr',
             lg: '1fr 1fr 1fr',
@@ -172,6 +173,20 @@ export default function GameCard() {
           }}
           gap={{ base: '43px', xl: '43px' }}
           //   onChangeUlMaxH={(h) => console.log('ul容器高度-->', h)}
+        > */}
+        <Masonry
+          breakpointCols={{
+            default: 3,
+            1400: 3,
+            1100: 3,
+            700: 2,
+            500: 1,
+          }}
+          className="note-masonry-grid"
+          columnClassName="note-masonry-grid_column"
+          style={{
+            display: 'flex',
+          }}
         >
           {GameCardData.map((item, index) => {
             return (
@@ -357,7 +372,7 @@ export default function GameCard() {
                       mr="7px"
                       data-idx={`${index}`}
                     >
-                      {idx == index ? (isShow ? 'Details' : 'Hide') : 'Hide'}
+                      {idx == index ? (isShow ? 'Hide' : 'Details') : 'Details'}
                     </Text>
                     <Icon
                       as={MdKeyboardArrowDown}
@@ -365,9 +380,9 @@ export default function GameCard() {
                       transform={
                         idx == index
                           ? isShow
-                            ? 'rotate(0deg)'
-                            : 'rotate(180deg)'
-                          : 'rotate(180deg)'
+                            ? 'rotate(180deg)'
+                            : 'rotate(0deg)'
+                          : 'rotate(0deg)'
                       }
                       w="18px"
                       h="18px"
@@ -376,10 +391,17 @@ export default function GameCard() {
                 </Box>
                 <Box
                   //   hidden={idx == index ? isShow : ''}
-                  height={idx == index ? (isShow ? '0px' : '200px') : '200px'}
-                  transition="1s"
+                  height={idx == index ? (isShow ? '200px' : '0px') : '0px'}
+                  transition="0.4s"
+                  overflow="hidden"
+                  padding={
+                    idx == index
+                      ? isShow
+                        ? '13px 21px 21px 20px'
+                        : '0px'
+                      : '0px'
+                  }
                   style={{
-                    padding: '13px 21px 21px 20px',
                     boxSizing: ' border-box',
                   }}
                 >
@@ -500,7 +522,8 @@ export default function GameCard() {
               </Box>
             )
           })}
-        </Grid>
+        </Masonry>
+        {/* </Grid> */}
       </Box>
     </Box>
   )
