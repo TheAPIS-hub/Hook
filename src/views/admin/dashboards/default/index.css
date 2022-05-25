@@ -47,3 +47,72 @@
 .css-wiypqd[data-selected] {
   background: unset !important;
 }
+.NftHoverBtn {
+  transition: All 0.4s ease-in-out;
+  -webkit-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
+  -o-transition: All 0.4s ease-in-out;
+}
+.NftHoverBtn:hover {
+  background: #868cff2e !important;
+}
+.DeftHoverBtn {
+  transition: All 0.4s ease-in-out;
+  -webkit-transition: All 0.4s ease-in-out;
+  -moz-transition: All 0.4s ease-in-out;
+  -o-transition: All 0.4s ease-in-out;
+}
+.DeftHoverBtn:hover {
+  background: #868cff2e !important;
+}
+.HeaderSearchBar .css-5bukk8:active,
+.HeaderSearchBar .css-5bukk8[data-active] {
+  background: var(--chakra-colors-whiteAlpha-200);
+}
+.HeaderSearchBar .css-5bukk8:hover,
+.HeaderSearchBar .css-5bukk8[data-hover] {
+  background: var(--chakra-colors-whiteAlpha-200) !important;
+}
+.HeaderSearchBar button,
+.HeaderSearchBar [role="button"] {
+  cursor: unset;
+}
+.TrendingBtn button,
+.TrendingBtn [role="button"] {
+  cursor: unset;
+}
+.TrendingBtn .css-1ivyhsy:active,
+.TrendingBtn .css-1ivyhsy[data-active] {
+  box-shadow: var(--chakra-shadows-none);
+  background: var(--chakra-colors-whiteAlpha-200);
+}
+.TrendingBtn .css-1ivyhsy:hover,
+.TrendingBtn .css-1ivyhsy[data-hover] {
+  background: var(--chakra-colors-whiteAlpha-200) !important;
+}
+.DeFiBtn button,
+.DeFiBtn [role="button"] {
+  cursor: unset;
+}
+.DeFiBtn .css-1inn410:active,
+.DeFiBtn .css-1inn410[data-active] {
+  box-shadow: var(--chakra-shadows-none);
+  background: var(--chakra-colors-whiteAlpha-200);
+}
+.DeFiBtn .css-1inn410:hover,
+.DeFiBtn .css-1inn410[data-hover] {
+  background: var(--chakra-colors-whiteAlpha-200) !important;
+}
+.NFTTrendingBtn button,
+.NFTTrendingBtn [role="button"] {
+  cursor: unset;
+}
+.NFTTrendingBtn .css-1inn410:active,
+.NFTTrendingBtn .css-1inn410[data-active] {
+  box-shadow: var(--chakra-shadows-none);
+  background: var(--chakra-colors-whiteAlpha-200);
+}
+.NFTTrendingBtn .css-1inn410:hover,
+.NFTTrendingBtn .css-1inn410[data-hover] {
+  background: var(--chakra-colors-whiteAlpha-200) !important;
+}

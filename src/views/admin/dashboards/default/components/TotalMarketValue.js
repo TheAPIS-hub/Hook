@@ -22,7 +22,7 @@ import {
 } from 'react-table'
 import { MdMoreHoriz } from 'react-icons/md'
 import BigNumber from 'bignumber.js'
-
+import '../index.css'
 function TotalMarketValue(props) {
   const { columnsData, tableData } = props
 
@@ -51,6 +51,7 @@ function TotalMarketValue(props) {
         direction="column"
         w="100%"
         overflowX={{ sm: 'scroll', lg: 'hidden' }}
+        className='DeFiBtn'
       >
         <Flex
           align={{ sm: 'flex-start', lg: 'center' }}

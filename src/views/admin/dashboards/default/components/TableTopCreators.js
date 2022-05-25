@@ -27,6 +27,7 @@ import {
   HSeparator,
 } from '../../../../../components/separator/Separator'
 import { IconButton } from '@chakra-ui/react'
+import '../index.css'
 function TopCreatorTable(props) {
   const { columnsData, tableData } = props
 
@@ -59,6 +60,7 @@ function TopCreatorTable(props) {
         bgColor={balanceBg}
         maxH="400px"
         overflowY="auto"
+        className='TrendingBtn'
       >
         <Flex
           align={{ sm: 'flex-start', lg: 'center' }}

@@ -30,6 +30,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import '../default/index.css'
 import BigNumber from 'bignumber.js'
 import Skeleton from './Skeleton/index'
+import './index.css'
 export default function Default() {
   const [nftVolumeData, setNftVolumData] = useState(1)
   const [defiVolumData, setDefiVolumData] = useState(1)
@@ -116,8 +117,8 @@ export default function Default() {
           {/* Data */}
           <Tabs variant="soft-rounded" colorScheme="green">
             <TabList>
-              <Tab>NFT</Tab>
-              <Tab>DEFI</Tab>
+              <Tab className='NftHoverBtn'>NFT</Tab>
+              <Tab className='DeftHoverBtn'>DEFI</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>

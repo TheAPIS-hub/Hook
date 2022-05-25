@@ -108,18 +108,18 @@ export default function Track(props) {
           justifyContent: 'space-around',
           margin:'auto'
       }}>
-         <Box className="Gaming">Crypto gaming for all</Box>
+         <Box className="Gaming">GAME and beyond</Box>
          <Box      className='CreateBtn' style={{
-           width: '159px',
-           height: '73px',
-           borderRadius: '20.799999237060547px',
+           width: '114px',
+           height: '48px',
+           borderRadius: '14px',
            background: 'rgba(207,200,255,1)',
            color: 'rgba(95,117,238,1)',
-           fontSize: '18.2px',
-           fontWeight: '700',
+           fontSize: '13px',
+           fontWeight: '400',
            textAlign: 'center',
-           lineHeight: '73px',
-           marginBottom: '47.8px',
+           lineHeight: '48px',
+           marginBottom: '48px',
       
          }}>
            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGpIutxIjaaC3i_wnli1B3_wY5rU91o7UpNqpeISbz2AHnrg/viewform">Create Project</a>
@@ -127,14 +127,17 @@ export default function Track(props) {
       </Box>
      
       <Box className=" challenge">
-        challenge your gaming skills through a fun and rewarding experience
+      From GAME to GAME and beyond.
+      </Box>
+      <Box className=" challengeText">
+Takes you on a journey to explore bigger crypto game worlds, all in one.
       </Box>
       <Flex justifyContent="center">
         <Box
           className="swiper-container1"
           style={{
-            width: '670px',
-            height: '660px',
+            width: '733px',
+            height: '593px',
             display: 'flex',
           }}
         >
@@ -144,9 +147,9 @@ export default function Track(props) {
                 <Box className="swiper-slide">
                   <Box
                     style={{
-                      height: '651px',
-                      width: '369px',
-                      borderRadius: '38px',
+                      height: '467px',
+                      width: '266px',
+                      borderRadius: '26px',
                       backgroundColor: '#111C44',
                       padding: '12px',
                       boxSizing: 'border-box',
@@ -154,63 +157,66 @@ export default function Track(props) {
                   >
                     <Box>
                       <img
-                        width="345px"
-                        height="330px"
+                        width="249px"
+                        height="238px"
                         src={item.img}
                         alt=""
 
                       />
                     </Box>
 
-                    <Box style={{ marginTop: "48px", marginLeft: "39px" }}>
+                    <Box style={{padding:'35px',boxSizing:'border-box' }}>
                       <Box
                         style={{
-                          width: '135px',
-                          height: '36px',
-                          borderRadius: '12px',
+                          width: '96px',
+                          height: '26px',
+                          borderRadius: '8px',
                           opacity: '0.5',
-                          background: 'rgba(108,93,211,1)',
-                          color: ' rgb(210 217 255)',
-                          fontSize: '19.5px',
+                          background: '#6C5DD3',
+                          color: '#5F75EE',
+                          fontSize: '14px',
                           textAlign: ' center',
-                          lineHeight: ' 38px',
+                          lineHeight: ' 26px',
                           fontWeight: ' 400',
                         }}
                       >
                         {item.Shooter}
                       </Box>
-                      <Box style={{ color: 'rgba(255,255,255,1)',
- fontSize: '27px',
+                      <Box style={{ color: '#FFFFFF',
+ fontSize: '20px',
  fontWeight: '500',
  textAlign: 'left',
- marginTop:'12px',
- lineHeight: '36px',}}>{item.gameName}</Box>
+ marginTop:'12px',}}>{item.gameName}</Box>
  <Box style={{
        display: 'flex',
        alignItems: 'center',  
  marginTop:'12px',
 
  }}>
-   <Box style={{width: '12px',
-height: '12px',
-background:' #69F85D',
+   <Box style={{width: '8px',
+height: '8px',
+background:'#7FBA7A',
 borderRadius:'50%',
-marginRight:'12px'
+marginRight:'8px'
 }}></Box>
-   <Box>{item.Viewers} Viewers</Box>
+   <Box style={{
+     color: '#808191',
+     fontWeight: '400',
+     fontSize: '12px',
+   }}>{item.Viewers} Viewers</Box>
  </Box>
  <Box className="VIewBtn" style={{
-   width: '180px',
-   height: '72px',
-   borderRadius:' 24px',
-   background: 'rgba(117,81,255,1)',
+   width: '130px',
+   height: '52px',
+   borderRadius:' 18px',
+   background: '#7551FF',
    color: 'rgba(255,255,255,1)',
-   fontSize: '21px',
+   fontSize: '16px',
    fontWeight: '400',
    textAlign:' center',
-   lineHeight: '72px',
-   marginTop:'18px'
- }}>VIew</Box>
+   lineHeight: '52px',
+   marginTop:'13px'
+ }}>View</Box>
                     </Box>
                   </Box>
                 </Box>

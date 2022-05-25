@@ -217,6 +217,13 @@ function SignIn() {
               w="100%"
               h="50"
               mb="24px"
+              transition= 'All 0.4s ease-in-out'
+              _webkitTransition= 'All 0.4s ease-in-out'
+              _mozTransition= 'All 0.4s ease-in-out'
+              _oTransition= 'All 0.4s ease-in-out'
+              _hover={{
+                background:'#7551ffc2'
+              }}
               onClick={() => {
                 setIsPending(true)
 

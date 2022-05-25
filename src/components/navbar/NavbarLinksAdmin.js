@@ -40,6 +40,7 @@ import { MdFilterNone } from 'react-icons/md'
 import { ethers } from 'ethers'
 import BigNumber from 'bignumber.js'
 import { getEthPrice } from '../../api/dashbord'
+import '../../views/admin/dashboards/default/index.css'
 export default function HeaderLinks(props) {
   const { secondary } = props
   const { colorMode, toggleColorMode } = useColorMode()
@@ -128,6 +129,7 @@ export default function HeaderLinks(props) {
       p="10px"
       borderRadius="30px"
       boxShadow={shadow}
+      className='HeaderSearchBar'
     >
       <SearchBar
         mb={secondary ? { base: '10px', md: 'unset' } : 'unset'}
@@ -307,6 +309,7 @@ export default function HeaderLinks(props) {
           minWidth="29px"
           height="29px"
           fontSize="16px"
+          
           icon={<MdVerticalDistribute />}
         />
         <Text fontWeight="700" color="#fff" fontSize="14px">
@@ -331,6 +334,7 @@ export default function HeaderLinks(props) {
           minWidth="29px"
           height="29px"
           fontSize="16px"
+          className='IconButtonNone'
           icon={<MdBolt />}
         />
         <Text fontWeight="700" color="#fff" lineHeight="29px" fontSize="14px">
@@ -443,8 +447,13 @@ export default function HeaderLinks(props) {
           borderRadius="49px"
           width="117px"
           fontSize="14px"
+          transition= 'All 0.4s ease-in-out'
+          _webkitTransition= 'All 0.4s ease-in-out'
+          _mozTransition=' All 0.4s ease-in-out'
+          _oTransition=' All 0.4s ease-in-out'
           _hover={{
             backgroundImage: 'linear-gradient(to bottom, #868CFF, #4318FF)',
+            background:'#7551ff96'
           }}
           _active={{
             backgroundImage: 'linear-gradient(to bottom, #868CFF, #4318FF)',

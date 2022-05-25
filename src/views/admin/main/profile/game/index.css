@@ -1,12 +1,11 @@
 .Gaming {
   font-style: normal;
   font-weight: 700;
-  font-size: 68px;
-  line-height: 82px;
+  font-size: 49px;
   text-align: center;
-  letter-spacing: -1.0625px;
+  letter-spacing: -0.765px;
   color: #ffffff;
-  margin-bottom: 47.8px;
+  margin-bottom: 45px;
   margin-left: 337px;
 }
 .CreateBtn {
@@ -19,15 +18,25 @@
   background: rgba(207, 200, 255, 0.7) !important;
 }
 .challenge {
-  width: 347px;
+  width: 421px;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 13px;
   line-height: 26px;
   text-align: center;
   color: #8d8cab;
   margin: auto;
-  margin-bottom: 90px;
+}
+.challengeText {
+  width: 421px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 26px;
+  text-align: center;
+  color: #8d8cab;
+  margin: auto;
+  margin-bottom: 76px;
 }
 .VIewBtn {
   transition: All 0.4s ease-in-out;
@@ -38,21 +47,24 @@
 .VIewBtn:hover {
   background: rgba(117, 81, 255, 0.7) !important;
 }
-.swiper-slide-active {
+.swiper-wrapper .swiper-slide-active {
   box-shadow: #7551ff96 0px -24px 150px -15px !important;
-  border-radius: 38px !important;
-  height: 651px !important;
-  width: 369px !important;
+  border-radius: 26px !important;
+  height: 238px !important;
+  width: 249px !important;
 }
-.swiper-slide-prev {
+.swiper-wrapper .swiper-slide-prev {
   box-shadow: #7551ff96 -7px 1px 19px -8px !important;
-  border-radius: 38px !important;
-  height: 651px !important;
-  width: 369px !important;
+  border-radius: 26px !important;
+  height: 238px !important;
+  width: 249px !important;
 }
-.swiper-slide-next {
+.swiper-wrapper .swiper-slide-next {
   box-shadow: #7551ff96 7px 1px 19px -8px !important;
-  border-radius: 38px !important;
-  height: 651px !important;
-  width: 369px !important;
+  border-radius: 26px !important;
+  height: 238px !important;
+  width: 249px !important;
+}
+.swiper-wrapper .swiper-slide {
+  width: 249px !important;
 }
