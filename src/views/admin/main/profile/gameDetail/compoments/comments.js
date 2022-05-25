@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 // Chakra imports
 import {
-
   Flex,
   Image,
   Text,
@@ -28,21 +27,25 @@ import commentIcon from 'assets/img/users/commentIcon.png'
 import expandIcon from 'assets/img/users/expandIcon.png'
 import DateUploaded from "./MainMenu";
 import { IoHeart, IoHeartOutline } from "react-icons/io5";
+
+import BraftEditor from 'braft-editor'
+import 'braft-editor/dist/index.css'
 export default function Comments(props) {
+  const [isShow, ShowFun] = useState(false)
   const earnList = [{
     img: avatar1,
-
   }, {
     img: avatar2,
-  },{
+  }, {
     img: avatar3,
-  },{
+  }, {
     img: avatar4,
-  },{
+  }, {
     img: avatar5,
-  },{
+  }, {
     img: avatar6,
   }]
+
   return (
     <div style={{
       background: "#111C44",
@@ -71,7 +74,7 @@ export default function Comments(props) {
             padding='20px 16px'
             mb="12px"
             borderRadius='12px'
-            _hover={{bgColor:'rgba(228, 228, 228, 0.1)'}}
+            _hover={{ bgColor: 'rgba(228, 228, 228, 0.1)' }}
           >
             <Avatar h='48px' w='48px' src={item.img} me='14px' />
             <Box>
@@ -79,7 +82,15 @@ export default function Comments(props) {
                 <Text as="span" color="#5F75EE">Joel Becker</Text>
                 <Text as="span" color="#B2B3BD" ml="3">12h</Text>
               </Box>
-              <Text m="10px 0" color="#B2B3BD" fontSize="14px" lineHeight="24px" noOfLines={2}>Can anyone tell me the settings for character voice lines cause its so boring to play without no characters lines....</Text>
+              <Text
+                m="10px 0"
+                color="#B2B3BD"
+                fontSize="14px"
+                lineHeight="24px"
+                noOfLines={2}>
+               {/* <div dangerouslySetInnerHTML={{__html:text}}></div> */}
+                Can anyone tell me the settings for character voice lines cause its so boring to play without no characters lines....
+                </Text>
               <Flex>
                 <Image src={commentIcon}></Image>
                 <Image m="0 16px" src={collectIcon}></Image>
@@ -88,10 +99,25 @@ export default function Comments(props) {
             </Box>
           </Flex>
         ))}
-        <Button variant="brand" width="180px"
-          height="56px" m="32px auto" fontWeight="400" fontSize="14px"> Write comment</Button>
+        {isShow ?
+          <BraftEditor
+            contentStyle={{ height: 100 }}
+            language="en"
+            style={{ border: '1px solid rgba(225, 225, 225, 0.2)', marginBottom: '20px' }}
+          /> : ''}
+        <Button
+          variant="brand"
+          width="180px"
+          height="56px"
+          m="32px auto"
+          fontWeight="400"
+          fontSize="14px"
+          onClick={(e) => {
+            ShowFun(!isShow)
+          }}> Write comment</Button>
       </Card>
     </div >
+
 
   );
 }

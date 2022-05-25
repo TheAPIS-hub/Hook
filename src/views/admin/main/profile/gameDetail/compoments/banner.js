@@ -21,7 +21,6 @@ import saleIcon from 'assets/img/users/saleIcon.png'
 import volumeIcon from 'assets/img/users/volumeIcon.png'
 import soldIcon from 'assets/img/users/soldIcon.png'
 import twitter from 'assets/img/users/twitter.png'
-import dot from 'assets/img/users/dot.png'
 import { MdMoreHoriz } from 'react-icons/md'
 import { AiOutlineLike } from 'react-icons/ai'
 import { RiShareForwardLine } from 'react-icons/ri'
@@ -76,19 +75,7 @@ export default function Banner(props) {
             justifyContent="space-between"
             flexDirection={{ base: "column", xl: "row" }} >
             <Flex alignItems="center">
-              <Box
-                position="relative"
-              >
-                <Image
-                  src={dot}
-                  width="28px"
-                  height="28px"
-                  borderRadius="50%"
-                  position="absolute"
-                  right="-8px"
-                  top="-8px"
-
-                ></Image>
+              <Box>
                 <Image src={avatar1} width="82px" height="82px" borderRadius="50%"></Image>
               </Box>
               <Box ml="24px" fontSize="18px" fontWeight="500">

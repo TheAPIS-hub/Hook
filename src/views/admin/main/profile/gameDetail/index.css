@@ -1,13 +1,13 @@
 .css-11fb1j9 {
   background-color: #3F8CFF !important;
-  z-index: 99;
 }
 .chakra-stack {
   align-items: center;
 }
-.css-tafvlg:first-child .chakra-avatar__excess.css-11fb1j9 {
+.css-tafvlg .chakra-avatar__excess.css-11fb1j9 {
   width: 43px;
   height: 43px;
+  z-index: 1;
 }
 .yscroll {
   overflow-y: auto;
