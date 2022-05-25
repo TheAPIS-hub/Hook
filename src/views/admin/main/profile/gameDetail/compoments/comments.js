@@ -28,7 +28,7 @@ import commentIcon from 'assets/img/users/commentIcon.png'
 import expandIcon from 'assets/img/users/expandIcon.png'
 import DateUploaded from "./MainMenu";
 import { IoHeart, IoHeartOutline } from "react-icons/io5";
-export default function Earn(props) {
+export default function Comments(props) {
   const earnList = [{
     img: avatar1,
 

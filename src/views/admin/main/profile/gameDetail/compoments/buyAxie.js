@@ -17,7 +17,7 @@ import axie3 from "assets/img/avatars/axie3.png";
 import axie4 from "assets/img/avatars/axie4.png";
 import axieIcon from 'assets/img/avatars/axieIcon.png'
 import arrow from 'assets/img/users/arrow.png'
-export default function earn(props) {
+export default function BuyAxie(props) {
   const { ...rest } = props;
   const earnList = [{
     img: axie1,
@@ -54,7 +54,7 @@ export default function earn(props) {
         fontWeight=" 500"
         textAlign="left"
         lineHeight="32px"
-        marginBottom='20px'>
+        margin='55px 0 30px 0'>
         Buy Axie
       </Text>
       <Card direction='column' w='100%' p='0px' bgColor='transparent' {...rest}>
@@ -71,17 +71,18 @@ export default function earn(props) {
                 color: "white",
                 alignItems:"center",
                 borderRadius:"3px",
-                justifyContent: "centert"
+                justifyContent: "center",
+                margin:"10px 0 10px 0"
               }}>
                 <img src={axieIcon} style={{width:"10px",height:"12px"}}></img>
                 <Text fontSize="10px" as="span">#242342</Text>
               </Flex>
-              <Text color="#B2B3BD" fontSize="10px" >breed count：4</Text>
+              <Text color="#B2B3BD" fontSize="10px" >breed count y4</Text>
             </Flex>
             <Flex fontSize="10px" flexDirection="column">
               <Text>BUYER</Text>
               <Text>Lunacian #23268…</Text>
-              <Text>（ronin…a553c)…</Text>
+              <Text color="#B2B3BD">(ronin…a553c)…</Text>
             </Flex>
             <Box fontSize="10px">
               <Flex justifyContent="space-between">
@@ -93,7 +94,7 @@ export default function earn(props) {
                 <Text color="#B2B3BD" as='span'>$8.23</Text>
               </Flex>
               <Flex justifyContent="space-between">
-                <Text color="#B2B3BD" as='span'>（ronin…a553c)…</Text>
+                <Text color="#B2B3BD" as='span'>(ronin…a553c)…</Text>
                 <Text color="#B2B3BD" as='span'>a minute ago</Text>
               </Flex>
             </Box>
