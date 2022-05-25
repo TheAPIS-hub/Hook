@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './player.css'
 
-export default function Players({ src }) {
+export default function Players({ src, ht, wd }) {
   return (
     <div className={styles.videobox}>
       <iframe
-        width="100%"
-        height="532"
+        width={wd}
+        height={ht}
         src={src}
         title="Hook"
         frameborder="0"

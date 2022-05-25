@@ -12,10 +12,10 @@ import {
   MenuList,
   useDisclosure,
   Button,
-  Grid
-} from "@chakra-ui/react";
+  Grid,
+} from '@chakra-ui/react'
 import '../index.css'
-import gameThree from "../../../../../../assets/img/logo/gameThree.png";
+import gameThree from '../../../../../../assets/img/logo/gameThree.png'
 export default function TrendingGames() {
   const [TrendingData, setTrendingData] = useState([
     {
@@ -72,26 +72,27 @@ export default function TrendingGames() {
         gridTemplateColumns={{
           base: '1fr',
           '2xl': '1fr',
-          md: '1fr 1fr',
+          md: '1fr ',
           sm: '1fr',
         }}
       >
         {TrendingData.map((item, index) => {
           return (
             <Box
-            _hover={{bgColor:'rgba(228, 228, 228, 0.1)'}}
-             style={{
-                display:'flex',
-                alignItems:'center',
-                width: '491px',
-      height: '100px',
-      marginBottom:'24px',
-      
-            }}>
-              <Box  >
-                <img style={{
-                    width: '115.05px',
-                    height: '100px',
+              _hover={{ bgColor: 'rgba(228, 228, 228, 0.1)' }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                // width: '491px',
+                height: '100px',
+                marginBottom: '24px',
+              }}
+            >
+              <Box>
+                <img
+                  style={{
+                    // width: '115.05px',
+                    // height: '100px',
                     borderRadius: '12px',
                   }}
                   src={item.img}
@@ -100,14 +101,14 @@ export default function TrendingGames() {
               </Box>
               <Box
                 style={{
-                  pandingTop: '13px',
-                  marginLeft: '34.92px',
+                  pandingTop: '12px',
+                  marginLeft: '20px',
                 }}
               >
                 <Box
                   style={{
                     color: 'rgba(255,255,255,1)',
-                    fontSize: '13px',
+                    fontSize: '12px',
                     fontWeight: '400',
                     textAlign: ' left',
                     lineHeight: '18px',
@@ -132,8 +133,9 @@ export default function TrendingGames() {
           )
         })}
       </Grid>
-      <Box
-       className="DiscoverBtn" style={{
+      {/* <Box
+        className="DiscoverBtn"
+        style={{
           height: '56px',
           borderRadius: '16px',
           background: 'rgba(108,93,211,1)',
@@ -146,7 +148,7 @@ export default function TrendingGames() {
         }}
       >
         Discover More
-      </Box>
+      </Box> */}
     </Box>
   )
 }

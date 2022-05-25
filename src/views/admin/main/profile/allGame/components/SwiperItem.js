@@ -23,40 +23,36 @@ export default function SwiperItem() {
   }
   return (
     <Box
-      height="720px"
+      //   height="720px"
       backgroundColor="rgba(17,28,68,1)"
       borderRadius="32px"
       paddingBottom="32px"
+      style={{}}
+      width="504px"
+      height="492px"
     >
-      <Box height="532px" borderRadius="32px">
+      <Box borderRadius="22px" overflow="hidden">
         <Players
           borderRadius="32px"
+          ht="384px"
+          wd="504px"
           src="https://www.youtube.com/embed/3OSUpTaiJM8"
         ></Players>
       </Box>
       <Box
-        style={{
-          fontWeight: '500',
-          fontSize: ' 32px',
-          lineHeight: ' 48px',
-          letterSpacing: '-0.5px',
-          color: '#FFFFFF',
-          marginTop: '34px',
-          marginBottom: '42px',
-          marginLeft: '32px',
-          textAlign: ' left',
-        }}
+        fontSize="22px"
+        textAlign="left"
+        fontWeight={500}
+        color="#fff"
+        marginTop="22px"
+        padding="0 22px"
+        lineHeight="33px"
+        alignItems="center"
       >
         Game name
       </Box>
 
-      <Box
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          marginLeft: '32px',
-        }}
-      >
+      <Flex marginTop="10px" padding="0 22px">
         <img
           style={{
             width: '24px',
@@ -67,7 +63,7 @@ export default function SwiperItem() {
           src={GameHeader}
           alt=""
         />
-        <Box
+        <Text
           style={{
             fontWeight: '400',
             fontSize: '14px',
@@ -75,34 +71,13 @@ export default function SwiperItem() {
             color: ' #B2B3BD',
           }}
         >
-          {GameData.copyright}
-          {/* <Text> League of Legends</Text>® */}
-        </Box>
-        <Box
-          style={{
-            width: '8px',
-            height: '8px',
-            borderRadius: '50%',
-            marginRight: '12px',
-            marginLeft: '12px',
-            backgroundColor: '#fff',
-          }}
-        ></Box>
-        <Box
-          style={{
-            fontWeight: '400',
-            fontSize: '14px',
-            lineHeight: '24px',
-            color: ' #B2B3BD',
-          }}
-        >
+          {GameData.copyright}®{' '}
+          <span style={{ color: '#fff', margin: '0 6px', fontSize: '16px' }}>
+            ·
+          </span>{' '}
           {GameData.generes}
-
-          {/* <Text>
-             Game generes
-            </Text> */}
-        </Box>
-      </Box>
+        </Text>
+      </Flex>
     </Box>
   )
 }

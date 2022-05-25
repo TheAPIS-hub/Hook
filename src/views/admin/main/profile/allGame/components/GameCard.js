@@ -186,23 +186,27 @@ export default function GameCard() {
           columnClassName="note-masonry-grid_column"
           style={{
             display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
           {GameCardData.map((item, index) => {
             return (
               <Box
                 style={{
-                  width: '306px',
                   borderRadius: '24px',
-                  marginBottom: '39px',
                   background: 'rgba(17,28,68,1)',
                 }}
                 key={`item+${index}`}
+                marginBottom={{
+                  base: '40px',
+                  md: '20px',
+                  sm: '18px',
+                }}
               >
                 <Box>
                   <img
                     style={{
-                      width: '316px',
+                      width: '100%',
                       height: '170px',
                       borderRadius: '24px 24px 0 0',
                     }}
@@ -219,10 +223,15 @@ export default function GameCard() {
                   <Box
                     style={{
                       color: 'rgba(255,255,255,1)',
-                      fontSize: '18px',
+                      //   fontSize: '18px',
                       fontWeight: ' 500',
                       textAlign: 'left',
                       lineHeight: '24px',
+                    }}
+                    fontSize={{
+                      base: '18px',
+                      md: '14px',
+                      sm: '12px',
                     }}
                   >
                     {item.gameName}
@@ -230,9 +239,13 @@ export default function GameCard() {
 
                   <Box
                     style={{
-                      marginTop: '18px',
                       alignItems: 'center',
                       display: 'flex',
+                    }}
+                    marginTop={{
+                      base: '18px',
+                      md: '12px',
+                      sm: '12px',
                     }}
                   >
                     <Box

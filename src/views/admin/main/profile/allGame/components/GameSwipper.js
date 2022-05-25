@@ -72,7 +72,7 @@ export default function GameSwipper() {
   ]
 
   return (
-    <Box>
+    <Box marginTop="74px">
       <Box
         style={{
           color: ' rgba(255,255,255,1)',
@@ -80,17 +80,17 @@ export default function GameSwipper() {
           fontWeight: ' 500',
           textAlign: 'left',
           lineHeight: '32px',
-          marginBottom: '28px',
+          marginBottom: '26px',
         }}
       >
         Featured & Recommended
       </Box>
       <Box
-        style={{
-          height: '720px',
-          borderRadius: '32px',
-          background: 'rgba(228,228,228,0.1)',
-        }}
+        width="686px"
+        height="492px"
+        borderRadius="22px"
+        background="rgba(228,228,228,0.1)"
+        overflow="hidden"
       >
         <ImageGallery
           thumbnailPosition="right"

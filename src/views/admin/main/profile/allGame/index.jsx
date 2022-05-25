@@ -9,18 +9,18 @@ export default function allGame() {
   return (
     <Box
       padding={{
-        base: '56px 60px 24px 32px',
-        md: '56px 60px 24px 32px',
-        xl: '56px 60px 24px 32px',
-        sm: '56px 60px 24px 32px',
+        base: '56px 20px 24px 32px',
+        md: '56px 20px 24px 32px',
+        xl: '56px 20px 24px 32px',
+        sm: '56px 20px 24px 32px',
       }}
     >
       <Grid
         mb="20px"
         gridTemplateColumns={{
-          base: '2fr 1fr',
-          '2xl': '2fr 1fr',
-          md: '1fr',
+          base: '686fr 276fr',
+          '2xl': '686fr 276fr',
+          md: '686fr 276fr',
           sm: '1fr',
         }}
         gap="39px"
@@ -34,8 +34,8 @@ export default function allGame() {
         gridTemplateColumns={{
           base: '2fr 1fr',
           '2xl': '2fr 1fr',
-          md: '1fr',
-          sm: '1fr',
+          md: '2fr 1fr',
+          sm: '2fr 1fr',
         }}
         gap="39px"
       >

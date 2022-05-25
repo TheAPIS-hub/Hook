@@ -1,47 +1,23 @@
-.videobox {
+.image-gallery-slide-wrapper.left, .image-gallery-slide-wrapper.right{
+    width: 505px !important;
+}
+.image-gallery-thumbnails-wrapper.left, .image-gallery-thumbnails-wrapper.right{
     position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-  }
-  
-  .videobox iframe {
-    position: absolute;
-    top: 32PX;
-    left: 32px;
-    width: 100%;
-    height: 100%;
-  }
-  .image-gallery-slide-wrapper.left, .image-gallery-slide-wrapper.right {
-    display: inline-block;
-    width: calc(100% - 272px) !important;
+    width: calc(100% - 504px) !important
+
 }
-.image-gallery-thumbnails-wrapper.left .image-gallery-thumbnails, .image-gallery-thumbnails-wrapper.right .image-gallery-thumbnails {
-  /* height: 100%; */
-  /* width: 100%; */
-  left: 32px !important;
-  padding: 0;
-  position: absolute;
-  top: 32px !important;
-  width: 208px !important;
-  height: 656px !important;
+.image-gallery-thumbnails-wrapper.left .image-gallery-thumbnails, .image-gallery-thumbnails-wrapper.right .image-gallery-thumbnails{
+    left: 50% !important;
+    width: 142px !important;
+
+    transform: translateX(-50%);
 }
-.image-gallery-thumbnails-wrapper.left .image-gallery-thumbnails .image-gallery-thumbnail, .image-gallery-thumbnails-wrapper.right .image-gallery-thumbnails .image-gallery-thumbnail {
-  width: 208px !important;
-  height: 140px !important;
-  border-radius: 16px !important;
-  margin-bottom: 32px !important;
+.image-gallery-thumbnails-wrapper.left .image-gallery-thumbnails .image-gallery-thumbnail, .image-gallery-thumbnails-wrapper.right .image-gallery-thumbnails .image-gallery-thumbnail{
+    width: 142px !important;
+height: 96px !important;
+border-radius: 10px;
+margin-top: 22px !important;
 }
-.image-gallery-thumbnail .image-gallery-thumbnail-image {
-  vertical-align: middle;
-  width: 100%;
-  line-height: 0;
-  width: 208px !important;
-  height: 140px !important;
-  border-radius: 16px!important;
-}
-.image-gallery-thumbnail.active, .image-gallery-thumbnail:focus {
-  outline: none;
-  /* border: 4px solid #337ab7; */
-  border: none !important;
+.image-gallery-content{
+    display: flex !important;
 }
