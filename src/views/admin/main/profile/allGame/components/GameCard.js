@@ -12,6 +12,7 @@ import {
   MenuIcon,
   MenuCommand,
   MenuDivider,
+  Image,
   Text,
   Grid,
   Icon,
@@ -23,6 +24,7 @@ import {
 import DateUploaded from '../components/MainMenu'
 import Headers from '../../../../../../assets/img/logo/Header.png'
 import gameThree from '../../../../../../assets/img/logo/gameThree.png'
+import { useHistory } from 'react-router-dom'
 import { MdHelpOutline, MdKeyboardArrowDown } from 'react-icons/md'
 import Masonry from 'react-masonry-css'
 export default function GameCard() {
@@ -137,10 +139,19 @@ export default function GameCard() {
     },
   ])
   const [isShow, setIsshow] = useState(false)
+  const history = useHistory()
   const [idx, setIdx] = useState('')
   return (
-    <Box>
-      <Box
+    <Box
+      marginTop="36px"
+      width={{
+        base: '100%',
+        xl: '100%',
+        '2xl': '100%',
+        md: '688px',
+      }}
+    >
+      <Flex
         style={{
           color: ' rgba(255,255,255,1)',
           fontSize: '24px',
@@ -149,18 +160,21 @@ export default function GameCard() {
           lineHeight: '32px',
           marginBottom: '32px',
         }}
+        alignItems="center"
+        justifyContent="space-between"
+        marginBottom="28px"
       >
         Trending games
-      </Box>
-      <Box
+        <DateUploaded></DateUploaded>
+      </Flex>
+      {/* <Box
         style={{
           textAlign: 'right',
           marginBottom: '32px',
           marginRight: '2px',
         }}
-      >
-        <DateUploaded></DateUploaded>
-      </Box>
+      > */}
+      {/* </Box> */}
       <Box>
         {/* <Grid
           templateColumns={{
@@ -202,21 +216,42 @@ export default function GameCard() {
                   md: '20px',
                   sm: '18px',
                 }}
+                width={{
+                  base: '90%',
+                  xl: '90%',
+                  '2xl': '90%',
+                  md: '210px',
+                }}
               >
-                <Box>
-                  <img
-                    style={{
-                      width: '100%',
-                      height: '170px',
-                      borderRadius: '24px 24px 0 0',
-                    }}
+                <Box
+                  cursor="pointer"
+                  onClick={() => {
+                    history.push({
+                      pathname: '/admin/profile/gameDetail',
+                    })
+                  }}
+                >
+                  <Image
+                    borderRadius="24px"
                     src={item.img}
                     alt=""
+                    width={{
+                      base: '100%',
+                      xl: '100%',
+                      '2xl': '100%',
+                      md: '210px',
+                    }}
+                    height={{
+                      base: '100%',
+                      xl: '100%',
+                      '2xl': '100%',
+                      md: '116px',
+                    }}
                   />
                 </Box>
                 <Box
                   style={{
-                    padding: '24px',
+                    padding: '16px',
                     boxSizing: ' border-box',
                   }}
                 >
@@ -228,11 +263,7 @@ export default function GameCard() {
                       textAlign: 'left',
                       lineHeight: '24px',
                     }}
-                    fontSize={{
-                      base: '18px',
-                      md: '14px',
-                      sm: '12px',
-                    }}
+                    fontSize="0.8vw"
                   >
                     {item.gameName}
                   </Box>
@@ -248,7 +279,7 @@ export default function GameCard() {
                       sm: '12px',
                     }}
                   >
-                    <Box
+                    {/* <Box
                       style={{
                         width: '8px',
                         height: ' 8px',
@@ -256,20 +287,20 @@ export default function GameCard() {
                         borderRadius: '50%',
                         marginRight: '9px',
                       }}
-                    ></Box>
+                    ></Box> */}
                     <Box
                       style={{
                         color: 'rgba(128,129,145,1)',
-                        fontSize: '12px',
                         fontWeight: '400',
                         textAlign: 'right',
                         lineHeight: ' 16px',
                         marginRight: '14px',
                       }}
+                      fontSize="0.3vw"
                     >
-                      {item.followers}followers
+                      {item.followers} followers
                     </Box>
-                    <Box
+                    {/* <Box
                       style={{
                         width: '8px',
                         height: ' 8px',
@@ -277,46 +308,72 @@ export default function GameCard() {
                         borderRadius: '50%',
                         marginRight: '9px',
                       }}
-                    ></Box>
+                    ></Box> */}
                     <Box
                       style={{
                         color: 'rgba(128,129,145,1)',
-                        fontSize: '12px',
                         fontWeight: '400',
                         textAlign: 'right',
                         lineHeight: ' 16px',
                       }}
+                      fontSize="0.6vw"
                     >
-                      {item.players}players
+                      {item.players} players
                     </Box>
                   </Box>
                   <Box
                     style={{
-                      marginTop: '18px',
+                      marginTop: '12px',
                       alignItems: 'center',
                       display: 'flex',
                     }}
                   >
-                    <Box>
-                      <img
+                    <Box
+                      width={{
+                        base: '10%',
+                        md: '12px',
+                        xl: '10%',
+                        '2xl': '10%',
+                        sm: '12px',
+                      }}
+                      marginRight={{
+                        base: '2%',
+                        md: '6px',
+                        xl: '2%',
+                        '2xl': '2%',
+                        sm: '6px',
+                      }}
+                    >
+                      <Image
                         style={{
-                          width: '24px',
-                          height: '24px',
                           borderRadius: '50%',
-                          marginRight: '8px',
                         }}
                         src={item.creatorHeader}
                         alt=""
+                        width={{
+                          base: '10%',
+                          md: '12px',
+                          xl: '100%',
+                          '2xl': '100%',
+                          sm: '12px',
+                        }}
+                        height={{
+                          base: '10%',
+                          md: '12px',
+                          xl: '100%',
+                          '2xl': '100%',
+                          sm: '12px',
+                        }}
                       />
                     </Box>
                     <Box
                       style={{
                         color: 'rgba(255,255,255,1)',
-                        fontSize: '13px',
                         fontWeight: ' 400',
                         textAlign: ' left',
                         lineHeight: '20px',
                       }}
+                      fontSize="0.6vw"
                     >
                       {item.creatorName}®
                     </Box>
@@ -339,16 +396,31 @@ export default function GameCard() {
                   >
                     <Box
                       style={{
-                        width: '90px',
-                        height: '24px',
                         borderRadius: '8px',
                         background: 'rgba(228,228,228,0.1)',
                         color: ' rgba(95,117,238,1)',
-                        fontSize: '13px',
                         fontWeight: ' 400',
                         textAlign: ' center',
-                        lineHeight: '24px',
                         marginRight: '8px',
+                      }}
+                      width={{
+                        base: '72px',
+                        md: '60px',
+                        xl: '72px',
+                        '2xl': '80px',
+                      }}
+                      height={{
+                        base: '20px',
+                        md: '16px',
+                        xl: '20px',
+                        '2xl': '24px',
+                      }}
+                      fontSize="0.6vw"
+                      lineHeight={{
+                        base: '20px',
+                        md: '16px',
+                        xl: '20px',
+                        '2xl': '24px',
                       }}
                     >
                       Alpha
@@ -356,8 +428,18 @@ export default function GameCard() {
                     <Icon
                       as={MdHelpOutline}
                       color="#808191"
-                      w="14px"
-                      h="14px"
+                      w={{
+                        base: '16px',
+                        md: '14px',
+                        xl: '16px',
+                        '2xl': '20px',
+                      }}
+                      h={{
+                        base: '16px',
+                        md: '14px',
+                        xl: '16px',
+                        '2xl': '20px',
+                      }}
                     />
                   </Box>
                   <Box
@@ -380,7 +462,7 @@ export default function GameCard() {
                   >
                     <Text
                       type="primary"
-                      fontSize="12px"
+                      fontSize="0.6vw"
                       fontWeight="400"
                       mr="7px"
                       data-idx={`${index}`}
@@ -397,21 +479,31 @@ export default function GameCard() {
                             : 'rotate(0deg)'
                           : 'rotate(0deg)'
                       }
-                      w="18px"
-                      h="18px"
+                      w={{
+                        base: '16px',
+                        md: '14px',
+                        xl: '16px',
+                        '2xl': '20px',
+                      }}
+                      h={{
+                        base: '16px',
+                        md: '14px',
+                        xl: '16px',
+                        '2xl': '20px',
+                      }}
                     />
                   </Box>
                 </Box>
                 <Box
                   //   hidden={idx == index ? isShow : ''}
-                  height={idx == index ? (isShow ? '200px' : '0px') : '0px'}
-                  transition="0.4s"
+                  height={idx == index ? (isShow ? '160px' : '0px') : '0px'}
+                  transition="1s"
                   overflow="hidden"
                   padding={
                     idx == index
                       ? isShow
                         ? '13px 21px 21px 20px'
-                        : '0px'
+                        : '0px 20px '
                       : '0px'
                   }
                   style={{
@@ -428,23 +520,22 @@ export default function GameCard() {
                   >
                     <Box
                       style={{
-                        width: '60px',
-                        marginRight: '37px',
                         color: ' rgba(128,129,145,1)',
-                        fontSize: '13px',
                         fontWeight: '400',
                         textAlign: 'left',
                       }}
+                      fontSize="12px"
+                      marginRight="50px"
                     >
                       RIO
                     </Box>
                     <Box
                       style={{
                         color: 'rgba(255,255,255,1)',
-                        fontSize: '13px',
                         fontWeight: '400',
                         textAlign: 'left',
                       }}
+                      fontSize="12px"
                     >
                       {item.RIO} $
                     </Box>
@@ -452,82 +543,83 @@ export default function GameCard() {
                   <Box
                     style={{
                       display: 'flex',
+
                       alignItems: ' center',
                       marginBottom: '16px',
                     }}
                   >
                     <Box
                       style={{
-                        width: '60px',
-                        marginRight: '37px',
                         color: ' rgba(128,129,145,1)',
-                        fontSize: '13px',
                         fontWeight: '400',
                         textAlign: 'left',
                       }}
+                      fontSize="12px"
+                      marginRight="50px"
                     >
-                      Volume
+                      RIO
                     </Box>
                     <Box
                       style={{
                         color: 'rgba(255,255,255,1)',
-                        fontSize: '13px',
                         fontWeight: '400',
                         textAlign: 'left',
                       }}
+                      fontSize="12px"
                     >
-                      {item.Volume}
+                      {item.RIO} $
                     </Box>
                   </Box>
                   <Box
                     style={{
                       display: 'flex',
+
                       alignItems: ' center',
                       marginBottom: '16px',
                     }}
                   >
                     <Box
                       style={{
-                        width: '60px',
-                        marginRight: '37px',
                         color: ' rgba(128,129,145,1)',
-                        fontSize: '13px',
                         fontWeight: '400',
                         textAlign: 'left',
                       }}
+                      fontSize="12px"
+                      marginRight="50px"
                     >
-                      Total NFT
+                      RIO
                     </Box>
                     <Box
                       style={{
                         color: 'rgba(255,255,255,1)',
-                        fontSize: '13px',
                         fontWeight: '400',
                         textAlign: 'left',
                       }}
+                      fontSize="12px"
                     >
-                      {item.TotalNFT}
+                      {item.RIO} $
                     </Box>
                   </Box>
                   <Flex justifyContent="flex-end">
                     <Box
                       style={{
-                        width: '101px',
-                        height: '28px',
                         borderRadius: ' 8px',
                         background: 'rgba(108,93,211,1)',
                       }}
+                      width="70px"
+                      height="20px"
                     >
                       <Text
                         style={{
                           color: 'rgba(255,255,255,1)',
-                          fontSize: '7px',
+
                           fontWeight: ' 400',
                           textAlign: ' center',
-                          lineHeight: ' 28px',
+                          lineHeight: ' 20px',
                         }}
+                        fontSize="12px"
                       >
-                        swap 8 lowed
+                        swap
                       </Text>
                     </Box>
                   </Flex>

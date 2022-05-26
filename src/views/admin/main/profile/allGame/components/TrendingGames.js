@@ -55,7 +55,7 @@ export default function TrendingGames() {
     },
   ])
   return (
-    <Box>
+    <Box marginTop="74px" width="100%">
       <Box
         style={{
           color: ' rgba(255,255,255,1)',
@@ -68,63 +68,57 @@ export default function TrendingGames() {
       >
         Ranking
       </Box>
-      <Grid
-        gridTemplateColumns={{
-          base: '1fr',
-          '2xl': '1fr',
-          md: '1fr ',
-          sm: '1fr',
-        }}
-      >
+      <Box overflowY="auto" height="34vw" overflow="hidden">
         {TrendingData.map((item, index) => {
           return (
             <Box
               _hover={{ bgColor: 'rgba(228, 228, 228, 0.1)' }}
               style={{
                 display: 'flex',
-                alignItems: 'center',
+                // alignItems: 'center',
                 // width: '491px',
-                height: '100px',
-                marginBottom: '24px',
               }}
+              height="4.8vw"
+              marginBottom="0.9vw"
             >
               <Box>
-                <img
+                <Image
                   style={{
-                    // width: '115.05px',
-                    // height: '100px',
                     borderRadius: '12px',
                   }}
+                  width="5.5vw"
+                  height="4.7vw"
                   src={item.img}
                   alt=""
                 />
               </Box>
               <Box
                 style={{
-                  pandingTop: '12px',
-                  marginLeft: '20px',
+                  pandingTop: '0.6vw',
+                  marginLeft: '0.7vw',
                 }}
               >
                 <Box
                   style={{
                     color: 'rgba(255,255,255,1)',
-                    fontSize: '12px',
                     fontWeight: '400',
                     textAlign: ' left',
                     lineHeight: '18px',
                   }}
+                  marginBottom="8px"
+                  fontSize="0.8vw"
                 >
                   {item.gameName}®
                 </Box>
                 <Box
                   style={{
-                    width: '173px',
                     color: 'rgba(128,129,145,1)',
-                    fontSize: '12px',
                     fontWeight: '400',
                     textAlign: 'left',
                     lineHeight: '16px',
                   }}
+                  width="12vw"
+                  fontSize="0.6vw"
                 >
                   {item.introduce}
                 </Box>
@@ -132,7 +126,7 @@ export default function TrendingGames() {
             </Box>
           )
         })}
-      </Grid>
+      </Box>
       {/* <Box
         className="DiscoverBtn"
         style={{

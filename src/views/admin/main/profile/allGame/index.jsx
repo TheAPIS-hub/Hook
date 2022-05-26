@@ -18,12 +18,18 @@ export default function allGame() {
       <Grid
         mb="20px"
         gridTemplateColumns={{
-          base: '686fr 276fr',
-          '2xl': '686fr 276fr',
-          md: '686fr 276fr',
-          sm: '1fr',
+          base: '2fr 1fr',
+          '2xl': '2fr 1fr',
+          md: '2fr 1fr',
+          sm: '2fr 1fr',
         }}
-        gap="39px"
+        gap={{
+          base: '5%',
+          '2xl': '5%',
+          xl: '5%',
+          md: '40px',
+          sm: '5%',
+        }}
       >
         <GameSwipper></GameSwipper>
 
@@ -37,7 +43,13 @@ export default function allGame() {
           md: '2fr 1fr',
           sm: '2fr 1fr',
         }}
-        gap="39px"
+        gap={{
+          base: '5%',
+          '2xl': '5%',
+          xl: '5%',
+          md: '40px',
+          sm: '5%',
+        }}
       >
         <GameCard></GameCard>
 

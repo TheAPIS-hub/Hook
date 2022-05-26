@@ -69,7 +69,15 @@ export default function Twitter() {
     },
   ])
   return (
-    <Box>
+    <Box
+      marginTop="36px"
+      width={{
+        base: '100%',
+        xl: '100%',
+        '2xl': '100%',
+        md: '334px',
+      }}
+    >
       <Box
         style={{
           color: ' rgba(255,255,255,1)',
@@ -77,29 +85,52 @@ export default function Twitter() {
           fontWeight: ' 500',
           textAlign: 'left',
           lineHeight: '32px',
-          marginBottom: '61px',
         }}
+        marginBottom="28px"
       >
         Twitter
       </Box>
 
-      <Box className="textScroll">
+      <Box height="20vw">
         {TwitterData.map((item, index) => {
           return (
             <Box
               style={{
                 display: 'flex',
                 verticalAlign: 'top',
-                marginBottom: '37px',
+                marginBottom: '24px',
               }}
             >
-              <Box>
-                <img
+              <Box
+                width={{
+                  base: '10%',
+                  xl: '10%',
+                  '2xl': '10%',
+                  md: '38px',
+                }}
+                height={{
+                  base: '20%',
+                  xl: '20%',
+                  '2xl': '20%',
+                  md: '38px',
+                }}
+                marginRight="0.5vw"
+              >
+                <Image
                   style={{
-                    width: '56px',
-                    height: '56px',
                     borderRadius: '50%',
-                    marginRight: '20px',
+                  }}
+                  width={{
+                    base: '100%',
+                    xl: '100%',
+                    '2xl': '100%',
+                    md: '38px',
+                  }}
+                  height={{
+                    base: '100%',
+                    xl: '100%',
+                    '2xl': '100%',
+                    md: '38px',
                   }}
                   src={item.img}
                   alt=""
@@ -116,32 +147,31 @@ export default function Twitter() {
                   <Text
                     style={{
                       color: 'rgba(255,255,255,1)',
-                      fontSize: '14px',
                       fontWeight: ' 700',
                       textAlign: 'left',
-                      marginRight: '6px',
                     }}
+                    fontSize="0.6vw"
                   >
                     {item.name}
                   </Text>
                   <Text
                     style={{
                       color: 'rgba(178,179,189,1)',
-                      fontSize: '13px',
                       fontWeight: '400',
                       textAlign: 'left',
-                      marginRight: '6px',
                     }}
+                    fontSize="0.6vw"
+                    marginRight="0.3vw"
                   >
                     @{item.TwitterName}
                   </Text>
                   <Text
                     style={{
                       color: 'rgba(178,179,189,1)',
-                      fontSize: '13px',
                       fontWeight: '400',
                       textAlign: 'left',
                     }}
+                    fontSize="0.6vw"
                   >
                     .{item.Time}ago
                   </Text>
@@ -152,29 +182,40 @@ export default function Twitter() {
                     // width: ' 349px',
                     borderRadius: '20px 20px 20px 4px',
                     background: ' rgba(228,228,228,0.1)',
-                    padding: '16px 24px',
                     boxSizing: 'border-box',
                     //   index === 1 ? {background: "blue"} : { background:'rgba(228,228,228,0.1)'}
                   }}
+                  width={{
+                    base: '100%',
+                    xl: '100%',
+                    '2xl': '100%',
+                    md: '100%',
+                  }}
+                  padding="0.8vw 1.1vw"
                 >
                   <Box
                     style={{
                       color: 'rgba(255,255,255,0.6)',
-                      fontSize: '14px',
                       fontWeight: ' 400',
                       textAlign: ' left',
                       lineHeight: '24px',
                     }}
+                    fontSize="0.7w"
                   >
                     {item.content}
-                    <img
-                      style={{
-                        width: '306px',
-                        marginTop: '7px',
-                      }}
-                      src={item.contentImg}
-                      alt=""
-                    />
+                    {item?.contentImg ? (
+                      <Image
+                        style={{
+                          marginTop: '7px',
+                        }}
+                        width="14vw"
+                        height="14vw"
+                        src={item.contentImg}
+                        alt=""
+                      />
+                    ) : (
+                      ''
+                    )}
                   </Box>
                 </Box>
               </Box>

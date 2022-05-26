@@ -28,25 +28,26 @@ export default function SwiperItem() {
       borderRadius="32px"
       paddingBottom="32px"
       style={{}}
-      width="504px"
-      height="492px"
+      width="34vw"
+      height="34vw"
     >
-      <Box borderRadius="22px" overflow="hidden">
+      <Box borderRadius="22px" overflow="hidden" height="26vw">
         <Players
           borderRadius="32px"
-          ht="384px"
-          wd="504px"
+          divht="26vw"
+          ht="100%"
+          wd="100%"
           src="https://www.youtube.com/embed/3OSUpTaiJM8"
         ></Players>
       </Box>
       <Box
-        fontSize="22px"
+        fontSize="1vw"
         textAlign="left"
         fontWeight={500}
         color="#fff"
-        marginTop="22px"
-        padding="0 22px"
-        lineHeight="33px"
+        marginTop="1vw"
+        padding="0 1vw"
+        lineHeight="1.2vw"
         alignItems="center"
       >
         Game name
@@ -55,10 +56,10 @@ export default function SwiperItem() {
       <Flex marginTop="10px" padding="0 22px">
         <img
           style={{
-            width: '24px',
-            height: '24px',
+            width: '1.1vw',
+            height: '1.1vw',
             borderRadius: '50%',
-            marginRight: '8px',
+            marginRight: '0.4vw',
           }}
           src={GameHeader}
           alt=""
@@ -66,8 +67,8 @@ export default function SwiperItem() {
         <Text
           style={{
             fontWeight: '400',
-            fontSize: '14px',
-            lineHeight: '24px',
+            fontSize: '0.4vw',
+            lineHeight: '1.1vw',
             color: ' #B2B3BD',
           }}
         >

@@ -1,11 +1,11 @@
 import './index.css'
-import { Box, Flex, Grid, Link } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, Link, Text } from '@chakra-ui/react'
 import { Image } from '@chakra-ui/react'
 import backLogo from 'assets/svg/BgImage.svg'
 import React, { useEffect, useState } from 'react'
 import {
   IconButton,
-  Input,  
+  Input,
   InputGroup,
   InputLeftElement,
   useColorModeValue,
@@ -17,6 +17,7 @@ import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
 import gameThree from '../../../../../assets/img/logo/gameThree.png'
 import AllGamePage from '../allGame/index'
+
 export default function Track(props) {
   const { variant, background, children, placeholder, borderRadius, ...rest } =
     props
@@ -26,6 +27,7 @@ export default function Track(props) {
   const inputText = useColorModeValue('gray.700', 'gray.100')
   const [inputValue, setInputValue] = useState('')
   const history = useHistory()
+
   const [swiperData, setSwiperData] = useState([
     {
       Shooter: 'Shooter',
@@ -101,43 +103,49 @@ export default function Track(props) {
     swiper()
   }, [])
   return (
-    <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
-      <Box style={{
+    <Box transform="scale(0.7)" marginTop="-60px">
+      <Box
+        style={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-around',
-          margin:'auto'
-      }}>
-         <Box className="Gaming">GAME and beyond</Box>
-         <Box      className='CreateBtn' style={{
-           width: '114px',
-           height: '48px',
-           borderRadius: '14px',
-           background: 'rgba(207,200,255,1)',
-           color: 'rgba(95,117,238,1)',
-           fontSize: '13px',
-           fontWeight: '400',
-           textAlign: 'center',
-           lineHeight: '48px',
-           marginBottom: '48px',
-      
-         }}>
-           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGpIutxIjaaC3i_wnli1B3_wY5rU91o7UpNqpeISbz2AHnrg/viewform">Create Project</a>
-           </Box>
+          justifyContent: 'center',
+          margin: 'auto',
+          position: 'relative',
+        }}
+      >
+        <Box className="Gaming">GAME and beyond</Box>
+        <Box
+          className="CreateBtn"
+          style={{
+            width: '114px',
+            height: '48px',
+            borderRadius: '14px',
+            background: 'rgba(207,200,255,1)',
+            color: 'rgba(95,117,238,1)',
+            fontSize: '13px',
+            fontWeight: '400',
+            textAlign: 'center',
+            lineHeight: '48px',
+            // marginBottom: '48px',
+            position: 'absolute',
+            right: '10px',
+          }}
+        >
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGpIutxIjaaC3i_wnli1B3_wY5rU91o7UpNqpeISbz2AHnrg/viewform">
+            Create Project
+          </a>
+        </Box>
       </Box>
-     
-      <Box className=" challenge">
-      From GAME to GAME and beyond.
-      </Box>
+
+      <Box className=" challenge">From GAME to GAME and beyond.</Box>
       <Box className=" challengeText">
-Takes you on a journey to explore bigger crypto game worlds, all in one.
+        Takes you on a journey to explore bigger crypto game worlds, all in one.
       </Box>
       <Flex justifyContent="center">
         <Box
           className="swiper-container1"
           style={{
             width: '733px',
-            height: '593px',
             display: 'flex',
           }}
         >
@@ -156,16 +164,10 @@ Takes you on a journey to explore bigger crypto game worlds, all in one.
                     }}
                   >
                     <Box>
-                      <img
-                        width="249px"
-                        height="238px"
-                        src={item.img}
-                        alt=""
-
-                      />
+                      <img width="249px" height="238px" src={item.img} alt="" />
                     </Box>
 
-                    <Box style={{padding:'35px',boxSizing:'border-box' }}>
+                    <Box style={{ padding: '35px', boxSizing: 'border-box' }}>
                       <Box
                         style={{
                           width: '96px',
@@ -182,41 +184,66 @@ Takes you on a journey to explore bigger crypto game worlds, all in one.
                       >
                         {item.Shooter}
                       </Box>
-                      <Box style={{ color: '#FFFFFF',
- fontSize: '20px',
- fontWeight: '500',
- textAlign: 'left',
- marginTop:'12px',}}>{item.gameName}</Box>
- <Box style={{
-       display: 'flex',
-       alignItems: 'center',  
- marginTop:'12px',
-
- }}>
-   <Box style={{width: '8px',
-height: '8px',
-background:'#7FBA7A',
-borderRadius:'50%',
-marginRight:'8px'
-}}></Box>
-   <Box style={{
-     color: '#808191',
-     fontWeight: '400',
-     fontSize: '12px',
-   }}>{item.Viewers} Viewers</Box>
- </Box>
- <Box className="VIewBtn" style={{
-   width: '130px',
-   height: '52px',
-   borderRadius:' 18px',
-   background: '#7551FF',
-   color: 'rgba(255,255,255,1)',
-   fontSize: '16px',
-   fontWeight: '400',
-   textAlign:' center',
-   lineHeight: '52px',
-   marginTop:'13px'
- }}>View</Box>
+                      <Box
+                        style={{
+                          color: '#FFFFFF',
+                          fontSize: '20px',
+                          fontWeight: '500',
+                          textAlign: 'left',
+                          marginTop: '12px',
+                        }}
+                      >
+                        {item.gameName}
+                      </Box>
+                      <Box
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          marginTop: '12px',
+                        }}
+                      >
+                        <Box
+                          style={{
+                            width: '8px',
+                            height: '8px',
+                            background: '#7FBA7A',
+                            borderRadius: '50%',
+                            marginRight: '8px',
+                          }}
+                        ></Box>
+                        <Box
+                          style={{
+                            color: '#808191',
+                            fontWeight: '400',
+                            fontSize: '12px',
+                          }}
+                        >
+                          {item.Viewers} Viewers
+                        </Box>
+                      </Box>
+                      <Box
+                        className="VIewBtn"
+                        style={{
+                          width: '130px',
+                          height: '52px',
+                          borderRadius: ' 18px',
+                          background: '#7551FF',
+                          color: 'rgba(255,255,255,1)',
+                          fontSize: '16px',
+                          fontWeight: '400',
+                          textAlign: ' center',
+                          lineHeight: '52px',
+                          marginTop: '13px',
+                          cursor: 'pointer',
+                        }}
+                        onClick={() => {
+                          history.push({
+                            pathname: '/admin/profile/gameDetail',
+                          })
+                        }}
+                      >
+                        View
+                      </Box>
                     </Box>
                   </Box>
                 </Box>
@@ -224,25 +251,27 @@ marginRight:'8px'
             })}
           </Box>
         </Box>
-        
       </Flex>
-        <Link href="#/admin/profile/allGame">
-      <Box className="VIewBtn"  style={ {     width: '244px',
-        height: '71.76px',
-        borderRadius: '24.959999084472656px',
-        background: 'rgba(117,81,255,1)',
-      margin:'auto',
-      color:' rgba(255,255,255,1)',
-      fontSize:' 21.84px',
-      fontWeight: '400',
-      textAlign: 'center',
-      lineHeight: '71.76px',
-      marginTop:'113.24px'
-      }
-      }>
-         Explore all games
-      </Box>
-          </Link>
+      <Link href="#/admin/profile/allGame">
+        <Box
+          className="VIewBtn"
+          style={{
+            width: '244px',
+            height: '71.76px',
+            borderRadius: '24.959999084472656px',
+            background: 'rgba(117,81,255,1)',
+            margin: 'auto',
+            color: ' rgba(255,255,255,1)',
+            fontSize: ' 21.84px',
+            fontWeight: '400',
+            textAlign: 'center',
+            lineHeight: '71.76px',
+            marginTop: '113.24px',
+          }}
+        >
+          Explore all games
+        </Box>
+      </Link>
     </Box>
   )
 }

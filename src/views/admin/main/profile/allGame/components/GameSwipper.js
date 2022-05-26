@@ -86,8 +86,8 @@ export default function GameSwipper() {
         Featured & Recommended
       </Box>
       <Box
-        width="686px"
-        height="492px"
+        width="100%"
+        height="34vw"
         borderRadius="22px"
         background="rgba(228,228,228,0.1)"
         overflow="hidden"
