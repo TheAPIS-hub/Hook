@@ -122,13 +122,14 @@ export default function Default() {
             </TabList>
             <TabPanels>
               <TabPanel>
-                <SimpleGrid
+                <SimpleGrid className='MarketCapFount'
                   // className={dataType === 'NFT' ? 'active' : 'nftData'}
                   columns={{ base: 1, md: 1, lg: 3, '2xl': 3 }}
                   gap="20px"
                   mb="20px"
                 >
                   <MiniStatistics
+                  
                     growth={
                       nftVolumeData?.marketCapRatio?.toFixed(2) > 0
                         ? `+${new BigNumber(nftVolumeData?.marketCapRatio || 0)

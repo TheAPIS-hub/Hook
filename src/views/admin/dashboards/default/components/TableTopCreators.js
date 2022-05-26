@@ -70,7 +70,7 @@ function TopCreatorTable(props) {
           pb="20px"
           pt="20px"
         >
-          <Text color={textColor} fontSize="24px" fontWeight="600">
+          <Text color={textColor} fontSize="24px" fontWeight="700" letterSpacing= '-0.48px'>
             Trending Addresses
           </Text>
           {/* <Button variant='action'>See all</Button> */}
@@ -99,12 +99,14 @@ function TopCreatorTable(props) {
                       pe="10px"
                       key={index}
                       borderColor="transparent"
+                    
                     >
                       <Flex
                         justify="space-between"
                         align="center"
                         fontSize={{ sm: '10px', lg: '12px' }}
                         color="gray.400"
+
                       >
                         {column.render('Header')}
                       </Flex>

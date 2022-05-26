@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3377203 */
-  src: url('iconfont.woff2?t=1652682385834') format('woff2'),
-       url('iconfont.woff?t=1652682385834') format('woff'),
-       url('iconfont.ttf?t=1652682385834') format('truetype');
+  src: url('iconfont.woff2?t=1653562181850') format('woff2'),
+       url('iconfont.woff?t=1653562181850') format('woff'),
+       url('iconfont.ttf?t=1653562181850') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,34 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-a-bianzubeifen32:before {
+  content: "\e60b";
+}
+
+.icon-shandian:before {
+  content: "\e60a";
+}
+
+.icon-a-bianzubeifen31:before {
+  content: "\e609";
+}
+
+.icon-Vector:before {
+  content: "\e608";
+}
+
+.icon-Vectorbeifen:before {
+  content: "\e607";
+}
+
+.icon-a-Gamebeifen5:before {
+  content: "\e606";
+}
+
+.icon-Categorybeifen:before {
+  content: "\e605";
 }
 
 .icon-a-Game1:before {

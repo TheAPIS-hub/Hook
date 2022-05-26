@@ -6,6 +6,55 @@
   "description": "hook ui",
   "glyphs": [
     {
+      "icon_id": "30016497",
+      "name": "编组备份 3 (2)",
+      "font_class": "a-bianzubeifen32",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "30016452",
+      "name": "闪电",
+      "font_class": "shandian",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "30014712",
+      "name": "编组备份 3",
+      "font_class": "a-bianzubeifen31",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "30013483",
+      "name": "Vector",
+      "font_class": "Vector",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "30013053",
+      "name": "Drop",
+      "font_class": "Vectorbeifen",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "30012947",
+      "name": "Game",
+      "font_class": "a-Gamebeifen5",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "30012766",
+      "name": "Trending",
+      "font_class": "Categorybeifen",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
       "icon_id": "29735387",
       "name": "Game (1)",
       "font_class": "a-Game1",

@@ -37,7 +37,15 @@
   margin-top: 0px !important;
 }
 .icon-Overview {
-  font-size: 25px;
+  font-size: 18px;
+}
+.ethPriceIcon {
+  font-size: 14px !important;
+  line-height: 32px;
+}
+.gasPriceIcon {
+  font-size: 16px !important;
+  line-height: 32px;
 }
 .css-wiypqd:focus,
 .css-wiypqd[data-focus] {
@@ -115,4 +123,7 @@
 .NFTTrendingBtn .css-1inn410:hover,
 .NFTTrendingBtn .css-1inn410[data-hover] {
   background: var(--chakra-colors-whiteAlpha-200) !important;
+}
+.MarketCapFount .css-12rqbe4 {
+  font-size: var(--chakra-fontSizes-md) !important;
 }

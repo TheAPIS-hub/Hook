@@ -74,7 +74,7 @@ const routes = [
     name: 'Overview',
     layout: '/admin',
     path: '/dashboards/default',
-    icon: <span className="iconfont icon-Overview">&#xe615;</span>,
+    icon: <span className="iconfont icon-Overview" >&#xe608;</span>,
     collapse: false,
     component: DashboardsDefault,
     isShow:true,
@@ -101,7 +101,7 @@ const routes = [
   },
   {
     name: 'Game',
-    icon: <span className="iconfont icon-drop">&#xe604;</span>,
+    icon: <span className="iconfont icon-Overview">&#xe606;</span>,
     collapse: false,
     layout: '/admin',
     component: Game,
@@ -246,7 +246,7 @@ const routes = [
     path: '/track',
     layout: '/admin',
     component: ProfileTrack,
-    icon: <span className="iconfont icon-drop">&#xe618;</span>,
+    icon: <span className="iconfont icon-Overview">&#xe618;</span>,
     collapse: false,
     isShow:true,
 
@@ -462,7 +462,7 @@ const routes = [
     name: 'Trending',
     layout: '',
     path: '#',
-    icon: <span className="iconfont icon-drop">&#xe616;</span>,
+    icon: <span className="iconfont icon-Overview">&#xe605;</span>,
     collapse: false,
     isShow:true,
     items: [
@@ -547,7 +547,7 @@ const routes = [
   // --- Drop ---
   {
     name: 'Drop',
-    icon: <span className="iconfont icon-drop">&#xe601;</span>,
+    icon: <span className="iconfont icon-Overview">&#xe607;</span>,
     collapse: false,
     layout: '',
     path: '#',

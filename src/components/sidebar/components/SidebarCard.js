@@ -27,6 +27,7 @@ export default function SidebarDocs() {
       position="relative"
       width="228px"
       height="190px"
+      marginTop='240px'
     >
       <Flex
         width="94px"
