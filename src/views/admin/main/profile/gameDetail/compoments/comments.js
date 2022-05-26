@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-
 // Chakra imports
 import {
   Flex,
@@ -30,8 +29,36 @@ import { IoHeart, IoHeartOutline } from "react-icons/io5";
 
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/index.css'
+import {
+  getComments,
+  writeComment,
+  getGameIconByGpId,
+  getGameIcons
+} from '../../../../../../hook/hook'
 export default function Comments(props) {
+  const { gpId } = props;
+  const uId = localStorage.getItem('uId')
   const [isShow, ShowFun] = useState(false)
+  const [CommentsDate, setCommentsDate] = useState([])
+  const [content, setContent] = useState(BraftEditor.createEditorState(null))
+  const [grId, setgrId] = useState('')
+  const [parentId, setParentId] = useState('')
+  const [rootParentId, setRootParentId] = useState('')
+  const [page, setPage] = useState('')
+  const [pageSize, setPageSize] = useState('')
+  const [sort, setSort] = useState('')
+  const time = new Date()
+
+  useEffect(() => {
+    getComments(gpId,page,pageSize,sort).then((res) => {
+      setCommentsDate(res.data.data.records)
+    })
+    // getGameIcons().then((res) => {
+    //    console.log(1111, res.data.data);
+    // })
+  
+
+  }, [])
   const earnList = [{
     img: avatar1,
   }, {
@@ -67,44 +94,57 @@ export default function Comments(props) {
         <DateUploaded></DateUploaded>
       </Flex>
       <Card direction='column' w='100%' p='0px' bgColor='transparent' >
-        {earnList.map((item, key) => (
-          <Flex key={key}
-            justifyContent='space-between'
-            w='100%'
-            padding='20px 16px'
-            mb="12px"
-            borderRadius='12px'
-            _hover={{ bgColor: 'rgba(228, 228, 228, 0.1)' }}
-          >
-            <Avatar h='48px' w='48px' src={item.img} me='14px' />
-            <Box>
-              <Box fontSize="13px" >
-                <Text as="span" color="#5F75EE">Joel Becker</Text>
-                <Text as="span" color="#B2B3BD" ml="3">12h</Text>
-              </Box>
-              <Text
-                m="10px 0"
-                color="#B2B3BD"
-                fontSize="14px"
-                lineHeight="24px"
-                noOfLines={2}>
-               {/* <div dangerouslySetInnerHTML={{__html:text}}></div> */}
-                Can anyone tell me the settings for character voice lines cause its so boring to play without no characters lines....
-                </Text>
-              <Flex>
-                <Image src={commentIcon}></Image>
-                <Image m="0 16px" src={collectIcon}></Image>
-                <Image src={expandIcon}></Image>
+      {/* {CommentsDate.length > 0 ?'': <Box textAlign="center">No Date</Box>} */}
+        {
+          earnList.map((item, key) => {
+            return (
+              <Flex key={key}
+                w='100%'
+                padding='20px 16px'
+                mb="12px"
+                borderRadius='12px'
+                pr={{ base: "5px", "2xl": "20%" }}
+                _hover={{ bgColor: 'rgba(228, 228, 228, 0.1)' }}
+              >
+                <Avatar h='48px' w='48px' src={item.img} me='14px' mr="14px"/>
+                <Box>
+                  <Box fontSize="13px" >
+                    <Text as="span" color="#5F75EE">Joel Becker</Text>
+                    <Text as="span" color="#B2B3BD" ml="3">12h</Text>
+                  </Box>
+                  <Text
+                    m="10px 0"
+                    color="#B2B3BD"
+                    fontSize="14px"
+                    lineHeight="24px"
+                    noOfLines={2}>
+                    {/* <div dangerouslySetInnerHTML={{__html:text}}></div> */}
+                    Can anyone tell me the settings for character voice lines cause its so boring to play without no characters lines....
+                  </Text>
+                  <Flex>
+                    {/* <Image src={commentIcon}></Image>
+              <Image m="0 16px" src={collectIcon}></Image>
+              <Image src={expandIcon}></Image> */}
+                  </Flex>
+                </Box>
               </Flex>
-            </Box>
-          </Flex>
-        ))}
-        {isShow ?
-          <BraftEditor
-            contentStyle={{ height: 100 }}
-            language="en"
-            style={{ border: '1px solid rgba(225, 225, 225, 0.2)', marginBottom: '20px' }}
-          /> : ''}
+            )
+          })
+        }
+        <BraftEditor
+          contentStyle={{ height: 100 }}
+          language="en"
+          value={content}
+          style={{
+            border: '1px solid rgba(225, 225, 225, 0.2)',
+            marginBottom: '20px'
+          }}
+          onChange={(editorState) => {
+            setContent(editorState)
+            console.log(1111, editorState);
+          }}
+          placeholder="comment length should be above 10 and below 500 characters."
+        />
         <Button
           variant="brand"
           width="180px"
@@ -112,9 +152,23 @@ export default function Comments(props) {
           m="32px auto"
           fontWeight="400"
           fontSize="14px"
-          onClick={(e) => {
-            ShowFun(!isShow)
-          }}> Write comment</Button>
+          onClick={() => {
+            if (!uId) {
+
+              return
+            }
+            // writeComment(content, gpId, grId, parentId, rootParentId, time, uid).then((res)=>{
+            //   if (res.data.code == 200) {
+            //     // localStorage.setItem('token', res.data.data)
+            //     // localStorage.setItem('email', email)
+            //   } else {
+            //     
+            //     // setErrMsg(res.data.msg)
+            //   }
+            // })
+          }
+          }
+        > Write comment</Button>
       </Card>
     </div >
 

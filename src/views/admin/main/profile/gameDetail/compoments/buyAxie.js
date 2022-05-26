@@ -23,28 +23,28 @@ export default function BuyAxie(props) {
     img: axie1,
   }, {
     img: axie2,
-    
+
   }, {
     img: axie3,
-    
+
   }, {
     img: axie4,
-    
+
   }, {
     img: axie1,
-    
+
   }, {
     img: axie2,
-    
+
   }, {
     img: axie3,
-    
+
   }, {
     img: axie4,
-    
+
   }, {
     img: axie1,
-    
+
   }]
   return (
     <div>
@@ -59,32 +59,60 @@ export default function BuyAxie(props) {
       </Text>
       <Card direction='column' w='100%' p='0px' bgColor='transparent' {...rest}>
         {earnList.map((item, key) => (
-          <Flex key={key} justifyContent='space-around' bgColor="rgba(228, 228, 228, 0.1)" alignItems='center' w='100%' {...rest} padding='20px 0px' mb="12px" borderRadius='16px' border='1px solid rgba(225, 225, 225, 0.2)'>
-            <Image src={item.img}></Image>
-            <Flex flexDirection="column">
-              <Flex style={{
-                width: "77px",
-                height: "18px",
-                padding: "0px 4px",
-                background: "#FB9A04",
-                lineHeight: "18px",
-                color: "white",
-                alignItems:"center",
-                borderRadius:"3px",
-                justifyContent: "center",
-                margin:"10px 0 10px 0"
-              }}>
-                <img src={axieIcon} style={{width:"10px",height:"12px"}}></img>
-                <Text fontSize="10px" as="span">#242342</Text>
+          <Flex
+            key={key}
+            justifyContent='space-between'
+            bgColor="rgba(228, 228, 228, 0.1)"
+            alignItems='center'
+            w='100%'
+            {...rest}
+            mb="12px"
+            borderRadius='16px'
+            height="80px"
+            pr="4"
+            >
+            <Flex>
+              <Image src={item.img}></Image>
+              <Flex
+                flexDirection="column"
+                justifyContent="center"
+                ml={{ base: "4", "2xl": "8" }}
+              >
+                <Flex style={{
+                  width: "77px",
+                  height: "18px",
+                  padding: "0px 4px",
+                  background: "#FB9A04",
+                  lineHeight: "18px",
+                  color: "white",
+                  alignItems: "center",
+                  borderRadius: "3px",
+                  justifyContent: "center",
+                  margin:"5px 0 10px 0"
+                }}>
+                  <img src={axieIcon} style={{ width: "10px", height: "12px" }}></img>
+                  <Text fontSize="10px" as="span">#242342</Text>
+                </Flex>
+                <Text color="#B2B3BD" fontSize="10px" >breed count y4</Text>
               </Flex>
-              <Text color="#B2B3BD" fontSize="10px" >breed count y4</Text>
             </Flex>
-            <Flex fontSize="10px" flexDirection="column">
-              <Text>BUYER</Text>
-              <Text>Lunacian #23268…</Text>
-              <Text color="#B2B3BD">(ronin…a553c)…</Text>
+            <Flex alignItems="center">
+              <Flex fontSize="10px" flexDirection="column">
+                <Flex fontWeight="600"> 
+                  <Box marginRight="6px">
+                    <Text className="symbol"></Text>
+                    <Text className="symbol"></Text>
+                    <Text className="symbol"></Text>
+                  </Box>
+                  <Text color="#B2B3BD">0.004</Text>
+                </Flex>
+                <Text>$8.23</Text>
+                <Text color="#B2B3BD">a minute ago</Text>
+              </Flex>
+              <Image height='20px' width='20px' src={arrow} ml="4"></Image>
             </Flex>
-            <Box fontSize="10px">
+
+            {/* <Box fontSize="10px">
               <Flex justifyContent="space-between">
                 <Text as='span'>SELLER</Text>
                 <Text as='span'>Ξ 0.004</Text>
@@ -97,10 +125,7 @@ export default function BuyAxie(props) {
                 <Text color="#B2B3BD" as='span'>(ronin…a553c)…</Text>
                 <Text color="#B2B3BD" as='span'>a minute ago</Text>
               </Flex>
-            </Box>
-            <Box>
-              <Image height='20px' width='20px' src={arrow} ></Image>
-            </Box>
+            </Box> */}
           </Flex>
         ))}
       </Card>

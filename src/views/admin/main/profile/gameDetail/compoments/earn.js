@@ -136,11 +136,7 @@ export default function earn(props) {
         avatar4,
         avatar1,
         avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
+
       ]
   }, {
     img: smiley,
@@ -266,16 +262,18 @@ export default function earn(props) {
 
         {earnList.map((item, key) => (
           <Flex key={key} justifyContent='space-between' alignItems='center' w='100%' padding='20px 16px' mb="12px" borderRadius='16px' border='1px solid rgba(225, 225, 225, 0.2)'>
-            <Avatar
-              h='48px'
-              w='48px'
-              src={item.img}
-              me='14px'
-              border={item.isLike ? '2px solid #0049C6' : '2px solid #353D59'}
-              p="6px"
-              bg="transparent"
-              cursor="pointer"
-            />
+            <Box>
+              <Avatar
+                h='48px'
+                w='48px'
+                src={item.img}
+                me='14px'
+                border={item.isLike ? '2px solid #0049C6' : '2px solid #353D59'}
+                p="6px"
+                bg="transparent"
+                cursor="pointer"
+              />
+            </Box>
             <AvatarGroup
               max={9}
               size='sm'
@@ -301,7 +299,7 @@ export default function earn(props) {
         <Flex justifyContent='space-between' alignItems='center' w='100%' padding='20px 16px' mb="12px" borderRadius='16px' border='1px solid rgba(225, 225, 225, 0.2)'>
           <Box border='2px solid #353D59' h='48px' w='48px' borderRadius="50%" cursor="pointer"
           >
-            <Image src={addIcon}  h='auto' w='auto' m="2px auto"></Image>
+            <Image src={addIcon} h='auto' w='auto' m="2px auto"></Image>
           </Box>
         </Flex>
       </Box>

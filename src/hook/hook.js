@@ -26,7 +26,12 @@ import {
   forgotPassword,
 } from '../api/user'
 import {
-  getGameItemsData
+  getGameItemsData,
+  getCommentsDate,
+  witeComments,
+  getGameIcon,
+  getGameIconsByGpId,
+  liked
 } from '../api/game'
 // overview
 export const getMarketCapAndVolume = (type) => {
@@ -103,4 +108,20 @@ export const getTags = (address) => {
 //game
 export const getGameItemsDatas = (page,pageSize) => {
   return getGameItemsData({ page,pageSize })
+}
+export const getComments = (gpId,page,pageSize,sort) => {
+  return getCommentsDate({gpId,page,pageSize,sort})
+}
+export const getGameIcons = () => {
+  return getGameIcon()
+}
+export const writeComment = (content,gpId,grId,parentId,rootParentId,time,uid) => {
+  return witeComments({content,gpId,grId,parentId,rootParentId,time,uid})
+}
+export const getGameIconByGpId = (gpId) => {
+  return getGameIconsByGpId({gpId})
+}
+
+export const likedStatus = (likedGpId,likedUserId,status) => {
+  return liked({likedGpId,likedUserId,status})
 }

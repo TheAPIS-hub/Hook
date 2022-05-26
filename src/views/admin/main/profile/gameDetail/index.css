@@ -26,3 +26,12 @@
   background: #6656FF;
   border-radius: 4px;
 }
+.symbol {
+  background: #FFFFFF;
+  width: 7px;
+  height: 2px;
+  margin: 2px 0;
+}
+.public-DraftEditorPlaceholder-root.public-DraftEditorPlaceholder-hasFocus {
+  color: #9197a3;
+}

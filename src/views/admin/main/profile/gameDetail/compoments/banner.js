@@ -26,9 +26,14 @@ import { AiOutlineLike } from 'react-icons/ai'
 import { RiShareForwardLine } from 'react-icons/ri'
 import { CgAdd } from 'react-icons/cg'
 import Players from './player'
+import { Link } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import {
+  likedStatus
+} from '../../../../../../hook/hook'
+
 export default function Banner(props) {
-  const { ...rest } = props;
+  const { game } = props;
   const good = '50%';
   const bad = '50%';
   const [isVote, voteFun] = useState(false)
@@ -68,9 +73,9 @@ export default function Banner(props) {
             fontSize="13px"
             fontWeight="400"
             bg="#7FBA7A" >
-            Alpha
+            {game.version}
           </Badge>
-          <Text as="p" fontWeight="500" fontSize="32px" m="12px 0 15px 0">Axie Infinity</Text>
+          <Text as="p" fontWeight="500" fontSize="32px" m="12px 0 14px 0">{game.name}</Text>
           <Flex
             justifyContent="space-between"
             flexDirection={{ base: "column", xl: "row" }} >
@@ -80,12 +85,12 @@ export default function Banner(props) {
               </Box>
               <Box ml="24px" fontSize="18px" fontWeight="500">
                 <Flex m="8px 0">
-                  <Text mr="9px" lineHeight="24px">Sky Mavis</Text>
+                  <Text mr="9px" lineHeight="24px">{game.twtter}</Text>
                   <Image src={twitter} width="26px" height="26px" mr="35px"></Image>
                 </Flex>
                 <Box m="8px 0">
-                  <Text as="span">536K followers</Text>
-                  <Text as="span" ml="24px">120 players</Text>
+                  <Text as="span">{game.twitterFollower} followers</Text>
+                  <Text as="span" ml="24px">{game.activeUsers} players</Text>
                 </Box>
               </Box>
             </Flex>
@@ -98,6 +103,12 @@ export default function Banner(props) {
                 m="32px auto"
                 fontWeight="500"
                 fontSize="25.2px"
+                onClick={() => {
+                  window.open(game.gameUrl)
+                }}
+                _hover={{
+                  bgColor:"rgba(108,93,211 ,0.6)"
+                }}
               >
                 Play Now!
               </Button>
@@ -106,8 +117,19 @@ export default function Banner(props) {
         </Box>
         <Flex p="25px 34px">
           <Stack direction="row" wrap="wrap" spacing={4} align-items="center">
-            <Button width="100px" height="50px" bgColor="transparent" leftIcon={<AiOutlineLike />} variant="brand">
-              <Text color="#808191;" > Like</Text>
+            <Button
+              width="100px"
+              height="50px"
+              bgColor="transparent"
+              leftIcon={<AiOutlineLike />}
+              variant="brand"
+              color="#808191"
+              _hover={{
+                color: "#fff",
+                bgColor: "#6C5DD3"
+              }}
+            >
+              <Text > Like</Text>
             </Button>
             {/* <Button width="100px" height="50px" bgColor="transparent" leftIcon={<RiShareForwardLine />} variant="brand">
               <Text color="#808191;"> Share</Text>
@@ -129,7 +151,7 @@ export default function Banner(props) {
       </Box>
       <Flex
         bg="rgba(228, 228, 228, 0.1)"
-        margin="60px 0"
+        margin="45px 0"
         borderRadius="16px"
         flexDirection={{ base: 'column;', xl: "inherit", }}>
         <Box
@@ -207,20 +229,23 @@ export default function Banner(props) {
         border='1px solid rgba(228, 228, 228, 0.1)'
         borderRight="0px"
         borderLeft="0px"
-        padding="47px 0 38px 0"
+        padding="40px 0"
         justifyContent="space-between"
       >
 
         {isVote ? (
           <Box width="48%">
             <Text fontSize="18px">Your‘ve voted-👍To da moon</Text>
-            <Text fontSize="13px" color="#B2B3BD" width="80%">
+            <Text fontSize="13px"
+              color="#B2B3BD"
+              width="80%"
+              lineHeight="25px">
               Your vote for 24 hours. In order to update how
               you feel about Tether,come back tomorrow!
             </Text>
           </Box>
         ) :
-          <Box width="48%">
+          <Box width="48%" margin="14px 0">
             <Text fontSize="18px">
               How do you feel about Tether today？
             </Text>
@@ -246,12 +271,15 @@ export default function Banner(props) {
               justifyContent="end"
               fontSize="14px"
               fontWeight="700"
-              color="#B2B3BD" >
+              color="#B2B3BD"
+              margin="15px 0"
+               >
               <Button
                 width="109px"
                 height="41px"
-                border="1px solid #E1E1E1"
+                border="1px solid rgba(225 225 225 / 0.5)"
                 borderRadius="12px"
+                background="transparent"
                 mr="11px"
                 onClick={(e) => {
                   voteFun(!isVote)
@@ -262,8 +290,9 @@ export default function Banner(props) {
               <Button
                 width="109px"
                 height="41px"
-                border="1px solid #E1E1E1"
+                border="1px solid rgba(225 225 225 / 0.5)"
                 borderRadius="12px"
+                background="transparent"
                 onClick={(e) => {
                   voteFun(!isVote)
                 }}

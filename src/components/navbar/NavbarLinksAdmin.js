@@ -95,6 +95,7 @@ export default function HeaderLinks(props) {
             getUserInfo(email).then((infoRes) => {
               if (infoRes.data.code == '200') {
                 setUserData(infoRes.data.data)
+                localStorage.setItem('uId',infoRes.data.data.uid)
               }
             })
           }
