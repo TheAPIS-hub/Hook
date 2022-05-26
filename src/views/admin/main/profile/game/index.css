@@ -47,24 +47,28 @@
 .VIewBtn:hover {
   background: rgba(117, 81, 255, 0.7) !important;
 }
+.swiper-wrapper {
+  margin-left: 75px;
+}
 .swiper-wrapper .swiper-slide-active {
   box-shadow: #7551ff96 0px -24px 150px -15px !important;
   border-radius: 26px !important;
-  height: 238px !important;
-  width: 249px !important;
+  height: 466px !important;
+  width: 266px !important;
 }
 .swiper-wrapper .swiper-slide-prev {
   box-shadow: #7551ff96 -7px 1px 19px -8px !important;
   border-radius: 26px !important;
-  height: 238px !important;
-  width: 249px !important;
+  height: 466px !important;
+  width: 266px !important;
 }
 .swiper-wrapper .swiper-slide-next {
   box-shadow: #7551ff96 7px 1px 19px -8px !important;
   border-radius: 26px !important;
-  height: 238px !important;
-  width: 249px !important;
+  height: 466px !important;
+  width: 266px !important;
 }
 .swiper-wrapper .swiper-slide {
-  width: 249px !important;
+  width: 266px !important;
+  height: 466px !important;
 }

@@ -25,7 +25,9 @@ import {
   emailCode,
   forgotPassword,
 } from '../api/user'
-
+import {
+  getGameItemsData
+} from '../api/game'
 // overview
 export const getMarketCapAndVolume = (type) => {
   return getMarketCapitalization({ type })
@@ -97,4 +99,8 @@ export const forgotPwd = (email) => {
 }
 export const getTags = (address) => {
   return getTag({ address })
+}
+//game
+export const getGameItemsDatas = (page,pageSize) => {
+  return getGameItemsData({ page,pageSize })
 }
