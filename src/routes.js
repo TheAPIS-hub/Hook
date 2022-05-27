@@ -78,6 +78,7 @@ const routes = [
     collapse: false,
     component: DashboardsDefault,
     isShow:true,
+    isClick:true,
     items: [
       // {
       //   name: "Main Overview",
@@ -107,6 +108,7 @@ const routes = [
     component: Game,
     path: '/game',
     isShow:true,
+    isClick:true,
     items: [
       // --- Sign In ---
       {
@@ -249,6 +251,8 @@ const routes = [
     icon: <span className="iconfont icon-Overview">&#xe618;</span>,
     collapse: false,
     isShow:true,
+    isClick:true,
+    
 
     items: [
       // {
@@ -465,6 +469,7 @@ const routes = [
     icon: <span className="iconfont icon-Overview">&#xe605;</span>,
     collapse: false,
     isShow:true,
+    isClick:false,
     items: [
       // {
       //   name: "Marketplace",
@@ -552,6 +557,7 @@ const routes = [
     layout: '',
     path: '#',
     isShow:true,
+    isClick:false,
     items: [
       // --- Sign In ---
       {

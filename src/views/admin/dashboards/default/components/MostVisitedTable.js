@@ -136,7 +136,11 @@ function TotalMarketValue(props) {
                       )
                     } else if (cell.column.Header === 'Collection') {
                       data = (
-                        <Text color={textColor} fontSize="sm" fontWeight="600">
+                        <Text color={textColor} fontSize="sm" fontWeight="600"  wordBreak='keep-all' whiteSpace='nowrap'
+                        overflow='hidden'
+                        textOverflow='ellipsis'
+                        
+                      >
                           {cell.value}
                         </Text>
                       )

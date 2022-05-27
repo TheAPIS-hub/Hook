@@ -158,7 +158,7 @@ export function SidebarLinks(props) {
         )
       } else {
         return (
-          <NavLink to={route.layout + route.path} key={key}>
+          <NavLink to={route.layout + route.path} key={key} >
             {route.icon ? (
               <Flex
                 align="center"
@@ -166,6 +166,8 @@ export function SidebarLinks(props) {
                 w="100%"
                 ps="17px"
                 mb="0px"
+
+                // _hover={{ bgColor: 'rgba(228, 228, 228, 0.1)' }}
               >
                 <HStack
                   mb="6px"
@@ -178,24 +180,21 @@ export function SidebarLinks(props) {
                     alignItems="center"
                     justifyContent="center"
                     marginBottom="10px"
+                    color={
+                      activeRoute(route.path.toLowerCase())
+                        ? activeIcon
+                        : (route.isClick?inactiveColor:'#a5afcd57')
+                    }
+                   
                   >
                     <Box
-                      color={
-                        activeRoute(route.path.toLowerCase())
-                          ? activeIcon
-                          : inactiveColor
-                      }
                       me="12px"
                     >
                       {route.icon}
                     </Box>
                     <Text
                       me="auto"
-                      color={
-                        activeRoute(route.path.toLowerCase())
-                          ? activeColor
-                          : 'secondaryGray.600'
-                      }
+                    
                       fontWeight="500"
                     >
                       {route.name}

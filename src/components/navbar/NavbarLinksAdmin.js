@@ -461,13 +461,9 @@ export default function HeaderLinks(props) {
           borderRadius="49px"
           width="117px"
           fontSize="14px"
-          transition="All 0.4s ease-in-out"
-          _webkitTransition="All 0.4s ease-in-out"
-          _mozTransition=" All 0.4s ease-in-out"
-          _oTransition=" All 0.4s ease-in-out"
+         
           _hover={{
-            backgroundImage: "linear-gradient(to bottom, #868CFF, #4318FF)",
-            background: "#7551ff96",
+            background: "#7551ffd1",
           }}
           _active={{
             backgroundImage: "linear-gradient(to bottom, #868CFF, #4318FF)",
@@ -475,6 +471,10 @@ export default function HeaderLinks(props) {
           onClick={() => {
             history.push({ pathname: "/auth/sign-in/default" });
           }}
+          transition="All 0.2s ease-in-out"
+          _webkitTransition="All 0.2s ease-in-out"
+          _mozTransition=" All 0.2s ease-in-out"
+          _oTransition=" All 0.2s ease-in-out"
         >
           Sign In
         </Button>

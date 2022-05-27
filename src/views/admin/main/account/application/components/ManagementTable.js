@@ -85,6 +85,7 @@ function ManagementTable(props) {
                     pe="10px"
                     key={index}
                     borderColor={borderColor}
+                    border='none'
                   >
                     <Flex
                       justify="space-between"

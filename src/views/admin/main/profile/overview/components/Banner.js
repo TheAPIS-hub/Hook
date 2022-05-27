@@ -6,14 +6,18 @@ import {
   Text,
   useColorModeValue,
   Image,
-} from '@chakra-ui/react'
-import Card from 'components/card/Card.js'
-import React from 'react'
-import Balance from './Balance'
-import { Icon } from '@chakra-ui/react'
-import { MdFilterNone } from 'react-icons/md'
-import NFTLogo from '../../../../../../assets/img/logo/NFTLogo.png'
-import SLogo from '../../../../../../assets/img/logo/SLogo.png'
+  Grid,
+  color,
+} from "@chakra-ui/react";
+import Card from "components/card/Card.js";
+import React from "react";
+import Balance from "./Balance";
+import { Icon } from "@chakra-ui/react";
+import { MdFilterNone } from "react-icons/md";
+import NFTLogo from "../../../../../../assets/img/logo/NFTLogo.png";
+import SLogo from "../../../../../../assets/img/logo/SLogo.png";
+
+import copy from "copy-to-clipboard";
 
 export default function Banner(props) {
   const {
@@ -27,20 +31,23 @@ export default function Banner(props) {
     defiPercentage,
     nftPercentage,
     tagArr,
-  } = props
+  } = props;
 
-  const cyberAddress = 'https://www.cyber.xyz/@'
-
+  const cyberAddress = "https://www.cyber.xyz/@";
+  const handleClick = () => {
+    // e.stopPropagation()
+    copy(searchAddress);
+  };
   // Chakra Color Mode
-  const textColorPrimary = useColorModeValue('secondaryGray.900', 'white')
-  const textColorSecondary = 'gray.400'
+  const textColorPrimary = useColorModeValue("secondaryGray.900", "white");
+  const textColorSecondary = "gray.400";
 
   const borderColor = useColorModeValue(
-    'white !important',
-    '#111C44 !important'
-  )
+    "white !important",
+    "#111C44 !important"
+  );
   return (
-    <Card mb={{ base: '0px', lg: '20px' }} align="center">
+    <Card mb={{ base: "0px", lg: "20px" }} align="center">
       <Box
         bg={`url(${banner})`}
         bgSize="cover"
@@ -60,35 +67,57 @@ export default function Banner(props) {
       <Text color={textColorPrimary} fontWeight="bold" fontSize="xl" mt="10px">
         {name}
       </Text>
-      <Flex margin="auto" display="flex" alignItems="center">
+      <Flex margin="auto" display="flex" alignItems="center" 
+          onClick={handleClick}
+      
+      >
         <Text color={textColorSecondary} fontSize="sm" marginRight={2}>
-          {searchAddress}
+          {searchAddress.slice(0, 5)}...
+          {searchAddress.slice(
+            searchAddress.length - 5,
+            searchAddress.length - 1
+          )}
         </Text>
-        <Icon as={MdFilterNone} w={13} h={13} color="#A3AED0" />
+        <Icon
+          as={MdFilterNone}
+          w={13}
+          h={13}
+          color="#A3AED0"
+          _hover={{ color: "#6656FF" }}
+        />
       </Flex>
 
       <Flex w="max-content" mx="auto" mt="10px" marginBottom="20px">
-        {tagArr.map((res, index) => {
-          return (
-            <Box
-              marginRight="7px"
-              fontSize="11.2px"
-              backgroundColor="#1B254B"
-              padding="7px 18px"
-              borderRadius="11px"
-              userSelect="none"
-              key={index + 1}
-            >
-              #{res}
-            </Box>
-          )
-        })}
+        <Grid
+          gridTemplateColumns={{
+            base: "repeat(2, 1fr)",
+            "2xl": "repeat(2, 1fr)",
+          }}
+          gap="10px"
+          display={{ base: "block", lg: "grid" }}
+        >
+          {tagArr.map((res, index) => {
+            return (
+              <Box
+                marginRight="7px"
+                fontSize="11.2px"
+                backgroundColor="#1B254B"
+                padding="7px 18px"
+                borderRadius="11px"
+                userSelect="none"
+                key={index + 1}
+              >
+                #{res}
+              </Box>
+            );
+          })}
+        </Grid>
       </Flex>
       <Flex
         margin="auto"
         display="flex"
-        justifyContent="space-around"
-        w={352}
+        justifyContent="space-between"
+        w={313}
         marginBottom="20px"
       >
         <Text
@@ -96,7 +125,7 @@ export default function Banner(props) {
           color="#438EFF"
           font-size="14px"
           onClick={() => {
-            window.open(`https://etherscan.io/address/${searchAddress}`)
+            window.open(`https://etherscan.io/address/${searchAddress}`);
           }}
         >
           Etherscan
@@ -104,7 +133,7 @@ export default function Banner(props) {
         <Text
           cursor="pointer"
           onClick={() => {
-            window.open(`https://opensea.io/${searchAddress}`)
+            window.open(`https://opensea.io/${searchAddress}`);
           }}
           color="#438EFF"
           font-size="14px"
@@ -114,7 +143,7 @@ export default function Banner(props) {
         <Text
           cursor="pointer"
           onClick={() => {
-            window.open(`https://www.cyber.xyz/@${searchAddress}`)
+            window.open(`https://www.cyber.xyz/@${searchAddress}`);
           }}
           color="#438EFF"
           font-size="14px"
@@ -164,5 +193,5 @@ export default function Banner(props) {
         </Flex>
       </Flex>
     </Card>
-  )
+  );
 }

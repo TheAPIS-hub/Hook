@@ -35,6 +35,8 @@ function SidebarContent(props) {
         mt="60px"
         mb="100px"
         borderRadius="30px"
+        position='fixed'
+        bottom='20px'
       >
         <SidebarCard />
       </Box>

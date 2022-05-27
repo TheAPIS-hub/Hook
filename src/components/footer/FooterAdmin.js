@@ -15,7 +15,7 @@ import Card from 'components/card/Card'
 
 export default function Footer() {
   const textColor = useColorModeValue('gray.400', 'white')
-  const { toggleColorMode } = useColorMode()
+  const { toggleColorMode } = useColorMode() 
   return (
     <Card >
       <Flex direction="column" padding='52px 19px 31px 36px' >
@@ -65,11 +65,14 @@ export default function Footer() {
                 base: '20px',
                 md: '44px',
               }}
+            
             >
               <Link
+            
                 fontWeight="500"
                 color="#A3AED0"
                 href="https://app.gitbook.com/o/dHoRYUVnGdpDW6kzvwKH/s/8MYNEydsCb1yG0qhMpJZ/products/hook"
+              _hover={{color:'#7551FF'}}
               >
                 About
               </Link>
@@ -150,6 +153,7 @@ export default function Footer() {
                 fontWeight="500"
                 color="#A3AED0"
                 href="https://app.gitbook.com/o/dHoRYUVnGdpDW6kzvwKH/s/8MYNEydsCb1yG0qhMpJZ/docs/terms-and-conditions"
+                _hover={{color:'#7551FF'}}
               >
                 Terms of Service
               </Link>
