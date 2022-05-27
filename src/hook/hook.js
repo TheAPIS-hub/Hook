@@ -31,7 +31,9 @@ import {
   witeComments,
   getGameIcon,
   getGameIconsByGpId,
-  liked
+  liked,
+  setGameIcon,
+  getNormal,
 } from '../api/game'
 // overview
 export const getMarketCapAndVolume = (type) => {
@@ -125,3 +127,10 @@ export const getGameIconByGpId = (gpId) => {
 export const likedStatus = (likedGpId,likedUserId,status) => {
   return liked({likedGpId,likedUserId,status})
 }
+export const userSetGameIcon = (giId,giuId,gpId,uid) => {
+  return setGameIcon({giId,giuId,gpId,uid})
+}
+export const getGameNormal = (address,limit,start) => {
+  return getNormal({address,limit,start})
+}
+

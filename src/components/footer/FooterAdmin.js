@@ -59,7 +59,7 @@ export default function Footer() {
           </Text>
         </Flex>
         <Flex>
-          <List display="flex" marginTop='27px'>
+          <List display="flex"  marginTop='27px' flexWrap="wrap">
             <ListItem
               me={{
                 base: '20px',

@@ -11,7 +11,8 @@ import {
   Badge,
   Stack,
   Button,
-  IconButton
+  IconButton,
+  useToast,
 } from "@chakra-ui/react";
 import Transfer from "components/dataDisplay/Transfer";
 import Card from "components/card/Card.js";
@@ -33,10 +34,19 @@ import {
 } from '../../../../../../hook/hook'
 
 export default function Banner(props) {
-  const { game } = props;
-  const good = '50%';
-  const bad = '50%';
+  const { game } = props
+  const uId = localStorage.getItem('uId')
+  const moon = (game.moon==0)?1:game.moon
+  const ngmi = (game.ngmi==0)?1:game.ngmi
+  const [good, setGood] = useState("")
+  const [bad, setBad] = useState("")
+  useEffect(() => {
+    
+    setGood((moon / (moon + ngmi) * 100).toFixed(2) + '%')
+    setBad((ngmi / (moon + ngmi) * 100).toFixed(2) + '%')
+  }, [])
   const [isVote, voteFun] = useState(false)
+  const toast = useToast()
   return (
     <div>
       <Text
@@ -58,7 +68,7 @@ export default function Banner(props) {
             width="100%"
           >
             <Box >
-              <Players width="100%" src="https://www.youtube.com/embed/3OSUpTaiJM8"></Players>
+              <Players width="100%" src={game.videos[0].url}></Players>
             </Box>
           </Box>
         </div>
@@ -81,7 +91,7 @@ export default function Banner(props) {
             flexDirection={{ base: "column", xl: "row" }} >
             <Flex alignItems="center">
               <Box>
-                <Image src={avatar1} width="82px" height="82px" borderRadius="50%"></Image>
+                <Image src={game.imgs[0].url} width="82px" height="82px" borderRadius="50%"></Image>
               </Box>
               <Box ml="24px" fontSize="18px" fontWeight="500">
                 <Flex m="8px 0">
@@ -107,7 +117,7 @@ export default function Banner(props) {
                   window.open(game.gameUrl)
                 }}
                 _hover={{
-                  bgColor:"rgba(108,93,211 ,0.6)"
+                  bgColor: "rgba(108,93,211 ,0.6)"
                 }}
               >
                 Play Now!
@@ -127,6 +137,24 @@ export default function Banner(props) {
               _hover={{
                 color: "#fff",
                 bgColor: "#6C5DD3"
+              }}
+              onClick={() => {
+                likedStatus(game.gpId, uId, 1).then((res) => {
+                  if (!uId) {
+                    toast({
+                      title: `please sign in`,
+                      position: "top",
+                      status: "warning",
+                      isClosable: true,
+                      duration: 1000,
+                    });
+                    return
+                  }
+                  if (res.data.code == 200) {
+                  } else {
+
+                  }
+                })
               }}
             >
               <Text > Like</Text>
@@ -168,12 +196,12 @@ export default function Banner(props) {
         >
           <Flex>
             <Image width="16px" height="16px" mr="8px" src={saleIcon}></Image>
-            <Text fontSize="12px" color="#808191">Sale</Text>
+            <Text fontSize="12px" color="#808191">Price</Text>
           </Flex>
           <Text fontSize={{
             base: 'xl',
             xl: "3xl",
-          }} fontWeight="600" letterSpacing="-1px">15.545</Text>
+          }} fontWeight="600" letterSpacing="-1px">{game.price}</Text>
         </Box>
         <Box width={{
           base: '100%',
@@ -196,7 +224,7 @@ export default function Banner(props) {
             fontWeight="600"
             letterSpacing="-1px"
           >
-            Ξ 15.545
+            Ξ {game.volume}
             <Text as="span" fontSize="18px" fontWeight="600" color="#808191" ml="18px">$245.54K</Text>
           </Text>
         </Box>
@@ -211,7 +239,7 @@ export default function Banner(props) {
           }}>
           <Flex>
             <Image width="16px" height="16px" mr="8px" src={soldIcon}></Image>
-            <Text fontSize="12px" color="#808191">Sold</Text>
+            <Text fontSize="12px" color="#808191">CirculatingSupply</Text>
           </Flex>
           <Text
             fontSize={{
@@ -221,7 +249,7 @@ export default function Banner(props) {
             fontWeight="600"
             letterSpacing="-1px"
           >
-            13,543
+            {game.circulatingSupply}
           </Text>
         </Box>
       </Flex >
@@ -273,7 +301,7 @@ export default function Banner(props) {
               fontWeight="700"
               color="#B2B3BD"
               margin="15px 0"
-               >
+            >
               <Button
                 width="109px"
                 height="41px"
@@ -282,6 +310,21 @@ export default function Banner(props) {
                 background="transparent"
                 mr="11px"
                 onClick={(e) => {
+                  likedStatus(game.gpId, uId, 1).then((res) => {
+                    if (!uId) {
+                      toast({
+                        title: `please sign in`,
+                        position: "top",
+                        status: "warning",
+                        isClosable: true,
+                        duration: 1000,
+                      });
+                      return
+                    }
+                    if (res.data.code == 200) {
+                    } else {
+                    }
+                  })
                   voteFun(!isVote)
                 }}
               >
@@ -294,7 +337,20 @@ export default function Banner(props) {
                 borderRadius="12px"
                 background="transparent"
                 onClick={(e) => {
+                  if (!uId) {
+                    toast({
+                      title: `please sign in`,
+                      position: "top",
+                      status: "warning",
+                      isClosable: true,
+                      duration: 1000,
+                    });
+                    return
+                  }
                   voteFun(!isVote)
+                  likedStatus(game.gpId, uId, 1).then((res) => {
+                   
+                  })
                 }}
               >
                 <Text

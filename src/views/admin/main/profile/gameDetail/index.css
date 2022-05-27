@@ -32,6 +32,24 @@
   height: 2px;
   margin: 2px 0;
 }
+.public-DraftEditorPlaceholder-root {
+  color: rgba(145, 151, 163, 0.5) !important;
+}
 .public-DraftEditorPlaceholder-root.public-DraftEditorPlaceholder-hasFocus {
-  color: #9197a3;
+  color: rgba(145, 151, 163, 0.5);
+}
+.animate {
+  animation: scaleDraw 1s ease-in-out infinite;
+  border-color: #0049c6 !important;
+}
+@keyframes scaleDraw {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
 }

@@ -9,7 +9,7 @@ import {
   AvatarGroup,
   Box,
   Image,
-
+  useToast,
 } from "@chakra-ui/react";
 import Transfer from "components/dataDisplay/Transfer";
 import Card from "components/card/Card.js";
@@ -20,9 +20,32 @@ import avatar3 from "assets/img/avatars/avatar3.png";
 import avatar4 from "assets/img/avatars/avatar4.png";
 import smiley from "assets/img/users/smiley.png";
 import addIcon from "assets/img/users/addIcon.png";
+import amin from "assets/img/users/amin.gif";
+// import data from '@emoji-mart/data'
+// import 'emoji-mart/css/emoji-mart.css'
+// import { Picker } from 'emoji-mart'
+import {
+  getGameIcons,
+  userSetGameIcon,
+  getGameItemsDatas,
+  getGameIconByGpId
+} from '../../../../../../hook/hook'
 
-export default function earn(props) {
-  const { ...rest } = props;
+export default function Earn(props) {
+  const uId = localStorage.getItem('uId')
+  const [gameIcons, SetGameIcons] = useState([])
+  const { gpId } = props
+  const [animate, setAnimate] = useState(false)
+  const [idx, setIdx] = useState('')
+  const toast = useToast()
+  useEffect(() => {
+    getGameIconByGpId(gpId).then((res) => {
+      SetGameIcons(res.data.data.records)
+    })
+    getGameItemsDatas('', '').then((res) => {
+
+    })
+  }, [])
   const earnList = [{
     img: smiley,
     isLike: true,
@@ -259,41 +282,133 @@ export default function earn(props) {
         bgColor='transparent'
         className="yscroll"
       >
+        {/* {gameIcons} */}
+        {gameIcons.map((item, index) => {
+          return (
+            <Flex
+              key={index}
+              justifyContent='space-between'
+              alignItems='center'
+              w='100%'
+              padding='20px 16px'
+              mb="12px"
+              borderRadius='16px'
+              border='1px solid rgba(225, 225, 225, 0.2)'>
+              <Box position="relative">
+                <Flex
+                  h='48px'
+                  w='48px'
+                  src={item.icon}
+                  me='14px'
+                  p="6px"
+                  bg="#0c1437"
+                  cursor="pointer"
+                  borderRadius="50%"
+                  border="2px solid #353D59"
+                  className={
+                    idx == index
+                      ? animate
+                        ? 'animate'
+                        : ''
+                      : ''
+                  }
+                  data-idx={`${index}`}
+                  cursor="pointer"
+                  borderColor="border: 2px solid rgba(0, 73, 198, 1)"
+                  onClick={(e) => {
+                    setAnimate(!animate)
+                    setTimeout(() => {
+                      setAnimate(false)
+                    }, 1100);
+                    setIdx(e.target.getAttribute('data-idx'))
+                    if (!uId) {
+                      toast({
+                        title: `please sign in`,
+                        position: "top",
+                        status: "warning",
+                        isClosable: true,
+                        duration: 1000,
+                      });
+                      return
+                    }
+                    userSetGameIcon(item.giId, '', gpId, uId).then((res) => {
+                      if (res.data.code == 200) {
+                        getGameIconByGpId(gpId).then((res) => {
+                          SetGameIcons(res.data.data.records)
+                        })
+                      } else {
+                      }
+                    })
+                  }}
+                >
+                  <Image src={item.icon} data-idx={`${index}`} ></Image>
+                </Flex>
+                <Image src={amin}
+                  display={
+                    idx == index
+                      ? animate
+                        ? 'block'
+                        : 'none'
+                      : 'none'
+                  }
+                  style={{
+                    width: "200px",
+                    position: "absolute",
+                    maxWidth: "none",
+                    top: "-20px",
+                    left: "-70px",
+                  }}></Image>
+              </Box>
+              <AvatarGroup
+                max={9}
+                size='sm'
+                mt={{
+                  base: "0px",
+                  md: "10px",
+                  lg: "0px",
+                  xl: "10px",
+                  "2xl": "0px",
+                }}
+                fontSize='12px'
+                fontWeight='700'
+                color="#fff"
+              >
+                {item.userIcons ? (item.userIcons.map((avt, key) => (
+                  <Avatar key={key} src={avt} />
+                ))) : ''}
 
-        {earnList.map((item, key) => (
-          <Flex key={key} justifyContent='space-between' alignItems='center' w='100%' padding='20px 16px' mb="12px" borderRadius='16px' border='1px solid rgba(225, 225, 225, 0.2)'>
-            <Box>
-              <Avatar
-                h='48px'
-                w='48px'
-                src={item.img}
-                me='14px'
-                border={item.isLike ? '2px solid #0049C6' : '2px solid #353D59'}
-                p="6px"
-                bg="transparent"
-                cursor="pointer"
-              />
-            </Box>
-            <AvatarGroup
-              max={9}
-              size='sm'
-              mt={{
-                base: "0px",
-                md: "10px",
-                lg: "0px",
-                xl: "10px",
-                "2xl": "0px",
-              }}
-              fontSize='12px'
-              fontWeight='700'
-              color="#fff"
-            >
-              {item.biddersimg.map((avt, key) => (
-                <Avatar key={key} src={avt} />
-              ))}
-            </AvatarGroup>
-          </Flex>
-        ))}
+              </AvatarGroup>
+            </Flex>
+          )
+        })}
+        {/* {earnList.map((item, key) => {
+          return (
+            <Flex
+              key={key}
+              justifyContent='space-between'
+              alignItems='center'
+              w='100%'
+              padding='20px 16px'
+              mb="12px"
+              borderRadius='16px'
+              border='1px solid rgba(225, 225, 225, 0.2)'>
+              <Box>
+                <Avatar
+                  h='48px'
+                  w='48px'
+                  src={item.icon}
+                  me='14px'
+                  border={item.isLike ? '2px solid #0049C6' : '2px solid #353D59'}
+                  p="6px"
+                  bg="transparent"
+                  cursor="pointer"
+                />
+                <Image src={amin}></Image>
+              </Box>
+             
+            </Flex>
+          )
+        })} */}
       </Card>
       <Box pr="15px">
         <Flex justifyContent='space-between' alignItems='center' w='100%' padding='20px 16px' mb="12px" borderRadius='16px' border='1px solid rgba(225, 225, 225, 0.2)'>
@@ -303,6 +418,8 @@ export default function earn(props) {
           </Box>
         </Flex>
       </Box>
+      {/* <Picker  data={data} /> */}
+      {/* {/* <Picker  />  */}
     </div>
 
   );

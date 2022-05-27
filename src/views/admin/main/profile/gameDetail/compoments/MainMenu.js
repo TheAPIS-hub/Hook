@@ -111,7 +111,7 @@ export default function Banner(props) {
             </Text>
           </Flex>
         </MenuItem>
-        <MenuItem
+        {/* <MenuItem
           transition='0.2s linear'
           p='0px'
           borderRadius='8px'
@@ -129,7 +129,7 @@ export default function Banner(props) {
             Most Liked
             </Text>
           </Flex>
-        </MenuItem>
+        </MenuItem> */}
       </MenuList>
     </Menu>
   );
