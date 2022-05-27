@@ -162,7 +162,7 @@ export default function Dashboard(props) {
               </Switch>
             </Box>
           ) : null}
-          <Box p="30px">
+          <Box p="0px 30px 30px 30px">
             <Footer />
           </Box>
         </Box>

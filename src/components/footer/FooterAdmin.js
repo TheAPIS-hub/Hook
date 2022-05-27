@@ -17,8 +17,8 @@ export default function Footer() {
   const textColor = useColorModeValue('gray.400', 'white')
   const { toggleColorMode } = useColorMode()
   return (
-    <Card>
-      <Flex direction="column">
+    <Card >
+      <Flex direction="column" padding='52px 19px 31px 36px' >
         <Flex
           zIndex="3"
           flexDirection={{
@@ -31,7 +31,7 @@ export default function Footer() {
           }}
           // alignItems="center"
 
-          pb="30px"
+        
         >
           <Text
             color={textColor}
@@ -40,7 +40,7 @@ export default function Footer() {
               xl: 'start',
             }}
             mb={{ base: '20px', xl: '0px' }}
-            marginRight="100px"
+            marginRight="30px"
           >
             Copyright &copy; {1900 + new Date().getYear()}
             <Text as="span" fontWeight="500" ms="4px">
@@ -59,7 +59,7 @@ export default function Footer() {
           </Text>
         </Flex>
         <Flex>
-          <List display="flex">
+          <List display="flex" marginTop='27px'>
             <ListItem
               me={{
                 base: '20px',

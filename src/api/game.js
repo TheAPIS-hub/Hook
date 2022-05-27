@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const DefaultUrl = 'https://api.hook.cool'
-
+// const DefaultUrl = 'https://api.hook.cool'
+const DefaultUrl = 'http://devhook.natapp1.cc/'
 export async function getGameItemsData(params) {
   return await axios.get(`${DefaultUrl}/game/getGameItems`, {
     params,
