@@ -500,6 +500,8 @@ export default function Track(props) {
                             cursor: 'pointer',
                           }}
                           onClick={() => {
+                            localStorage.setItem('game', JSON.stringify(item))
+
                             history.push({
                               pathname: '/admin/profile/gameDetail',
                             })

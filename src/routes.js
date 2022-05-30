@@ -74,11 +74,11 @@ const routes = [
     name: 'Overview',
     layout: '/admin',
     path: '/dashboards/default',
-    icon: <span className="iconfont icon-Overview" >&#xe608;</span>,
+    icon: <span className="iconfont icon-Overview">&#xe608;</span>,
     collapse: false,
     component: DashboardsDefault,
-    isShow:true,
-    isClick:true,
+    isShow: true,
+    isClick: true,
     items: [
       // {
       //   name: "Main Overview",
@@ -107,8 +107,8 @@ const routes = [
     layout: '/admin',
     component: Game,
     path: '/game',
-    isShow:true,
-    isClick:true,
+    isShow: true,
+    isClick: true,
     items: [
       // --- Sign In ---
       {
@@ -250,9 +250,8 @@ const routes = [
     component: ProfileTrack,
     icon: <span className="iconfont icon-Overview">&#xe618;</span>,
     collapse: false,
-    isShow:true,
-    isClick:true,
-    
+    isShow: true,
+    isClick: true,
 
     items: [
       // {
@@ -468,8 +467,8 @@ const routes = [
     path: '#',
     icon: <span className="iconfont icon-Overview">&#xe605;</span>,
     collapse: false,
-    isShow:true,
-    isClick:false,
+    isShow: true,
+    isClick: false,
     items: [
       // {
       //   name: "Marketplace",
@@ -556,8 +555,8 @@ const routes = [
     collapse: false,
     layout: '',
     path: '#',
-    isShow:true,
-    isClick:false,
+    isShow: true,
+    isClick: false,
     items: [
       // --- Sign In ---
       {
@@ -692,13 +691,13 @@ const routes = [
     ],
   },
   {
-    name: 'Game',
+    name: 'AllGame',
     layout: '/admin',
     path: '/profile/allGame',
     icon: <></>,
     component: AllGamePage,
     collapse: false,
-    isShow:false,
+    isShow: false,
     items: [],
   },
   {
@@ -708,7 +707,7 @@ const routes = [
     icon: <></>,
     component: gameDetailPage,
     collapse: false,
-    isShow:false,
+    isShow: false,
     items: [],
   },
   {
@@ -718,7 +717,7 @@ const routes = [
     icon: <></>,
     component: SignInDefault,
     collapse: false,
-    isShow:false,
+    isShow: false,
     items: [],
   },
   {
@@ -728,7 +727,7 @@ const routes = [
     icon: <></>,
     component: SignUpDefault,
     collapse: false,
-    isShow:false,
+    isShow: false,
     items: [],
   },
 
@@ -739,7 +738,7 @@ const routes = [
     icon: <></>,
     component: ProfileOverview,
     collapse: false,
-    isShow:false,
+    isShow: false,
     items: [],
   },
   {
@@ -749,7 +748,7 @@ const routes = [
     icon: <></>,
     component: ForgotPasswordDefault,
     collapse: false,
-    isShow:false,
+    isShow: false,
     items: [],
   },
   {
@@ -759,7 +758,7 @@ const routes = [
     icon: <></>,
     component: LockDefault,
     collapse: false,
-    isShow:false,
+    isShow: false,
     items: [],
   },
   // --- RSS ---

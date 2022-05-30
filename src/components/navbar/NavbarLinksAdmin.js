@@ -15,128 +15,126 @@ import {
   Text,
   useColorModeValue,
   useColorMode,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 // Custom Components
-import { ItemContent } from "components/menu/ItemContent";
-import { SearchBar } from "components/navbar/searchBar/SearchBar";
-import { SidebarResponsive } from "components/sidebar/Sidebar";
-import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
-import { getUserInfo, userIsLogin, userLogout } from "../../hook/hook";
-import "../../views/admin/dashboards/default/iconfont.css";
-import React, { useEffect, useState } from "react";
+import { ItemContent } from 'components/menu/ItemContent'
+import { SearchBar } from 'components/navbar/searchBar/SearchBar'
+import { SidebarResponsive } from 'components/sidebar/Sidebar'
+import PropTypes from 'prop-types'
+import { useHistory } from 'react-router-dom'
+import { getUserInfo, userIsLogin, userLogout } from '../../hook/hook'
+import '../../views/admin/dashboards/default/iconfont.css'
+import React, { useEffect, useState } from 'react'
 // Assets
-import navImage from "assets/img/layout/Navbar.png";
+import navImage from 'assets/img/layout/Navbar.png'
 import {
   MdNotificationsNone,
   MdInfoOutline,
   MdVerticalDistribute,
   MdBolt,
-} from "react-icons/md";
-import { IoMdMoon, IoMdSunny } from "react-icons/io";
-import { FaEthereum } from "react-icons/fa";
-import routes from "routes.js";
-import { MdFilterNone } from "react-icons/md";
-import { ethers } from "ethers";
-import BigNumber from "bignumber.js";
-import { getEthPrice } from "../../api/dashbord";
-import "../../views/admin/dashboards/default/index.css";
+} from 'react-icons/md'
+import { IoMdMoon, IoMdSunny } from 'react-icons/io'
+import { FaEthereum } from 'react-icons/fa'
+import routes from 'routes.js'
+import { MdFilterNone } from 'react-icons/md'
+import { ethers } from 'ethers'
+import BigNumber from 'bignumber.js'
+import { getEthPrice } from '../../api/dashbord'
+import '../../views/admin/dashboards/default/index.css'
 export default function HeaderLinks(props) {
-  const { secondary } = props;
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { secondary } = props
+  const { colorMode, toggleColorMode } = useColorMode()
   // Chakra Color Mode
-  const navbarIcon = useColorModeValue("gray.400", "white");
-  let menuBg = useColorModeValue("white", "navy.800");
-  const textColor = useColorModeValue("secondaryGray.900", "white");
-  const textColorBrand = useColorModeValue("brand.700", "brand.400");
-  const ethColor = useColorModeValue("gray.700", "white");
-  const borderColor = useColorModeValue("#E6ECFA", "rgba(135, 140, 189, 0.3)");
-  const ethBg = useColorModeValue("secondaryGray.300", "navy.900");
-  const ethBox = useColorModeValue("white", "navy.800");
+  const navbarIcon = useColorModeValue('gray.400', 'white')
+  let menuBg = useColorModeValue('white', 'navy.800')
+  const textColor = useColorModeValue('secondaryGray.900', 'white')
+  const textColorBrand = useColorModeValue('brand.700', 'brand.400')
+  const ethColor = useColorModeValue('gray.700', 'white')
+  const borderColor = useColorModeValue('#E6ECFA', 'rgba(135, 140, 189, 0.3)')
+  const ethBg = useColorModeValue('secondaryGray.300', 'navy.900')
+  const ethBox = useColorModeValue('white', 'navy.800')
   const shadow = useColorModeValue(
-    "14px 17px 40px 4px rgba(112, 144, 176, 0.18)",
-    "14px 17px 40px 4px rgba(112, 144, 176, 0.06)"
-  );
-  const borderButton = useColorModeValue("secondaryGray.500", "whiteAlpha.200");
+    '14px 17px 40px 4px rgba(112, 144, 176, 0.18)',
+    '14px 17px 40px 4px rgba(112, 144, 176, 0.06)'
+  )
+  const borderButton = useColorModeValue('secondaryGray.500', 'whiteAlpha.200')
 
-  const [gasPrice, setGasPrice] = useState(0);
-  const [ethPrice, setEthPrice] = useState(0);
-  const [isLogin, setIsLogin] = useState(false);
-  const [userData, setUserData] = useState({});
-  let provider = ethers.getDefaultProvider("homestead");
+  const [gasPrice, setGasPrice] = useState(0)
+  const [ethPrice, setEthPrice] = useState(0)
+  const [isLogin, setIsLogin] = useState(false)
+  const [userData, setUserData] = useState({})
+  let provider = ethers.getDefaultProvider('homestead')
 
   useEffect(() => {
-    if (colorMode !== "dark") {
-      toggleColorMode();
+    if (colorMode !== 'dark') {
+      toggleColorMode()
     }
     setInterval(() => {
       provider.getGasPrice().then((res) => {
-        setGasPrice(
-          new BigNumber(res.toString()).dividedBy(10 ** 9).toFixed(2)
-        );
-      });
+        setGasPrice(new BigNumber(res.toString()).dividedBy(10 ** 9).toFixed(2))
+      })
       getEthPrice().then((res) => {
-        setEthPrice(res?.data?.data?.marketPairs[0]?.price?.toFixed(2));
-      });
-    }, 10000);
-  }, []);
-  const history = useHistory();
+        setEthPrice(res?.data?.data?.marketPairs[0]?.price?.toFixed(2))
+      })
+    }, 10000)
+  }, [])
+  const history = useHistory()
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const email = localStorage.getItem("email");
+    const token = localStorage.getItem('token')
+    const email = localStorage.getItem('email')
     if (!token || !email) {
-      setIsLogin(false);
-      return;
+      setIsLogin(false)
+      return
     }
     setInterval(() => {
       userIsLogin(token).then((res) => {
-        if (res.data.code == "200") {
-          setIsLogin(res.data.data);
+        if (res.data.code == '200') {
+          setIsLogin(res.data.data)
           if (res.data.data) {
             getUserInfo(email).then((infoRes) => {
-              if (infoRes.data.code == "200") {
-                setUserData(infoRes.data.data);
-                localStorage.setItem('uId',infoRes.data.data.uid)
+              if (infoRes.data.code == '200') {
+                setUserData(infoRes.data.data)
+                localStorage.setItem('uId', infoRes.data.data.uid)
               }
-            });
+            })
           }
         } else {
-          setIsLogin(false);
+          setIsLogin(false)
         }
-      });
-    }, 100000);
+      })
+    }, 100000)
     userIsLogin(token).then((res) => {
-      if (res.data.code == "200") {
-        setIsLogin(res.data.data);
+      if (res.data.code == '200') {
+        setIsLogin(res.data.data)
         if (res.data.data) {
           getUserInfo(email, token).then((infoRes) => {
-            if (infoRes.data.code == "200") {
-              setUserData(infoRes.data.data);
-              localStorage.setItem('uId',infoRes.data.data.uid)
+            if (infoRes.data.code == '200') {
+              setUserData(infoRes.data.data)
+              localStorage.setItem('uId', infoRes.data.data.uid)
             }
-          });
+          })
         }
       } else {
-        setIsLogin(false);
+        setIsLogin(false)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <Flex
-      w={{ sm: "100%", md: "auto" }}
+      w={{ sm: '100%', md: 'auto' }}
       alignItems="center"
       flexDirection="row"
       bg={menuBg}
-      flexWrap={secondary ? { base: "wrap", md: "nowrap" } : "unset"}
+      flexWrap={secondary ? { base: 'wrap', md: 'nowrap' } : 'unset'}
       p="10px"
       borderRadius="30px"
       boxShadow={shadow}
       className="HeaderSearchBar"
     >
       <SearchBar
-        mb={secondary ? { base: "10px", md: "unset" } : "unset"}
+        mb={secondary ? { base: '10px', md: 'unset' } : 'unset'}
         me="10px"
         borderRadius="30px"
       />
@@ -193,9 +191,9 @@ export default function HeaderLinks(props) {
           bg={menuBg}
           border="none"
           mt="22px"
-          me={{ base: "30px", md: "unset" }}
-          minW={{ base: "unset", md: "400px", xl: "450px" }}
-          maxW={{ base: "360px", md: "unset" }}
+          me={{ base: '30px', md: 'unset' }}
+          minW={{ base: 'unset', md: '400px', xl: '450px' }}
+          maxW={{ base: '360px', md: 'unset' }}
         >
           <Flex jusitfy="space-between" w="100%" mb="20px">
             <Text fontSize="md" fontWeight="600" color={textColor}>
@@ -213,8 +211,8 @@ export default function HeaderLinks(props) {
           </Flex>
           <Flex flexDirection="column">
             <MenuItem
-              _hover={{ bg: "none" }}
-              _focus={{ bg: "none" }}
+              _hover={{ bg: 'none' }}
+              _focus={{ bg: 'none' }}
               px="0"
               borderRadius="8px"
               mb="10px"
@@ -222,8 +220,8 @@ export default function HeaderLinks(props) {
               <ItemContent info="Horizon UI Dashboard PRO" aName="Alicia" />
             </MenuItem>
             <MenuItem
-              _hover={{ bg: "none" }}
-              _focus={{ bg: "none" }}
+              _hover={{ bg: 'none' }}
+              _focus={{ bg: 'none' }}
               px="0"
               borderRadius="8px"
               mb="10px"
@@ -306,20 +304,16 @@ export default function HeaderLinks(props) {
         display="flex"
         alignItems="center"
       >
-      
         <Box
           width="29px"
           height="29px"
           borderRadius="50%"
           background="#111C44"
           textAlign="center"
-          marginRight='7px'
+          marginRight="7px"
         >
-          <i
-            color="#fff"
-            className="iconfont ethPriceIcon"
-          >
-           &#xe60b;
+          <i color="#fff" className="iconfont ethPriceIcon">
+            &#xe60b;
           </i>
         </Box>
 
@@ -338,19 +332,16 @@ export default function HeaderLinks(props) {
         display="flex"
         alignItems="center"
       >
-         <Box
+        <Box
           width="29px"
           height="29px"
           borderRadius="50%"
           background="#111C44"
           textAlign="center"
-          marginRight='7px'
+          marginRight="7px"
         >
-          <i
-            color="#fff"
-            className="iconfont gasPriceIcon"
-          >
-           &#xe60a;
+          <i color="#fff" className="iconfont gasPriceIcon">
+            &#xe60a;
           </i>
         </Box>
         <Text fontWeight="700" color="#fff" lineHeight="29px" fontSize="14px">
@@ -379,7 +370,7 @@ export default function HeaderLinks(props) {
         <Menu>
           <MenuButton p="0px">
             <Avatar
-              _hover={{ cursor: "pointer" }}
+              _hover={{ cursor: 'pointer' }}
               color="white"
               name={userData.userName}
               bg="#11047A"
@@ -430,8 +421,8 @@ export default function HeaderLinks(props) {
                 <Text fontSize="sm">Newsletter Settings</Text>
               </MenuItem> */}
               <MenuItem
-                _hover={{ bg: "none" }}
-                _focus={{ bg: "none" }}
+                _hover={{ bg: 'none' }}
+                _focus={{ bg: 'none' }}
                 color="red.400"
                 borderRadius="8px"
                 px="14px"
@@ -439,16 +430,16 @@ export default function HeaderLinks(props) {
                 <Text
                   fontSize="sm"
                   onClick={() => {
-                    const token = localStorage.getItem("token");
+                    const token = localStorage.getItem('token')
                     if (!token) {
-                      return;
+                      return
                     }
                     userLogout(userData.uid, token).then((res) => {
-                      if (res.data.code == "200") {
-                        setIsLogin(false);
-                        localStorage.setItem('uId','')
+                      if (res.data.code == '200') {
+                        setIsLogin(false)
+                        localStorage.setItem('uId', '')
                       }
-                    });
+                    })
                   }}
                 >
                   Log out
@@ -464,15 +455,14 @@ export default function HeaderLinks(props) {
           borderRadius="49px"
           width="117px"
           fontSize="14px"
-         
           _hover={{
-             backgroundImage:"linear-gradient(to bottom, #868cffb0, #4318ffb5)"
+            backgroundImage: 'linear-gradient(to bottom, #868cffb0, #4318ffb5)',
           }}
           _active={{
-            backgroundImage: "linear-gradient(to bottom, #868CFF, #4318FF)",
+            backgroundImage: 'linear-gradient(to bottom, #868CFF, #4318FF)',
           }}
           onClick={() => {
-            history.push({ pathname: "/auth/sign-in/default" });
+            history.push({ pathname: '/auth/sign-in/default' })
           }}
           transition="All 0.2s ease-in-out"
           _webkitTransition="All 0.2s ease-in-out"
@@ -483,7 +473,7 @@ export default function HeaderLinks(props) {
         </Button>
       )}
     </Flex>
-  );
+  )
 }
 
 HeaderLinks.propTypes = {
@@ -491,4 +481,4 @@ HeaderLinks.propTypes = {
   fixed: PropTypes.bool,
   secondary: PropTypes.bool,
   onOpen: PropTypes.func,
-};
+}

@@ -133,6 +133,8 @@ export default function GameCard({ gameData }) {
                   <Box
                     cursor="pointer"
                     onClick={() => {
+                      localStorage.setItem('game', JSON.stringify(item))
+
                       history.push({
                         pathname: '/admin/profile/gameDetail',
                       })
