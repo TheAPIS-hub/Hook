@@ -34,6 +34,7 @@ import {
   liked,
   setGameIcon,
   getNormal,
+  getTwitter,
 } from '../api/game'
 // overview
 export const getMarketCapAndVolume = (type) => {
@@ -108,29 +109,48 @@ export const getTags = (address) => {
   return getTag({ address })
 }
 //game
-export const getGameItemsDatas = (page,pageSize) => {
-  return getGameItemsData({ page,pageSize })
+export const getGameItemsDatas = (page, pageSize, sortField) => {
+  return getGameItemsData({ page, pageSize, sortField })
 }
-export const getComments = (gpId,page,pageSize,sort) => {
-  return getCommentsDate({gpId,page,pageSize,sort})
+export const getComments = (gpId, page, pageSize, sort) => {
+  return getCommentsDate({ gpId, page, pageSize, sort })
 }
 export const getGameIcons = () => {
   return getGameIcon()
 }
-export const writeComment = (content,gpId,grId,parentId,rootParentId,time,uid) => {
-  return witeComments({content,gpId,grId,parentId,rootParentId,time,uid})
+export const writeComment = (
+  content,
+  gpId,
+  grId,
+  parentId,
+  rootParentId,
+  time,
+  uid
+) => {
+  return witeComments({
+    content,
+    gpId,
+    grId,
+    parentId,
+    rootParentId,
+    time,
+    uid,
+  })
 }
 export const getGameIconByGpId = (gpId) => {
-  return getGameIconsByGpId({gpId})
+  return getGameIconsByGpId({ gpId })
 }
 
-export const likedStatus = (likedGpId,likedUserId,status) => {
-  return liked({likedGpId,likedUserId,status})
-}
-export const userSetGameIcon = (giId,giuId,gpId,uid) => {
-  return setGameIcon({giId,giuId,gpId,uid})
-}
-export const getGameNormal = (address,limit,start) => {
-  return getNormal({address,limit,start})
+export const likedStatus = (likedGpId, likedUserId, status) => {
+  return liked({ likedGpId, likedUserId, status })
 }
 
+export const getTwitterList = () => {
+  return getTwitter()
+}
+export const userSetGameIcon = (giId, giuId, gpId, uid) => {
+  return setGameIcon({ giId, giuId, gpId, uid })
+}
+export const getGameNormal = (address, limit, start) => {
+  return getNormal({ address, limit, start })
+}

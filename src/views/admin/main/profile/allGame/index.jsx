@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react'
 import { Box, Grid } from '@chakra-ui/react'
 import './index.css'
 import TrendingGames from './components/TrendingGames'
@@ -5,16 +6,17 @@ import GameSwipper from './components/GameSwipper'
 import GameCard from './components/GameCard'
 import Twitter from './components/Twitter'
 
-export default function allGame() {
+export default function AllGame() {
+  const [gameData, setGameData] = useState([])
+  const gameListDataStr = localStorage.getItem('gameListData')
+  const gameListDataJson = JSON.parse(gameListDataStr).records
+  //   useEffect(() => {
+  //     const gameListDataStr = localStorage.getItem('gameListData')
+  //     const gameListDataJson = JSON.parse(gameListDataStr).records
+  //     setGameData(gameListDataJson)
+  //   }, [])
   return (
-    <Box
-      padding={{
-        base: '56px 20px 24px 32px',
-        md: '56px 20px 24px 32px',
-        xl: '56px 20px 24px 32px',
-        sm: '56px 20px 24px 32px',
-      }}
-    >
+    <Box>
       <Grid
         mb="20px"
         gridTemplateColumns={{
@@ -23,17 +25,11 @@ export default function allGame() {
           md: '2fr 1fr',
           sm: '2fr 1fr',
         }}
-        gap={{
-          base: '5%',
-          '2xl': '5%',
-          xl: '5%',
-          md: '40px',
-          sm: '5%',
-        }}
+        gap="20px"
       >
-        <GameSwipper></GameSwipper>
+        <GameSwipper gameData={gameListDataJson}></GameSwipper>
 
-        <TrendingGames></TrendingGames>
+        <TrendingGames gameData={gameListDataJson}></TrendingGames>
       </Grid>
       <Grid
         mb="20px"
@@ -43,17 +39,11 @@ export default function allGame() {
           md: '2fr 1fr',
           sm: '2fr 1fr',
         }}
-        gap={{
-          base: '5%',
-          '2xl': '5%',
-          xl: '5%',
-          md: '40px',
-          sm: '5%',
-        }}
+        gap="20px"
       >
-        <GameCard></GameCard>
+        <GameCard gameData={gameListDataJson}></GameCard>
 
-        <Twitter></Twitter>
+        <Twitter gameData={gameListDataJson}></Twitter>
       </Grid>
     </Box>
   )

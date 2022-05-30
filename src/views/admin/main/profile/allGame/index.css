@@ -28,3 +28,6 @@
 .chatFrame:hover {
   background: #3f8cffa3 !important;
 }
+.note-masonry-grid_column {
+  width: 30% !important;
+}

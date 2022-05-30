@@ -16,7 +16,13 @@ import ImageGallery from 'react-image-gallery'
 import Players from '../../game/compoment/player'
 import GameHeader from '../../../../../../assets/img/logo/Header.png'
 import gameThree from '../../../../../../assets/img/logo/gameThree.png'
-export default function SwiperItem() {
+export default function SwiperItem({
+  src,
+  gameStudio,
+  gameUserIcon,
+  genres,
+  name,
+}) {
   const GameData = {
     copyright: 'Game Studio',
     generes: 'Game generes ',
@@ -27,8 +33,9 @@ export default function SwiperItem() {
       backgroundColor="rgba(17,28,68,1)"
       borderRadius="32px"
       paddingBottom="32px"
-      style={{}}
-      width="34vw"
+      style={{
+        width: '100%',
+      }}
       height="34vw"
     >
       <Box borderRadius="22px" overflow="hidden" height="26vw">
@@ -37,23 +44,23 @@ export default function SwiperItem() {
           divht="26vw"
           ht="100%"
           wd="100%"
-          src="https://www.youtube.com/embed/3OSUpTaiJM8"
+          src={src}
         ></Players>
       </Box>
       <Box
-        fontSize="1vw"
+        fontSize="1.2vw"
         textAlign="left"
         fontWeight={500}
         color="#fff"
-        marginTop="1vw"
+        marginTop="2vw"
         padding="0 1vw"
         lineHeight="1.2vw"
         alignItems="center"
       >
-        Game name
+        {name}
       </Box>
 
-      <Flex marginTop="10px" padding="0 22px">
+      <Flex marginTop="1.3vw" padding="0 1vw">
         <img
           style={{
             width: '1.1vw',
@@ -61,22 +68,22 @@ export default function SwiperItem() {
             borderRadius: '50%',
             marginRight: '0.4vw',
           }}
-          src={GameHeader}
+          src={gameUserIcon}
           alt=""
         />
         <Text
           style={{
             fontWeight: '400',
-            fontSize: '0.4vw',
+            fontSize: '0.6vw',
             lineHeight: '1.1vw',
             color: ' #B2B3BD',
           }}
         >
-          {GameData.copyright}®{' '}
+          {gameStudio}®
           <span style={{ color: '#fff', margin: '0 6px', fontSize: '16px' }}>
             ·
-          </span>{' '}
-          {GameData.generes}
+          </span>
+          {genres}
         </Text>
       </Flex>
     </Box>

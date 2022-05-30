@@ -149,7 +149,7 @@ export default function Overview() {
               gridArea="1 / 1 / 2 / 2"
               banner={banner}
               avatar={avatar}
-              name="Adela Parkson"
+              name="Hook Whale"
               searchAddress={searchAddress}
               total2Usd={total2Usd?.toLocaleString()}
               defi2Usd={defi2Usd?.toLocaleString()}
@@ -191,7 +191,7 @@ export default function Overview() {
           gridArea="1 / 2 / 2 / 2"
           banner={banner}
           avatar={avatar}
-          name="Adela Parkson"
+          name="Hook Whale"
           job="Product Designer"
           posts="17"
           followers="9.7k"

@@ -16,6 +16,9 @@ import {
 import TwitterHeader from '../../../../../../assets/img/logo/Header.png'
 import contentImg from '../../../../../../assets/img/logo/gameThree.png'
 import '../index.css'
+import { getTwitterList } from '../../../../../../hook/hook'
+import { dateDiff } from '../../../../../../hook/untils'
+
 export default function Twitter() {
   const [TwitterData, setTwitterData] = useState([
     {
@@ -68,6 +71,12 @@ export default function Twitter() {
         'on a long enough time horizon bitcoin’smechanism design is just as flawed as terra’s',
     },
   ])
+  useEffect(() => {
+    getTwitterList().then((res) => {
+      console.log(res.data.data)
+      setTwitterData(res.data.data)
+    })
+  }, [])
   return (
     <Box
       marginTop="36px"
@@ -77,6 +86,8 @@ export default function Twitter() {
         '2xl': '100%',
         md: '334px',
       }}
+      pr="10px"
+      overflow="hidden"
     >
       <Box
         style={{
@@ -91,7 +102,7 @@ export default function Twitter() {
         Twitter
       </Box>
 
-      <Box height="20vw">
+      <Box maxH="45vw" overflowY="auto">
         {TwitterData.map((item, index) => {
           return (
             <Box
@@ -121,18 +132,19 @@ export default function Twitter() {
                     borderRadius: '50%',
                   }}
                   width={{
-                    base: '100%',
-                    xl: '100%',
-                    '2xl': '100%',
+                    base: '2vw',
+                    xl: '2vw',
+                    '2xl': '2vw',
                     md: '38px',
                   }}
                   height={{
-                    base: '100%',
-                    xl: '100%',
-                    '2xl': '100%',
+                    base: '2vw',
+                    xl: '2vw',
+                    '2xl': '2vw',
                     md: '38px',
                   }}
-                  src={item.img}
+                  maxW="2vw"
+                  src={item.profileImageUrlHttps}
                   alt=""
                 />
               </Box>
@@ -151,6 +163,10 @@ export default function Twitter() {
                       textAlign: 'left',
                     }}
                     fontSize="0.6vw"
+                    maxWidth="11vw"
+                    overflow="hidden"
+                    whiteSpace="nowrap"
+                    textOverflow="ellipsis"
                   >
                     {item.name}
                   </Text>
@@ -163,7 +179,7 @@ export default function Twitter() {
                     fontSize="0.6vw"
                     marginRight="0.3vw"
                   >
-                    @{item.TwitterName}
+                    @{item.screenName}
                   </Text>
                   <Text
                     style={{
@@ -173,7 +189,7 @@ export default function Twitter() {
                     }}
                     fontSize="0.6vw"
                   >
-                    .{item.Time}ago
+                    {dateDiff(item.createdAt, null)}
                   </Text>
                 </Box>
                 <Box
@@ -200,17 +216,17 @@ export default function Twitter() {
                       textAlign: ' left',
                       lineHeight: '24px',
                     }}
-                    fontSize="0.7w"
+                    fontSize="0.6w"
                   >
-                    {item.content}
-                    {item?.contentImg ? (
+                    {item.fullText}
+                    {item?.mediaUrl ? (
                       <Image
                         style={{
                           marginTop: '7px',
                         }}
                         width="14vw"
                         height="14vw"
-                        src={item.contentImg}
+                        src={item.mediaUrl}
                         alt=""
                       />
                     ) : (

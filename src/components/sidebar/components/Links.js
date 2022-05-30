@@ -158,7 +158,7 @@ export function SidebarLinks(props) {
         )
       } else {
         return (
-          <NavLink to={route.layout + route.path} key={key} >
+          <NavLink to={route.layout + route.path} key={key}>
             {route.icon ? (
               <Flex
                 align="center"
@@ -183,20 +183,13 @@ export function SidebarLinks(props) {
                     color={
                       activeRoute(route.path.toLowerCase())
                         ? activeIcon
-                        : (route.isClick?inactiveColor:'#a5afcd57')
+                        : route.isClick
+                        ? inactiveColor
+                        : '#a5afcd57'
                     }
-                   
                   >
-                    <Box
-                      me="12px"
-                    >
-                      {route.icon}
-                    </Box>
-                    <Text
-                      me="auto"
-                    
-                      fontWeight="500"
-                    >
+                    <Box me="12px">{route.icon}</Box>
+                    <Text me="auto" fontWeight="500">
                       {route.name}
                     </Text>
                   </Flex>

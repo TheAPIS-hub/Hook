@@ -17,13 +17,15 @@ import Players from '../../game/compoment/player'
 
 import gameThree from '../../../../../../assets/img/logo/gameThree.png'
 import SwiperItem from './SwiperItem'
-export default function GameSwipper() {
-  const images = [
+export default function GameSwipper({ gameData }) {
+  const [images, setImages] = useState([
     {
       thumbnail: `https://picsum.photos/id/1019/1000/600/`,
       original: `https://picsum.photos/id/1019/1000/600/`,
       embedUrl:
         'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0',
+      originalClass: 'featured-slide',
+      thumbnailClass: 'featured-thumb',
       renderItem: () => <SwiperItem></SwiperItem>,
     },
     {
@@ -69,7 +71,38 @@ export default function GameSwipper() {
       thumbnailClass: 'featured-thumb',
       renderItem: () => <SwiperItem></SwiperItem>,
     },
-  ]
+  ])
+  useEffect(() => {
+    const gameListData = localStorage.getItem('gameListData')
+    // console.log(JSON.parse(gameListData))
+    const a = JSON.parse(gameListData).records.map((res) => {
+      console.log(res)
+      return {
+        thumbnail: res.imgs[0].url,
+        original: res.imgs[0].url,
+        // embedUrl: res.videos[0].url,
+        embedUrl: 'https://www.youtube.com/embed/Vut_tqyw_2U',
+
+        originalClass: 'featured-slide',
+        thumbnailClass: 'featured-thumb',
+        renderItem: () => (
+          <SwiperItem
+            src={res.videos[0].url}
+            gameStudio={res.gameStudio}
+            gameUserIcon={res.gameUserIcon}
+            genres={res.genres}
+            name={res.name}
+          ></SwiperItem>
+        ),
+      }
+    })
+    if (a.length > 1) {
+      console.log(a)
+      setImages(a)
+    }
+    // setImages(a)
+    // setImages(gameListData.records)
+  }, [])
 
   return (
     <Box marginTop="74px">

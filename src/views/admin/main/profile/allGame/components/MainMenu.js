@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 // Chakra imports
 import {
@@ -11,7 +11,7 @@ import {
   MenuList,
   useDisclosure,
   useColorModeValue,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 // Assets
 import {
   MdKeyboardArrowDown,
@@ -19,157 +19,133 @@ import {
   MdOutlineCardTravel,
   MdOutlineLightbulb,
   MdOutlineSettings,
-} from "react-icons/md";
+} from 'react-icons/md'
 
-export default function Banner(props) {
-  const { ...rest } = props;
+export default function DateUploaded(props) {
+  const { chooseSort, ...rest } = props
 
-  const textColor = useColorModeValue("secondaryGray.500", "white");
+  const textColor = useColorModeValue('secondaryGray.500', 'white')
   const textHover = useColorModeValue(
-    { color: "secondaryGray.900", bg: "unset" },
-    { color: "secondaryGray.500", bg: "unset" }
-  );
-  const iconColor = useColorModeValue("brand.500", "white");
-  const bgList = useColorModeValue("white", "whiteAlpha.100");
+    { color: 'secondaryGray.900', bg: 'unset' },
+    { color: 'secondaryGray.500', bg: 'unset' }
+  )
+  const iconColor = useColorModeValue('brand.500', 'white')
+  const bgList = useColorModeValue('white', 'whiteAlpha.100')
   const bgShadow = useColorModeValue(
-    "14px 17px 40px 4px rgba(112, 144, 176, 0.08)",
-    "unset"
-  );
-  const bgButton = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
+    '14px 17px 40px 4px rgba(112, 144, 176, 0.08)',
+    'unset'
+  )
+  const bgButton = useColorModeValue('secondaryGray.300', 'whiteAlpha.100')
   const bgHover = useColorModeValue(
-    { bg: "secondaryGray.400" },
-    { bg: "whiteAlpha.50" }
-  );
+    { bg: 'secondaryGray.400' },
+    { bg: 'whiteAlpha.50' }
+  )
   const bgFocus = useColorModeValue(
-    { bg: "secondaryGray.300" },
-    { bg: "whiteAlpha.100" }
-  );
+    { bg: 'secondaryGray.300' },
+    { bg: 'whiteAlpha.100' }
+  )
 
   // Ellipsis modals
   const {
     isOpen: isOpen1,
     onOpen: onOpen1,
     onClose: onClose1,
-  } = useDisclosure();
+  } = useDisclosure()
 
   return (
     <Menu isOpen={isOpen1} onClose={onClose1}>
       <MenuButton
-       alignItems='center'
+        alignItems="center"
         bg={bgButton}
         _hover={bgHover}
         _focus={bgFocus}
         _active={bgFocus}
-        w='200px'
-        h='56px'
-        lineHeight='100%'
+        w="200px"
+        h="56px"
+        lineHeight="100%"
         onClick={onOpen1}
-        borderRadius='16px'
-        {...rest}>
-          <Flex style={{
-            display:'flex',
-            justifyContent:'space-between',
+        borderRadius="16px"
+        {...rest}
+      >
+        <Flex
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
             padding: '0px 24px',
-            boxSizing:' border-box',
-            alignItems: 'center'
-          }}>
-              <Text style={{ color: 'rgba(128,129,145,1)',
- fontSize: '14px',
- fontWeight: '700',
-}}>GAME GENRES</Text>
-        <Icon as={MdKeyboardArrowDown} color={iconColor} w='24px' h='24px' />
-          </Flex>
-        
+            boxSizing: ' border-box',
+            alignItems: 'center',
+          }}
+        >
+          <Text
+            style={{
+              color: 'rgba(128,129,145,1)',
+              fontSize: '14px',
+              fontWeight: '700',
+            }}
+          >
+            GAME SORT
+          </Text>
+          <Icon as={MdKeyboardArrowDown} color={iconColor} w="24px" h="24px" />
+        </Flex>
       </MenuButton>
       <MenuList
-        w='90pxpx'
-        minW='unset'
-        maxW='150px !important'
-        border='transparent'
-        backdropFilter='blur(63px)'
+        w="90pxpx"
+        minW="unset"
+        maxW="200px !important"
+        border="transparent"
+        backdropFilter="blur(63px)"
         bg={bgList}
         boxShadow={bgShadow}
-        borderRadius='20px'
-    
-        p='15px'>
+        borderRadius="20px"
+        p="15px"
+      >
         <MenuItem
-          transition='0.2s linear'
+          transition="0.2s linear"
           color={textColor}
           _hover={textHover}
-          p='0px'
-          borderRadius='8px'
+          borderRadius="8px"
           _active={{
-            bg: "transparent",
+            bg: 'transparent',
           }}
           _focus={{
-            bg: "transparent",
+            bg: 'transparent',
           }}
-          mb='10px'>
-          <Flex align='center'>
-          
-            <Text fontSize='sm' fontWeight='400'>
-            Strategy
+          mb="10px"
+          p="0 15px"
+          onClick={() => {
+            chooseSort('like')
+          }}
+        >
+          <Flex align="center">
+            <Text fontSize="sm" fontWeight="400">
+              LIKE
             </Text>
           </Flex>
         </MenuItem>
         <MenuItem
-          transition='0.2s linear'
-          p='0px'
-          borderRadius='8px'
+          transition="0.2s linear"
+          borderRadius="8px"
           color={textColor}
           _hover={textHover}
           _active={{
-            bg: "transparent",
+            bg: 'transparent',
           }}
           _focus={{
-            bg: "transparent",
+            bg: 'transparent',
           }}
-          mb='10px'>
-          <Flex align='center'>
-          
-            <Text fontSize='sm' fontWeight='400'>
-            Shooters
-            </Text>
-          </Flex>
-        </MenuItem>
-        <MenuItem
-          transition='0.2s linear'
-          p='0px'
-          borderRadius='8px'
-          color={textColor}
-          _hover={textHover}
-          _active={{
-            bg: "transparent",
+          mb="10px"
+          p="0 15px"
+          onClick={() => {
+            chooseSort('initialReleaseDate')
           }}
-          _focus={{
-            bg: "transparent",
-          }}
-          mb='10px'>
-          <Flex align='center'>
-            <Text fontSize='sm' fontWeight='400'>
-            Sandbox
-            </Text>
-          </Flex>
-        </MenuItem>
-        <MenuItem
-          transition='0.2s linear'
-          color={textColor}
-          _hover={textHover}
-          p='0px'
-          borderRadius='8px'
-          _active={{
-            bg: "transparent",
-          }}
-          _focus={{
-            bg: "transparent",
-          }}>
-          <Flex align='center'>
-            <Text fontSize='sm' fontWeight='400'>
-            MOBA
+        >
+          <Flex align="center">
+            <Text fontSize="sm" fontWeight="400">
+              INITIALRELEASEDATE
             </Text>
           </Flex>
         </MenuItem>
       </MenuList>
     </Menu>
-  );
+  )
 }

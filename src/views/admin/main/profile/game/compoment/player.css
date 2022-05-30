@@ -1,10 +1,10 @@
 .image-gallery-slide-wrapper.left, .image-gallery-slide-wrapper.right{
-    width: 34vw !important;
+    width: 80% !important;
 }
 .image-gallery-thumbnails-wrapper.left, .image-gallery-thumbnails-wrapper.right{
     position: relative;
     /* width:calc(100%-34vw) !important */
-    width:100% !important
+    width:20% !important
 
 }
 .image-gallery-thumbnails-wrapper.left .image-gallery-thumbnails, .image-gallery-thumbnails-wrapper.right .image-gallery-thumbnails{

@@ -35,8 +35,8 @@ function SidebarContent(props) {
         mt="60px"
         mb="100px"
         borderRadius="30px"
-        position='fixed'
-        bottom='20px'
+        position="fixed"
+        bottom="20px"
       >
         <SidebarCard />
       </Box>
@@ -44,7 +44,7 @@ function SidebarContent(props) {
         <Avatar h='48px' w='48px' src={avatar4} me='20px' />
         <Box>
           <Text color={textColor} fontSize='md' fontWeight='700'>
-            Adela Parkson
+            Hook Whale
           </Text>
           <Text color='secondaryGray.600' fontSize='sm' fontWeight='400'>
             Product Designer
