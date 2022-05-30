@@ -35,6 +35,7 @@ import {
   setGameIcon,
   getNormal,
   getTwitter,
+  uploadIcon
 } from '../api/game'
 // overview
 export const getMarketCapAndVolume = (type) => {
@@ -153,4 +154,7 @@ export const userSetGameIcon = (giId, giuId, gpId, uid) => {
 }
 export const getGameNormal = (address, limit, start) => {
   return getNormal({ address, limit, start })
+}
+export const uploadGameIcon = (giId,icon) => {
+  return uploadIcon({ giId, icon })
 }

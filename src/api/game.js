@@ -36,3 +36,6 @@ export async function getNormal(params) {
 export async function getTwitter() {
   return await axios.get(`${DefaultUrl}/game/socialMedia`)
 }
+export async function uploadIcon(params) {
+  return await axios.post(`${DefaultUrl}/game/uploadGameIcon`, params)
+}

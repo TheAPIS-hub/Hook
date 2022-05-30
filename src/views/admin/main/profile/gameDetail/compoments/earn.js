@@ -24,11 +24,13 @@ import addIcon from "assets/img/users/addIcon.png";
 import amin from "assets/img/users/amin.gif";
 import { Picker } from 'emoji-mart'
 import data from '@emoji-mart/data'
+import { BASE64 } from './base64.js'
 import {
   getGameIcons,
   userSetGameIcon,
   getGameItemsDatas,
-  getGameIconByGpId
+  getGameIconByGpId,
+  uploadGameIcon
 } from '../../../../../../hook/hook'
 
 export default function Earn(props) {
@@ -94,11 +96,14 @@ export default function Earn(props) {
                   w='48px'
                   src={item.icon}
                   me='14px'
-                  p="6px"
                   bg="#0c1437"
                   cursor="pointer"
                   borderRadius="50%"
                   border="2px solid #353D59"
+                  fontSize="38px"
+                  justifyContent="center"
+                  alignItems="center"
+                  pt="4px"
                   className={
                     idx == index
                       ? animate
@@ -108,7 +113,6 @@ export default function Earn(props) {
                   }
                   data-idx={`${index}`}
                   cursor="pointer"
-                  borderColor="border: 2px solid rgba(0, 73, 198, 1)"
                   onClick={(e) => {
                     setAnimate(!animate)
                     setTimeout(() => {
@@ -143,7 +147,8 @@ export default function Earn(props) {
                     })
                   }}
                 >
-                  <Image src={item.icon} data-idx={`${index}`} ></Image>
+                  {/* {item.icon} */}
+                  <span data-idx={`${index}`} > {BASE64.decrypt(item.icon)}</span>
                 </Flex>
                 <Image src={amin}
                   display={
@@ -226,18 +231,45 @@ export default function Earn(props) {
               <Text fontSize="36px" margin="0 18px">
                 {emoji}
               </Text>
-              
-              {emoji?
-               <Button
-               variant="brand"
-               width="60px"
-               bgColor="#6C5DD3"
-               height="20px"
-               fontWeight="500"
-               fontSize="18px"
-                onClick={() => {
-                }}
-              >OK</Button> : ''}
+
+              {emoji ?
+                <Button
+                  variant="brand"
+                  width="60px"
+                  bgColor="#6C5DD3"
+                  height="20px"
+                  fontWeight="500"
+                  fontSize="18px"
+                  onClick={() => {
+                    let emcode = BASE64.encoder(emoji)
+                    if (!uId) {
+                      toast({
+                        title: `please sign in`,
+                        position: "top",
+                        status: "warning",
+                        isClosable: true,
+                        duration: 1000,
+                      });
+                      return
+                    }
+                      uploadGameIcon("",emcode).then((res) => {
+                        if(res.data.code==200){
+                          toast({
+                            title: `successful`,
+                            position: "top",
+                            status: "success",
+                            isClosable: true,
+                            duration: 1000,
+                          });
+                          setEmojia('');
+                          getGameIconByGpId(gpId).then((emojiRes) => {
+                            SetGameIcons(emojiRes.data.data.records)
+                          })
+                        }
+                       
+                      })
+                  }}
+                >OK</Button> : ''}
 
             </Flex>
           ) : ''}

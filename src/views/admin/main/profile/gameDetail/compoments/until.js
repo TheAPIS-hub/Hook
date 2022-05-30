@@ -44,7 +44,6 @@ export function dateDiff(hisTime, nowTime) {
   return result
 }
 export function toThousands(num) {
-  console.log(num)
 	var num = num ? num.toString() : "",
 		index = num.indexOf('.'),
 		result = '',

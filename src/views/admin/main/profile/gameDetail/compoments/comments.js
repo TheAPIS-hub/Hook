@@ -8,6 +8,7 @@ import {
   Box,
   Button,
   useToast,
+  Icon
 } from "@chakra-ui/react";
 import { MdMoreHoriz } from 'react-icons/md'
 import Transfer from "components/dataDisplay/Transfer";
@@ -28,9 +29,10 @@ import commentIcon from 'assets/img/users/commentIcon.png'
 import expandIcon from 'assets/img/users/expandIcon.png'
 import DateUploaded from "./MainMenu";
 import { IoHeart, IoHeartOutline } from "react-icons/io5";
-
+import { AiOutlineLike } from 'react-icons/ai'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/index.css'
+import {BASE64} from './base64'
 import {
   getComments,
   writeComment,
@@ -73,7 +75,7 @@ export default function Comments(props) {
           lineHeight="32px"
           as="span"
           marginBottom='20px'>
-          Comments{sort}
+          Comments
         </Text>
         <DateUploaded sort={sort} setSort={setSort} getCommentsDate={getCommentsDate}></DateUploaded>
       </Flex>
@@ -101,10 +103,24 @@ export default function Comments(props) {
                       color="#B2B3BD"
                       fontSize="14px"
                       lineHeight="24px"
+                      wordBreak="break-all"
                     >
-                      <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
+                      <div dangerouslySetInnerHTML={{ __html:BASE64.decrypt(item.content)}}></div>
                     </Text>
                     <Flex>
+                      <Flex alignItems="center" cursor="pointer">
+                        <Icon
+                          w="5"
+                          h="5"
+                          as={AiOutlineLike}
+                        />
+                        <Text
+                        color="#808191"
+                        fontSize="14px"
+                        ml="6px"
+                        fontWeight="600"
+                        > Like</Text>
+                      </Flex>
                       {/* <Image src={commentIcon}></Image>
                         <Image m="0 16px" src={collectIcon}></Image>
                         <Image src={expandIcon}></Image> */}
@@ -115,7 +131,7 @@ export default function Comments(props) {
             })
           }
         </Box>
-        {CommentsDate.length > 7 ? (!commentShow ?
+        {CommentsDate.length >= 7 ? (!commentShow ?
           <Box
             textAlign="center"
             cursor="pointer"
@@ -124,11 +140,11 @@ export default function Comments(props) {
             color="#5F75EE"
             onClick={() => {
               setCommentShow(true);
-              setPageSize(" ");
-              getCommentsDate();
-
+              getComments(gpId, page, '', sort).then((res) => {
+                setCommentsDate(res.data.data.records)
+              })
             }}>
-            View More 
+            View More
           </Box> : '')
 
           : ''}
@@ -173,7 +189,7 @@ export default function Comments(props) {
                 duration: 1500,
               });
             }
-            writeComment(content.toHTML(), gpId, grId, parentId, rootParentId, "", uId).then((res) => {
+            writeComment( BASE64.encoder(content.toHTML()), gpId, grId, parentId, rootParentId, "", uId).then((res) => {
               if (res.data.code == 200) {
                 toast({
                   title: `Comment successful`,
