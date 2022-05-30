@@ -83,7 +83,7 @@ export default function Banner(props) {
           w={13}
           h={13}
           color="#A3AED0"
-          _hover={{ color: "#6656FF" }}
+          _hover={{ color: "#a3aed094" }}
         />
       </Flex>
 
@@ -117,7 +117,7 @@ export default function Banner(props) {
         margin="auto"
         display="flex"
         justifyContent="space-between"
-        w={313}
+        w={277}
         marginBottom="20px"
       >
         <Text
@@ -126,6 +126,9 @@ export default function Banner(props) {
           font-size="14px"
           onClick={() => {
             window.open(`https://etherscan.io/address/${searchAddress}`);
+          }}
+          _hover={{
+            color:' #438effad'
           }}
         >
           Etherscan
@@ -137,6 +140,9 @@ export default function Banner(props) {
           }}
           color="#438EFF"
           font-size="14px"
+          _hover={{
+            color:' #438effad'
+          }}
         >
           Opensea
         </Text>
@@ -147,6 +153,9 @@ export default function Banner(props) {
           }}
           color="#438EFF"
           font-size="14px"
+          _hover={{
+            color:' #438effad'
+          }}
         >
           Cyber.xyz
         </Text>

@@ -102,11 +102,10 @@ function TopCreatorTable(props) {
                     
                     >
                       <Flex
-                        justify="space-between"
-                        align="center"
+                        className='HeaderRight'
                         fontSize={{ sm: '10px', lg: '12px' }}
                         color="gray.400"
-
+                        text-align=' end '
                       >
                         {column.render('Header')}
                       </Flex>

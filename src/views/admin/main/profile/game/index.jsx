@@ -469,7 +469,7 @@ export default function Track(props) {
                             style={{
                               width: '8px',
                               height: '8px',
-                              background: '#8F9FFA',
+                              background: '#5CF54F',
                               borderRadius: '50%',
                               marginRight: '8px',
                             }}

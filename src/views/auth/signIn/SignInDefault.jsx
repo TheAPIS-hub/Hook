@@ -103,10 +103,10 @@ function SignIn() {
             py="15px"
             h="50px"
             borderRadius="16px"
-            bg={googleBg}
-            color={googleText}
+            bg='rgb(158 158 158 / 6%)'
+            color='#ffffff33'
             fontWeight="500"
-            _hover={googleHover}
+           disabled={true}
             _active={googleActive}
             _focus={googleActive}
           >

@@ -20,7 +20,7 @@ import {
   useSortBy,
   useTable,
 } from 'react-table'
-import { MdMoreHoriz } from 'react-icons/md'
+import { MdBarChart } from 'react-icons/md'
 import BigNumber from 'bignumber.js'
 import '../index.css'
 function TotalMarketValue(props) {
@@ -88,7 +88,7 @@ function TotalMarketValue(props) {
             w="37px"
             h="37px"
             fontSize="20px"
-            icon={<MdMoreHoriz />}
+            icon={<MdBarChart />}
           />
         </Flex>
         <Table {...getTableProps()} variant="simple" color="gray.500">

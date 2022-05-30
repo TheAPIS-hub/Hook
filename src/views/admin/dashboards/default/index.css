@@ -10,7 +10,7 @@
 .dataBox .css-wiypqd[aria-selected='true'],
 .dataBox .css-wiypqd[data-selected] {
   color: #fff;
-  background-image: linear-gradient(to right, #868cff, #4318ff) !important;
+  background-image: linear-gradient(to bottom, #868CFF, #4318FF) !important;
 }
 .dataBox .css-wiypqd {
   color: #fff !important;

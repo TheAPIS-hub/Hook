@@ -466,7 +466,7 @@ export default function HeaderLinks(props) {
           fontSize="14px"
          
           _hover={{
-            background: "#7551ffd1",
+             backgroundImage:"linear-gradient(to bottom, #868cffb0, #4318ffb5)"
           }}
           _active={{
             backgroundImage: "linear-gradient(to bottom, #868CFF, #4318FF)",
