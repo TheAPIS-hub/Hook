@@ -139,7 +139,7 @@ export default function AdminNavbar(props) {
                 window.history.back()
               }}
             >
-              {'<'}
+              <b className='iconfont'>&#xe6a7;</b>
             </Box>
           )}
         </Box>

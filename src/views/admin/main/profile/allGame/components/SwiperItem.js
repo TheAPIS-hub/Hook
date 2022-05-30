@@ -31,7 +31,7 @@ export default function SwiperItem({
     <Box
       //   height="720px"
       backgroundColor="rgba(17,28,68,1)"
-      borderRadius="32px"
+      borderRadius="21px"
       paddingBottom="32px"
       style={{
         width: '100%',
@@ -48,11 +48,11 @@ export default function SwiperItem({
         ></Players>
       </Box>
       <Box
-        fontSize="1.2vw"
+        fontSize="2vw"
         textAlign="left"
         fontWeight={500}
         color="#fff"
-        marginTop="2vw"
+        marginTop="2.6vw"
         padding="0 1vw"
         lineHeight="1.2vw"
         alignItems="center"

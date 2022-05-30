@@ -58,19 +58,19 @@ export default function GameCard({ gameData }) {
       }}
     >
       <Flex
-        style={{
+           alignItems= 'start'
+        justifyContent="space-between"
+        marginBottom= '32px'
+      >
+        <Text   style={{
           color: ' rgba(255,255,255,1)',
           fontSize: '24px',
           fontWeight: ' 500',
           textAlign: 'left',
-          lineHeight: '32px',
-          marginBottom: '32px',
-        }}
-        alignItems="center"
-        justifyContent="space-between"
-        marginBottom="28px"
-      >
-        Trending games
+        }}>
+Trending games
+        </Text>
+       
         <DateUploaded chooseSort={chooseSort}></DateUploaded>
       </Flex>
       {/* <Box
@@ -144,18 +144,8 @@ export default function GameCard({ gameData }) {
                       borderRadius="24px"
                       src={item?.imgs[0].url}
                       alt=""
-                      width={{
-                        base: '100%',
-                        xl: '100%',
-                        '2xl': '100%',
-                        md: '210px',
-                      }}
-                      height={{
-                        base: '100%',
-                        xl: '100%',
-                        '2xl': '100%',
-                        md: '116px',
-                      }}
+                      width='17vw'
+                      height='8vw'
                     />
                   </Box>
                   <Box
@@ -295,7 +285,7 @@ export default function GameCard({ gameData }) {
                       </Box>
                     </Box>
                   </Box>
-                  <HSeparator></HSeparator>
+                  <HSeparator background='#fff5f514'></HSeparator>
                   <Box
                     style={{
                       display: 'flex',

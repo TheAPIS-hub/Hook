@@ -33,7 +33,7 @@ export default function TrendingGames({ gameData }) {
       >
         Ranking
       </Box>
-      <Box overflowY="auto" height="34vw" overflow="hidden">
+      <Box overflowY="auto" height="34vw">
         {gameData.map((item, index) => {
           return (
             <Box

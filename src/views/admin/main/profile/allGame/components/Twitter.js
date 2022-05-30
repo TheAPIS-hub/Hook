@@ -210,6 +210,7 @@ export default function Twitter() {
                   padding="0.8vw 1.1vw"
                 >
                   <Box
+                  className="chatFullText"
                     style={{
                       color: 'rgba(255,255,255,0.6)',
                       fontWeight: ' 400',

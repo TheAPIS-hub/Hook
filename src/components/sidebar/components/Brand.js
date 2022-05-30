@@ -2,7 +2,7 @@ import React from 'react'
 
 // Chakra imports
 import { Flex, useColorModeValue, Image } from '@chakra-ui/react'
-import Logo from '../../../assets/svg/LogoNew.png'
+import Logo from '../../../assets/svg/LogoNew.svg'
 // Custom components
 import { HorizonLogo } from 'components/icons/Icons'
 import { HSeparator } from 'components/separator/Separator'
