@@ -24,27 +24,26 @@ import {
 export default function Banner(props) {
   const { setSort } = props
   const sort = props.sort
-  const textColor = useColorModeValue("secondaryGray.500", "white");
+  const textColor = useColorModeValue('secondaryGray.500', 'white')
   const textHover = useColorModeValue(
-    { color: "secondaryGray.900", bg: "unset" },
-    { color: "secondaryGray.500", bg: "unset" }
-  );
-  const iconColor = useColorModeValue("brand.500", "white");
-  const bgList = useColorModeValue("white", "whiteAlpha.100");
+    { color: 'secondaryGray.900', bg: 'unset' },
+    { color: 'secondaryGray.500', bg: 'unset' }
+  )
+  const iconColor = useColorModeValue('brand.500', 'white')
+  const bgList = useColorModeValue('white', 'whiteAlpha.100')
   const bgShadow = useColorModeValue(
-    "14px 17px 40px 4px rgba(112, 144, 176, 0.08)",
-    "unset"
-  );
-  const bgButton = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
+    '14px 17px 40px 4px rgba(112, 144, 176, 0.08)',
+    'unset'
+  )
+  const bgButton = useColorModeValue('secondaryGray.300', 'whiteAlpha.100')
   const bgHover = useColorModeValue(
-    { bg: "secondaryGray.400" },
-    { bg: "whiteAlpha.50" }
-  );
+    { bg: 'secondaryGray.400' },
+    { bg: 'whiteAlpha.50' }
+  )
   const bgFocus = useColorModeValue(
-    { bg: "secondaryGray.300" },
-    { bg: "whiteAlpha.100" }
-  );
-
+    { bg: 'secondaryGray.300' },
+    { bg: 'whiteAlpha.100' }
+  )
   // Ellipsis modals
   const {
     isOpen: isOpen1,
@@ -79,16 +78,16 @@ export default function Banner(props) {
             fontWeight: '700',
           }}
           >
-            {sort == "desc" ? "Most Recent" : "Olders"}
+            {sort == "desc" ? "MOST RECENT" : "OLDERS"}
           </Text>
           <Icon as={MdKeyboardArrowDown} color={iconColor} w='24px' h='24px' />
         </Flex>
 
       </MenuButton>
       <MenuList
-        w='150px'
+        w='200px'
         minW='unset'
-        maxW='150px !important'
+        maxW="200px !important"
         border='transparent'
         backdropFilter='blur(63px)'
         bg={bgList}
@@ -96,17 +95,18 @@ export default function Banner(props) {
         borderRadius='20px'
         p='15px'>
         <MenuItem
-          transition='0.2s linear'
+          transition="0.2s linear"
+          borderRadius="8px"
           color={textColor}
           _hover={textHover}
-          p='0px'
-          borderRadius='8px'
           _active={{
-            bg: "transparent",
+            bg: 'transparent',
           }}
           _focus={{
-            bg: "transparent",
+            bg: 'transparent',
           }}
+          mb="10px"
+          p="0 15px"
           mb='10px'>
           <Flex align='center'>
             {sort == "desc" ? <Text fontSize='sm' fontWeight='400'
@@ -115,7 +115,7 @@ export default function Banner(props) {
                 props.getCommentsDate()
               }}
             >
-              Olders
+              OLDERS
             </Text> :
               <Text fontSize='sm' fontWeight='400'
                 onClick={() => {
@@ -123,7 +123,7 @@ export default function Banner(props) {
                   props.getCommentsDate()
                 }}
               >
-                Most Recent
+                MOST RECENT
               </Text>}
 
 

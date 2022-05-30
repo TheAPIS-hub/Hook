@@ -31,6 +31,8 @@ import { Link } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { toThousands } from './until.js';
 import { FcLike } from "react-icons/fc";
+import { formatNumber } from '../../../../../../hook/untils'
+import likedIcon from 'assets/img/users/liked.png'
 import {
   likedStatus
 } from '../../../../../../hook/hook'
@@ -101,8 +103,8 @@ export default function Banner(props) {
                   <Image src={twitter} width="26px" height="26px" mr="35px"></Image>
                 </Flex>
                 <Box m="8px 0">
-                  <Text as="span">{game.twitterFollower} followers</Text>
-                  <Text as="span" ml="24px">{game.activeUsers} players</Text>
+                  <Text as="span">{formatNumber(game.twitterFollower)} followers</Text>
+                  <Text as="span" ml="24px">{formatNumber(game.activeUsers)} players</Text>
                 </Box>
               </Box>
             </Flex>
@@ -130,11 +132,19 @@ export default function Banner(props) {
         <Flex p="25px 34px">
           <Stack direction="row" wrap="wrap" spacing={4} align-items="center">
             {isLike ?
-              <Icon
-                w="6"
-                h="6"
-                as={FcLike}
-              /> :
+              (
+                <Flex  
+                  width="100px"
+                  height="50px">
+                 <Image src={likedIcon}/>
+                  <Text
+                    color="#808191"
+                    fontSize="14px"
+                    ml="6px"
+                    fontWeight="600"
+                  > Like</Text>
+                </Flex>
+              ) :
               <Button
                 width="100px"
                 height="50px"
@@ -209,7 +219,8 @@ export default function Banner(props) {
           </Flex>
           <Text fontSize={{
             base: 'xl',
-            xl: "3xl",
+            xl: "xl",
+            "2xl": "xl"
           }}
             fontWeight="600"
             fontFamily="Poppins"
@@ -233,7 +244,8 @@ export default function Banner(props) {
           <Text
             fontSize={{
               base: 'xl',
-              xl: "3xl",
+              xl: "xl",
+              "2xl": "xl"
             }}
             fontWeight="600"
             letterSpacing="-1px"
@@ -259,7 +271,8 @@ export default function Banner(props) {
           <Text
             fontSize={{
               base: 'xl',
-              xl: "3xl",
+              xl: "xl",
+              "2xl": "xl"
             }}
             fontWeight="600"
             letterSpacing="-1px"

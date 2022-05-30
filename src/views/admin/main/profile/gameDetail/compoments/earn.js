@@ -55,7 +55,7 @@ export default function Earn(props) {
   const ref = useRef()
   useEffect(() => {
     new Picker({ data, ref })
-    getGameIconByGpId(gpId).then((res) => {
+    getGameIconByGpId(gpId,uId).then((res) => {
       SetGameIcons(res.data.data.records)
     })
   }, [])
@@ -94,12 +94,11 @@ export default function Earn(props) {
                 <Flex
                   h='48px'
                   w='48px'
-                  src={item.icon}
                   me='14px'
                   bg="#0c1437"
                   cursor="pointer"
                   borderRadius="50%"
-                  border="2px solid #353D59"
+                  border={item.isLiked?"2px solid #0049C6":"2px solid #353D59"}
                   fontSize="38px"
                   justifyContent="center"
                   alignItems="center"
@@ -131,7 +130,7 @@ export default function Earn(props) {
                     }
                     userSetGameIcon(item.giId, '', gpId, uId).then((res) => {
                       if (res.data.code == 200) {
-                        getGameIconByGpId(gpId).then((res) => {
+                        getGameIconByGpId(gpId,uId).then((res) => {
                           SetGameIcons(res.data.data.records)
                         })
                       } else {
@@ -148,7 +147,7 @@ export default function Earn(props) {
                   }}
                 >
                   {/* {item.icon} */}
-                  <span data-idx={`${index}`} > {BASE64.decrypt(item.icon)}</span>
+                  <Text data-idx={`${index}`} > {BASE64.decrypt(item.icon)}</Text>
                 </Flex>
                 <Image src={amin}
                   display={
@@ -279,6 +278,7 @@ export default function Earn(props) {
       {showEmojiModa ? <EmojiPicker
         onEmojiSelect={(emoji, event) => { checkEmoji(emoji, event) }}
         theme="dark"
+        bgColor="red"
         native
         emojiSize={25}
         sheetSize={32}

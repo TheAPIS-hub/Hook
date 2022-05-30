@@ -27,15 +27,17 @@ import NFT from 'components/card/NFT'
 import collectIcon from 'assets/img/users/collectIcon.png'
 import commentIcon from 'assets/img/users/commentIcon.png'
 import expandIcon from 'assets/img/users/expandIcon.png'
+import likedIcon from 'assets/img/users/liked.png'
 import DateUploaded from "./MainMenu";
 import { IoHeart, IoHeartOutline } from "react-icons/io5";
 import { AiOutlineLike } from 'react-icons/ai'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/index.css'
-import {BASE64} from './base64'
+import { BASE64 } from './base64'
 import {
   getComments,
   writeComment,
+  gameCommentLiked,
 } from '../../../../../../hook/hook'
 export default function Comments(props) {
   const { gpId } = props;
@@ -51,8 +53,9 @@ export default function Comments(props) {
   const [sort, setSort] = useState("desc")
   const toast = useToast();
   const [commentShow, setCommentShow] = useState(false)
+
   const getCommentsDate = () => {
-    getComments(gpId, page, pageSize, sort).then((res) => {
+    getComments(gpId, page, pageSize, sort, uId).then((res) => {
       setCommentsDate(res.data.data.records)
     })
   };
@@ -105,22 +108,71 @@ export default function Comments(props) {
                       lineHeight="24px"
                       wordBreak="break-all"
                     >
-                      <div dangerouslySetInnerHTML={{ __html:BASE64.decrypt(item.content)}}></div>
+                      <div dangerouslySetInnerHTML={{ __html: BASE64.decrypt(item.content) }}></div>
                     </Text>
                     <Flex>
-                      <Flex alignItems="center" cursor="pointer">
+                      {!item.isLiked ? <Flex
+                        alignItems="center"
+                        cursor="pointer"
+                        onClick={() => {
+                          if (!uId) {
+                            toast({
+                              title: `please sign in`,
+                              position: "top",
+                              status: "warning",
+                              isClosable: true,
+                              duration: 1000,
+                            });
+                            return
+                          }
+                          gameCommentLiked(item.grId, 1, uId).then((res) => {
+                              if(res.data){
+                                getCommentsDate();
+                              }
+                          })
+                        }}
+                      >
                         <Icon
-                          w="5"
-                          h="5"
+                          w="4"
+                          h="4"
                           as={AiOutlineLike}
                         />
                         <Text
-                        color="#808191"
-                        fontSize="14px"
-                        ml="6px"
-                        fontWeight="600"
+                          color="#808191"
+                          fontSize="14px"
+                          ml="6px"
+                          fontWeight="600"
                         > Like</Text>
-                      </Flex>
+                      </Flex> : (
+                        <Flex cursor="pointer"
+                        onClick={() => {
+                          if (!uId) {
+                            toast({
+                              title: `please sign in`,
+                              position: "top",
+                              status: "warning",
+                              isClosable: true,
+                              duration: 1000,
+                            });
+                            return
+                          }
+                          gameCommentLiked(item.grId, 0, uId).then((res) => {
+                              if(res.data){
+                                getCommentsDate();
+                              }
+                          })
+                        }}
+                        >
+                         <Image src={likedIcon}/>
+                          <Text
+                            color="#808191"
+                            fontSize="14px"
+                            ml="6px"
+                            fontWeight="600"
+                          > Like</Text>
+                        </Flex>
+                      )}
+
                       {/* <Image src={commentIcon}></Image>
                         <Image m="0 16px" src={collectIcon}></Image>
                         <Image src={expandIcon}></Image> */}
@@ -140,7 +192,7 @@ export default function Comments(props) {
             color="#5F75EE"
             onClick={() => {
               setCommentShow(true);
-              getComments(gpId, page, '', sort).then((res) => {
+              getComments(gpId, page, '', sort, uId).then((res) => {
                 setCommentsDate(res.data.data.records)
               })
             }}>
@@ -188,8 +240,9 @@ export default function Comments(props) {
                 isClosable: true,
                 duration: 1500,
               });
+              return
             }
-            writeComment( BASE64.encoder(content.toHTML()), gpId, grId, parentId, rootParentId, "", uId).then((res) => {
+            writeComment(BASE64.encoder(content.toHTML()), gpId, grId, parentId, rootParentId, "", uId).then((res) => {
               if (res.data.code == 200) {
                 toast({
                   title: `Comment successful`,

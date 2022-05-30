@@ -49,7 +49,7 @@ export default function BuyAxie(props) {
               pr="4"
             >
               <Flex>
-                {/* <Image src={item.img}></Image> */}
+                <Image src={item.imgUrl}></Image>
                 <Flex
                   flexDirection="column"
                   justifyContent="center"
@@ -98,7 +98,7 @@ export default function BuyAxie(props) {
                     {dateDiff(item.time * 1000, null)}
                   </Text>
                 </Flex>
-                <Image height="20px" width="20px" src={arrow} ml="4"></Image>
+                
               </Flex>
 
               {/* <Box fontSize="10px">

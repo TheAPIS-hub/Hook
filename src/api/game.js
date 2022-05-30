@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const DefaultUrl = 'https://api.hook.cool'
-// const DefaultUrl = 'http://devhook.natapp1.cc'
+//const DefaultUrl = 'https://api.hook.cool'
+const DefaultUrl = 'http://devhook.natapp1.cc'
 
 export async function getGameItemsData(params) {
   return await axios.get(`${DefaultUrl}/game/getGameItems`, {
@@ -38,4 +38,7 @@ export async function getTwitter() {
 }
 export async function uploadIcon(params) {
   return await axios.post(`${DefaultUrl}/game/uploadGameIcon`, params)
+}
+export async function commentLiked(params) {
+  return await axios.post(`${DefaultUrl}/game/commentLiked`, params)
 }

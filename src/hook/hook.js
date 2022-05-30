@@ -35,7 +35,8 @@ import {
   setGameIcon,
   getNormal,
   getTwitter,
-  uploadIcon
+  uploadIcon,
+  commentLiked
 } from '../api/game'
 // overview
 export const getMarketCapAndVolume = (type) => {
@@ -113,8 +114,8 @@ export const getTags = (address) => {
 export const getGameItemsDatas = (page, pageSize, sortField) => {
   return getGameItemsData({ page, pageSize, sortField })
 }
-export const getComments = (gpId, page, pageSize, sort) => {
-  return getCommentsDate({ gpId, page, pageSize, sort })
+export const getComments = (gpId, page, pageSize, sort,uId) => {
+  return getCommentsDate({ gpId, page, pageSize, sort,uId})
 }
 export const getGameIcons = () => {
   return getGameIcon()
@@ -138,8 +139,8 @@ export const writeComment = (
     uid,
   })
 }
-export const getGameIconByGpId = (gpId) => {
-  return getGameIconsByGpId({ gpId })
+export const getGameIconByGpId = (gpId,uid) => {
+  return getGameIconsByGpId({ gpId,uid })
 }
 
 export const likedStatus = (likedGpId, likedUserId, status) => {
@@ -157,4 +158,7 @@ export const getGameNormal = (address, limit, start) => {
 }
 export const uploadGameIcon = (giId,icon) => {
   return uploadIcon({ giId, icon })
+}
+export const gameCommentLiked = (giId,status,uid) => {
+  return commentLiked({ giId,status,uid })
 }

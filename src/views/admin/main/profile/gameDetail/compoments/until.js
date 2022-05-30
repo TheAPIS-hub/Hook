@@ -26,7 +26,7 @@ export function dateDiff(hisTime, nowTime) {
   // if (_year >= 1) result = parseInt(_year) + "";
   // else if (_month >= 1) result = parseInt(_month) + "";
   // else if (_week >= 1) result = parseInt(_week) + "";
-  if(parseInt(diffValue)<1500)result = "just now";
+  if(parseInt(diffValue)<15000)result = "just now";
   else if (parseInt(_year) > 1) result = parseInt(_year) + " years ago";
   else if (parseInt(_year) >= 1) result = parseInt(_year) + " year ago";
   else if (parseInt(_month) > 1) result = parseInt(_month) + " months ago";
