@@ -29,6 +29,8 @@ import { CgAdd } from 'react-icons/cg'
 import Players from './player'
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { toThousands } from './until.js';
+import { FcLike } from "react-icons/fc";
 import {
   likedStatus
 } from '../../../../../../hook/hook'
@@ -36,14 +38,14 @@ import {
 export default function Banner(props) {
   const { game } = props
   const uId = localStorage.getItem('uId')
-  const moon = (game.moon==0)?1:game.moon
-  const ngmi = (game.ngmi==0)?1:game.ngmi
+  const moon = (game.moon == 0) ? 1 : game.moon
+  const ngmi = (game.ngmi == 0) ? 1 : game.ngmi
   const [good, setGood] = useState("")
   const [bad, setBad] = useState("")
+  const [isLike, setIsLike] = useState(false)
   useEffect(() => {
-    
-    setGood((moon / (moon + ngmi) * 100).toFixed(2) + '%')
-    setBad((ngmi / (moon + ngmi) * 100).toFixed(2) + '%')
+    setGood((moon / (moon + ngmi) * 100).toFixed(0) + '%')
+    setBad((ngmi / (moon + ngmi) * 100).toFixed(0) + '%')
   }, [])
   const [isVote, voteFun] = useState(false)
   const toast = useToast()
@@ -127,19 +129,24 @@ export default function Banner(props) {
         </Box>
         <Flex p="25px 34px">
           <Stack direction="row" wrap="wrap" spacing={4} align-items="center">
-            <Button
-              width="100px"
-              height="50px"
-              bgColor="transparent"
-              leftIcon={<AiOutlineLike />}
-              variant="brand"
-              color="#808191"
-              _hover={{
-                color: "#fff",
-                bgColor: "#6C5DD3"
-              }}
-              onClick={() => {
-                likedStatus(game.gpId, uId, 1).then((res) => {
+            {isLike ?
+              <Icon
+                w="6"
+                h="6"
+                as={FcLike}
+              /> :
+              <Button
+                width="100px"
+                height="50px"
+                bgColor="transparent"
+                leftIcon={<AiOutlineLike />}
+                variant="brand"
+                color="#808191"
+                _hover={{
+                  color: "#fff",
+                  bgColor: "#6C5DD3"
+                }}
+                onClick={() => {
                   if (!uId) {
                     toast({
                       title: `please sign in`,
@@ -150,15 +157,17 @@ export default function Banner(props) {
                     });
                     return
                   }
-                  if (res.data.code == 200) {
-                  } else {
-
-                  }
-                })
-              }}
-            >
-              <Text > Like</Text>
-            </Button>
+                  likedStatus(game.gpId, uId, 1).then((res) => {
+                    if (res.data.code == 200) {
+                      setIsLike(true)
+                    } else {
+                    }
+                  })
+                }}
+              >
+                <Text > Like</Text>
+              </Button>
+            }
             {/* <Button width="100px" height="50px" bgColor="transparent" leftIcon={<RiShareForwardLine />} variant="brand">
               <Text color="#808191;"> Share</Text>
             </Button>
@@ -201,7 +210,12 @@ export default function Banner(props) {
           <Text fontSize={{
             base: 'xl',
             xl: "3xl",
-          }} fontWeight="600" letterSpacing="-1px">{game.price}</Text>
+          }}
+            fontWeight="600"
+            fontFamily="Poppins"
+            letterSpacing="-1px">
+            {toThousands(game.price)}
+          </Text>
         </Box>
         <Box width={{
           base: '100%',
@@ -223,9 +237,10 @@ export default function Banner(props) {
             }}
             fontWeight="600"
             letterSpacing="-1px"
+            fontFamily="Poppins"
           >
-            Ξ {game.volume}
-            <Text as="span" fontSize="18px" fontWeight="600" color="#808191" ml="18px">$245.54K</Text>
+            Ξ {toThousands(game.volume)}
+            <Text as="span" fontSize="18px" fontWeight="600" color="#808191" ml="18px">${toThousands((game.volume / 1000).toFixed(2))}K</Text>
           </Text>
         </Box>
         <Box
@@ -248,8 +263,9 @@ export default function Banner(props) {
             }}
             fontWeight="600"
             letterSpacing="-1px"
+            fontFamily="Poppins"
           >
-            {game.circulatingSupply}
+            {toThousands(game.circulatingSupply)}
           </Text>
         </Box>
       </Flex >
@@ -310,17 +326,17 @@ export default function Banner(props) {
                 background="transparent"
                 mr="11px"
                 onClick={(e) => {
+                  if (!uId) {
+                    toast({
+                      title: `please sign in`,
+                      position: "top",
+                      status: "warning",
+                      isClosable: true,
+                      duration: 1000,
+                    });
+                    return
+                  }
                   likedStatus(game.gpId, uId, 1).then((res) => {
-                    if (!uId) {
-                      toast({
-                        title: `please sign in`,
-                        position: "top",
-                        status: "warning",
-                        isClosable: true,
-                        duration: 1000,
-                      });
-                      return
-                    }
                     if (res.data.code == 200) {
                     } else {
                     }
@@ -349,7 +365,7 @@ export default function Banner(props) {
                   }
                   voteFun(!isVote)
                   likedStatus(game.gpId, uId, 1).then((res) => {
-                   
+
                   })
                 }}
               >

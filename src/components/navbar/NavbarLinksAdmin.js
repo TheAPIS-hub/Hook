@@ -97,6 +97,7 @@ export default function HeaderLinks(props) {
             getUserInfo(email).then((infoRes) => {
               if (infoRes.data.code == "200") {
                 setUserData(infoRes.data.data);
+                localStorage.setItem('uId',infoRes.data.data.uid)
               }
             });
           }
@@ -112,6 +113,7 @@ export default function HeaderLinks(props) {
           getUserInfo(email, token).then((infoRes) => {
             if (infoRes.data.code == "200") {
               setUserData(infoRes.data.data);
+              localStorage.setItem('uId',infoRes.data.data.uid)
             }
           });
         }
@@ -444,6 +446,7 @@ export default function HeaderLinks(props) {
                     userLogout(userData.uid, token).then((res) => {
                       if (res.data.code == "200") {
                         setIsLogin(false);
+                        localStorage.setItem('uId','')
                       }
                     });
                   }}

@@ -44,14 +44,18 @@ export default function Comments(props) {
   const [grId, setgrId] = useState("")
   const [parentId, setParentId] = useState("")
   const [rootParentId, setRootParentId] = useState("")
-  const [page, setPage] = useState("1")
-  const [pageSize, setPageSize] = useState("5")
-  const [sort, setSort] = useState("")
+  const [page, setPage] = useState("")
+  const [pageSize, setPageSize] = useState("7")
+  const [sort, setSort] = useState("desc")
   const toast = useToast();
-  useEffect(() => {
+  const [commentShow, setCommentShow] = useState(false)
+  const getCommentsDate = () => {
     getComments(gpId, page, pageSize, sort).then((res) => {
       setCommentsDate(res.data.data.records)
     })
+  };
+  useEffect(() => {
+    getCommentsDate()
   }, [])
   return (
     <div style={{
@@ -69,9 +73,9 @@ export default function Comments(props) {
           lineHeight="32px"
           as="span"
           marginBottom='20px'>
-          Comments
+          Comments{sort}
         </Text>
-        <DateUploaded></DateUploaded>
+        <DateUploaded sort={sort} setSort={setSort} getCommentsDate={getCommentsDate}></DateUploaded>
       </Flex>
       <Card direction='column' w='100%' p='0px' bgColor='transparent' >
         <Box>
@@ -87,13 +91,6 @@ export default function Comments(props) {
                   _hover={{ bgColor: 'rgba(228, 228, 228, 0.1)' }}
                 >
                   <Avatar h='48px' w='48px' src={item.img} me='14px' mr="14px" />
-                  <Box onClick={() => {
-                    getComments(gpId, ' ', ' ', sort).then((res) => {
-                      setCommentsDate(res.data.data.records)
-                    })
-                  }}>
-                    More
-                  </Box>
                   <Box>
                     <Box fontSize="13px" >
                       <Text as="span" color="#5F75EE">{item.userName}</Text>
@@ -118,6 +115,23 @@ export default function Comments(props) {
             })
           }
         </Box>
+        {CommentsDate.length > 7 ? (!commentShow ?
+          <Box
+            textAlign="center"
+            cursor="pointer"
+            mt="4"
+            mb="4"
+            color="#5F75EE"
+            onClick={() => {
+              setCommentShow(true);
+              setPageSize(" ");
+              getCommentsDate();
+
+            }}>
+            View More 
+          </Box> : '')
+
+          : ''}
         <BraftEditor
           contentStyle={{ height: 100 }}
           language="en"
@@ -126,7 +140,6 @@ export default function Comments(props) {
             border: '1px solid rgba(225, 225, 225, 0.2)',
             marginBottom: '20px'
           }}
-          MaxLength="5"
           onChange={(editorState) => {
             setContent(editorState)
           }}
@@ -150,14 +163,34 @@ export default function Comments(props) {
               });
               return
             }
+            let str = content.toHTML().replace(/<[^>]+>|&[^>]+;/g, "").trim();
+            if (str.length < 10 || str.length > 500) {
+              toast({
+                title: `comment length should be above 10 and below 500 characters`,
+                position: "top",
+                status: "warning",
+                isClosable: true,
+                duration: 1500,
+              });
+            }
             writeComment(content.toHTML(), gpId, grId, parentId, rootParentId, "", uId).then((res) => {
               if (res.data.code == 200) {
-                setContent(" ");
-                getComments(gpId, page, pageSize, sort).then((res) => {
-                  setCommentsDate(res.data.data.records)
-                })
+                toast({
+                  title: `Comment successful`,
+                  position: "top",
+                  status: "success",
+                  duration: 1000,
+                });
+                setContent(BraftEditor.createEditorState('null'));
+                getCommentsDate();
               } else {
-
+                toast({
+                  title: `error`,
+                  position: "top",
+                  status: "error",
+                  isClosable: true,
+                  duration: 1500,
+                });
               }
             })
           }

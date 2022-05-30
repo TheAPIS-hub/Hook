@@ -22,8 +22,8 @@ import {
 } from "react-icons/md";
 
 export default function Banner(props) {
-  const { ...rest } = props;
-
+  const { setSort } = props
+  const sort = props.sort
   const textColor = useColorModeValue("secondaryGray.500", "white");
   const textHover = useColorModeValue(
     { color: "secondaryGray.900", bg: "unset" },
@@ -65,7 +65,7 @@ export default function Banner(props) {
         lineHeight='100%'
         onClick={onOpen1}
         borderRadius='16px'
-        {...rest}>
+      >
         <Flex style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -77,7 +77,10 @@ export default function Banner(props) {
             color: 'rgba(128,129,145,1)',
             fontSize: '14px',
             fontWeight: '700',
-          }}>Most Recent</Text>
+          }}
+          >
+            {sort == "desc" ? "Most Recent" : "Olders"}
+          </Text>
           <Icon as={MdKeyboardArrowDown} color={iconColor} w='24px' h='24px' />
         </Flex>
 
@@ -106,9 +109,24 @@ export default function Banner(props) {
           }}
           mb='10px'>
           <Flex align='center'>
-            <Text fontSize='sm' fontWeight='400'>
+            {sort == "desc" ? <Text fontSize='sm' fontWeight='400'
+              onClick={() => {
+                setSort("asc")
+                props.getCommentsDate()
+              }}
+            >
               Olders
-            </Text>
+            </Text> :
+              <Text fontSize='sm' fontWeight='400'
+                onClick={() => {
+                  setSort("desc")
+                  props.getCommentsDate()
+                }}
+              >
+                Most Recent
+              </Text>}
+
+
           </Flex>
         </MenuItem>
         {/* <MenuItem

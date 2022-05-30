@@ -17,6 +17,7 @@ import axie3 from "assets/img/avatars/axie3.png";
 import axie4 from "assets/img/avatars/axie4.png";
 import axieIcon from 'assets/img/avatars/axieIcon.png'
 import arrow from 'assets/img/users/arrow.png'
+import BigNumber from 'bignumber.js'
 import {
   getGameNormal
 } from '../../../../../../hook/hook'
@@ -27,36 +28,7 @@ export default function BuyAxie(props) {
     getGameNormal(address, 9, 1).then((res) => {
       setNormalDate(res.data.data)
     })
-
   }, [])
-  const earnList = [{
-    img: axie1,
-  }, {
-    img: axie2,
-
-  }, {
-    img: axie3,
-
-  }, {
-    img: axie4,
-
-  }, {
-    img: axie1,
-
-  }, {
-    img: axie2,
-
-  }, {
-    img: axie3,
-
-  }, {
-    img: axie4,
-
-  }, {
-    img: axie1,
-
-  }]
- 
   return (
     <div>
       <Text
@@ -103,7 +75,7 @@ export default function BuyAxie(props) {
                   <img src={axieIcon} style={{ width: "10px", height: "12px" }}></img>
                   <Text fontSize="10px" as="span">#{item.blockNo}</Text>
                 </Flex>
-                <Text color="#B2B3BD" fontSize="10px" >breed count 4</Text>
+                {/* <Text color="#B2B3BD" fontSize="10px" >breed count 4</Text> */}
               </Flex>
             </Flex>
             <Flex alignItems="center">
@@ -115,11 +87,12 @@ export default function BuyAxie(props) {
                     <Text className="symbol"></Text>
                   </Box>
                   <Text color="#B2B3BD">
-                     {0.004}
-                    </Text>
+                    0.004
+                    {/* {item.tokenTransfer[0].value/(Math.pow(10,item.tokenTransfer[0].tokenInfo.d))} */}
+                  </Text>
                 </Flex>
                 <Text>$8.23</Text>
-                <Text color="#B2B3BD">a minute ago</Text>
+                <Text color="#B2B3BD">{dateDiff((item.time)*1000, null)}</Text>
               </Flex>
               <Image height='20px' width='20px' src={arrow} ml="4"></Image>
             </Flex>

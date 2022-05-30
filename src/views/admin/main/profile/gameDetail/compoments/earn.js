@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 // Chakra imports
 import {
@@ -10,6 +10,7 @@ import {
   Box,
   Image,
   useToast,
+  Button
 } from "@chakra-ui/react";
 import Transfer from "components/dataDisplay/Transfer";
 import Card from "components/card/Card.js";
@@ -21,9 +22,8 @@ import avatar4 from "assets/img/avatars/avatar4.png";
 import smiley from "assets/img/users/smiley.png";
 import addIcon from "assets/img/users/addIcon.png";
 import amin from "assets/img/users/amin.gif";
-// import data from '@emoji-mart/data'
-// import 'emoji-mart/css/emoji-mart.css'
-// import { Picker } from 'emoji-mart'
+import { Picker } from 'emoji-mart'
+import data from '@emoji-mart/data'
 import {
   getGameIcons,
   userSetGameIcon,
@@ -38,232 +38,26 @@ export default function Earn(props) {
   const [animate, setAnimate] = useState(false)
   const [idx, setIdx] = useState('')
   const toast = useToast()
+  const [showEmojiModa, setShowEmojiModa] = useState(false)
+  const [emoji, setEmojia] = useState('')
+  function EmojiPicker(props) {
+    const ref = React.useRef();
+    React.useEffect(() => {
+      new Picker({ ...props, data, ref });
+    }, []);
+    return <div ref={ref} />;
+  }
+  const checkEmoji = (emoji, event) => {
+    setEmojia(emoji.native)
+  };
+  const ref = useRef()
   useEffect(() => {
+    new Picker({ data, ref })
     getGameIconByGpId(gpId).then((res) => {
       SetGameIcons(res.data.data.records)
     })
-    getGameItemsDatas('', '').then((res) => {
-
-    })
   }, [])
-  const earnList = [{
-    img: smiley,
-    isLike: true,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: false,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: false,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: false,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: true,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: false,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: true,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
 
-      ]
-  }, {
-    img: smiley,
-    isLike: false,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: false,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: false,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: false,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: false,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }, {
-    img: smiley,
-    isLike: false,
-    biddersimg:
-      [
-        avatar1,
-        avatar2,
-        avatar3,
-        avatar4,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1,
-        avatar1
-      ]
-  }]
   return (
     <div>
       <Text
@@ -337,6 +131,14 @@ export default function Earn(props) {
                           SetGameIcons(res.data.data.records)
                         })
                       } else {
+                        toast({
+                          title: res.data.msg,
+                          position: "top",
+                          status: "warning",
+                          isClosable: true,
+                          duration: 2000,
+                        });
+
                       }
                     })
                   }}
@@ -411,15 +213,46 @@ export default function Earn(props) {
         })} */}
       </Card>
       <Box pr="15px">
-        <Flex justifyContent='space-between' alignItems='center' w='100%' padding='20px 16px' mb="12px" borderRadius='16px' border='1px solid rgba(225, 225, 225, 0.2)'>
+        <Flex alignItems='center' w='100%' padding='20px 16px' mb="12px" borderRadius='16px' border='1px solid rgba(225, 225, 225, 0.2)'>
           <Box border='2px solid #353D59' h='48px' w='48px' borderRadius="50%" cursor="pointer"
+            onClick={() => {
+              setShowEmojiModa(!showEmojiModa)
+            }}
           >
             <Image src={addIcon} h='auto' w='auto' m="2px auto"></Image>
           </Box>
+          {showEmojiModa ? (
+            <Flex alignItems="center">
+              <Text fontSize="36px" margin="0 18px">
+                {emoji}
+              </Text>
+              
+              {emoji?
+               <Button
+               variant="brand"
+               width="60px"
+               bgColor="#6C5DD3"
+               height="20px"
+               fontWeight="500"
+               fontSize="18px"
+                onClick={() => {
+                }}
+              >OK</Button> : ''}
+
+            </Flex>
+          ) : ''}
+
         </Flex>
       </Box>
-      {/* <Picker  data={data} /> */}
-      {/* {/* <Picker  />  */}
+      {showEmojiModa ? <EmojiPicker
+        onEmojiSelect={(emoji, event) => { checkEmoji(emoji, event) }}
+        theme="dark"
+        native
+        emojiSize={25}
+        sheetSize={32}
+        data={data}
+
+      /> : ''}
     </div>
 
   );
