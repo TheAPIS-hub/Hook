@@ -139,8 +139,8 @@ export const writeComment = (
     uid,
   })
 }
-export const getGameIconByGpId = (gpId,uid) => {
-  return getGameIconsByGpId({ gpId,uid })
+export const getGameIconByGpId = (gpId,uId) => {
+  return getGameIconsByGpId({ gpId,uId })
 }
 
 export const likedStatus = (likedGpId, likedUserId, status) => {
@@ -159,6 +159,6 @@ export const getGameNormal = (address, limit, start) => {
 export const uploadGameIcon = (giId,icon) => {
   return uploadIcon({ giId, icon })
 }
-export const gameCommentLiked = (giId,status,uid) => {
-  return commentLiked({ giId,status,uid })
+export const gameCommentLiked = (grId,status,uid) => {
+  return commentLiked({ grId,status,uid })
 }

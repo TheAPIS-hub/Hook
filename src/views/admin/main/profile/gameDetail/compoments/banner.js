@@ -134,8 +134,18 @@ export default function Banner(props) {
             {isLike ?
               (
                 <Flex  
-                  width="100px"
-                  height="50px">
+                  width="22px"
+                  height="22px"
+                  cursor="pointer"
+                  onClick={() => {
+                    likedStatus(game.gpId, uId, 0).then((res) => {
+                      if (res.data.code == 200) {
+                        setIsLike(false)
+                      } else {
+                      }
+                    })
+                  }}
+                  >
                  <Image src={likedIcon}/>
                   <Text
                     color="#808191"
