@@ -30,7 +30,8 @@ import {
   userSetGameIcon,
   getGameItemsDatas,
   getGameIconByGpId,
-  uploadGameIcon
+  uploadGameIcon,
+  delUserSetGameIcon
 } from '../../../../../../hook/hook'
 
 export default function Earn(props) {
@@ -126,6 +127,17 @@ export default function Earn(props) {
                         isClosable: true,
                         duration: 1000,
                       });
+                      return
+                    }
+                    if(item.isLiked){
+                      delUserSetGameIcon(item.giId,'', gpId, uId).then((res) => {
+                        if (res.data.code == 200) {
+                          getGameIconByGpId(gpId,uId).then((res) => {
+                            SetGameIcons(res.data.data.records)
+                          })
+                        } else {
+                        }
+                      })
                       return
                     }
                     userSetGameIcon(item.giId, '', gpId, uId).then((res) => {
@@ -261,7 +273,7 @@ export default function Earn(props) {
                             duration: 1000,
                           });
                           setEmojia('');
-                          getGameIconByGpId(gpId).then((emojiRes) => {
+                          getGameIconByGpId(gpId,uId).then((emojiRes) => {
                             SetGameIcons(emojiRes.data.data.records)
                           })
                         }
@@ -282,6 +294,7 @@ export default function Earn(props) {
         native
         emojiSize={25}
         sheetSize={32}
+        emojiButtonColors="['rgba(102, 51, 153, .2)']"
         data={data}
 
       /> : ''}

@@ -36,7 +36,9 @@ import {
   getNormal,
   getTwitter,
   uploadIcon,
-  commentLiked
+  commentLiked,
+  tokenTokentransData,
+  delSetGameIcon
 } from '../api/game'
 // overview
 export const getMarketCapAndVolume = (type) => {
@@ -161,4 +163,10 @@ export const uploadGameIcon = (giId,icon) => {
 }
 export const gameCommentLiked = (grId,status,uid) => {
   return commentLiked({ grId,status,uid })
+}
+export const tokenTokentrans = (limit, start,tokenAddress) => {
+  return tokenTokentransData({limit, start,tokenAddress })
+}
+export const delUserSetGameIcon = ( giId, giuId, gpId, uid) => {
+  return delSetGameIcon({ giId, giuId, gpId, uid })
 }

@@ -13,13 +13,14 @@ import axie4 from 'assets/img/avatars/axie4.png'
 import axieIcon from 'assets/img/avatars/axieIcon.png'
 import arrow from 'assets/img/users/arrow.png'
 import BigNumber from 'bignumber.js'
-import { getGameNormal } from '../../../../../../hook/hook'
+import { getGameNormal ,tokenTokentrans} from '../../../../../../hook/hook'
 export default function BuyAxie(props) {
   const { address } = props
   const [normalDate, setNormalDate] = useState([])
   useEffect(() => {
-    getGameNormal(address, 9, 1).then((res) => {
-      setNormalDate(res.data.data)
+    tokenTokentrans(9, 1,address).then((res) => {
+      setNormalDate(res.data.data.data)
+      console.log("normalDate",normalDate);
     })
   }, [])
   return (
@@ -47,9 +48,10 @@ export default function BuyAxie(props) {
               borderRadius="16px"
               height="80px"
               pr="4"
+              pl="4"
             >
               <Flex>
-                <Image src={item.imgUrl}></Image>
+                {item.imageUrl?<Image maxWidth="100px" src={item.imageUrl}></Image>:''}
                 <Flex
                   flexDirection="column"
                   justifyContent="center"
@@ -89,8 +91,7 @@ export default function BuyAxie(props) {
                       <Text className="symbol"></Text>
                     </Box>
                     <Text color="#B2B3BD">
-                      0.004
-                      {/* {item.tokenTransfer[0].value/(Math.pow(10,item.tokenTransfer[0].tokenInfo.d))} */}
+                      {item.valueIsNft?item.valueIsNft:(item.value/(Math.pow(10,item.tokenInfo.d))).toFixed(2)}
                     </Text>
                   </Flex>
                   <Text>$8.23</Text>
