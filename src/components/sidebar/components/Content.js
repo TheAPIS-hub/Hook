@@ -33,7 +33,7 @@ function SidebarContent(props) {
         ps="20px"
         pe={{ md: '16px', '2xl': '0px' }}
         mt="60px"
-        mb="100px"
+        mb="80px"
         borderRadius="30px"
         position="fixed"
         bottom="20px"

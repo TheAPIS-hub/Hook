@@ -78,3 +78,40 @@
 //     box-shadow:none;
 // }
 
+.swipperBox {
+  .maskSwipper {
+    //   background: rgba(255, 255, 255, 0.7);
+
+    z-index: -1;
+    width: 50vw;
+    height: 25vw;
+    top: 0;
+    position: absolute;
+    z-index: 100;
+  }
+  .left {
+    background-image: linear-gradient(
+      to left,
+      rgba(12, 21, 56, 0),
+      rgba(12, 21, 56, 0.7)
+    );
+    left: -25vw;
+  }
+  .right {
+    background-image: linear-gradient(
+      to left,
+      rgba(12, 21, 56, 0.7),
+      rgba(12, 21, 56, 0)
+    );
+    right: -25vw;
+  }
+  .swiper-container {
+    width: 750px !important;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    //   overflow: hidden ;
+  }
+  .swiper-slide {
+    width: 300px !important;
+  }
+}

@@ -20,7 +20,7 @@ export default function TrendingGames({ gameData }) {
   //   const [TrendingData, setTrendingData] = useState(gameData)
   //   console.log(gameData)
   return (
-    <Box marginTop="74px" width="100%">
+    <Box marginTop="74px" width="100%" className="afterShandow">
       <Box
         style={{
           color: ' rgba(255,255,255,1)',
@@ -81,12 +81,15 @@ export default function TrendingGames({ gameData }) {
                     fontWeight: '400',
                     textAlign: 'left',
                     lineHeight: '16px',
+                    lineClamp: 3,
+                    overflow: 'hidden',
                   }}
                   width="15vw"
                   fontSize="0.6vw"
-                  overflow="hidden"
-                  maxH="2.3vw"
-                  textOverflow="ellipsis"
+                  //   overflow="hidden"
+                  //   //   maxH="2.3vw"
+                  //   textOverflow="ellipsis"
+                  className="rankText"
                 >
                   {item.gameIntroduction}
                 </Box>

@@ -28,12 +28,39 @@
 }
 .chatFrame:hover {
   background: #3f8cffa3 !important;
-  
+  .chatFullText {
+    color: #fff !important;
+  }
 }
-.chatFullText:hover{
-  color: #fff !important;
-
+.chatFullText:hover {
+  //   color: #fff !important;
 }
 .note-masonry-grid_column {
   width: 30% !important;
+}
+.rankText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.afterShandow {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    // background-color: #fff;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+    background: linear-gradient(
+      to top,
+      rgba(12, 21, 56, 1),
+      rgba(12, 21, 56, 0)
+    );
+  }
+}
+.css-xl71ch {
+  display: flex;
 }

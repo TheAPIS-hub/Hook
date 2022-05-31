@@ -46,3 +46,27 @@
 .VIewBtn:hover {
   background: rgba(117, 81, 255, 0.7) !important;
 }
+.swipperBox .maskSwipper {
+  z-index: -1;
+  width: 50vw;
+  height: 25vw;
+  top: 0;
+  position: absolute;
+  z-index: 100;
+}
+.swipperBox .left {
+  background-image: linear-gradient(to left, rgba(12, 21, 56, 0), rgba(12, 21, 56, 0.7));
+  left: -25vw;
+}
+.swipperBox .right {
+  background-image: linear-gradient(to left, rgba(12, 21, 56, 0.7), rgba(12, 21, 56, 0));
+  right: -25vw;
+}
+.swipperBox .swiper-container {
+  width: 750px !important;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.swipperBox .swiper-slide {
+  width: 300px !important;
+}

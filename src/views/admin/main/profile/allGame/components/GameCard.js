@@ -58,19 +58,21 @@ export default function GameCard({ gameData }) {
       }}
     >
       <Flex
-           alignItems= 'start'
+        alignItems="start"
         justifyContent="space-between"
-        marginBottom= '32px'
+        marginBottom="32px"
       >
-        <Text   style={{
-          color: ' rgba(255,255,255,1)',
-          fontSize: '24px',
-          fontWeight: ' 500',
-          textAlign: 'left',
-        }}>
-Trending games
+        <Text
+          style={{
+            color: ' rgba(255,255,255,1)',
+            fontSize: '24px',
+            fontWeight: ' 500',
+            textAlign: 'left',
+          }}
+        >
+          Trending games
         </Text>
-       
+
         <DateUploaded chooseSort={chooseSort}></DateUploaded>
       </Flex>
       {/* <Box
@@ -144,8 +146,8 @@ Trending games
                       borderRadius="24px"
                       src={item?.imgs[0].url}
                       alt=""
-                      width='17vw'
-                      height='8vw'
+                      width="17vw"
+                      height="8vw"
                     />
                   </Box>
                   <Box
@@ -285,7 +287,7 @@ Trending games
                       </Box>
                     </Box>
                   </Box>
-                  <HSeparator background='#fff5f514'></HSeparator>
+                  <HSeparator background="#fff5f514"></HSeparator>
                   <Box
                     style={{
                       display: 'flex',
@@ -332,22 +334,43 @@ Trending games
                       >
                         Alpha
                       </Box>
-                      <Icon
-                        as={MdHelpOutline}
-                        color="#808191"
-                        w={{
-                          base: '16px',
-                          md: '14px',
-                          xl: '16px',
-                          '2xl': '20px',
-                        }}
-                        h={{
-                          base: '16px',
-                          md: '14px',
-                          xl: '16px',
-                          '2xl': '20px',
-                        }}
-                      />
+                      <Menu>
+                        <MenuButton p="0px">
+                          <Icon
+                            as={MdHelpOutline}
+                            color="#808191"
+                            w={{
+                              base: '16px',
+                              md: '14px',
+                              xl: '16px',
+                              '2xl': '20px',
+                            }}
+                            h={{
+                              base: '16px',
+                              md: '14px',
+                              xl: '16px',
+                              '2xl': '20px',
+                            }}
+                          />
+                        </MenuButton>
+                        <MenuList
+                          p="0px"
+                          background="var(--chakra-colors-navy-900)"
+                          borderRadius="20px"
+                          border="none"
+                        >
+                          <Flex w="100%" mb="0px">
+                            <Text
+                              p="10px 20px"
+                              w="100%"
+                              fontSize="sm"
+                              fontWeight="700"
+                            >
+                              Initial release date：March 2018
+                            </Text>
+                          </Flex>
+                        </MenuList>
+                      </Menu>
                     </Box>
                     <Box
                       style={{

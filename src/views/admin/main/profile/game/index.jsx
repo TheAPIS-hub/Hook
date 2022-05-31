@@ -311,40 +311,66 @@ export default function Track(props) {
     },
   ])
   const swiper = () => {
+    // new Swiper('.swiper-container1', {
+    //   effect: 'coverflow',
+    //   loop: true,
+
+    //   grabCursor: true,
+    //   centeredSlides: true,
+    //   slidesPerView: 2,
+    //   spaceBetween: -200,
+    //   coverflowEffect: {
+    //     rotate: 0,
+    //     stretch: 0,
+    //     depth: 500,
+    //     modifier: 1,
+    //     slideShadows: true,
+    //   },
+    //   navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    //   },
+    //   breakpoints: {
+    //     1024: {
+    //       slidesPerView: 4,
+    //       spaceBetween: 40,
+    //     },
+    //     768: {
+    //       slidesPerView: 1,
+    //       spaceBetween: 30,
+    //     },
+    //     640: {
+    //       slidesPerView: 1,
+    //       spaceBetween: 0,
+    //     },
+    //     320: {
+    //       slidesPerView: 1,
+    //       spaceBetween: 0,
+    //     },
+    //   },
+    // })
     new Swiper('.swiper-container1', {
+      loop: true,
+      //   speed: 1000,
+      //   autoplay: {
+      //     delay: 3000,
+      //   },
       effect: 'coverflow',
       grabCursor: true,
       centeredSlides: true,
-      slidesPerView: 2,
-      spaceBetween: -200,
+      slidesPerView: 'auto',
       coverflowEffect: {
         rotate: 0,
-        stretch: 0,
-        depth: 500,
+        stretch: 80,
+        depth: 200,
         modifier: 1,
-        slideShadows: true,
+        slideShadows: false,
       },
+
+      // Navigation arrows
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 40,
-        },
-        768: {
-          slidesPerView: 1,
-          spaceBetween: 30,
-        },
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
       },
     })
   }
@@ -358,7 +384,15 @@ export default function Track(props) {
     })
   }, [])
   return (
-    <Box transform="scale(0.8)" marginTop="-20px">
+    <Box
+      className="swipperBox"
+      transform="scale(0.8)"
+      marginTop="-20px"
+      position="relative"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+    >
       <Box
         style={{
           display: 'flex',
@@ -366,9 +400,10 @@ export default function Track(props) {
           justifyContent: 'center',
           margin: 'auto',
           position: 'relative',
+          width: '100%',
         }}
       >
-        <Box className="Gaming">GAME and beyond</Box>
+        <Box className="Gaming">GAMES and beyond</Box>
         <Box
           className="CreateBtn"
           style={{
@@ -392,7 +427,7 @@ export default function Track(props) {
         </Box>
       </Box>
 
-      <Box className=" challenge">From GAME to GAME and beyond.</Box>
+      <Box className=" challenge">From GAME to GAMES and beyond.</Box>
       <Box className=" challengeText">
         Takes you on a journey to explore bigger crypto game worlds, all in one.
       </Box>
@@ -400,11 +435,16 @@ export default function Track(props) {
         <Box
           className="swiper-container1"
           style={{
-            width: '733px',
+            width: '1000px',
             display: 'flex',
-            marginLeft: ' 212px',
+            // marginLeft: ' 212px',
+            overflow: 'hidden',
+            position: 'relative',
+            // left: '3vw',
           }}
         >
+          <Box className="maskSwipper left "></Box>
+          <Box className="maskSwipper right"></Box>
           <Box className="swiper-wrapper">
             {swiperData.length &&
               swiperData.map((item, index) => {
@@ -493,7 +533,7 @@ export default function Track(props) {
                             background: '#7551FF',
                             color: 'rgba(255,255,255,1)',
                             fontSize: '16px',
-                            fontWeight: '400',
+                            fontWeight: '900',
                             textAlign: ' center',
                             lineHeight: '52px',
                             marginTop: '13px',
@@ -517,7 +557,7 @@ export default function Track(props) {
           </Box>
         </Box>
       </Flex>
-      <Link href="#/admin/profile/allGame">
+      <Link href="#/admin/profile/allGame" marginRight="35px">
         <Box
           className="VIewBtn"
           style={{
@@ -528,7 +568,7 @@ export default function Track(props) {
             margin: 'auto',
             color: ' rgba(255,255,255,1)',
             fontSize: ' 21.84px',
-            fontWeight: '400',
+            fontWeight: '600',
             textAlign: 'center',
             lineHeight: '71.76px',
             marginTop: '113.24px',
