@@ -75,6 +75,10 @@ export default function HeaderLinks(props) {
       })
       getEthPrice().then((res) => {
         setEthPrice(res?.data?.data?.marketPairs[0]?.price?.toFixed(2))
+        localStorage.setItem(
+          'ethPrice',
+          res?.data?.data?.marketPairs[0]?.price?.toFixed(2)
+        )
       })
     }, 10000)
   }, [])

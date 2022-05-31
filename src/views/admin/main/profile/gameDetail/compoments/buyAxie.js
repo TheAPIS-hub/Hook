@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from 'react'
 
 // Chakra imports
-import { Flex, Image, Text, Box } from '@chakra-ui/react'
-import { dateDiff } from './until.js'
+import {
+  Flex,
+  Image,
+  Text,
+  Box,
+  Icon,
+  useColorModeValue,
+} from '@chakra-ui/react'
+import { dateDiff, toThousands } from './until.js'
 import Transfer from 'components/dataDisplay/Transfer'
 import Card from 'components/card/Card.js'
+import { MdLanguage } from 'react-icons/md'
 // Assets
 import axie1 from 'assets/img/avatars/axie1.png'
 import axie2 from 'assets/img/avatars/axie2.png'
@@ -13,14 +21,20 @@ import axie4 from 'assets/img/avatars/axie4.png'
 import axieIcon from 'assets/img/avatars/axieIcon.png'
 import arrow from 'assets/img/users/arrow.png'
 import BigNumber from 'bignumber.js'
-import { getGameNormal ,tokenTokentrans} from '../../../../../../hook/hook'
+import { getGameNormal, tokenTokentrans } from '../../../../../../hook/hook'
 export default function BuyAxie(props) {
+  const textColorSecondary = useColorModeValue('secondaryGray.700', 'white')
+
   const { address } = props
   const [normalDate, setNormalDate] = useState([])
+  const [ethPrice, setEthPrice] = useState(0)
   useEffect(() => {
-    tokenTokentrans(9, 1,address).then((res) => {
+    setInterval(() => {
+      setEthPrice(localStorage.getItem('ethPrice') ?? 0)
+    }, 10000)
+    tokenTokentrans(9, 1, address).then((res) => {
       setNormalDate(res.data.data.data)
-      console.log("normalDate",normalDate);
+      console.log('normalDate', normalDate)
     })
   }, [])
   return (
@@ -51,7 +65,11 @@ export default function BuyAxie(props) {
               pl="4"
             >
               <Flex>
-                {item.imageUrl?<Image maxWidth="100px" src={item.imageUrl}></Image>:''}
+                {item.imageUrl ? (
+                  <Image width="70px" height="70px" src={item.imageUrl} />
+                ) : (
+                  ''
+                )}
                 <Flex
                   flexDirection="column"
                   justifyContent="center"
@@ -71,10 +89,11 @@ export default function BuyAxie(props) {
                       margin: '5px 0 10px 0',
                     }}
                   >
-                    <img
+                    {/* <img style={{ width: '10px', height: '12px' }}></img> */}
+                    <Image
                       src={axieIcon}
                       style={{ width: '10px', height: '12px' }}
-                    ></img>
+                    />
                     <Text fontSize="10px" as="span">
                       #{item.blockNo}
                     </Text>
@@ -91,15 +110,38 @@ export default function BuyAxie(props) {
                       <Text className="symbol"></Text>
                     </Box>
                     <Text color="#B2B3BD">
-                      {item.valueIsNft?item.valueIsNft:(item.value/(Math.pow(10,item.tokenInfo.d))).toFixed(2)}
+                      {new BigNumber(item.ethValue).toFixed(2)}
                     </Text>
                   </Flex>
-                  <Text>$8.23</Text>
+                  <Text>
+                    $
+                    {toThousands(
+                      new BigNumber(new BigNumber(item.ethValue).toFixed(2))
+                        .times(ethPrice)
+                        .toString()
+                    )}
+                    {/* {ethPrice} */}
+                  </Text>
                   <Text color="#B2B3BD">
                     {dateDiff(item.time * 1000, null)}
                   </Text>
                 </Flex>
-                
+              </Flex>
+              <Flex>
+                <Text
+                  onClick={() => {
+                    window.open(`https://etherscan.io/tx/${item.txid}`)
+                  }}
+                  cursor="pointer"
+                >
+                  <Icon
+                    h="30px"
+                    w="30px"
+                    me="20px"
+                    as={MdLanguage}
+                    color={textColorSecondary}
+                  />
+                </Text>
               </Flex>
 
               {/* <Box fontSize="10px">

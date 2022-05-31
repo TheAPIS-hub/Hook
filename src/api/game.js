@@ -43,7 +43,7 @@ export async function commentLiked(params) {
   return await axios.post(`${DefaultUrl}/game/commentLiked`, params)
 }
 export async function tokenTokentransData(params) {
-  return await axios.get(`${DefaultUrl}/game/tokenTokentrans`, {params})
+  return await axios.get(`${DefaultUrl}/game/tokenTokentrans`, { params })
 }
 
 export async function delSetGameIcon(params) {
