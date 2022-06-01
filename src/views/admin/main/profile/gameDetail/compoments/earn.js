@@ -68,7 +68,7 @@ export default function Earn(props) {
         fontWeight=" 500"
         textAlign="left"
         lineHeight="32px"
-        marginBottom="20px"
+        marginBottom="10px"
       >
         React to earn
       </Text>
@@ -87,7 +87,7 @@ export default function Earn(props) {
               justifyContent="space-between"
               alignItems="center"
               w="100%"
-              padding="20px 16px"
+              padding="15px 16px"
               mb="12px"
               borderRadius="16px"
               border="1px solid rgba(225, 225, 225, 0.2)"
@@ -103,10 +103,10 @@ export default function Earn(props) {
                   border={
                     item.isLiked ? '2px solid #0049C6' : '2px solid #353D59'
                   }
-                  fontSize="38px"
+                  fontSize="36px"
                   justifyContent="center"
                   alignItems="center"
-                  pt="4px"
+                  pt="2px"
                   className={idx == index ? (animate ? 'animate' : '') : ''}
                   data-idx={`${index}`}
                   onClick={(e) => {
@@ -196,58 +196,31 @@ export default function Earn(props) {
             </Flex>
           )
         })}
-        {/* {earnList.map((item, key) => {
-          return (
-            <Flex
-              key={key}
-              justifyContent='space-between'
-              alignItems='center'
-              w='100%'
-              padding='20px 16px'
-              mb="12px"
-              borderRadius='16px'
-              border='1px solid rgba(225, 225, 225, 0.2)'>
-              <Box>
-                <Avatar
-                  h='48px'
-                  w='48px'
-                  src={item.icon}
-                  me='14px'
-                  border={item.isLike ? '2px solid #0049C6' : '2px solid #353D59'}
-                  p="6px"
-                  bg="transparent"
-                  cursor="pointer"
-                />
-                <Image src={amin}></Image>
-              </Box>
-             
-            </Flex>
-          )
-        })} */}
       </Card>
       <Box pr="15px">
         <Flex
           alignItems="center"
           w="100%"
-          padding="20px 16px"
+          padding="15px 16px"
           mb="12px"
           borderRadius="16px"
           border="1px solid rgba(225, 225, 225, 0.2)"
         >
-          <Box
+          {showEmojiModa?'':( <Box
             border="2px solid #353D59"
             h="48px"
             w="48px"
             borderRadius="50%"
             cursor="pointer"
             onClick={() => {
+              setEmojia('')
               setShowEmojiModa(!showEmojiModa)
             }}
           >
-            <Image src={addIcon} h="auto" w="auto" m="2px auto"></Image>
-          </Box>
+           <Image src={addIcon} h="auto" w="auto" m="2px auto"></Image>
+          </Box>)}
           {showEmojiModa ? (
-            <Flex alignItems="center">
+            <Flex alignItems="center" justifyContent="space-between" width="100%">
               <Text fontSize="36px" margin="0 18px">
                 {emoji}
               </Text>
@@ -282,6 +255,7 @@ export default function Earn(props) {
                           duration: 1000,
                         })
                         setEmojia('')
+                        setShowEmojiModa(!showEmojiModa)
                         getGameIconByGpId(gpId, uId).then((emojiRes) => {
                           SetGameIcons(emojiRes.data.data.records)
                         })

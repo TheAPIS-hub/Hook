@@ -22,8 +22,8 @@ import {
 } from "react-icons/md";
 
 export default function Banner(props) {
-  const { setSort } = props
-  const sort = props.sort
+  const { SetsortField } = props
+  const sortField = props.sortField
   const textColor = useColorModeValue('secondaryGray.500', 'white')
   const textHover = useColorModeValue(
     { color: 'secondaryGray.900', bg: 'unset' },
@@ -51,6 +51,7 @@ export default function Banner(props) {
     onClose: onClose1,
   } = useDisclosure();
 
+const list=[ {value:'ALL',param:'All'}, {value:'MOST HOT',param:'Most Hot'},{value:'RECENT',param:'Recent'}, {value:'PASS HOLDER',param:'Pass Holder'}];
   return (
     <Menu isOpen={isOpen1} onClose={onClose1}>
       <MenuButton
@@ -78,11 +79,10 @@ export default function Banner(props) {
             fontWeight: '700',
           }}
           >
-            {sort == "desc" ? "MOST RECENT" : "OLDERS"}
+            {sortField}
           </Text>
           <Icon as={MdKeyboardArrowDown} color={iconColor} w='24px' h='24px' />
         </Flex>
-
       </MenuButton>
       <MenuList
         w='200px'
@@ -94,60 +94,38 @@ export default function Banner(props) {
         boxShadow={bgShadow}
         borderRadius='20px'
         p='15px'>
-        <MenuItem
-          transition="0.2s linear"
-          borderRadius="8px"
-          color={textColor}
-          _hover={textHover}
-          _active={{
-            bg: 'transparent',
-          }}
-          _focus={{
-            bg: 'transparent',
-          }}
-          mb="10px"
-          p="0 15px"
-          mb='10px'>
-          <Flex align='center'>
-            {sort == "desc" ? <Text fontSize='sm' fontWeight='400'
+           {
+          list.map((item, key) => {
+            return (
+              <MenuItem
+              transition="0.2s linear"
+              borderRadius="8px"
+              color={textColor}
+              _hover={textHover}
+              _active={{
+                bg: 'transparent',
+              }}
+              _focus={{
+                bg: 'transparent',
+              }}
+              mb="10px"
+              p="0 15px"
+              mb='10px'
+              key={key}
               onClick={() => {
-                setSort("asc")
+                SetsortField(item.param)
                 props.getCommentsDate()
               }}
-            >
-              OLDERS
-            </Text> :
-              <Text fontSize='sm' fontWeight='400'
-                onClick={() => {
-                  setSort("desc")
-                  props.getCommentsDate()
-                }}
               >
-                MOST RECENT
-              </Text>}
-
-
-          </Flex>
-        </MenuItem>
-        {/* <MenuItem
-          transition='0.2s linear'
-          p='0px'
-          borderRadius='8px'
-          color={textColor}
-          _hover={textHover}
-          _active={{
-            bg: "transparent",
-          }}
-          _focus={{
-            bg: "transparent",
-          }}
-          mb='10px'>
-          <Flex align='center'>
-            <Text fontSize='sm' fontWeight='400'>
-            Most Liked
-            </Text>
-          </Flex>
-        </MenuItem> */}
+              <Flex align='center'>
+                {item.value}
+              </Flex>
+            </MenuItem>
+           
+              
+              )
+            })
+          }
       </MenuList>
     </Menu>
   );

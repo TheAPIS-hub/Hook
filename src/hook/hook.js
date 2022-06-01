@@ -116,8 +116,8 @@ export const getTags = (address) => {
 export const getGameItemsDatas = (page, pageSize, sortField) => {
   return getGameItemsData({ page, pageSize, sortField })
 }
-export const getComments = (gpId, page, pageSize, sort,uId) => {
-  return getCommentsDate({ gpId, page, pageSize, sort,uId})
+export const getComments = (gpId, page, pageSize, sort,sortField,uId) => {
+  return getCommentsDate({ gpId, page, pageSize, sort,sortField,uId})
 }
 export const getGameIcons = () => {
   return getGameIcon()

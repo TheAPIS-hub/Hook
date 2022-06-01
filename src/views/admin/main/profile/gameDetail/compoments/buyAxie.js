@@ -47,7 +47,7 @@ export default function BuyAxie(props) {
         lineHeight="32px"
         margin="55px 0 30px 0"
       >
-        Buy Axie
+        Trading Activies 
       </Text>
       <Card direction="column" w="100%" p="0px" bgColor="transparent">
         {normalDate.length > 0 &&

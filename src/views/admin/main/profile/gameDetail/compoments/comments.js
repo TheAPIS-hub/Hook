@@ -50,12 +50,13 @@ export default function Comments(props) {
   const [rootParentId, setRootParentId] = useState("")
   const [page, setPage] = useState("")
   const [pageSize, setPageSize] = useState("7")
-  const [sort, setSort] = useState("desc")
+  const [sort, setSort] = useState("")
   const toast = useToast();
   const [commentShow, setCommentShow] = useState(false)
-
+  const [sortField, SetsortField] = useState("ALL")
+  //
   const getCommentsDate = () => {
-    getComments(gpId, page, pageSize, sort, uId).then((res) => {
+    getComments(gpId, page, pageSize, sort,sortField, uId).then((res) => {
       setCommentsDate(res.data.data.records)
     })
   };
@@ -66,7 +67,7 @@ export default function Comments(props) {
     <div style={{
       background: "#111C44",
       borderRadius: "24px",
-      margin: "45px 0 45px",
+      margin: "62px 0 45px",
       padding: "32px 16px"
     }}>
       <Flex justifyContent="space-between" mb="12px">
@@ -80,7 +81,7 @@ export default function Comments(props) {
           marginBottom='20px'>
           Comments
         </Text>
-        <DateUploaded sort={sort} setSort={setSort} getCommentsDate={getCommentsDate}></DateUploaded>
+        <DateUploaded sortField={sortField} SetsortField={SetsortField} getCommentsDate={getCommentsDate}></DateUploaded>
       </Flex>
       <Card direction='column' w='100%' p='0px' bgColor='transparent' >
         <Box>
@@ -192,7 +193,7 @@ export default function Comments(props) {
             color="#5F75EE"
             onClick={() => {
               setCommentShow(true);
-              getComments(gpId, page, '', sort, uId).then((res) => {
+              getComments(gpId, page, '', sort,sortField,uId).then((res) => {
                 setCommentsDate(res.data.data.records)
               })
             }}>

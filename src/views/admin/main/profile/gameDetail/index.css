@@ -11,7 +11,7 @@
 }
 .yscroll {
   overflow-y: auto;
-  max-height: 827px;
+  max-height: 746px;
   padding: 10px 0 !important;
   padding-right: 10px !important;
 }
@@ -52,4 +52,7 @@
   50% {
     transform: scale(1);
   }
+}
+em-emoji-picker {
+  --rgb-background: 17, 28, 67;
 }

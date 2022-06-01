@@ -208,9 +208,9 @@ export default function Banner(props) {
       </Box>
       <Flex
         bg="rgba(228, 228, 228, 0.1)"
-        margin="45px 0"
+        margin="62px 0"
         borderRadius="16px"
-        flexDirection={{ base: 'column;', xl: "inherit", }}>
+        flexDirection={{ base: 'inherit;', xl: "inherit"}}>
         <Box
           width={{
             base: '100%',
@@ -218,8 +218,8 @@ export default function Banner(props) {
           }}
           p={{
             base: '10px 0 10px 10px',
-            xl: "20px 0 20px 20px",
-            '2xl': "20px 0 20px 60px",
+            xl: "30px 0 30px 20px",
+            '2xl': "30px 0 20px 60px",
           }}
           borderRight="1px solid rgba(228, 228, 228, 0.1)"
         >
@@ -230,8 +230,9 @@ export default function Banner(props) {
           <Text fontSize={{
             base: 'xl',
             xl: "xl",
-            "2xl": "xl"
+            "2xl": "32px"
           }}
+            mt="10px"
             fontWeight="600"
             fontFamily="Poppins"
             letterSpacing="-1px">
@@ -243,8 +244,8 @@ export default function Banner(props) {
           xl: "40%",
         }} p={{
           base: '10px 0 10px 10px',
-          xl: "20px 0 20px 20px",
-          '2xl': "20px 0 20px 60px",
+          xl: "30px 0 30px 20px",
+          '2xl': "30px 0 20px 60px",
         }}
           borderRight="1px solid rgba(228, 228, 228, 0.1)">
           <Flex>
@@ -255,8 +256,9 @@ export default function Banner(props) {
             fontSize={{
               base: 'xl',
               xl: "xl",
-              "2xl": "xl"
+              "2xl": "32px"
             }}
+            mt="10px"
             fontWeight="600"
             letterSpacing="-1px"
             fontFamily="Poppins"
@@ -272,8 +274,8 @@ export default function Banner(props) {
           }}
           p={{
             base: '10px 0 10px  10px',
-            xl: "20px 0 20px 11%",
-          }}>
+            xl: "30px 0 30px 11%",
+          }}> 
           <Flex>
             <Image width="16px" height="16px" mr="8px" src={soldIcon}></Image>
             <Text fontSize="12px" color="#808191">CirculatingSupply</Text>
@@ -282,8 +284,9 @@ export default function Banner(props) {
             fontSize={{
               base: 'xl',
               xl: "xl",
-              "2xl": "xl"
+              "2xl": "32px"
             }}
+            mt="10px"
             fontWeight="600"
             letterSpacing="-1px"
             fontFamily="Poppins"
