@@ -107,7 +107,6 @@ export default function Earn(props) {
                   fontSize={{base:"30px","2xl":"36px"}}
                   justifyContent="center"
                   alignItems="center"
-                  pt="1"
                   className={idx == index ? (animate ? 'animate' : '') : ''}
                   data-idx={`${index}`}
                   onClick={(e) => {
@@ -157,7 +156,7 @@ export default function Earn(props) {
                   }}
                 >
                   {/* {item.icon} */}
-                  <Text data-idx={`${index}`}>
+                  <Text height={{base:"41px","2xl":"52px"}} data-idx={`${index}`}>
                     {' '}
                     {BASE64.decrypt(item.icon)}
                   </Text>
