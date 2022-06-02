@@ -11,6 +11,18 @@ import React, { useState } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import routes from 'routes.js'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import { Icon } from '@chakra-ui/react'
+import {
+  MdHome,
+  MdLock,
+  MdSpaceDashboard,
+  MdDashboard,
+  MdAssessment,
+  MdAccountCircle,
+  MdBrokenImage,
+  MdLineWeight,
+  MdMenu,
+} from 'react-icons/md'
 
 // Custom Chakra theme
 export default function Dashboard(props) {
@@ -132,18 +144,27 @@ export default function Dashboard(props) {
           //     alert(1)
           //     setIsShowSidebar(!isShowSidebar)
           //   }}
-          position="absolute"
-          left="100px"
-          zIndex="999"
+          position="fixed"
+          left={isShowSidebar ? '57px' : '240px'}
+          zIndex="99999"
           cursor="pointer"
           onClick={() => {
             // alert(1)
             setIsShowSidebar(!isShowSidebar)
             localStorage.setItem('isShowSidebar', !isShowSidebar)
           }}
+          top={isShowSidebar ? '130px' : '68px'}
         >
+          <Icon
+            fontSize="20px"
+            as={MdMenu}
+            width={isShowSidebar ? '20px' : '30px'}
+            height={isShowSidebar ? '20px' : '30px'}
+            color="inherit"
+          />
           {/* {isShowSidebar ? 'switch' : '关'} */}
-          switch
+          {/* MdLineWeight */}
+          {/* switch */}
         </Box>
         <Box
           float="right"

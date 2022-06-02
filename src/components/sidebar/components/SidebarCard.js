@@ -10,10 +10,12 @@ import {
   Link,
 } from '@chakra-ui/react'
 import LineChart from 'components/charts/LineChart'
+import { useHistory } from 'react-router-dom'
 import Vector from '../../../assets/img/logo/Vector.png'
 // Custom components
 export default function SidebarDocs() {
   const bgColor = 'linear-gradient(135deg, #868CFF 0%, #4318FF 100%)'
+  const history = useHistory()
 
   return (
     <Flex
@@ -28,6 +30,10 @@ export default function SidebarDocs() {
       width="228px"
       height="190px"
       //   marginTop='240px'
+      cursor="pointer"
+      onClick={() => {
+        history.push({ pathname: '/pass' })
+      }}
     >
       <Flex
         width="94px"
@@ -47,14 +53,9 @@ export default function SidebarDocs() {
         />
       </Flex>
       <Flex marginTop="26px" marginBottom="10px" textAlign="center">
-        <Link
-          fontSize="16px"
-          color="#FFFFFF"
-          fontWeight="700"
-          href="https://www.theapis.xyz/hook-pass"
-        >
+        <Text fontSize="16px" color="#FFFFFF" fontWeight="700">
           Get Hook Pass
-        </Link>
+        </Text>
       </Flex>
       <Flex textAlign="center" width="221px">
         <Text

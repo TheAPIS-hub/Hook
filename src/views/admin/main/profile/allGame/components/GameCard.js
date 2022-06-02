@@ -26,6 +26,7 @@ import Headers from '../../../../../../assets/img/logo/Header.png'
 import gameThree from '../../../../../../assets/img/logo/gameThree.png'
 import { useHistory } from 'react-router-dom'
 import { getGameItemsDatas } from '../../../../../../hook/hook'
+import { formatNumber } from '../../../../../../hook/untils'
 import { MdHelpOutline, MdKeyboardArrowDown } from 'react-icons/md'
 import Masonry from 'react-masonry-css'
 export default function GameCard({ gameData }) {
@@ -199,7 +200,7 @@ export default function GameCard({ gameData }) {
                         }}
                         fontSize="0.3vw"
                       >
-                        {item.twitterFollower} followers
+                        {formatNumber(item.twitterFollower)} followers
                       </Box>
                       {/* <Box
                       style={{
@@ -219,7 +220,7 @@ export default function GameCard({ gameData }) {
                         }}
                         fontSize="0.6vw"
                       >
-                        {item.activeUsers} players
+                        {formatNumber(item.activeUsers)} players
                       </Box>
                     </Box>
                     <Box
