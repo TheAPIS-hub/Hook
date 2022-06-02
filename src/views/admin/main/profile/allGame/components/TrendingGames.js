@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react'
 import '../index.css'
 import gameThree from '../../../../../../assets/img/logo/gameThree.png'
+
 export default function TrendingGames({ gameData }) {
   //   const [TrendingData, setTrendingData] = useState(gameData)
   //   console.log(gameData)

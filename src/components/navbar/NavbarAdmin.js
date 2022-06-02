@@ -15,6 +15,7 @@ import AdminNavbarLinks from 'components/navbar/NavbarLinksAdmin'
 
 export default function AdminNavbar(props) {
   const [scrolled, setScrolled] = useState(false)
+  const [isShowSidebar, setIsShowSidebar] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', changeNavbar)
@@ -45,6 +46,10 @@ export default function AdminNavbar(props) {
       setScrolled(false)
     }
   }
+
+  useEffect(() => {
+    setIsShowSidebar(localStorage.getItem('isShowSidebar'))
+  }, [localStorage.getItem('isShowSidebar')])
 
   return (
     <Box
@@ -82,13 +87,24 @@ export default function AdminNavbar(props) {
       pt="8px"
       top={{ base: '12px', md: '16px', xl: '18px' }}
       paddingLeft="0px !important"
-      w={{
-        base: 'calc(100vw - 6%)',
-        md: 'calc(100vw - 8%)',
-        lg: 'calc(100vw - 6%)',
-        xl: 'calc(100vw - 350px)',
-        '2xl': 'calc(100vw - 365px)',
-      }}
+      w={
+        !isShowSidebar
+          ? {
+              base: '87vw',
+              md: '87vw',
+              lg: '87vw',
+              xl: '88vw',
+              '2xl': '91vw',
+            }
+          : {
+              base: 'calc(100vw - 6%)',
+              md: 'calc(100vw - 8%)',
+              lg: 'calc(100vw - 6%)',
+              xl: 'calc(100vw - 350px)',
+              '2xl': 'calc(100vw - 365px)',
+            }
+      }
+      //   background="yellow"
       zIndex="9"
     >
       <Flex
@@ -115,7 +131,9 @@ export default function AdminNavbar(props) {
             </BreadcrumbItem>
           </Breadcrumb> */}
           {/* Here we create navbar brand, based on route name */}
-          {['Game', 'Overview', 'Track', 'Drop'].includes(brandText) ? (
+          {['Game', 'Overview', 'Track', 'Drop', 'SearchErr'].includes(
+            brandText
+          ) ? (
             ''
           ) : (
             <Box
@@ -139,7 +157,7 @@ export default function AdminNavbar(props) {
                 window.history.back()
               }}
             >
-              <b className='iconfont'>&#xe6a7;</b>
+              <b className="iconfont">&#xe6a7;</b>
             </Box>
           )}
         </Box>

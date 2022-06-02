@@ -146,7 +146,7 @@ export default function GameCard({ gameData }) {
                       borderRadius="24px"
                       src={item?.imgs[0].url}
                       alt=""
-                      width="17vw"
+                      width="100%"
                       height="8vw"
                     />
                   </Box>

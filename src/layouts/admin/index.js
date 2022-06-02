@@ -4,6 +4,8 @@ import Footer from 'components/footer/FooterAdmin.js'
 // Layout components
 import Navbar from 'components/navbar/NavbarAdmin.js'
 import Sidebar from 'components/sidebar/Sidebar.js'
+import SidebarSm from 'components/sidebarSm/SidebarSm'
+
 import { SidebarContext } from 'contexts/SidebarContext'
 import React, { useState } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
@@ -15,6 +17,7 @@ export default function Dashboard(props) {
   const { ...rest } = props
   // states and functions
   const [fixed] = useState(false)
+  const [isShowSidebar, setIsShowSidebar] = useState(false)
   const [toggleSidebar, setToggleSidebar] = useState(false)
   // functions for changing the states from components
   const getRoute = () => {
@@ -119,7 +122,29 @@ export default function Dashboard(props) {
           setToggleSidebar,
         }}
       >
-        <Sidebar routes={routes} display="none" {...rest} />
+        {isShowSidebar ? (
+          <SidebarSm routes={routes} display="none" {...rest} />
+        ) : (
+          <Sidebar routes={routes} display="none" {...rest} />
+        )}
+        <Box
+          //   onclick={() => {
+          //     alert(1)
+          //     setIsShowSidebar(!isShowSidebar)
+          //   }}
+          position="absolute"
+          left="100px"
+          zIndex="999"
+          cursor="pointer"
+          onClick={() => {
+            // alert(1)
+            setIsShowSidebar(!isShowSidebar)
+            localStorage.setItem('isShowSidebar', !isShowSidebar)
+          }}
+        >
+          {/* {isShowSidebar ? 'switch' : '关'} */}
+          switch
+        </Box>
         <Box
           float="right"
           minHeight="100vh"
@@ -127,8 +152,16 @@ export default function Dashboard(props) {
           overflow="auto"
           position="relative"
           maxHeight="100%"
-          w={{ base: '100%', xl: 'calc( 100% - 290px )' }}
-          maxWidth={{ base: '100%', xl: 'calc( 100% - 290px )' }}
+          w={
+            isShowSidebar
+              ? { base: '100%', xl: 'calc( 100% - 100px )' }
+              : { base: '100%', xl: 'calc( 100% - 290px )' }
+          }
+          maxWidth={
+            isShowSidebar
+              ? { base: '100%', xl: 'calc( 100% - 100px )' }
+              : { base: '100%', xl: 'calc( 100% - 290px )' }
+          }
           transition="all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)"
           transitionDuration=".2s, .2s, .35s"
           transitionProperty="top, bottom, width"
@@ -138,7 +171,7 @@ export default function Dashboard(props) {
             <Box>
               <Navbar
                 onOpen={onOpen}
-                logoText={'Horizon UI Dashboard PRO'}
+                logoText={'HOOK'}
                 brandText={getActiveRoute(routes)}
                 secondary={getActiveNavbar(routes)}
                 message={getActiveNavbarText(routes)}

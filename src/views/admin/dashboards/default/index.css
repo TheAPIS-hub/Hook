@@ -10,7 +10,7 @@
 .dataBox .css-wiypqd[aria-selected='true'],
 .dataBox .css-wiypqd[data-selected] {
   color: #fff;
-  background-image: linear-gradient(to bottom, #868CFF, #4318FF) !important;
+  background-image: linear-gradient(to bottom, #868cff, #4318ff) !important;
 }
 .dataBox .css-wiypqd {
   color: #fff !important;
@@ -37,7 +37,7 @@
   margin-top: 0px !important;
 }
 .icon-Overview {
-  font-size: 18px;
+  font-size: 18px !important;
 }
 .ethPriceIcon {
   font-size: 14px !important;
@@ -82,11 +82,11 @@
   background: var(--chakra-colors-whiteAlpha-200) !important;
 }
 .HeaderSearchBar button,
-.HeaderSearchBar [role="button"] {
+.HeaderSearchBar [role='button'] {
   cursor: unset;
 }
 .TrendingBtn button,
-.TrendingBtn [role="button"] {
+.TrendingBtn [role='button'] {
   cursor: unset;
 }
 .TrendingBtn .css-1ivyhsy:active,
@@ -99,7 +99,7 @@
   background: var(--chakra-colors-whiteAlpha-200) !important;
 }
 .DeFiBtn button,
-.DeFiBtn [role="button"] {
+.DeFiBtn [role='button'] {
   cursor: unset;
 }
 .DeFiBtn .css-1inn410:active,
@@ -112,7 +112,7 @@
   background: var(--chakra-colors-whiteAlpha-200) !important;
 }
 .NFTTrendingBtn button,
-.NFTTrendingBtn [role="button"] {
+.NFTTrendingBtn [role='button'] {
   cursor: unset;
 }
 .NFTTrendingBtn .css-1inn410:active,

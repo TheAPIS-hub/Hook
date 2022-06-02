@@ -93,7 +93,7 @@ export default function Track(props) {
                     setSearchHeats(inputValue.toLowerCase())
                     history.push({ pathname: '/admin/info' })
                   } else {
-                    alert('false')
+                    history.push({ pathname: '/admin/profile/searcherr' })
                   }
                 }
               })

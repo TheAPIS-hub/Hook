@@ -64,6 +64,7 @@ import SignInDefault from 'views/auth/signIn/SignInDefault.jsx'
 import SignUpCentered from 'views/auth/signUp/SignUpCentered.jsx'
 import SignUpDefault from 'views/auth/signUp/SignUpDefault.jsx'
 import AllGamePage from 'views/admin/main/profile/allGame/index.jsx'
+import SearchErr from 'views/admin/main/profile/searchErr/index'
 
 import VerificationCentered from 'views/auth/verification/VerificationCentered.jsx'
 import VerificationDefault from 'views/auth/verification/VerificationDefault.jsx'
@@ -547,7 +548,16 @@ const routes = [
   //   ],
   // },
   // ---NFT ---
-
+  {
+    name: 'SearchErr',
+    layout: '/admin',
+    path: '/profile/searcherr',
+    icon: <></>,
+    component: SearchErr,
+    collapse: false,
+    isShow: false,
+    items: [],
+  },
   // --- Drop ---
   {
     name: 'Drop',
@@ -700,6 +710,7 @@ const routes = [
     isShow: false,
     items: [],
   },
+
   {
     name: 'gameDetail',
     layout: '/admin',
