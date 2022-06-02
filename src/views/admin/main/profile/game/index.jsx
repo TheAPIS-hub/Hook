@@ -443,8 +443,6 @@ export default function Track(props) {
             // left: '3vw',
           }}
         >
-          <Box className="maskSwipper left "></Box>
-          <Box className="maskSwipper right"></Box>
           <Box className="swiper-wrapper">
             {swiperData.length &&
               swiperData.map((item, index) => {
@@ -476,9 +474,8 @@ export default function Track(props) {
                             width: '96px',
                             height: '26px',
                             borderRadius: '8px',
-                            opacity: '0.5',
                             background: '#6C5DD3',
-                            color: '#5CF54F',
+                            color: '#beb9ff',
                             fontSize: '14px',
                             textAlign: ' center',
                             lineHeight: ' 26px',

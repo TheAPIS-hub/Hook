@@ -65,6 +65,7 @@ import SignUpCentered from 'views/auth/signUp/SignUpCentered.jsx'
 import SignUpDefault from 'views/auth/signUp/SignUpDefault.jsx'
 import AllGamePage from 'views/admin/main/profile/allGame/index.jsx'
 import SearchErr from 'views/admin/main/profile/searchErr/index'
+import Pass from 'views/pass'
 
 import VerificationCentered from 'views/auth/verification/VerificationCentered.jsx'
 import VerificationDefault from 'views/auth/verification/VerificationDefault.jsx'
@@ -558,6 +559,8 @@ const routes = [
     isShow: false,
     items: [],
   },
+  // --- Pass ---
+
   // --- Drop ---
   {
     name: 'Drop',
