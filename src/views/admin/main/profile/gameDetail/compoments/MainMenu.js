@@ -24,6 +24,7 @@ import {
 export default function Banner(props) {
   const { SetsortField } = props
   const sortField = props.sortField
+  const chooseSort=props.chooseSort
   const textColor = useColorModeValue('secondaryGray.500', 'white')
   const textHover = useColorModeValue(
     { color: 'secondaryGray.900', bg: 'unset' },
@@ -65,13 +66,17 @@ const list=[ {value:'ALL',param:'All'}, {value:'MOST HOT',param:'Most Hot'},{val
         lineHeight='100%'
         onClick={onOpen1}
         borderRadius='16px'
+        justifyContent='space-between'
+
       >
         <Flex style={{
           display: 'flex',
-          justifyContent: 'space-between',
           padding: '0px 24px',
           boxSizing: ' border-box',
-          alignItems: 'center'
+          alignItems: 'center',
+          justifyContent:'space-between',
+          width:'100%'
+
         }}>
           <Text style={{
             color: 'rgba(128,129,145,1)',
@@ -114,7 +119,7 @@ const list=[ {value:'ALL',param:'All'}, {value:'MOST HOT',param:'Most Hot'},{val
               key={key}
               onClick={() => {
                 SetsortField(item.param)
-                props.getCommentsDate()
+                chooseSort(item.param);
               }}
               >
               <Flex align='center'>

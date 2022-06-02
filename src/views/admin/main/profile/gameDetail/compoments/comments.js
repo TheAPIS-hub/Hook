@@ -62,7 +62,12 @@ export default function Comments(props) {
   };
   useEffect(() => {
     getCommentsDate()
-  }, [])
+  }, []) 
+ const chooseSort = (sortField) => {
+    getComments(gpId, page, pageSize, sort,sortField, uId).then((res) => {
+      setCommentsDate(res.data.data.records)
+    })
+  }
   return (
     <div style={{
       background: "#111C44",
@@ -81,7 +86,7 @@ export default function Comments(props) {
           marginBottom='20px'>
           Comments
         </Text>
-        <DateUploaded sortField={sortField} SetsortField={SetsortField} getCommentsDate={getCommentsDate}></DateUploaded>
+        <DateUploaded sortField={sortField} SetsortField={SetsortField} chooseSort={chooseSort}></DateUploaded>
       </Flex>
       <Card direction='column' w='100%' p='0px' bgColor='transparent' >
         <Box>

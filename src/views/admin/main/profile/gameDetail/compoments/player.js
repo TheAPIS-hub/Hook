@@ -3,10 +3,10 @@ import styles from './player.css'
 
 export default function Players({ src }) {
   return (
-    <div className={styles.videobox}>
+    <div className={styles.videobox} style={{ height: '100%' }}>
       <iframe
         width="100%"
-        height="492"
+        height="100%"
         src={src}
         title="Hook"
         frameborder="0"

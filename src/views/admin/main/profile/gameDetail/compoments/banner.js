@@ -31,7 +31,7 @@ import { Link } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { toThousands } from './until.js';
 import { FcLike } from "react-icons/fc";
-import { formatNumber } from '../../../../../../hook/untils'
+import { formatNumber ,abc} from '../../../../../../hook/untils'
 import likedIcon from 'assets/img/users/liked.png'
 import {
   likedStatus
@@ -62,22 +62,24 @@ export default function Banner(props) {
         marginBottom='20px'>
         Overview
       </Text>
-      <Box bg="#111C44" borderRadius="32px">
+      <Box bg="#111C44"  borderRadius="22px">
         <div>
           <Box
-            maxH="720px"
             width="100%"
             backgroundColor="rgba(17,28,68,1)"
-            borderRadius="32px"
-            width="100%"
+            borderRadius="22px"
+            overflow="hidden"
+            height={{ base: "400px", xl: "400px", "2xl": "492px"}}
+            position="relative"
           >
-            <Box >
-              <Players width="100%" src={game.videos[0].url}></Players>
-            </Box>
+              <Players width="100%"  bordeRadius='32px' src={game.videos[0].url}></Players>
           </Box>
         </div>
         <Box
-          p={{ md: "20px 10px", "2xl": "40px 49px 23px 32px" }}
+          p={{ base: '24px auto',
+          md: "20px 10px",
+          xl: '30px 36px 18px 24px ',
+          "2xl": "40px 49px 23px 32px"}}
           borderBottom="1px solid  rgba(228, 228, 228,0.1)">
           <Badge
             variant="solid"
@@ -89,15 +91,15 @@ export default function Banner(props) {
             bg="#7FBA7A" >
             {game.version}
           </Badge>
-          <Text as="p" fontWeight="500" fontSize="32px" m="12px 0 14px 0">{game.name}</Text>
+          <Text as="p" fontWeight="500" fontSize="1.6vw" m="12px 0 14px 0">{game.name}</Text>
           <Flex
             justifyContent="space-between"
             flexDirection={{ base: "column", xl: "row" }} >
             <Flex alignItems="center">
               <Box>
-                <Image src={game.imgs[0].url} width="82px" height="82px" borderRadius="50%"></Image>
+                <Image src={game.imgs[0].url} width="4.2vw" height="4.2vw" borderRadius="50%"></Image>
               </Box>
-              <Box ml="24px" fontSize="18px" fontWeight="500">
+              <Box ml="24px" fontSize="0.95vw" fontWeight="500">
                 <Flex m="8px 0">
                   <Text mr="9px" lineHeight="24px">{game.twtter}</Text>
                   <Image src={twitter} width="26px" height="26px" mr="35px"></Image>
@@ -111,12 +113,20 @@ export default function Banner(props) {
             <Box>
               <Button
                 variant="brand"
-                width="180px"
+                width={{
+                  base: '144px',
+                  xl: '144px',
+                  '2xl': '194px',
+                }}
                 bgColor="#6C5DD3"
-                height="56px"
-                m="32px auto"
+                height="2.8vw"
+                h={{
+                  base: '54px',
+                  xl: '54px',
+                  '2xl': '72px',
+                }}
                 fontWeight="500"
-                fontSize="25.2px"
+                fontSize="1.3vw"
                 onClick={() => {
                   window.open(game.gameUrl)
                 }}
@@ -129,7 +139,10 @@ export default function Banner(props) {
             </Box>
           </Flex>
         </Box>
-        <Flex p="25px 34px">
+        <Flex p={{
+          base: '14px 34px',
+          '2xl':'25px 34px',
+        }}>
           <Stack direction="row" wrap="wrap" spacing={4} align-items="center">
             {isLike ?
               (
@@ -210,7 +223,7 @@ export default function Banner(props) {
         bg="rgba(228, 228, 228, 0.1)"
         margin="62px 0"
         borderRadius="16px"
-        flexDirection={{ base: 'inherit;', xl: "inherit"}}>
+        flexDirection={{ base: 'inherit;', xl: "inherit",sm:"column"}}>
         <Box
           width={{
             base: '100%',
@@ -218,7 +231,7 @@ export default function Banner(props) {
           }}
           p={{
             base: '10px 0 10px 10px',
-            xl: "30px 0 30px 20px",
+            xl: "25px 0 25px 20px",
             '2xl': "30px 0 20px 60px",
           }}
           borderRight="1px solid rgba(228, 228, 228, 0.1)"
@@ -244,7 +257,7 @@ export default function Banner(props) {
           xl: "40%",
         }} p={{
           base: '10px 0 10px 10px',
-          xl: "30px 0 30px 20px",
+          xl: "25px 0 25px 20px",
           '2xl': "30px 0 20px 60px",
         }}
           borderRight="1px solid rgba(228, 228, 228, 0.1)">
@@ -274,7 +287,8 @@ export default function Banner(props) {
           }}
           p={{
             base: '10px 0 10px  10px',
-            xl: "30px 0 30px 11%",
+            xl: "25px 0 25px 11%",
+            '2xl': "30px 0 20px 11%",
           }}> 
           <Flex>
             <Image width="16px" height="16px" mr="8px" src={soldIcon}></Image>
@@ -345,7 +359,7 @@ export default function Banner(props) {
               margin="15px 0"
             >
               <Button
-                width="109px"
+                width="140px"
                 height="41px"
                 border="1px solid rgba(225 225 225 / 0.5)"
                 borderRadius="12px"
@@ -370,7 +384,7 @@ export default function Banner(props) {
                   voteFun(!isVote)
                 }}
               >
-                👍 &nbsp;&nbsp;Good
+                👍 &nbsp;&nbsp;To da moon
               </Button>
               <Button
                 width="109px"
@@ -402,7 +416,7 @@ export default function Banner(props) {
                 >
                   👍&nbsp;&nbsp;
                 </Text>
-                Bad
+                Ngmi
               </Button>
             </Flex>
           </Box>}

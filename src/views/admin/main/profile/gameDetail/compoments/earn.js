@@ -78,6 +78,7 @@ export default function Earn(props) {
         p="0px"
         bgColor="transparent"
         className="yscroll"
+        height={{base:"600px","2xl":"746px"}}
       >
         {/* {gameIcons} */}
         {gameIcons.map((item, index) => {
@@ -87,15 +88,15 @@ export default function Earn(props) {
               justifyContent="space-between"
               alignItems="center"
               w="100%"
-              padding="15px 16px"
+              padding={{base:"10px 16px","2xl":"15px 16px"}}
               mb="12px"
               borderRadius="16px"
               border="1px solid rgba(225, 225, 225, 0.2)"
             >
               <Box position="relative">
                 <Flex
-                  h="48px"
-                  w="48px"
+                  h={{base:"40px","2xl":"48px"}}
+                  w={{base:"40px","2xl":"48px"}}
                   me="14px"
                   bg="#0c1437"
                   cursor="pointer"
@@ -103,10 +104,10 @@ export default function Earn(props) {
                   border={
                     item.isLiked ? '2px solid #0049C6' : '2px solid #353D59'
                   }
-                  fontSize="36px"
+                  fontSize={{base:"30px","2xl":"36px"}}
                   justifyContent="center"
                   alignItems="center"
-                  pt="2px"
+                  pt="1"
                   className={idx == index ? (animate ? 'animate' : '') : ''}
                   data-idx={`${index}`}
                   onClick={(e) => {
@@ -189,7 +190,7 @@ export default function Earn(props) {
               >
                 {item.userIcons
                   ? item.userIcons.map((avt, key) => (
-                      <Avatar key={key} src={avt} />
+                      <Avatar key={key} w={{base:"28px","2xl":"32px"}} height={{base:"28px","2xl":"32px"}} src={avt.userIcon} />
                     ))
                   : ''}
               </AvatarGroup>
@@ -201,15 +202,15 @@ export default function Earn(props) {
         <Flex
           alignItems="center"
           w="100%"
-          padding="15px 16px"
+          padding="10px 16px"
           mb="12px"
           borderRadius="16px"
           border="1px solid rgba(225, 225, 225, 0.2)"
         >
-          {showEmojiModa?'':( <Box
+          {emoji?'':( <Box
             border="2px solid #353D59"
-            h="48px"
-            w="48px"
+            h={{base:"40px","2xl":"48px"}}
+            w={{base:"40px","2xl":"48px"}}
             borderRadius="50%"
             cursor="pointer"
             onClick={() => {
@@ -217,11 +218,11 @@ export default function Earn(props) {
               setShowEmojiModa(!showEmojiModa)
             }}
           >
-           <Image src={addIcon} h="auto" w="auto" m="2px auto"></Image>
+           <Image src={addIcon}  w={{base:"28px","2xl":"38px"}} m="2px auto"></Image>
           </Box>)}
-          {showEmojiModa ? (
+          {showEmojiModa&&emoji?(
             <Flex alignItems="center" justifyContent="space-between" width="100%">
-              <Text fontSize="36px" margin="0 18px">
+              <Text fontSize="30px" margin="0 10px">
                 {emoji}
               </Text>
 
@@ -274,22 +275,24 @@ export default function Earn(props) {
           )}
         </Flex>
       </Box>
-      {showEmojiModa ? (
-        <EmojiPicker
-          onEmojiSelect={(emoji, event) => {
-            checkEmoji(emoji, event)
-          }}
-          theme="dark"
-          bgColor="red"
-          native
-          emojiSize={25}
-          sheetSize={32}
-          emojiButtonColors="['rgba(102, 51, 153, .2)']"
-          data={data}
+         <Box>
+          {showEmojiModa ? (
+            <EmojiPicker
+              onEmojiSelect={(emoji, event) => {
+                checkEmoji(emoji, event)
+              }}
+              theme="dark"
+              bgColor="red"
+              native
+              emojiSize={25}
+              sheetSize={32}
+              emojiButtonColors="['rgba(102, 51, 153, .2)']"
+              data={data}
         />
       ) : (
         ''
       )}
+            </Box>
     </div>
   )
 }

@@ -45,7 +45,7 @@ export default function BuyAxie(props) {
         fontWeight=" 500"
         textAlign="left"
         lineHeight="32px"
-        margin="55px 0 30px 0"
+        margin={{base:"45px 0 26px 0","2xl":"55px 0 30px 0"}}
       >
         Trading Activies 
       </Text>
@@ -60,13 +60,13 @@ export default function BuyAxie(props) {
               w="100%"
               mb="12px"
               borderRadius="16px"
-              height="80px"
+              height={{ base: '72px', '2xl': '80px' }}
               pr="4"
               pl="4"
             >
               <Flex>
                 {item.imageUrl ? (
-                  <Image width="70px" height="70px" src={item.imageUrl} />
+                  <Image width="50px" height="50px" src={item.imageUrl} />
                 ) : (
                   ''
                 )}
@@ -109,15 +109,15 @@ export default function BuyAxie(props) {
                       <Text className="symbol"></Text>
                       <Text className="symbol"></Text>
                     </Box>
-                    <Text color="#B2B3BD">
+                    <Text >
                       {new BigNumber(item.ethValue).toFixed(2)}
                     </Text>
                   </Flex>
-                  <Text>
+                  <Text color="#B2B3BD">
                     $
                     {toThousands(
                       new BigNumber(new BigNumber(item.ethValue).toFixed(2))
-                        .times(ethPrice)
+                        .times(ethPrice).toFixed(2)
                         .toString()
                     )}
                     {/* {ethPrice} */}
@@ -126,8 +126,18 @@ export default function BuyAxie(props) {
                     {dateDiff(item.time * 1000, null)}
                   </Text>
                 </Flex>
+                <Image 
+                  src={arrow} 
+                  w="20px"
+                  height="20px"
+                  ml="2"
+                  cursor="pointer"
+                  onClick={() => {
+                    window.open(`https://etherscan.io/tx/${item.txid}`)
+                  }}
+                 ></Image>
               </Flex>
-              <Flex>
+              {/* <Flex>
                 <Text
                   onClick={() => {
                     window.open(`https://etherscan.io/tx/${item.txid}`)
@@ -142,7 +152,7 @@ export default function BuyAxie(props) {
                     color={textColorSecondary}
                   />
                 </Text>
-              </Flex>
+              </Flex> */}
 
               {/* <Box fontSize="10px">
               <Flex justifyContent="space-between">
