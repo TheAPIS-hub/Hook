@@ -4,7 +4,7 @@
 .chakra-stack {
   align-items: center;
 }
-.css-tafvlg .chakra-avatar__excess.css-11fb1j9 {
+.chakra-avatar__excess.css-11fb1j9 {
   width: 43px;
   height: 43px;
   z-index: 1;
@@ -57,4 +57,10 @@ em-emoji-picker {
 }
 .bf-dropdown .dropdown-content-inner {
   background-color: #0b1437 !important;
+}
+@media screen and (max-width: 1440px) {
+  .chakra-avatar__excess.css-11fb1j9 {
+    width: 32px;
+    height: 32px;
+  }
 }

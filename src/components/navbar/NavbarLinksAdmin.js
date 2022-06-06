@@ -102,6 +102,8 @@ export default function HeaderLinks(props) {
                 localStorage.setItem('uId', infoRes.data.data.uid)
               }
             })
+          }else{
+           localStorage.setItem('uId', '')
           }
         } else {
           setIsLogin(false)
@@ -118,7 +120,9 @@ export default function HeaderLinks(props) {
               localStorage.setItem('uId', infoRes.data.data.uid)
             }
           })
-        }
+        }else{
+          localStorage.setItem('uId', '')
+         }
       } else {
         setIsLogin(false)
       }
