@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const DefaultUrl = 'https://api.hook.cool'
+const DefaultUrl = 'https://api.hook.cool:8890'
 // const DefaultUrl = 'http://devhook.natapp1.cc/'
 export async function getFigureData(params) {
   return await axios.get(`${DefaultUrl}/mini/getFigureData`, {
