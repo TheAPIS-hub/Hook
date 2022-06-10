@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 // Chakra imports
 import {
@@ -19,10 +19,26 @@ import DefaultAuth from 'layouts/auth/types/Default'
 // Assets
 import illustration from 'assets/img/auth/sign.svg'
 
+import { resetPasswords } from '../../../hook/hook'
+import { useHistory } from 'react-router-dom'
+
 function ForgotPassword() {
+  const history = useHistory()
   // Chakra color mode
   const textColor = useColorModeValue('navy.700', 'white')
   const brandStars = useColorModeValue('brand.500', 'brand.400')
+  const [uId, setUid] = useState('')
+  const [password, setPassword] = useState('')
+  useEffect(() => {
+    setUid(window.location.href.split('default/')[1])
+  }, [])
+  const reset = () => {
+    resetPasswords(uId, password).then((res) => {
+      if (res.data.code == '200') {
+        history.push({ pathname: '/auth/sign-in/default' })
+      }
+    })
+  }
   return (
     <DefaultAuth illustrationBackground={illustration} image={illustration}>
       <Flex
@@ -76,6 +92,9 @@ function ForgotPassword() {
               placeholder="Your account password"
               mb="24px"
               size="lg"
+              onChange={(e) => {
+                setPassword(e.target.value)
+              }}
             />
             <Button
               fontSize="14px"
@@ -84,6 +103,7 @@ function ForgotPassword() {
               w="100%"
               h="50"
               mb="24px"
+              onClick={reset}
             >
               Unlock
             </Button>

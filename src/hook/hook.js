@@ -24,6 +24,7 @@ import {
   logout,
   emailCode,
   forgotPassword,
+  resetPassword,
 } from '../api/user'
 import {
   getGameItemsData,
@@ -38,7 +39,7 @@ import {
   uploadIcon,
   commentLiked,
   tokenTokentransData,
-  delSetGameIcon
+  delSetGameIcon,
 } from '../api/game'
 // overview
 export const getMarketCapAndVolume = (type) => {
@@ -116,8 +117,8 @@ export const getTags = (address) => {
 export const getGameItemsDatas = (page, pageSize, sortField) => {
   return getGameItemsData({ page, pageSize, sortField })
 }
-export const getComments = (gpId, page, pageSize, sort,sortField,uId) => {
-  return getCommentsDate({ gpId, page, pageSize, sort,sortField,uId})
+export const getComments = (gpId, page, pageSize, sort, sortField, uId) => {
+  return getCommentsDate({ gpId, page, pageSize, sort, sortField, uId })
 }
 export const getGameIcons = () => {
   return getGameIcon()
@@ -141,8 +142,8 @@ export const writeComment = (
     uid,
   })
 }
-export const getGameIconByGpId = (gpId,uId) => {
-  return getGameIconsByGpId({ gpId,uId })
+export const getGameIconByGpId = (gpId, uId) => {
+  return getGameIconsByGpId({ gpId, uId })
 }
 
 export const likedStatus = (likedGpId, likedUserId, status) => {
@@ -158,15 +159,18 @@ export const userSetGameIcon = (giId, giuId, gpId, uid) => {
 export const getGameNormal = (address, limit, start) => {
   return getNormal({ address, limit, start })
 }
-export const uploadGameIcon = (giId,icon) => {
+export const uploadGameIcon = (giId, icon) => {
   return uploadIcon({ giId, icon })
 }
-export const gameCommentLiked = (grId,status,uid) => {
-  return commentLiked({ grId,status,uid })
+export const gameCommentLiked = (grId, status, uid) => {
+  return commentLiked({ grId, status, uid })
 }
-export const tokenTokentrans = (limit, start,tokenAddress) => {
-  return tokenTokentransData({limit, start,tokenAddress })
+export const tokenTokentrans = (limit, start, tokenAddress) => {
+  return tokenTokentransData({ limit, start, tokenAddress })
 }
-export const delUserSetGameIcon = ( giId, giuId, gpId, uid) => {
+export const delUserSetGameIcon = (giId, giuId, gpId, uid) => {
   return delSetGameIcon({ giId, giuId, gpId, uid })
+}
+export const resetPasswords = (uId, password) => {
+  return resetPassword({ uId, password })
 }

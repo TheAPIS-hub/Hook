@@ -79,3 +79,8 @@ export async function forgotPassword(params) {
     ...params,
   })
 }
+export async function resetPassword(params) {
+  return await axios.post(`${DefaultUrl}/user/resetPassword`, {
+    ...params,
+  })
+}
