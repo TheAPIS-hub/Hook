@@ -9,11 +9,11 @@ import Comments from './compoments/comments'
 export default function GameDetail(props) {
   const game=JSON.parse(localStorage.getItem("game"));
   return (
-    <Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
+    <Box pt={{ base: '130px', md: '80px', xl: '80px' }} >
       <Grid
         mb='20px'
         gridTemplateColumns={{ xl: "repeat(3, 1fr)", "2xl": "1fr 0.46fr" }}
-        gap={{ base: "30px", xl: "30px" ,'2xl': "40px"}}
+        gap={{ base: "20px", xl: "20px" ,'2xl': "42px"}}
         display={{ base: "block", xl: "grid" }}>
         <Flex
           flexDirection='column'

@@ -69,11 +69,12 @@ export default function Comments(props) {
     })
   }
   return (
-    <div style={{
+    <Box 
+    padding={{ base: "30px 28px", "2xl": "40px 39.68px"}}
+    style={{
       background: "#111C44",
       borderRadius: "24px",
-      margin: "62px 0 45px",
-      padding: "32px 16px"
+      margin: "30px 0 45px",
     }}>
       <Flex justifyContent="space-between" mb="12px">
         <Text
@@ -272,7 +273,7 @@ export default function Comments(props) {
           }
         > Write comment</Button>
       </Card>
-    </div >
+    </Box >
 
 
   );

@@ -68,7 +68,7 @@ export default function Banner(props) {
             backgroundColor="rgba(17,28,68,1)"
             borderRadius="22px"
             overflow="hidden"
-            height={{ base: '400px', xl: '400px', '2xl': '492px' }}
+            height={{ base: '385px', xl: '385px', '2xl': '492px' }}
             position="relative"
           >
             <Players
@@ -257,7 +257,7 @@ export default function Banner(props) {
           }}
           p={{
             base: '10px 0 10px 10px',
-            xl: '25px 0 25px 20px',
+            xl: '25px 0 25px 32px',
             '2xl': '30px 0 20px 60px',
           }}
           borderRight="1px solid rgba(228, 228, 228, 0.1)"
@@ -285,12 +285,12 @@ export default function Banner(props) {
         <Box
           width={{
             base: '100%',
-            xl: '40%',
+            xl: '42%',
           }}
           p={{
             base: '10px 0 10px 10px',
             xl: '25px 0 25px 20px',
-            '2xl': '30px 0 20px 60px',
+            '2xl': '30px 0 20px 55px',
           }}
           borderRight="1px solid rgba(228, 228, 228, 0.1)"
         >
@@ -326,12 +326,12 @@ export default function Banner(props) {
         <Box
           width={{
             base: '100%',
-            xl: '25%',
+            xl: '30%',
           }}
           p={{
             base: '10px 0 10px  10px',
-            xl: '25px 0 25px 11%',
-            '2xl': '30px 0 20px 11%',
+            xl: '25px 0 25px 8%',
+            '2xl': '30px 0 20px 8%',
           }}
         >
           <Flex>
@@ -356,10 +356,13 @@ export default function Banner(props) {
         </Box>
       </Flex>
       <Flex
-        border="1px solid rgba(228, 228, 228, 0.1)"
+        borderTop="1px solid rgba(228, 228, 228, 0.1)"
         borderRight="0px"
         borderLeft="0px"
-        padding="40px 0"
+        padding={{
+          base: '25px 0 20px',
+          '2xl': '39px 0',
+        }}
         justifyContent="space-between"
       >
         {isVote ? (

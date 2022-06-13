@@ -34,7 +34,6 @@ export default function BuyAxie(props) {
     }, 10000)
     tokenTokentrans(9, 1, address).then((res) => {
       setNormalDate(res.data.data.data)
-      console.log('normalDate', normalDate)
     })
   }, [])
   return (
@@ -60,13 +59,13 @@ export default function BuyAxie(props) {
               w="100%"
               mb="12px"
               borderRadius="16px"
-              height={{ base: '72px', '2xl': '80px' }}
+              height={{ base: '68px', '2xl': '80px' }}
               pr="4"
               pl="4"
             >
               <Flex>
                 {item.imageUrl ? (
-                  <Image width="50px" height="50px" src={item.imageUrl} />
+                  <Image width={{ base: '45x', '2xl': '50px' }} height={{ base: '45px', '2xl': '50px' }} src={item.imageUrl} />
                 ) : (
                   ''
                 )}

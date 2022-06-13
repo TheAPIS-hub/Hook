@@ -8,6 +8,8 @@
   width: 43px;
   height: 43px;
   z-index: 1;
+  font-size: 16px;
+  font-weight: 700;
 }
 .yscroll {
   overflow-y: auto;
@@ -55,12 +57,19 @@
 em-emoji-picker {
   --rgb-background: 17, 28, 67;
 }
-.bf-dropdown .dropdown-content-inner {
+.bf-dropdown .dropdown-content-inner,.bf-controlbar [data-title]:after {
+  background-color: #0b1437 !important;
+}
+.bf-controlbar [data-title]:before{
+  border-bottom-color: #0b1437 !important;
+}
+.bf-dropdown .dropdown-content .dropdown-arrow{
   background-color: #0b1437 !important;
 }
 @media screen and (max-width: 1440px) {
   .chakra-avatar__excess.css-11fb1j9 {
     width: 32px;
     height: 32px;
+    font-size: 12px;
   }
 }

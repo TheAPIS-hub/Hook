@@ -78,7 +78,7 @@ export default function Earn(props) {
         p="0px"
         bgColor="transparent"
         className="yscroll"
-        height={{base:"600px","2xl":"746px"}}
+        height={{base:"585px","2xl":"746px"}}
       >
         {/* {gameIcons} */}
         {gameIcons.map((item, index) => {
@@ -88,7 +88,7 @@ export default function Earn(props) {
               justifyContent="space-between"
               alignItems="center"
               w="100%"
-              padding={{base:"10px 16px","2xl":"15px 16px"}}
+              padding={{base:"9px 16px","2xl":"15px 16px"}}
               mb="12px"
               borderRadius="16px"
               border="1px solid rgba(225, 225, 225, 0.2)"
@@ -156,7 +156,7 @@ export default function Earn(props) {
                   }}
                 >
                   {/* {item.icon} */}
-                  <Text height={{base:"41px","2xl":"52px"}} data-idx={`${index}`}>
+                  <Text height={{base:"41px","2xl":"51px"}} data-idx={`${index}`}>
                     {' '}
                     {BASE64.decrypt(item.icon)}
                   </Text>
@@ -176,20 +176,19 @@ export default function Earn(props) {
               <AvatarGroup
                 max={9}
                 size="sm"
-                mt={{
-                  base: '0px',
-                  md: '10px',
-                  lg: '0px',
-                  xl: '10px',
-                  '2xl': '0px',
-                }}
+               
                 fontSize="12px"
                 fontWeight="700"
                 color="#fff"
               >
                 {item.userIcons
                   ? item.userIcons.map((avt, key) => (
-                      <Avatar key={key} w={{base:"28px","2xl":"32px"}} height={{base:"28px","2xl":"32px"}} src={avt.userIcon} />
+                      <Avatar 
+                      key={key} 
+                      w={{base:"28px","2xl":"32px"}} 
+                      height={{base:"28px","2xl":"32px"}}
+                      borderWidth="0"
+                      src={avt.userIcon} />
                     ))
                   : ''}
               </AvatarGroup>
@@ -201,7 +200,7 @@ export default function Earn(props) {
         <Flex
           alignItems="center"
           w="100%"
-          padding="10px 16px"
+          padding={{base:"9px 16px","2xl":"15px 16px"}}
           mb="12px"
           borderRadius="16px"
           border="1px solid rgba(225, 225, 225, 0.2)"
@@ -217,7 +216,7 @@ export default function Earn(props) {
               setShowEmojiModa(!showEmojiModa)
             }}
           >
-           <Image src={addIcon}  w={{base:"28px","2xl":"38px"}} m="2px auto"></Image>
+           <Image src={addIcon}  w={{base:"28px","2xl":"34px"}} m="2px auto"></Image>
           </Box>)}
           {showEmojiModa&&emoji?(
             <Flex alignItems="center" justifyContent="space-between" width="100%">

@@ -35,7 +35,7 @@
   text-align: center;
   color: #8d8cab;
   margin: auto;
-  margin-bottom: 76px;
+  margin-bottom: 46px;
 }
 .VIewBtn {
   transition: All 0.4s ease-in-out;
@@ -45,6 +45,13 @@
 }
 .VIewBtn:hover {
   background: rgba(117, 81, 255, 0.7) !important;
+}
+.swiper-wrapper .swiper-slide-active > div {
+  filter: drop-shadow(#374c9f 0px 2px 18px);
+}
+.swiper-wrapper .swiper-slide-prev > div,
+.swiper-wrapper .swiper-slide-next > div {
+  filter: drop-shadow(0px 2px 18px rgba(55, 76, 159, 0.330228));
 }
 .swipperBox .maskSwipper {
   z-index: -1;
@@ -69,4 +76,6 @@
 }
 .swipperBox .swiper-slide {
   width: 300px !important;
+  margin-top: 30px;
+  margin-bottom: 2px;
 }
