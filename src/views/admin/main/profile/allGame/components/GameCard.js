@@ -181,36 +181,36 @@ export default function GameCard({ gameData }) {
                         sm: '12px',
                       }}
                     >
-                      {/* <Box
-                      style={{
-                        width: '8px',
-                        height: ' 8px',
-                        background: ' #0049C6',
-                        borderRadius: '50%',
-                        marginRight: '9px',
-                      }}
-                    ></Box> */}
+                      <Box
+                        style={{
+                          width: '8px',
+                          height: ' 8px',
+                          background: ' #0049C6',
+                          borderRadius: '50%',
+                          marginRight: '10px',
+                        }}
+                      ></Box>
                       <Box
                         style={{
                           color: 'rgba(128,129,145,1)',
                           fontWeight: '400',
                           textAlign: 'right',
                           lineHeight: ' 16px',
-                          marginRight: '14px',
+                          marginRight: '10px',
                         }}
                         fontSize="0.3vw"
                       >
                         {formatNumber(item.twitterFollower)} followers
                       </Box>
-                      {/* <Box
-                      style={{
-                        width: '8px',
-                        height: ' 8px',
-                        background: ' #7FBA7A',
-                        borderRadius: '50%',
-                        marginRight: '9px',
-                      }}
-                    ></Box> */}
+                      <Box
+                        style={{
+                          width: '8px',
+                          height: ' 8px',
+                          background: ' #7FBA7A',
+                          borderRadius: '50%',
+                          marginRight: '10px',
+                        }}
+                      ></Box>
                       <Box
                         style={{
                           color: 'rgba(128,129,145,1)',
