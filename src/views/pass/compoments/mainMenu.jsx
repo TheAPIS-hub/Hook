@@ -70,9 +70,6 @@ export default function DateUploaded(props) {
         <Flex
           style={{
             display: 'flex',
-            justifyContent: 'space-between',
-            padding: '0px 24px',
-            boxSizing: ' border-box',
             alignItems: 'center',
           }}
         >
@@ -81,6 +78,7 @@ export default function DateUploaded(props) {
               color: 'rgba(128,129,145,1)',
               fontSize: '14px',
               fontWeight: '700',
+              marginRight: '3vw',
             }}
           >
             GAME SORT

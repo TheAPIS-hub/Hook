@@ -21,7 +21,7 @@ import {
   MdAccountCircle,
   MdBrokenImage,
   MdLineWeight,
-  MdMenu,
+  MdDragHandle,
 } from 'react-icons/md'
 
 // Custom Chakra theme
@@ -145,7 +145,7 @@ export default function Dashboard(props) {
           //     setIsShowSidebar(!isShowSidebar)
           //   }}
           position="fixed"
-          left={isShowSidebar ? '57px' : '240px'}
+          left={isShowSidebar ? '54px' : '240px'}
           zIndex="99999"
           cursor="pointer"
           onClick={() => {
@@ -157,7 +157,7 @@ export default function Dashboard(props) {
         >
           <Icon
             fontSize="20px"
-            as={MdMenu}
+            as={MdDragHandle}
             width={isShowSidebar ? '20px' : '30px'}
             height={isShowSidebar ? '20px' : '30px'}
             color="inherit"

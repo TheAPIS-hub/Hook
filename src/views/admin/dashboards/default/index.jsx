@@ -117,19 +117,19 @@ export default function Default() {
           {/* Data */}
           <Tabs variant="soft-rounded" colorScheme="green">
             <TabList>
-              <Tab className='NftHoverBtn'>NFT</Tab>
-              <Tab className='DeftHoverBtn'>DEFI</Tab>
+              <Tab className="NftHoverBtn">NFT</Tab>
+              <Tab className="DeftHoverBtn">DEFI</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
-                <SimpleGrid className='MarketCapFount'
+                <SimpleGrid
+                  className="MarketCapFount"
                   // className={dataType === 'NFT' ? 'active' : 'nftData'}
                   columns={{ base: 1, md: 1, lg: 3, '2xl': 3 }}
                   gap="20px"
                   mb="20px"
                 >
                   <MiniStatistics
-                  
                     growth={
                       nftVolumeData?.marketCapRatio?.toFixed(2) > 0
                         ? `+${new BigNumber(nftVolumeData?.marketCapRatio || 0)

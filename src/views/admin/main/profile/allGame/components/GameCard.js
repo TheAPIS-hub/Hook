@@ -144,7 +144,7 @@ export default function GameCard({ gameData }) {
                     }}
                   >
                     <Image
-                      borderRadius="24px"
+                      borderRadius="24px 24px 0px 0px"
                       src={item?.imgs[0].url}
                       alt=""
                       width="100%"

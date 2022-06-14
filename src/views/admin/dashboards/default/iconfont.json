@@ -6,6 +6,13 @@
   "description": "hook ui",
   "glyphs": [
     {
+      "icon_id": "7550218",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
       "icon_id": "27724395",
       "name": "左箭头",
       "font_class": "zuojiantou",
