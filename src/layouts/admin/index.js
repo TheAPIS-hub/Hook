@@ -153,6 +153,7 @@ export default function Dashboard(props) {
             setIsShowSidebar(!isShowSidebar)
             localStorage.setItem('isShowSidebar', !isShowSidebar)
           }}
+          display={{sm:"none",md:"block"}}
           top={isShowSidebar ? '130px' : '68px'}
         >
           <Icon

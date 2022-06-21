@@ -58,17 +58,18 @@ export default function Banner(props) {
         textAlign="left"
         lineHeight="32px"
         marginBottom="20px"
+        className="font-Inter-SemiBold"
       >
         Overview
       </Text>
-      <Box bg="#111C44" borderRadius="22px">
+      <Box bg={{ sm: "none", md: "#111C44" }} borderRadius="22px">
         <div>
           <Box
             width="100%"
             backgroundColor="rgba(17,28,68,1)"
             borderRadius="22px"
             overflow="hidden"
-            height={{ base: '385px', xl: '385px', '2xl': '492px' }}
+            height={{ sm: '140vw', base: '385px', xl: '385px', '2xl': '492px' }}
             position="relative"
           >
             <Players
@@ -76,16 +77,94 @@ export default function Banner(props) {
               bordeRadius="32px"
               src={game.videos[0].url}
             ></Players>
+            <Flex 
+            position="absolute" 
+            bottom="1px" 
+            textAlign="center" 
+            width="100%" 
+            padding={{sm:"4vw",md:"0"}}
+            display={{sm:"block",md: "none" }}>
+              <Box
+                fontSize={{ sm: "6.4vw", md: "2vw" }}
+                textAlign="left"
+                fontWeight={500}
+                color="#fff"
+                marginTop="2.6vw"
+                marginBottom="6.4vw"
+                padding="0 1vw"
+                lineHeight="1.2vw"
+                alignItems="center"
+                className="font-Inter-SemiBold"
+              >
+                 {game.name}
+              </Box>
+              <Flex marginTop={{ sm: "7.2vw", md: "1.3vw" }} padding="0 1vw" alignItems="center">
+                <Image
+                  style={{
+                    borderRadius: '50%',
+                  }}
+                  width={{ sm: "6.4vw", md: "1.1vw" }}
+                  height={{ sm: "6.4vw", md: "1.1vw" }}
+                  marginRight={{ sm: "2.1vw", md: "0.4vw" }}
+                  src={game.gameUserIcon}
+                  alt=""
+                />
+                <Text
+                  style={{
+                    fontWeight: '400',
+                    // fontSize: '0.6vw',
+                    lineHeight: '1.1vw',
+                    // color: ' #B2B3BD',
+                  }}
+                  color={{ sm: "#fff", md: "#B2B3BD" }}
+                  fontSize={{ sm: "3.7vw", md: "0.6vw" }}
+                >
+                  <Text as="span" marginRight={{ sm: "3.5vw", md: "0" }}>
+                    {game.gameStudio}®
+                  </Text>
+                  <span style={{ color: '#fff', margin: '0 6px', fontSize: '16px' }}>
+                    ·
+                  </span>
+                  {game.genres}
+                </Text>
+              </Flex>
+              <Button
+                variant="brand"
+                width="82.9vw"
+                bgColor="#6C5DD3"
+                height="14.7vw"
+                h={{
+                  base: '54px',
+                  sm: '50px',
+                  xl: '54px',
+                  '2xl': '72px',
+                }}
+                fontWeight="500"
+                fontSize="14px"
+                onClick={() => {
+                  window.open(game.gameUrl)
+                }}
+                _hover={{
+                  bgColor: 'rgba(108,93,211 ,0.6)',
+                }}
+                borderRadius="16px"
+                marginTop="5.4vw"
+              >
+                Play Now!
+              </Button>
+
+            </Flex>
           </Box>
         </div>
         <Box
           p={{
-            base: '24px auto',
+            base: '24px 10px',
+            sm: '0',
             md: '20px 10px',
             xl: '30px 36px 18px 24px ',
             '2xl': '40px 49px 23px 32px',
           }}
-          borderBottom="1px solid  rgba(228, 228, 228,0.1)"
+          borderBottom={{ sm: "0", md: "1px solid  rgba(228, 228, 228,0.1)" }}
         >
           <Badge
             variant="solid"
@@ -95,28 +174,35 @@ export default function Banner(props) {
             fontSize="13px"
             fontWeight="400"
             bg="#7FBA7A"
+            display={{sm:"none",md:"inline-block"}}
           >
             {game.version}
           </Badge>
-          <Text as="p" fontWeight="500" fontSize="1.6vw" m="12px 0 14px 0">
+          <Text as="p" fontWeight="500" fontSize="1.6vw" m="12px 0 14px 0" display={{sm:"none",md:"block"}} >
             {game.name}
           </Text>
           <Flex
             justifyContent="space-between"
             flexDirection={{ base: 'column', xl: 'row' }}
+            background="#111C44"
+            borderRadius="24px"
+            padding={{ sm: "7vw 1.4vw 7vw 4.4vw", md: "0" }}
+            m={{ sm: "8.5vw 0 12vw", md: "0" }}
+            position="relative"
           >
             <Flex alignItems="center">
               <Box>
                 <Image
                   src={game.imgs[0].url}
-                  width="4.2vw"
-                  height="4.2vw"
+                  width={{ sm: "19.2vw", md: "4.2vw" }}
+                  height={{ sm: "19.2vw", md: "4.2vw" }}
+                  border={{ sm: "3.55556px solid #0049C6", md: "0" }}
                   borderRadius="50%"
                 ></Image>
               </Box>
-              <Box ml="24px" fontSize="0.95vw" fontWeight="500">
+              <Box ml="24px" fontSize={{ sm: "6.4vw", md: "0.95vw" }} fontWeight="500">
                 <Flex m="8px 0">
-                  <Text mr="9px" lineHeight="24px">
+                  <Text mr="9px" lineHeight="24px" className="font-Inter-SemiBold">
                     {game.twtter}
                   </Text>
                   <Image
@@ -126,7 +212,7 @@ export default function Banner(props) {
                     mr="35px"
                   ></Image>
                 </Flex>
-                <Box m="8px 0">
+                <Box m="8px 0" fontSize={{ sm: "3.7vw", md: "0.95vw" }}>
                   <Text as="span">
                     {formatNumber(game.twitterFollower)} followers
                   </Text>
@@ -141,6 +227,7 @@ export default function Banner(props) {
                 variant="brand"
                 width={{
                   base: '144px',
+                  sm: '120px',
                   xl: '144px',
                   '2xl': '194px',
                 }}
@@ -148,11 +235,18 @@ export default function Banner(props) {
                 height="2.8vw"
                 h={{
                   base: '54px',
+                  sm: '50px',
                   xl: '54px',
                   '2xl': '72px',
                 }}
                 fontWeight="500"
-                fontSize="1.3vw"
+                fontSize={{
+                  base: '1.3vw',
+                  sm: "20px",
+                }}
+                display={{
+                  sm: 'none',
+                }}
                 onClick={() => {
                   window.open(game.gameUrl)
                 }}
@@ -163,15 +257,20 @@ export default function Banner(props) {
                 Play Now!
               </Button>
             </Box>
+            <Text className="boder-line"></Text>
+            <Text className="boder-line"></Text>
           </Flex>
         </Box>
         <Flex
           p={{
+            sm: '5px 10px',
+            md: '14px 34px',
             base: '14px 34px',
             '2xl': '25px 34px',
           }}
+          display={{ sm: "none", md: "block" }}
         >
-          <Stack direction="row" wrap="wrap" spacing={4} align-items="center">
+          <Stack direction="row" wrap="wrap" spacing={4} align-items="center" >
             {isLike ? (
               <Flex
                 width="22px"
@@ -244,251 +343,6 @@ export default function Banner(props) {
           </Stack>
         </Flex>
       </Box>
-      <Flex
-        bg="rgba(228, 228, 228, 0.1)"
-        margin="62px 0"
-        borderRadius="16px"
-        flexDirection={{ base: 'inherit;', xl: 'inherit', sm: 'column' }}
-      >
-        <Box
-          width={{
-            base: '100%',
-            xl: '25%',
-          }}
-          p={{
-            base: '10px 0 10px 10px',
-            xl: '25px 0 25px 32px',
-            '2xl': '30px 0 20px 60px',
-          }}
-          borderRight="1px solid rgba(228, 228, 228, 0.1)"
-        >
-          <Flex>
-            <Image width="16px" height="16px" mr="8px" src={saleIcon}></Image>
-            <Text fontSize="12px" color="#808191">
-              Price
-            </Text>
-          </Flex>
-          <Text
-            fontSize={{
-              base: 'xl',
-              xl: 'xl',
-              '2xl': '32px',
-            }}
-            mt="10px"
-            fontWeight="600"
-            fontFamily="Poppins"
-            letterSpacing="-1px"
-          >
-            {toThousands(game.price)}
-          </Text>
-        </Box>
-        <Box
-          width={{
-            base: '100%',
-            xl: '42%',
-          }}
-          p={{
-            base: '10px 0 10px 10px',
-            xl: '25px 0 25px 20px',
-            '2xl': '30px 0 20px 55px',
-          }}
-          borderRight="1px solid rgba(228, 228, 228, 0.1)"
-        >
-          <Flex>
-            <Image width="16px" height="16px" mr="8px" src={volumeIcon}></Image>
-            <Text fontSize="12px" color="#808191">
-              Volume
-            </Text>
-          </Flex>
-          <Text
-            fontSize={{
-              base: 'xl',
-              xl: 'xl',
-              '2xl': '32px',
-            }}
-            mt="10px"
-            fontWeight="600"
-            letterSpacing="-1px"
-            fontFamily="Poppins"
-          >
-            Ξ {toThousands(new BigNumber(game.volume).toFixed(2))}
-            <Text
-              as="span"
-              fontSize="18px"
-              fontWeight="600"
-              color="#808191"
-              ml="18px"
-            >
-              ${toThousands((game.volume / 1000).toFixed(2))}K
-            </Text>
-          </Text>
-        </Box>
-        <Box
-          width={{
-            base: '100%',
-            xl: '30%',
-          }}
-          p={{
-            base: '10px 0 10px  10px',
-            xl: '25px 0 25px 8%',
-            '2xl': '30px 0 20px 8%',
-          }}
-        >
-          <Flex>
-            <Image width="16px" height="16px" mr="8px" src={soldIcon}></Image>
-            <Text fontSize="12px" color="#808191">
-              CirculatingSupply
-            </Text>
-          </Flex>
-          <Text
-            fontSize={{
-              base: 'xl',
-              xl: 'xl',
-              '2xl': '32px',
-            }}
-            mt="10px"
-            fontWeight="600"
-            letterSpacing="-1px"
-            fontFamily="Poppins"
-          >
-            {toThousands(new BigNumber(game.circulatingSupply).toFixed(2))}
-          </Text>
-        </Box>
-      </Flex>
-      <Flex
-        borderTop="1px solid rgba(228, 228, 228, 0.1)"
-        borderRight="0px"
-        borderLeft="0px"
-        padding={{
-          base: '25px 0 20px',
-          '2xl': '39px 0',
-        }}
-        justifyContent="space-between"
-      >
-        {isVote ? (
-          <Box width="48%">
-            <Text fontSize="18px">Your‘ve voted-👍To da moon</Text>
-            <Text fontSize="13px" color="#B2B3BD" width="80%" lineHeight="25px">
-              Your vote for 24 hours. In order to update how you feel about{' '}
-              {game.name},come back tomorrow!
-            </Text>
-          </Box>
-        ) : (
-          <Box width="48%" margin="14px 0">
-            <Text fontSize="18px">
-              How do you feel about {game.name} today？
-            </Text>
-            <Text fontSize="13px" color="#B2B3BD" width="80%">
-              Vote to see community result
-            </Text>
-          </Box>
-        )}
-        {isVote ? (
-          <Box width="48%" fontSize="13px" color="#B2B3BD" pt="10px">
-            <Flex mb="20px">
-              <Box
-                height="1px"
-                width={good}
-                borderRight="1px"
-                bgColor="#FF9A7B"
-              ></Box>
-              <Box
-                height="1px"
-                width={bad}
-                borderRight="1px"
-                bgColor="#6C5DD3"
-              ></Box>
-            </Flex>
-            <Flex
-              justifyContent="space-between"
-              fontSize="13px"
-              color="#B2B3BD"
-            >
-              <Text> {good} To da moon&nbsp;👍 </Text>
-              <Text>
-                <Text
-                  as="span"
-                  transform="matrix(1, 0, 0, -1, 0, 0)"
-                  display="inline-block"
-                >
-                  {' '}
-                  👍
-                </Text>
-                &nbsp;{bad} Ngmi
-              </Text>
-            </Flex>
-          </Box>
-        ) : (
-          <Box width="48%" fontSize="13px" color="#B2B3BD" pt="10px">
-            <Flex
-              justifyContent="end"
-              fontSize="14px"
-              fontWeight="700"
-              color="#B2B3BD"
-              margin="15px 0"
-            >
-              <Button
-                width="140px"
-                height="41px"
-                border="1px solid rgba(225 225 225 / 0.5)"
-                borderRadius="12px"
-                background="transparent"
-                mr="11px"
-                onClick={(e) => {
-                  if (!uId) {
-                    toast({
-                      title: `please sign in`,
-                      position: 'top',
-                      status: 'warning',
-                      isClosable: true,
-                      duration: 1000,
-                    })
-                    return
-                  }
-                  likedStatus(game.gpId, uId, 1).then((res) => {
-                    if (res.data.code == 200) {
-                    } else {
-                    }
-                  })
-                  voteFun(!isVote)
-                }}
-              >
-                👍 &nbsp;&nbsp;To da moon
-              </Button>
-              <Button
-                width="109px"
-                height="41px"
-                border="1px solid rgba(225 225 225 / 0.5)"
-                borderRadius="12px"
-                background="transparent"
-                onClick={(e) => {
-                  if (!uId) {
-                    toast({
-                      title: `please sign in`,
-                      position: 'top',
-                      status: 'warning',
-                      isClosable: true,
-                      duration: 1000,
-                    })
-                    return
-                  }
-                  voteFun(!isVote)
-                  likedStatus(game.gpId, uId, 1).then((res) => {})
-                }}
-              >
-                <Text
-                  as="span"
-                  transform="matrix(1, 0, 0, -1, 0, 0)"
-                  display="inline-block"
-                >
-                  👍&nbsp;&nbsp;
-                </Text>
-                Ngmi
-              </Button>
-            </Flex>
-          </Box>
-        )}
-      </Flex>
     </div>
   )
 }

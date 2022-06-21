@@ -60,7 +60,7 @@ export default function DateUploaded(props) {
         _hover={bgHover}
         _focus={bgFocus}
         _active={bgFocus}
-        w="200px"
+        w={{sm:"150px",md:"200px"}}
         h="56px"
         lineHeight="100%"
         onClick={onOpen1}

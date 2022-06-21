@@ -68,7 +68,8 @@ export default function Earn(props) {
         fontWeight=" 500"
         textAlign="left"
         lineHeight="32px"
-        marginBottom="10px"
+        marginBottom={{sm:"8px",md:"10px"}}
+        className="font-Inter-SemiBold"
       >
         React to earn
       </Text>
@@ -78,7 +79,7 @@ export default function Earn(props) {
         p="0px"
         bgColor="transparent"
         className="yscroll"
-        height={{base:"585px","2xl":"746px"}}
+        height={{sm:"378px",md:"585px","2xl":"746px"}}
       >
         {/* {gameIcons} */}
         {gameIcons.map((item, index) => {
@@ -88,15 +89,15 @@ export default function Earn(props) {
               justifyContent="space-between"
               alignItems="center"
               w="100%"
-              padding={{base:"9px 16px","2xl":"15px 16px"}}
+              padding={{sm:"15px 16px",md:"9px 16px","2xl":"15px 16px"}}
               mb="12px"
               borderRadius="16px"
               border="1px solid rgba(225, 225, 225, 0.2)"
             >
               <Box position="relative">
                 <Flex
-                  h={{base:"40px","2xl":"48px"}}
-                  w={{base:"40px","2xl":"48px"}}
+                  h={{sm:"48px",md:"40px","2xl":"48px"}}
+                  w={{sm:"48px",md:"40px","2xl":"48px"}}
                   me="14px"
                   bg="#0c1437"
                   cursor="pointer"
@@ -104,7 +105,7 @@ export default function Earn(props) {
                   border={
                     item.isLiked ? '2px solid #0049C6' : '2px solid #353D59'
                   }
-                  fontSize={{base:"30px","2xl":"36px"}}
+                  fontSize={{sm:"36px",md:"30px","2xl":"36px"}}
                   justifyContent="center"
                   alignItems="center"
                   className={idx == index ? (animate ? 'animate' : '') : ''}
@@ -156,7 +157,7 @@ export default function Earn(props) {
                   }}
                 >
                   {/* {item.icon} */}
-                  <Text height={{base:"41px","2xl":"51px"}} data-idx={`${index}`}>
+                  <Text height={{sm:"51px",md:"41px","2xl":"51px"}} data-idx={`${index}`}>
                     {' '}
                     {BASE64.decrypt(item.icon)}
                   </Text>
@@ -200,23 +201,25 @@ export default function Earn(props) {
         <Flex
           alignItems="center"
           w="100%"
-          padding={{base:"9px 16px","2xl":"15px 16px"}}
+          padding={{sm:"15px 16px",md:"9px 16px",base:"9px 16px","2xl":"15px 16px"}}
           mb="12px"
           borderRadius="16px"
           border="1px solid rgba(225, 225, 225, 0.2)"
         >
           {emoji?'':( <Box
             border="2px solid #353D59"
-            h={{base:"40px","2xl":"48px"}}
-            w={{base:"40px","2xl":"48px"}}
+            h={{sm:"48px",md:"40px","2xl":"48px"}}
+            w={{sm:"48px",md:"40px","2xl":"48px"}}
             borderRadius="50%"
             cursor="pointer"
+            position="relative"
             onClick={() => {
               setEmojia('')
               setShowEmojiModa(!showEmojiModa)
             }}
           >
-           <Image src={addIcon}  w={{base:"28px","2xl":"34px"}} m="2px auto"></Image>
+           <Image src={addIcon}  w={{base:"28px","2xl":"34px"}} m="2px auto" display={{sm:"none",md:"block"}}></Image>
+           <Text display={{md:"none"}} width="6.8vw" height="6.8vw" background="#D8D8D8" borderRadius="50%" position="absolute" right="-3px"></Text>
           </Box>)}
           {showEmojiModa&&emoji?(
             <Flex alignItems="center" justifyContent="space-between" width="100%">

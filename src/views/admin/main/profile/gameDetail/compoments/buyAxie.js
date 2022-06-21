@@ -22,6 +22,7 @@ import axieIcon from 'assets/img/avatars/axieIcon.png'
 import arrow from 'assets/img/users/arrow.png'
 import BigNumber from 'bignumber.js'
 import { getGameNormal, tokenTokentrans } from '../../../../../../hook/hook'
+import { isMobile } from './until.js'
 export default function BuyAxie(props) {
   const textColorSecondary = useColorModeValue('secondaryGray.700', 'white')
 
@@ -32,7 +33,7 @@ export default function BuyAxie(props) {
     setInterval(() => {
       setEthPrice(localStorage.getItem('ethPrice') ?? 0)
     }, 10000)
-    tokenTokentrans(9, 1, address).then((res) => {
+    tokenTokentrans(isMobile()?3:9, 1, address).then((res) => {
       setNormalDate(res.data.data.data)
     })
   }, [])
@@ -45,6 +46,7 @@ export default function BuyAxie(props) {
         textAlign="left"
         lineHeight="32px"
         margin={{base:"45px 0 26px 0","2xl":"55px 0 30px 0"}}
+        className="font-Inter-SemiBold"
       >
         Trading Activies 
       </Text>
@@ -59,13 +61,13 @@ export default function BuyAxie(props) {
               w="100%"
               mb="12px"
               borderRadius="16px"
-              height={{ base: '68px', '2xl': '80px' }}
+              height={{sm:'80px',base: '68px', '2xl': '80px' }}
               pr="4"
               pl="4"
             >
               <Flex>
                 {item.imageUrl ? (
-                  <Image width={{ base: '45x', '2xl': '50px' }} height={{ base: '45px', '2xl': '50px' }} src={item.imageUrl} />
+                  <Image width={{ base: '40px', '2xl': '50px' }} height={{ base: '40px', '2xl': '50px' }} src={item.imageUrl} />
                 ) : (
                   ''
                 )}

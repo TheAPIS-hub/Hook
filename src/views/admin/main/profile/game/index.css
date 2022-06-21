@@ -25,6 +25,7 @@
   text-align: center;
   color: #8d8cab;
   margin: auto;
+  max-width: 100%;
 }
 .challengeText {
   width: 421px;
@@ -36,6 +37,7 @@
   color: #8d8cab;
   margin: auto;
   margin-bottom: 46px;
+  max-width: 100%;
 }
 .VIewBtn {
   transition: All 0.4s ease-in-out;

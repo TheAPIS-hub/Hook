@@ -386,8 +386,8 @@ export default function Track(props) {
   return (
     <Box
       className="swipperBox"
-      transform="scale(0.8)"
-      marginTop="-20px"
+      transform={{sm:"scale(0.9)",md:"scale(0.8)"}}
+      marginTop={{sm:"44px",md:"-20px"}}
       position="relative"
       display="flex"
       flexDirection="column"
@@ -420,6 +420,7 @@ export default function Track(props) {
             position: 'absolute',
             right: '10px',
           }}
+          top={{sm:"-27%",md:"initial"}}
         >
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGpIutxIjaaC3i_wnli1B3_wY5rU91o7UpNqpeISbz2AHnrg/viewform">
             Create Project

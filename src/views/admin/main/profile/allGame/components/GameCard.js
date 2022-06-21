@@ -62,6 +62,7 @@ export default function GameCard({ gameData }) {
         alignItems="start"
         justifyContent="space-between"
         marginBottom="32px"
+        flexDirection={{sm:"column-reverse",md:"initial"}}
       >
         <Text
           style={{
@@ -70,11 +71,12 @@ export default function GameCard({ gameData }) {
             fontWeight: ' 500',
             textAlign: 'left',
           }}
+          className="font-Inter-SemiBold"
         >
           Trending games
         </Text>
 
-        <DateUploaded chooseSort={chooseSort}></DateUploaded>
+        <DateUploaded chooseSort={chooseSort} ml={{sm:"57%",md:"0"}} mb={{sm:"26px",md:"0"}}></DateUploaded>
       </Flex>
       {/* <Box
         style={{
@@ -121,10 +123,11 @@ export default function GameCard({ gameData }) {
                     background: 'rgba(17,28,68,1)',
                   }}
                   key={`item+${index}`}
+                  w='100%'
                   marginBottom={{
                     base: '40px',
                     md: '20px',
-                    sm: '18px',
+                    sm: '24px',
                   }}
                   // width={{
                   //   base: '90%',
@@ -148,14 +151,15 @@ export default function GameCard({ gameData }) {
                       src={item?.imgs[0].url}
                       alt=""
                       width="100%"
-                      height="8vw"
+                      height={{sm:"45.3vw",md:"8vw"}}
                     />
                   </Box>
                   <Box
                     style={{
-                      padding: '16px',
+                      // padding: '16px',
                       boxSizing: ' border-box',
                     }}
+                    padding={{sm:'24px',md:'16px'}}
                   >
                     <Box
                       style={{
@@ -165,7 +169,7 @@ export default function GameCard({ gameData }) {
                         textAlign: 'left',
                         lineHeight: '24px',
                       }}
-                      fontSize="0.8vw"
+                      fontSize={{sm:'4.8vw',md:"0.8vw"}}
                     >
                       {item.name}
                     </Box>
@@ -198,7 +202,7 @@ export default function GameCard({ gameData }) {
                           lineHeight: ' 16px',
                           marginRight: '10px',
                         }}
-                        fontSize="0.3vw"
+                        fontSize={{sm:"3.2vw",md:"0.3vw"}}
                       >
                         {formatNumber(item.twitterFollower)} followers
                       </Box>
@@ -218,7 +222,7 @@ export default function GameCard({ gameData }) {
                           textAlign: 'right',
                           lineHeight: ' 16px',
                         }}
-                        fontSize="0.6vw"
+                        fontSize={{sm:"3.2vw",md:"0.6vw"}}
                       >
                         {formatNumber(item.activeUsers)} players
                       </Box>
@@ -236,14 +240,14 @@ export default function GameCard({ gameData }) {
                           md: '12px',
                           xl: '10%',
                           '2xl': '10%',
-                          sm: '12px',
+                          sm: '24px',
                         }}
                         marginRight={{
                           base: '2%',
                           md: '6px',
                           xl: '2%',
                           '2xl': '2%',
-                          sm: '6px',
+                          sm: '8px',
                         }}
                       >
                         <Image
@@ -257,21 +261,21 @@ export default function GameCard({ gameData }) {
                             md: '12px',
                             xl: '100%',
                             '2xl': '100%',
-                            sm: '12px',
+                            sm: '24px',
                           }}
                           maxW={{
                             base: '10%',
                             md: '12px',
                             xl: '100%',
                             '2xl': '100%',
-                            sm: '12px',
+                            sm: '24px',
                           }}
                           height={{
                             base: '10%',
                             md: '12px',
                             xl: '100%',
                             '2xl': '100%',
-                            sm: '12px',
+                            sm: '24px',
                           }}
                         />
                       </Box>
@@ -282,7 +286,7 @@ export default function GameCard({ gameData }) {
                           textAlign: ' left',
                           lineHeight: '20px',
                         }}
-                        fontSize="0.6vw"
+                        fontSize={{sm:"3.4vw",md:"0.6vw"}}
                       >
                         {item.gameStudio}®
                       </Box>
@@ -293,9 +297,10 @@ export default function GameCard({ gameData }) {
                     style={{
                       display: 'flex',
                       justifyContent: 'space-between',
-                      padding: ' 13px 21px 11px 21px',
+                      // padding: ' 13px 21px 11px 21px',
                       boxSizing: ' border-box',
                     }}
+                    padding={{sm:'12px 32px 11px 32px',md:' 13px 21px 11px 21px'}}
                   >
                     <Box
                       style={{
@@ -318,19 +323,22 @@ export default function GameCard({ gameData }) {
                           md: '60px',
                           xl: '72px',
                           '2xl': '80px',
+                          sm:'90px'
                         }}
                         height={{
                           base: '20px',
                           md: '16px',
                           xl: '20px',
                           '2xl': '24px',
+                          sm:'27px'
                         }}
-                        fontSize="0.6vw"
+                        fontSize={{sm:"3.47vw",md:"0.6vw"}}
                         lineHeight={{
                           base: '20px',
                           md: '16px',
                           xl: '20px',
                           '2xl': '24px',
+                          sm:'27px'
                         }}
                       >
                         Alpha
@@ -392,7 +400,7 @@ export default function GameCard({ gameData }) {
                     >
                       <Text
                         type="primary"
-                        fontSize="0.6vw"
+                        fontSize={{sm:"3.2vw",md:"0.6vw"}}
                         fontWeight="400"
                         mr="7px"
                         data-idx={`${index}`}
@@ -448,7 +456,6 @@ export default function GameCard({ gameData }) {
                       style={{
                         display: 'flex',
                         alignItems: ' center',
-                        justifyContent: 'space-between',
                         marginBottom: '16px',
                       }}
                     >
@@ -459,6 +466,7 @@ export default function GameCard({ gameData }) {
                           textAlign: 'left',
                         }}
                         fontSize="12px"
+                        width={{sm:"26vw",md:"5.6vw","2xl":"5vw"}}
                         // marginRight="50px"
                       >
                         RIO
@@ -477,7 +485,6 @@ export default function GameCard({ gameData }) {
                     <Box
                       style={{
                         display: 'flex',
-                        justifyContent: 'space-between',
                         alignItems: ' center',
                         marginBottom: '16px',
                       }}
@@ -489,8 +496,9 @@ export default function GameCard({ gameData }) {
                           textAlign: 'left',
                         }}
                         fontSize="12px"
+                        width={{sm:"26vw",md:"5.6vw","2xl":"5vw"}}
                       >
-                        volume
+                        Volume
                       </Box>
                       <Box
                         style={{
@@ -500,13 +508,12 @@ export default function GameCard({ gameData }) {
                         }}
                         fontSize="12px"
                       >
-                        {item.volume}%
+                        {item.volume}
                       </Box>
                     </Box>
                     <Box
                       style={{
                         display: 'flex',
-                        justifyContent: 'space-between',
                         alignItems: ' center',
                         marginBottom: '16px',
                       }}
@@ -518,8 +525,10 @@ export default function GameCard({ gameData }) {
                           textAlign: 'left',
                         }}
                         fontSize="12px"
+                        width={{sm:"26vw",md:"5.6vw","2xl":"5vw"}}
+
                       >
-                        totalNFT
+                        Total NFTs
                       </Box>
                       <Box
                         style={{
@@ -529,7 +538,7 @@ export default function GameCard({ gameData }) {
                         }}
                         fontSize="12px"
                       >
-                        {item.totalNFT}%
+                        {item.totalNFT}
                       </Box>
                     </Box>
                     <Flex justifyContent="flex-end">
@@ -538,17 +547,17 @@ export default function GameCard({ gameData }) {
                           borderRadius: ' 8px',
                           background: 'rgba(108,93,211,1)',
                         }}
-                        width="70px"
-                        height="20px"
+                        width={{sm:'108px',md:'70px'}}
+                        height={{sm:'28px',md:'20px'}}
                       >
                         <Text
                           style={{
                             color: 'rgba(255,255,255,1)',
-
                             fontWeight: ' 400',
                             textAlign: ' center',
-                            lineHeight: ' 20px',
+                            // lineHeight: ' 20px',
                           }}
+                          lineHeight={{sm:'28px',md:'20px'}}
                           fontSize="12px"
                         >
                           swap

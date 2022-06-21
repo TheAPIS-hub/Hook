@@ -1,6 +1,10 @@
 .css-11fb1j9 {
   background-color: #3F8CFF !important;
 }
+@font-face {
+  font-family: 'Inter-SemiBold';
+  src: url('../../../../../assets/font/Inter-SemiBold.ttf');
+}
 .chakra-stack {
   align-items: center;
 }
@@ -57,13 +61,7 @@
 em-emoji-picker {
   --rgb-background: 17, 28, 67;
 }
-.bf-dropdown .dropdown-content-inner,.bf-controlbar [data-title]:after {
-  background-color: #0b1437 !important;
-}
-.bf-controlbar [data-title]:before{
-  border-bottom-color: #0b1437 !important;
-}
-.bf-dropdown .dropdown-content .dropdown-arrow{
+.bf-dropdown .dropdown-content-inner {
   background-color: #0b1437 !important;
 }
 @media screen and (max-width: 1440px) {
@@ -71,5 +69,49 @@ em-emoji-picker {
     width: 32px;
     height: 32px;
     font-size: 12px;
+  }
+}
+.per-tips {
+  width: 56px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 6px;
+  background: #1B1D21;
+  margin-bottom: 16px;
+  position: absolute;
+  top: -44px;
+  right: -27px;
+}
+.per-tips::after {
+  position: absolute;
+  content: '';
+  left: 46%;
+  bottom: -4px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-top: 4px solid #1B1D21;
+  border-right: 4px solid transparent;
+  border-bottom: 0px solid transparent;
+}
+@media screen and (max-width: 768px) {
+  .boder-line {
+    background-color: #fff;
+    opacity: 0.05;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    left: 0;
+    border-radius: 24px;
+    bottom: -5px;
+  }
+  .boder-line:last-child {
+    opacity: 0.05;
+    bottom: -10px;
+  }
+  .font-Inter-SemiBold {
+    font-family: Inter-SemiBold;
   }
 }

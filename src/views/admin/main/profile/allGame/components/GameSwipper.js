@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import ImageGallery from 'react-image-gallery'
 import Players from '../../game/compoment/player'
-
+import { isMobile } from '../../gameDetail/compoments/until.js'
 import gameThree from '../../../../../../assets/img/logo/gameThree.png'
 import SwiperItem from './SwiperItem'
 export default function GameSwipper({ gameData }) {
@@ -76,13 +76,11 @@ export default function GameSwipper({ gameData }) {
     const gameListData = localStorage.getItem('gameListData')
     // console.log(JSON.parse(gameListData))
     const a = JSON.parse(gameListData).records.map((res) => {
-      console.log(res)
       return {
-        thumbnail: res.imgs[0].url,
+        thumbnail:res.imgs[0].url,
         original: res.imgs[0].url,
         // embedUrl: res.videos[0].url,
         embedUrl: 'https://www.youtube.com/embed/Vut_tqyw_2U',
-
         originalClass: 'featured-slide',
         thumbnailClass: 'featured-thumb',
         renderItem: () => (
@@ -92,6 +90,7 @@ export default function GameSwipper({ gameData }) {
             gameUserIcon={res.gameUserIcon}
             genres={res.genres}
             name={res.name}
+            game={res}
           ></SwiperItem>
         ),
       }
@@ -105,7 +104,7 @@ export default function GameSwipper({ gameData }) {
   }, [])
 
   return (
-    <Box marginTop="74px">
+    <Box marginTop={{sm:"100px",md:"74px"}}>
       <Box
         style={{
           color: ' rgba(255,255,255,1)',
@@ -115,12 +114,13 @@ export default function GameSwipper({ gameData }) {
           lineHeight: '32px',
           marginBottom: '26px',
         }}
+        className="font-Inter-SemiBold"
       >
         Featured & Recommended
       </Box>
       <Box
         width="100%"
-        height="34vw"
+        height={{sm:"140vw",md:"34vw"}}
         borderRadius="22px"
         background="rgba(228,228,228,0.1)"
         overflow="hidden"
@@ -129,8 +129,9 @@ export default function GameSwipper({ gameData }) {
           thumbnailPosition="right"
           items={images}
           showFullscreenButton={false}
-          showNav={false}
+          showNav={isMobile()?true:false}
           showPlayButton={false}
+          showThumbnails={isMobile()?false:true}
         />
       </Box>
     </Box>

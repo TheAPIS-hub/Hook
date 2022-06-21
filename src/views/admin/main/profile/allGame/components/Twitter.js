@@ -99,11 +99,12 @@ export default function Twitter() {
           lineHeight: '32px',
         }}
         marginBottom="28px"
+        className="font-Inter-SemiBold"
       >
         Twitter
       </Box>
 
-      <Box maxH="45vw" overflowY="auto">
+      <Box maxH={{sm:"200vw",md:"45vw"}} overflowY="auto">
         {TwitterData.map((item, index) => {
           return (
             <Box
@@ -126,25 +127,27 @@ export default function Twitter() {
                   '2xl': '20%',
                   md: '38px',
                 }}
-                marginRight="0.5vw"
+                marginRight={{sm:"3.6vw",md:"0.5vw"}}
               >
                 <Image
                   style={{
                     borderRadius: '50%',
                   }}
                   width={{
+                    sm:"10.1vw",
                     base: '2vw',
                     xl: '2vw',
                     '2xl': '2vw',
                     md: '38px',
                   }}
                   height={{
+                    sm:"10.1vw",
                     base: '2vw',
                     xl: '2vw',
                     '2xl': '2vw',
                     md: '38px',
                   }}
-                  maxW="2vw"
+                  maxW={{sm:"11vw",md:"2vw"}}
                   src={item.profileImageUrlHttps}
                   alt=""
                 />
@@ -156,6 +159,7 @@ export default function Twitter() {
                     display: 'flex',
                     alignItems: 'center',
                   }}
+                  mt={{sm:"11px",md:"21px"}}
                 >
                   <Text
                     style={{
@@ -164,7 +168,7 @@ export default function Twitter() {
                       textAlign: 'left',
                     }}
                     fontSize="0.6vw"
-                    maxWidth="11vw"
+                    maxWidth={{sm:'44vw',md:'11vw'}}
                     overflow="hidden"
                     whiteSpace="nowrap"
                     textOverflow="ellipsis"
@@ -178,7 +182,7 @@ export default function Twitter() {
                       textAlign: 'left',
                     }}
                     fontSize="0.6vw"
-                    marginRight="0.3vw"
+                    marginLeft={{sm:"1.3vw",md:"0.3vw"}}
                   >
                     @{item.screenName}
                   </Text>
@@ -208,7 +212,7 @@ export default function Twitter() {
                     '2xl': '100%',
                     md: '100%',
                   }}
-                  padding="0.8vw 1.1vw"
+                  padding={{sm:'3.6vw 4.3vw',md:'0.8vw 1.1vw'}}
                 >
                   <Box
                     className="chatFullText"

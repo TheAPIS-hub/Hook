@@ -39,6 +39,7 @@ import {
   writeComment,
   gameCommentLiked,
 } from '../../../../../../hook/hook'
+import { isMobile } from './until.js'
 export default function Comments(props) {
   const { gpId } = props;
   const uId = localStorage.getItem('uId')
@@ -49,12 +50,11 @@ export default function Comments(props) {
   const [parentId, setParentId] = useState("")
   const [rootParentId, setRootParentId] = useState("")
   const [page, setPage] = useState("")
-  const [pageSize, setPageSize] = useState("7")
+  const [pageSize, setPageSize] = useState(isMobile()?3:7)
   const [sort, setSort] = useState("")
   const toast = useToast();
   const [commentShow, setCommentShow] = useState(false)
   const [sortField, SetsortField] = useState("ALL")
-  //
   const getCommentsDate = () => {
     getComments(gpId, page, pageSize, sort,sortField, uId).then((res) => {
       setCommentsDate(res.data.data.records)
@@ -70,13 +70,13 @@ export default function Comments(props) {
   }
   return (
     <Box 
-    padding={{ base: "30px 28px", "2xl": "40px 39.68px"}}
+    padding={{sm:"16px" ,md: "30px 28px", "2xl": "40px 39.68px"}}
+    m={{sm:"40px 0 45px" ,md: "30px 0 45px",}}
     style={{
       background: "#111C44",
       borderRadius: "24px",
-      margin: "30px 0 45px",
     }}>
-      <Flex justifyContent="space-between" mb="12px">
+      <Flex justifyContent="space-between" mb="12px" flexDirection={{md:"initial",sm:"column"}} >
         <Text
           color=" rgba(255,255,255,1)"
           fontSize="24px"
@@ -84,7 +84,10 @@ export default function Comments(props) {
           textAlign="left"
           lineHeight="32px"
           as="span"
-          marginBottom='20px'>
+          pl={{sm:"16px",md:'0'}}
+          marginBottom='24px'
+          className="font-Inter-SemiBold"
+          >
           Comments
         </Text>
         <DateUploaded sortField={sortField} SetsortField={SetsortField} chooseSort={chooseSort}></DateUploaded>
@@ -96,13 +99,13 @@ export default function Comments(props) {
               return (
                 <Flex key={key}
                   w='100%'
-                  padding='20px 16px'
-                  mb="12px"
+                  padding={{sm:"8vw 3.4vw",md:"20px 16px"}}
+                  mb={{sm:"0",md:"12px"}}
                   borderRadius='12px'
                   pr={{ base: "5px", "2xl": "20%" }}
                   _hover={{ bgColor: 'rgba(228, 228, 228, 0.1)' }}
                 >
-                  <Avatar h='48px' w='48px' src={item.img} me='14px' mr="14px" />
+                  <Avatar h='48px' w='48px' src={item.img} me='14px' mr={{sm:'24px',md:'14px'}} />
                   <Box>
                     <Box fontSize="13px" >
                       <Text as="span" color="#5F75EE">{item.userName}</Text>
@@ -190,12 +193,13 @@ export default function Comments(props) {
             })
           }
         </Box>
-        {CommentsDate.length >= 7 ? (!commentShow ?
+        {CommentsDate.length >= (isMobile()?3:7 )? (!commentShow ?
           <Box
             textAlign="center"
             cursor="pointer"
             mt="4"
             mb="4"
+            display="inline-block"
             color="#5F75EE"
             onClick={() => {
               setCommentShow(true);
@@ -203,7 +207,28 @@ export default function Comments(props) {
                 setCommentsDate(res.data.data.records)
               })
             }}>
-            View More
+              <Button 
+               display={{md:"none"}}
+                variant="brand"
+                width="82.9vw"
+                bgColor="#6C5DD3"
+                height="14.7vw"
+                h={{
+                  base: '54px',
+                  sm: '50px',
+                  xl: '54px',
+                  '2xl': '72px',
+                }}
+                fontWeight="500"
+                fontSize="14px"
+                _hover={{
+                  bgColor: 'rgba(108,93,211 ,0.6)',
+                }}
+                borderRadius="16px"
+                >
+                Load More
+              </Button>
+              <Text display={{sm:"none",md:"block"}}>View More</Text>
           </Box> : '')
 
           : ''}

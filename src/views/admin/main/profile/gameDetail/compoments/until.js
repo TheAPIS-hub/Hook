@@ -67,4 +67,8 @@ export function toAddress(address) {
 	}
 	return address;
 }
+export function isMobile() {
+	const userAgent = navigator.userAgent;
+	return userAgent.match(/(iPhone|iPod|Android|ios|iPad|AppleWebKit.*Mobile.*)/i);
+}
 
