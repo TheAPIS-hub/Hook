@@ -7,8 +7,16 @@ import BuyAxie from './compoments/buyAxie'
 import Comments from './compoments/comments'
 import Vote from './compoments/vote'
 import { isMobile } from './compoments/until.js'
+import { useHistory } from 'react-router-dom'
 export default function GameDetail(props) {
   const game = JSON.parse(localStorage.getItem("game"));
+  const history = useHistory();
+  if(!game){
+    history.push({
+      pathname: "/admin/game",
+    })
+    return null
+  }
   return (
     <Box pt={{ base: '130px', md: '80px', xl: '80px',sm:'72px' }} >
       {isMobile() ? (
