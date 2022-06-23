@@ -20,9 +20,11 @@ export default function AllGame() {
       {isMobile() ? (
         <>
           <GameSwipper gameData={gameListDataJson}></GameSwipper>
-          <GameCard gameData={gameListDataJson}></GameCard>
-          <Twitter gameData={gameListDataJson}></Twitter>
-          <TrendingGames gameData={gameListDataJson}></TrendingGames>
+           <Box pl="8px" pr="8px">
+            <GameCard gameData={gameListDataJson}></GameCard>
+            <Twitter gameData={gameListDataJson}></Twitter>
+            <TrendingGames gameData={gameListDataJson}></TrendingGames>
+          </Box>
           </>
       ) : (<>
         <Grid

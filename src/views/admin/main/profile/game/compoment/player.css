@@ -40,6 +40,9 @@ margin-top: 22px !important;
 .image-gallery-slide-wrapper .image-gallery-right-nav{
   right: 16px;
 }
+.image-gallery-icon{
+  filter:none !important;
+}
 @media screen and (max-width: 768px){
   .image-gallery-slide-wrapper.left, .image-gallery-slide-wrapper.right{
     width: 100% !important;

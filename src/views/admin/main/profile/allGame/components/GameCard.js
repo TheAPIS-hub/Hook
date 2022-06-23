@@ -300,7 +300,13 @@ export default function GameCard({ gameData }) {
                       // padding: ' 13px 21px 11px 21px',
                       boxSizing: ' border-box',
                     }}
-                    padding={{sm:'12px 32px 11px 32px',md:' 13px 21px 11px 21px'}}
+                    padding={{sm:
+                      idx == index
+                        ? isShow
+                          ? '12px 22px 11px 22px'
+                          : '12px 32px 11px 32px'
+                        : '12px 32px 11px 32px'
+                        ,md:' 13px 21px 11px 21px'}}
                   >
                     <Box
                       style={{

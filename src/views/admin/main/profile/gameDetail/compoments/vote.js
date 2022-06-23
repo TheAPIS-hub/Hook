@@ -266,8 +266,10 @@ export default function Vote(props) {
         {isVote ? (
           <Box width={{ sm: "80%", md: "48%" }}>
             <Text
-              mb={{ sm: "10.13vw", md: "0" }}
+              mb={{ sm: "18vw", md: "0" }}
               fontSize={{ sm: "8.53vw", md: "18px" }}
+              className="font-Inter-SemiBold"
+              fontWeight="600"
               lineHeight={{ sm: "10.13vw", md: "24px" }}>Your‘ve voted <br/>- {choosMoon ? ('👍To da moon') : (
                 <Box>
                   <Text
@@ -289,7 +291,7 @@ export default function Vote(props) {
           </Box>
         ) : (
           <Box width={{ sm: "100%", md: "48%" }} margin={{sm:"0",md:"14px 0"}}>
-            <Text fontSize="18px">
+            <Text fontSize={{ sm: "24px", md: "18px" }}>
               How do you feel about {game.name} today？
             </Text>
             <Text fontSize="13px" color="#B2B3BD" width="80%">

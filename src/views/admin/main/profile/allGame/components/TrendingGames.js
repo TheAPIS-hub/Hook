@@ -47,7 +47,7 @@ export default function TrendingGames({ gameData }) {
                 // width: '491px',
               }}
               height={{sm:'26.6vw',md:'4.8vw'}}
-              marginBottom={{sm:'5.3vw',md:'0.9vw'}}
+              marginBottom={{sm:'6.4vw',md:'0.9vw'}}
             >
               <Box>
                 <Image
@@ -88,7 +88,7 @@ export default function TrendingGames({ gameData }) {
                     lineClamp: 3,
                     overflow: 'hidden',
                   }}
-                  width={{sm:"40vw",md:"15vw"}}
+                  width={{sm:"42vw",md:"15vw"}}
                   fontSize={{sm:"3.2vw",md:"0.6vw"}}
                   //   overflow="hidden"
                   //   //   maxH="2.3vw"

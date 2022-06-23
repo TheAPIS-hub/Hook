@@ -391,7 +391,7 @@ export default function HeaderLinks(props) {
       </Button> */}
       {isLogin ? (
         <Menu>
-          <MenuButton p="0px">
+          <MenuButton p="0px" display={{sm:"none",md:"block"}}> 
             <Avatar
               _hover={{ cursor: 'pointer' }}
               color="white"

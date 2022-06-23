@@ -86,7 +86,10 @@ export default function Twitter() {
         '2xl': '100%',
         md: '334px',
       }}
-      pr="10px"
+      pr={{
+        sm:"0",
+        md: '10px',
+      }}
       overflow="hidden"
       className="afterShandow"
     >
@@ -98,21 +101,22 @@ export default function Twitter() {
           textAlign: 'left',
           lineHeight: '32px',
         }}
-        marginBottom="28px"
+        marginBottom={{sm:"50px",md:"28px"}}
         className="font-Inter-SemiBold"
       >
         Twitter
       </Box>
 
-      <Box maxH={{sm:"200vw",md:"45vw"}} overflowY="auto">
+      <Box maxH={{sm:"200vw",md:"45vw"}} overflowY="auto" ml={{sm:"3.2vw",md:"0"}} pr={{sm:"1.5vw",md:"0"}}>
         {TwitterData.map((item, index) => {
           return (
             <Box
               style={{
                 display: 'flex',
                 verticalAlign: 'top',
-                marginBottom: '24px',
+                // marginBottom: '24px',
               }}
+              mt={{sm:"27px",md:"24px"}}
             >
               <Box
                 width={{
@@ -155,11 +159,11 @@ export default function Twitter() {
               <Box>
                 <Box
                   style={{
-                    marginBottom: '21px',
+                    // marginBottom: '21px',
                     display: 'flex',
                     alignItems: 'center',
                   }}
-                  mt={{sm:"11px",md:"21px"}}
+                  mb={{sm:"13px",md:"21px"}}
                 >
                   <Text
                     style={{
@@ -201,10 +205,14 @@ export default function Twitter() {
                   className="chatFrame"
                   style={{
                     // width: ' 349px',
-                    borderRadius: '20px 20px 20px 4px',
+                    // borderRadius: '20px 20px 20px 4px',
                     background: ' rgba(228,228,228,0.1)',
                     boxSizing: 'border-box',
                     //   index === 1 ? {background: "blue"} : { background:'rgba(228,228,228,0.1)'}
+                  }}
+                  borderRadius={{
+                    base: '13.4px 13.4px 13.4px 4px',
+                    md: '20px 20px 20px 4px',
                   }}
                   width={{
                     base: '100%',

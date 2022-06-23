@@ -107,7 +107,7 @@ export default function SwiperItem({
                 height="14.7vw"
                 h={{
                   base: '54px',
-                  sm: '50px',
+                  sm: '56px',
                   xl: '54px',
                   '2xl': '72px',
                 }}
@@ -123,7 +123,7 @@ export default function SwiperItem({
                   bgColor: 'rgba(108,93,211 ,0.6)',
                 }}
                 borderRadius="16px"
-                marginTop="5.4vw"
+                marginTop="6.4vw"
                 display={{sm:"block",md:"none"}}
               >
                 Watch

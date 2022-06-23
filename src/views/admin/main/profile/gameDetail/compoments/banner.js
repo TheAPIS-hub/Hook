@@ -137,7 +137,7 @@ export default function Banner(props) {
                 height="14.7vw"
                 h={{
                   base: '54px',
-                  sm: '50px',
+                  sm: '56px',
                   xl: '54px',
                   '2xl': '72px',
                 }}
@@ -150,7 +150,7 @@ export default function Banner(props) {
                   bgColor: 'rgba(108,93,211 ,0.6)',
                 }}
                 borderRadius="16px"
-                marginTop="5.4vw"
+                marginTop="6.4vw"
               >
                 Play Now
               </Button>
