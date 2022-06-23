@@ -9,6 +9,7 @@ import {
   Button,
   Thead,
   Tr,
+  Avatar,
   useColorModeValue,
 } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
@@ -23,6 +24,7 @@ import {
 import { MdBarChart } from 'react-icons/md'
 import BigNumber from 'bignumber.js'
 import '../index.css'
+import avatar from '../../../../../assets/img/logo/Header.png'
 function TotalMarketValue(props) {
   const { columnsData, tableData } = props
 
@@ -51,7 +53,7 @@ function TotalMarketValue(props) {
         direction="column"
         w="100%"
         overflowX={{ sm: 'scroll', lg: 'hidden' }}
-        className='DeFiBtn'
+        className="DeFiBtn"
       >
         <Flex
           align={{ sm: 'flex-start', lg: 'center' }}
@@ -66,7 +68,7 @@ function TotalMarketValue(props) {
             fontWeight="700"
             lineHeight="100%"
           >
-            DeFi Trending
+            Gaming Token Trending
           </Text>
           {/* <Button
             bg={boxBg}
@@ -137,9 +139,21 @@ function TotalMarketValue(props) {
                       )
                     } else if (cell.column.Header === 'Name') {
                       data = (
-                        <Text color={textColor} fontSize="sm" fontWeight="600">
-                          {cell.value}
-                        </Text>
+                        <Flex alignItems="center">
+                          <Avatar
+                            src={avatar}
+                            h="24px"
+                            w="24px"
+                            marginRight="8px"
+                          />
+                          <Text
+                            color={textColor}
+                            fontSize="sm"
+                            fontWeight="600"
+                          >
+                            {cell.value}
+                          </Text>
+                        </Flex>
                       )
                     } else if (cell.column.Header === 'Price') {
                       data = (

@@ -56,7 +56,7 @@ export default function YourTransactions(props) {
         fontWeight="700"
         mb="34px"
       >
-        Defi token
+        DeFi Token
       </Text>
       <Box p="34px" pt="0" maxHeight="520px" overflowY="auto">
         {defiToken.map((item, index) => {

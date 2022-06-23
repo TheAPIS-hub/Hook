@@ -50,7 +50,7 @@ function TotalMarketValue(props) {
         direction="column"
         w="100%"
         overflowX={{ sm: 'scroll', lg: 'hidden' }}
-        className='NFTTrendingBtn'
+        className="NFTTrendingBtn"
       >
         <Flex
           align={{ sm: 'flex-start', lg: 'center' }}
@@ -65,7 +65,7 @@ function TotalMarketValue(props) {
             fontWeight="700"
             lineHeight="100%"
           >
-            NFT Trending
+            NFT Gaming Trending
           </Text>
           {/* <Button
               bg={boxBg}
@@ -136,11 +136,15 @@ function TotalMarketValue(props) {
                       )
                     } else if (cell.column.Header === 'Collection') {
                       data = (
-                        <Text color={textColor} fontSize="sm" fontWeight="600"  wordBreak='keep-all' whiteSpace='nowrap'
-                        overflow='hidden'
-                        textOverflow='ellipsis'
-                        
-                      >
+                        <Text
+                          color={textColor}
+                          fontSize="sm"
+                          fontWeight="600"
+                          wordBreak="keep-all"
+                          whiteSpace="nowrap"
+                          overflow="hidden"
+                          textOverflow="ellipsis"
+                        >
                           {cell.value}
                         </Text>
                       )

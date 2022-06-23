@@ -119,6 +119,7 @@ export default function Default() {
             <TabList>
               <Tab className="NftHoverBtn">NFT</Tab>
               <Tab className="DeftHoverBtn">DEFI</Tab>
+              <Tab className="DeftHoverBtn">GamFi</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
@@ -189,6 +190,7 @@ export default function Default() {
               </TabPanel>
               <TabPanel>
                 <SimpleGrid
+                  className="MarketCapFount"
                   // className={dataType === 'DEFI' ? 'active' : 'nftData'}
                   columns={{ base: 1, md: 1, lg: 3, '2xl': 3 }}
                   gap="20px"
@@ -227,6 +229,72 @@ export default function Default() {
                     }
                     name="Volume"
                     value={'$' + defiVolumData?.volume?.toLocaleString()}
+                  />
+                </SimpleGrid>
+              </TabPanel>
+              <TabPanel>
+                <SimpleGrid
+                  className="MarketCapFount"
+                  // className={dataType === 'NFT' ? 'active' : 'nftData'}
+                  columns={{ base: 1, md: 1, lg: 3, '2xl': 3 }}
+                  gap="20px"
+                  mb="20px"
+                >
+                  <MiniStatistics
+                    growth={
+                      nftVolumeData?.marketCapRatio?.toFixed(2) > 0
+                        ? `+${new BigNumber(nftVolumeData?.marketCapRatio || 0)
+                            .times(100)
+                            .toFixed(2)}%`
+                        : new BigNumber(nftVolumeData?.marketCapRatio || 0)
+                            .times(100)
+                            .toFixed(2) + '%'
+                    }
+                    name="Market Cap"
+                    value={'$' + nftVolumeData?.marketCap?.toLocaleString()}
+                    fontColor={
+                      nftVolumeData?.marketCapRatio > 0
+                        ? 'green.500'
+                        : 'red.500'
+                    }
+                  />
+                  <MiniStatistics
+                    growth={
+                      nftVolumeData?.volumeRatio?.toFixed(2) > 0
+                        ? `+${new BigNumber(nftVolumeData?.volumeRatio || 0)
+                            .times(100)
+                            .toFixed(2)}%`
+                        : new BigNumber(nftVolumeData?.volumeRatio || 0)
+                            .times(100)
+                            .toFixed(2) + '%'
+                    }
+                    fontColor={
+                      nftVolumeData?.volumeRatio > 0 ? 'green.500' : 'red.500'
+                    }
+                    name="Volume"
+                    value={'$' + nftVolumeData?.volume?.toLocaleString()}
+                  />
+                  <MiniStatistics
+                    growth={
+                      nftVolumeData?.circulatingSupplyRatio?.toFixed(2) > 0
+                        ? `+${new BigNumber(
+                            nftVolumeData?.circulatingSupplyRatio || 0
+                          )
+                            .times(100)
+                            .toFixed(2)}%`
+                        : new BigNumber(
+                            nftVolumeData?.circulatingSupplyRatio || 0
+                          )
+                            .times(100)
+                            .toFixed(2) + '%'
+                    }
+                    name="Sales"
+                    fontColor={
+                      nftVolumeData?.circulatingSupplyRatio > 0
+                        ? 'green.500'
+                        : 'red.500'
+                    }
+                    value={nftVolumeData?.circulatingSupply?.toLocaleString()}
                   />
                 </SimpleGrid>
               </TabPanel>
