@@ -56,7 +56,7 @@ export default function Vote(props) {
         <Grid gridTemplateColumns="repeat(2, 1fr)"
           background="rgba(228, 228, 228, 0.1)"
           borderRadius="4.69vw"
-          mt="10.6vw"
+          mt="13.86vw"
         >
           <Flex
             borderRight="1px solid rgba(228, 228, 228, 0.1)"
@@ -259,7 +259,7 @@ export default function Vote(props) {
           base: '25px 0 20px',
           '2xl': '39px 0',
         }}
-        mt={{ sm: "13.8vw", md: "0" }}
+        mt={{ sm: "13.86vw", md: "0" }}
         justifyContent="space-between"
         flexDirection={{ sm: "column", md: "initial" }}
       >

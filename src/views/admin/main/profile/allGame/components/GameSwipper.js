@@ -104,18 +104,21 @@ export default function GameSwipper({ gameData }) {
   }, [])
 
   return (
-    <Box marginTop={{sm:"100px",md:"74px"}}>
+    <Box marginTop={{sm:"72px",md:"74px"}}>
       <Box
         style={{
           color: ' rgba(255,255,255,1)',
-          fontSize: '24px',
+          // fontSize: '24px',
           fontWeight: ' 500',
           textAlign: 'left',
           lineHeight: '32px',
-          marginBottom: '26px',
+          // marginBottom: '26px',
         }}
+        fontSize={{sm:"7.2vw",md:"24px"}}
+        marginBottom={{sm:"30px",md:"26px"}}
         className="font-Inter-SemiBold"
       >
+        <Text fontSize="16px" display={{md:"none"}}>Game</Text>
         Featured & Recommended
       </Box>
       <Box

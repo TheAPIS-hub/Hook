@@ -21,6 +21,7 @@ import saleIcon from 'assets/img/users/saleIcon.png'
 import volumeIcon from 'assets/img/users/volumeIcon.png'
 import soldIcon from 'assets/img/users/soldIcon.png'
 import twitter from 'assets/img/users/twitter.png'
+import checkIcon from 'assets/img/users/check-icon.png'
 import { MdMoreHoriz } from 'react-icons/md'
 import { AiOutlineLike } from 'react-icons/ai'
 import { RiShareForwardLine } from 'react-icons/ri'
@@ -34,7 +35,7 @@ import { formatNumber, abc } from '../../../../../../hook/untils'
 import likedIcon from 'assets/img/users/liked.png'
 import { likedStatus } from '../../../../../../hook/hook'
 import BigNumber from 'bignumber.js'
-
+import { isMobile } from './until.js'
 export default function Banner(props) {
   const { game } = props
   const uId = localStorage.getItem('uId')
@@ -53,13 +54,14 @@ export default function Banner(props) {
     <div>
       <Text
         color=" rgba(255,255,255,1)"
-        fontSize="24px"
+        fontSize={{sm:"32px",md:"24px"}}
         fontWeight=" 500"
         textAlign="left"
         lineHeight="32px"
-        marginBottom="20px"
         className="font-Inter-SemiBold"
+        marginBottom={{sm:"7.2vw",md:"26px"}}
       >
+        <Text fontSize="16px" display={{md:"none"}}>Game</Text>
         Overview
       </Text>
       <Box bg={{ sm: "none", md: "#111C44" }} borderRadius="22px">
@@ -150,7 +152,7 @@ export default function Banner(props) {
                 borderRadius="16px"
                 marginTop="5.4vw"
               >
-                Play Now!
+                Play Now
               </Button>
 
             </Flex>
@@ -202,14 +204,13 @@ export default function Banner(props) {
               </Box>
               <Box ml="24px" fontSize={{ sm: "6.4vw", md: "0.95vw" }} fontWeight="500">
                 <Flex m="8px 0">
-                  <Text mr="9px" lineHeight="24px" className="font-Inter-SemiBold">
+                  <Text mr={{sm:"17px",md:"9px"}} lineHeight="24px" className="font-Inter-SemiBold">
                     {game.twtter}
                   </Text>
                   <Image
-                    src={twitter}
-                    width="26px"
-                    height="26px"
-                    mr="35px"
+                    src={isMobile()?checkIcon:twitter}
+                    width={{sm:"16px",md:"26px"}}
+                    height={{sm:"16px",md:"26px"}}
                   ></Image>
                 </Flex>
                 <Box m="8px 0" fontSize={{ sm: "3.7vw", md: "0.95vw" }}>

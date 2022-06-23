@@ -115,3 +115,7 @@ em-emoji-picker {
     font-family: Inter-SemiBold;
   }
 }
+video {
+  height: 100px;
+  width: 100px;
+}

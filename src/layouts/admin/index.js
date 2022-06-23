@@ -206,10 +206,10 @@ export default function Dashboard(props) {
           {getRoute() ? (
             <Box
               mx="auto"
-              p={{ base: '20px', md: '30px' }}
+              p={{sm:'20px 16px',base: '20px', md: '30px' }}
               pe="20px"
               minH="100vh"
-              pt="50px"
+              pt={{sm:'50px',md: '50px' }}
             >
               <Switch>
                 {getRoutes(routes)}

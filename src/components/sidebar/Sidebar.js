@@ -12,6 +12,7 @@ import {
   useDisclosure,
   DrawerContent,
   DrawerCloseButton,
+  Image,
 } from '@chakra-ui/react'
 import Content from 'components/sidebar/components/Content'
 import {
@@ -23,7 +24,7 @@ import { Scrollbars } from 'react-custom-scrollbars-2'
 import PropTypes from 'prop-types'
 // Assers
 import { IoMenuOutline } from 'react-icons/io5'
-
+import navIcon from 'assets/img/users/navIcon.png'
 // FUNCTIONS
 
 function Sidebar(props) {
@@ -98,7 +99,9 @@ export function SidebarResponsive(props) {
           h="20px"
           me="10px"
           _hover={{ cursor: 'pointer' }}
+          display={{ sm: 'none', md: 'block' }}
         />
+        <Image position="absolute" left="32px" top="37px" display={{ md: 'none' }} src={navIcon}></Image>
       </Flex>
       <Drawer
         isOpen={isOpen}

@@ -27,6 +27,8 @@ import '../../views/admin/dashboards/default/iconfont.css'
 import React, { useEffect, useState } from 'react'
 // Assets
 import navImage from 'assets/img/layout/Navbar.png'
+import logo from 'assets/img/logo/logo.png'
+import newsIcon from 'assets/img/users/newsIcon.png'
 import {
   MdNotificationsNone,
   MdInfoOutline,
@@ -132,19 +134,21 @@ export default function HeaderLinks(props) {
   return (
     <Flex
       w={{ sm: '100%', md: 'auto' }}
+      h={{ sm: '100%', md: 'auto' }}
       alignItems="center"
       flexDirection="row"
-      bg={menuBg}
+      bg={{ sm: '#0B1437', md: menuBg }}
       flexWrap={secondary ? { base: 'wrap', md: 'nowrap' } : 'unset'}
       p="10px"
       borderRadius="30px"
-      boxShadow={shadow}
+      boxShadow={{ sm: ' ', md: shadow }}
       className="HeaderSearchBar"
     >
       <SearchBar
         mb={secondary ? { base: '10px', md: 'unset' } : 'unset'}
         me="10px"
         borderRadius="30px"
+        display={{sm:"none",md:"block"}}
       />
       {/* <Flex
         bg={ethBg}
@@ -182,7 +186,10 @@ export default function HeaderLinks(props) {
       </Flex> */}
       <SidebarResponsive routes={routes} />
       <Menu>
-        <MenuButton p="0px">
+        <MenuButton p="0px"  
+           position={{sm:"absolute",md:"inherit"}}
+           right="31.4vw"
+           top="36px">
           <Icon
             display="flex"
             as={MdNotificationsNone}
@@ -190,7 +197,15 @@ export default function HeaderLinks(props) {
             w="18px"
             h="18px"
             me="10px"
+            display={{sm:"none",md:"block"}}
           />
+          <Image 
+          display={{md:"none"}}
+           src={newsIcon} 
+           w="24px" 
+           height="24px"
+           >  
+          </Image>
         </MenuButton>
         <MenuList
           boxShadow={shadow}
@@ -309,8 +324,8 @@ export default function HeaderLinks(props) {
         padding="6px"
         boxSizing="border-box"
         h="41px"
-        display="flex"
         alignItems="center"
+        display={{sm:"none",md:"flex"}}
       >
         <Box
           width="29px"
@@ -337,7 +352,7 @@ export default function HeaderLinks(props) {
         padding="6px"
         boxSizing="border-box"
         h="41px"
-        display="flex"
+        display={{sm:"none",md:"flex"}}
         alignItems="center"
       >
         <Box
@@ -476,10 +491,12 @@ export default function HeaderLinks(props) {
           _webkitTransition="All 0.2s ease-in-out"
           _mozTransition=" All 0.2s ease-in-out"
           _oTransition=" All 0.2s ease-in-out"
+          display={{sm:"none",md:"block"}}
         >
           Sign In
         </Button>
       )}
+      <Image src={logo} position="absolute" right="22px" top="26px" display={{md:"none"}}></Image>
     </Flex>
   )
 }

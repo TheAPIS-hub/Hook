@@ -10,7 +10,7 @@ import { isMobile } from './compoments/until.js'
 export default function GameDetail(props) {
   const game = JSON.parse(localStorage.getItem("game"));
   return (
-    <Box pt={{ base: '130px', md: '80px', xl: '80px',sm:'100px' }} >
+    <Box pt={{ base: '130px', md: '80px', xl: '80px',sm:'72px' }} >
       {isMobile() ? (
         <div>
           <Banner game={game}></Banner>
