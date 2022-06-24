@@ -15,7 +15,7 @@ import AdminNavbarLinks from 'components/navbar/NavbarLinksAdmin'
 
 export default function AdminNavbar(props) {
   const [scrolled, setScrolled] = useState(false)
-  const [isShowSidebar, setIsShowSidebar] = useState(false)
+  const [isShowSidebar, setIsShowSidebar] = useState(true)
 
   useEffect(() => {
     window.addEventListener('scroll', changeNavbar)
