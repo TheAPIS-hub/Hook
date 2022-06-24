@@ -60,7 +60,7 @@ export default function DateUploaded(props) {
         _hover={bgHover}
         _focus={bgFocus}
         _active={bgFocus}
-        w={{sm:"150px",md:"200px"}}
+        w={{ sm: '150px', md: '200px' }}
         h="56px"
         lineHeight="100%"
         onClick={onOpen1}
@@ -79,10 +79,10 @@ export default function DateUploaded(props) {
               color: 'rgba(128,129,145,1)',
               fontSize: '14px',
               fontWeight: '700',
-              marginRight: '3vw',
+              marginRight: '13vw',
             }}
           >
-            GAME SORT
+            SORT
           </Text>
           <Icon as={MdKeyboardArrowDown} color={iconColor} w="24px" h="24px" />
         </Flex>
@@ -140,7 +140,7 @@ export default function DateUploaded(props) {
         >
           <Flex align="center">
             <Text fontSize="sm" fontWeight="400">
-              INITIALRELEASEDATE
+              INITIALRELEASE DATE
             </Text>
           </Flex>
         </MenuItem>
