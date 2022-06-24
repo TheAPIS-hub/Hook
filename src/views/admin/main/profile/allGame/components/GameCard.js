@@ -62,7 +62,7 @@ export default function GameCard({ gameData }) {
         alignItems="start"
         justifyContent="space-between"
         marginBottom="32px"
-        flexDirection={{sm:"column-reverse",md:"initial"}}
+        flexDirection={{ sm: 'column-reverse', md: 'initial' }}
       >
         <Text
           style={{
@@ -76,7 +76,11 @@ export default function GameCard({ gameData }) {
           Trending games
         </Text>
 
-        <DateUploaded chooseSort={chooseSort} ml={{sm:"57%",md:"0"}} mb={{sm:"26px",md:"0"}}></DateUploaded>
+        <DateUploaded
+          chooseSort={chooseSort}
+          ml={{ sm: '57%', md: '0' }}
+          mb={{ sm: '26px', md: '0' }}
+        ></DateUploaded>
       </Flex>
       {/* <Box
         style={{
@@ -123,7 +127,7 @@ export default function GameCard({ gameData }) {
                     background: 'rgba(17,28,68,1)',
                   }}
                   key={`item+${index}`}
-                  w='100%'
+                  w="100%"
                   marginBottom={{
                     base: '40px',
                     md: '20px',
@@ -151,7 +155,7 @@ export default function GameCard({ gameData }) {
                       src={item?.imgs[0].url}
                       alt=""
                       width="100%"
-                      height={{sm:"45.3vw",md:"8vw"}}
+                      height={{ sm: '45.3vw', md: '8vw' }}
                     />
                   </Box>
                   <Box
@@ -159,7 +163,7 @@ export default function GameCard({ gameData }) {
                       // padding: '16px',
                       boxSizing: ' border-box',
                     }}
-                    padding={{sm:'24px',md:'16px'}}
+                    padding={{ sm: '24px', md: '16px' }}
                   >
                     <Box
                       style={{
@@ -169,7 +173,7 @@ export default function GameCard({ gameData }) {
                         textAlign: 'left',
                         lineHeight: '24px',
                       }}
-                      fontSize={{sm:'4.8vw',md:"0.8vw"}}
+                      fontSize={{ sm: '4.8vw', md: '0.8vw' }}
                     >
                       {item.name}
                     </Box>
@@ -202,7 +206,7 @@ export default function GameCard({ gameData }) {
                           lineHeight: ' 16px',
                           marginRight: '10px',
                         }}
-                        fontSize={{sm:"3.2vw",md:"0.3vw"}}
+                        fontSize={{ sm: '3.2vw', md: '0.3vw' }}
                       >
                         {formatNumber(item.twitterFollower)} followers
                       </Box>
@@ -222,7 +226,7 @@ export default function GameCard({ gameData }) {
                           textAlign: 'right',
                           lineHeight: ' 16px',
                         }}
-                        fontSize={{sm:"3.2vw",md:"0.6vw"}}
+                        fontSize={{ sm: '3.2vw', md: '0.6vw' }}
                       >
                         {formatNumber(item.activeUsers)} players
                       </Box>
@@ -286,7 +290,7 @@ export default function GameCard({ gameData }) {
                           textAlign: ' left',
                           lineHeight: '20px',
                         }}
-                        fontSize={{sm:"3.4vw",md:"0.6vw"}}
+                        fontSize={{ sm: '3.4vw', md: '0.6vw' }}
                       >
                         {item.gameStudio}®
                       </Box>
@@ -300,13 +304,15 @@ export default function GameCard({ gameData }) {
                       // padding: ' 13px 21px 11px 21px',
                       boxSizing: ' border-box',
                     }}
-                    padding={{sm:
-                      idx == index
-                        ? isShow
-                          ? '12px 22px 11px 22px'
-                          : '12px 32px 11px 32px'
-                        : '12px 32px 11px 32px'
-                        ,md:' 13px 21px 11px 21px'}}
+                    padding={{
+                      sm:
+                        idx == index
+                          ? isShow
+                            ? '12px 22px 11px 22px'
+                            : '12px 32px 11px 32px'
+                          : '12px 32px 11px 32px',
+                      md: ' 13px 21px 11px 21px',
+                    }}
                   >
                     <Box
                       style={{
@@ -329,22 +335,22 @@ export default function GameCard({ gameData }) {
                           md: '60px',
                           xl: '72px',
                           '2xl': '80px',
-                          sm:'90px'
+                          sm: '90px',
                         }}
                         height={{
                           base: '20px',
                           md: '16px',
                           xl: '20px',
                           '2xl': '24px',
-                          sm:'27px'
+                          sm: '27px',
                         }}
-                        fontSize={{sm:"3.47vw",md:"0.6vw"}}
+                        fontSize={{ sm: '3.47vw', md: '0.6vw' }}
                         lineHeight={{
                           base: '20px',
                           md: '16px',
                           xl: '20px',
                           '2xl': '24px',
-                          sm:'27px'
+                          sm: '27px',
                         }}
                       >
                         Alpha
@@ -406,7 +412,7 @@ export default function GameCard({ gameData }) {
                     >
                       <Text
                         type="primary"
-                        fontSize={{sm:"3.2vw",md:"0.6vw"}}
+                        fontSize={{ sm: '3.2vw', md: '0.6vw' }}
                         fontWeight="400"
                         mr="7px"
                         data-idx={`${index}`}
@@ -472,10 +478,10 @@ export default function GameCard({ gameData }) {
                           textAlign: 'left',
                         }}
                         fontSize="12px"
-                        width={{sm:"26vw",md:"5.6vw","2xl":"5vw"}}
+                        width={{ sm: '26vw', md: '5.6vw', '2xl': '5vw' }}
                         // marginRight="50px"
                       >
-                        RIO
+                        ROI
                       </Box>
                       <Box
                         style={{
@@ -502,7 +508,7 @@ export default function GameCard({ gameData }) {
                           textAlign: 'left',
                         }}
                         fontSize="12px"
-                        width={{sm:"26vw",md:"5.6vw","2xl":"5vw"}}
+                        width={{ sm: '26vw', md: '5.6vw', '2xl': '5vw' }}
                       >
                         Volume
                       </Box>
@@ -531,8 +537,7 @@ export default function GameCard({ gameData }) {
                           textAlign: 'left',
                         }}
                         fontSize="12px"
-                        width={{sm:"26vw",md:"5.6vw","2xl":"5vw"}}
-
+                        width={{ sm: '26vw', md: '5.6vw', '2xl': '5vw' }}
                       >
                         Total NFTs
                       </Box>
@@ -553,8 +558,8 @@ export default function GameCard({ gameData }) {
                           borderRadius: ' 8px',
                           background: 'rgba(108,93,211,1)',
                         }}
-                        width={{sm:'108px',md:'70px'}}
-                        height={{sm:'28px',md:'20px'}}
+                        width={{ sm: '108px', md: '70px' }}
+                        height={{ sm: '28px', md: '20px' }}
                       >
                         <Text
                           style={{
@@ -563,7 +568,7 @@ export default function GameCard({ gameData }) {
                             textAlign: ' center',
                             // lineHeight: ' 20px',
                           }}
-                          lineHeight={{sm:'28px',md:'20px'}}
+                          lineHeight={{ sm: '28px', md: '20px' }}
                           fontSize="12px"
                         >
                           swap

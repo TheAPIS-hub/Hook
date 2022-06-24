@@ -55,9 +55,7 @@ export default function Footer() {
                     ></Link>
                   </Text>
                 </Text>
-                <Text as="span" fontWeight="500" ms="4px" marginRight="30px">
-                  One-stop Data Analysis For All Blockchains.
-                </Text>
+
                 <Text as="span" fontWeight="500" ms="4px">
                   Help Web2 Gamers play to Web3 Games.
                 </Text>
@@ -201,9 +199,7 @@ export default function Footer() {
                   ></Link>
                 </Text>
               </Text>
-              <Text as="span" fontWeight="500" ms="4px" marginRight="30px">
-                One-stop Data Analysis For All Blockchains.
-              </Text>
+
               <Text as="span" fontWeight="500" ms="4px">
                 Help Web2 Gamers play to Web3 Games.
               </Text>
