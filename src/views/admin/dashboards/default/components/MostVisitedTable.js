@@ -53,8 +53,8 @@ function TotalMarketValue(props) {
         className="NFTTrendingBtn"
       >
         <Flex
-          align={{ sm: 'flex-start', lg: 'center' }}
-          justify={{ sm: 'flex-start', lg: 'space-between' }}
+          align={{ sm: 'center', lg: 'center' }}
+          justify={{ sm: 'space-between', lg: 'space-between' }}
           w="100%"
           px="10px"
           mb="20px"

@@ -104,8 +104,8 @@ export default function HeaderLinks(props) {
                 localStorage.setItem('uId', infoRes.data.data.uid)
               }
             })
-          }else{
-           localStorage.setItem('uId', '')
+          } else {
+            localStorage.setItem('uId', '')
           }
         } else {
           setIsLogin(false)
@@ -122,9 +122,9 @@ export default function HeaderLinks(props) {
               localStorage.setItem('uId', infoRes.data.data.uid)
             }
           })
-        }else{
+        } else {
           localStorage.setItem('uId', '')
-         }
+        }
       } else {
         setIsLogin(false)
       }
@@ -148,7 +148,7 @@ export default function HeaderLinks(props) {
         mb={secondary ? { base: '10px', md: 'unset' } : 'unset'}
         me="10px"
         borderRadius="30px"
-        display={{sm:"none",md:"block"}}
+        display={{ sm: 'none', md: 'block' }}
       />
       {/* <Flex
         bg={ethBg}
@@ -186,10 +186,12 @@ export default function HeaderLinks(props) {
       </Flex> */}
       <SidebarResponsive routes={routes} />
       <Menu>
-        <MenuButton p="0px"  
-           position={{sm:"absolute",md:"inherit"}}
-           right="31.4vw"
-           top="36px">
+        <MenuButton
+          p="0px"
+          position={{ sm: 'absolute', md: 'inherit' }}
+          right="31.4vw"
+          top="36px"
+        >
           <Icon
             display="flex"
             as={MdNotificationsNone}
@@ -197,15 +199,14 @@ export default function HeaderLinks(props) {
             w="18px"
             h="18px"
             me="10px"
-            display={{sm:"none",md:"block"}}
+            display={{ sm: 'none', md: 'block' }}
           />
-          <Image 
-          display={{md:"none"}}
-           src={newsIcon} 
-           w="24px" 
-           height="24px"
-           >  
-          </Image>
+          <Image
+            display={{ md: 'none' }}
+            src={newsIcon}
+            w="24px"
+            height="24px"
+          ></Image>
         </MenuButton>
         <MenuList
           boxShadow={shadow}
@@ -325,7 +326,7 @@ export default function HeaderLinks(props) {
         boxSizing="border-box"
         h="41px"
         alignItems="center"
-        display={{sm:"none",md:"flex"}}
+        display={{ sm: 'none', md: 'flex' }}
       >
         <Box
           width="29px"
@@ -352,7 +353,7 @@ export default function HeaderLinks(props) {
         padding="6px"
         boxSizing="border-box"
         h="41px"
-        display={{sm:"none",md:"flex"}}
+        display={{ sm: 'none', md: 'flex' }}
         alignItems="center"
       >
         <Box
@@ -391,7 +392,7 @@ export default function HeaderLinks(props) {
       </Button> */}
       {isLogin ? (
         <Menu>
-          <MenuButton p="0px" display={{sm:"none",md:"block"}}> 
+          <MenuButton p="0px" display={{ sm: 'none', md: 'block' }}>
             <Avatar
               _hover={{ cursor: 'pointer' }}
               color="white"
@@ -491,12 +492,19 @@ export default function HeaderLinks(props) {
           _webkitTransition="All 0.2s ease-in-out"
           _mozTransition=" All 0.2s ease-in-out"
           _oTransition=" All 0.2s ease-in-out"
-          display={{sm:"none",md:"block"}}
+          display={{ sm: 'none', md: 'block' }}
         >
           Sign In
         </Button>
       )}
-      <Image src={logo} position="absolute" right="22px" top="26px" display={{md:"none"}}></Image>
+      <Image
+        src={logo}
+        position="absolute"
+        right="22px"
+        top="26px"
+        w="42px"
+        display={{ md: 'none' }}
+      ></Image>
     </Flex>
   )
 }

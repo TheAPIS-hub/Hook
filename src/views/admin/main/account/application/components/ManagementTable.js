@@ -85,7 +85,7 @@ function ManagementTable(props) {
                     pe="10px"
                     key={index}
                     borderColor={borderColor}
-                    border='none'
+                    border="none"
                   >
                     <Flex
                       justify="space-between"
@@ -129,7 +129,7 @@ function ManagementTable(props) {
                       )
                     } else if (cell.column.Header === 'Transfer') {
                       data = (
-                        <Text color={textColor} fontSize="sm" fontWeight="600">
+                        <Text color="#a5adc5" fontSize="sm" fontWeight="600">
                           {cell.value}
                         </Text>
                       )

@@ -60,17 +60,22 @@ function TopCreatorTable(props) {
         bgColor={balanceBg}
         maxH="400px"
         overflowY="auto"
-        className='TrendingBtn'
+        className="TrendingBtn"
       >
         <Flex
           align={{ sm: 'flex-start', lg: 'center' }}
           justify="space-between"
           w="100%"
-          px="22px"
-          pb="20px"
+          px="30px"
+          pb="10px"
           pt="20px"
         >
-          <Text color={textColor} fontSize="24px" fontWeight="700" letterSpacing= '-0.48px'>
+          <Text
+            color={textColor}
+            fontSize="24px"
+            fontWeight="700"
+            letterSpacing="-0.48px"
+          >
             Trending Addresses
           </Text>
           {/* <Button variant='action'>See all</Button> */}
@@ -99,13 +104,12 @@ function TopCreatorTable(props) {
                       pe="10px"
                       key={index}
                       borderColor="transparent"
-                    
                     >
                       <Flex
-                        className='HeaderRight'
+                        className="HeaderRight"
                         fontSize={{ sm: '10px', lg: '12px' }}
                         color="gray.400"
-                        text-align=' end '
+                        text-align=" end "
                       >
                         {column.render('Header')}
                       </Flex>

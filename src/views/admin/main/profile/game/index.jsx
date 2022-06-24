@@ -525,6 +525,26 @@ export default function Track(props) {
               </Box>
             </Box>
           </Flex>
+          <Link href="#/admin/profile/allGame" marginRight="35px">
+            <Box
+              className="VIewBtn"
+              style={{
+                width: '244px',
+                height: '71.76px',
+                borderRadius: '24.959999084472656px',
+                background: 'rgba(117,81,255,1)',
+                margin: 'auto',
+                color: ' rgba(255,255,255,1)',
+                fontSize: ' 21.84px',
+                fontWeight: '600',
+                textAlign: 'center',
+                lineHeight: '71.76px',
+                marginTop: '113.24px',
+              }}
+            >
+              Explore all games
+            </Box>
+          </Link>
         </>
       ) : (
         <Box

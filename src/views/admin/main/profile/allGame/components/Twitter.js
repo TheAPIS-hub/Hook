@@ -87,7 +87,7 @@ export default function Twitter() {
         md: '334px',
       }}
       pr={{
-        sm:"0",
+        sm: '0',
         md: '10px',
       }}
       overflow="hidden"
@@ -101,13 +101,18 @@ export default function Twitter() {
           textAlign: 'left',
           lineHeight: '32px',
         }}
-        marginBottom={{sm:"50px",md:"28px"}}
+        marginBottom={{ sm: '50px', md: '28px' }}
         className="font-Inter-SemiBold"
       >
         Twitter
       </Box>
 
-      <Box maxH={{sm:"200vw",md:"45vw"}} overflowY="auto" ml={{sm:"3.2vw",md:"0"}} pr={{sm:"1.5vw",md:"0"}}>
+      <Box
+        maxH={{ sm: '127vw', md: '45vw' }}
+        overflowY="auto"
+        ml={{ sm: '3.2vw', md: '0' }}
+        pr={{ sm: '1.5vw', md: '0' }}
+      >
         {TwitterData.map((item, index) => {
           return (
             <Box
@@ -116,7 +121,7 @@ export default function Twitter() {
                 verticalAlign: 'top',
                 // marginBottom: '24px',
               }}
-              mt={{sm:"27px",md:"24px"}}
+              mt={{ sm: '27px', md: '24px' }}
             >
               <Box
                 width={{
@@ -131,27 +136,27 @@ export default function Twitter() {
                   '2xl': '20%',
                   md: '38px',
                 }}
-                marginRight={{sm:"3.6vw",md:"0.5vw"}}
+                marginRight={{ sm: '3.6vw', md: '0.5vw' }}
               >
                 <Image
                   style={{
                     borderRadius: '50%',
                   }}
                   width={{
-                    sm:"10.1vw",
+                    sm: '10.1vw',
                     base: '2vw',
                     xl: '2vw',
                     '2xl': '2vw',
                     md: '38px',
                   }}
                   height={{
-                    sm:"10.1vw",
+                    sm: '10.1vw',
                     base: '2vw',
                     xl: '2vw',
                     '2xl': '2vw',
                     md: '38px',
                   }}
-                  maxW={{sm:"11vw",md:"2vw"}}
+                  maxW={{ sm: '11vw', md: '2vw' }}
                   src={item.profileImageUrlHttps}
                   alt=""
                 />
@@ -163,7 +168,7 @@ export default function Twitter() {
                     display: 'flex',
                     alignItems: 'center',
                   }}
-                  mb={{sm:"13px",md:"21px"}}
+                  mb={{ sm: '13px', md: '21px' }}
                 >
                   <Text
                     style={{
@@ -172,7 +177,7 @@ export default function Twitter() {
                       textAlign: 'left',
                     }}
                     fontSize="0.6vw"
-                    maxWidth={{sm:'44vw',md:'11vw'}}
+                    maxWidth={{ sm: '44vw', md: '11vw' }}
                     overflow="hidden"
                     whiteSpace="nowrap"
                     textOverflow="ellipsis"
@@ -186,7 +191,7 @@ export default function Twitter() {
                       textAlign: 'left',
                     }}
                     fontSize="0.6vw"
-                    marginLeft={{sm:"1.3vw",md:"0.3vw"}}
+                    marginLeft={{ sm: '1.3vw', md: '0.3vw' }}
                   >
                     @{item.screenName}
                   </Text>
@@ -220,7 +225,7 @@ export default function Twitter() {
                     '2xl': '100%',
                     md: '100%',
                   }}
-                  padding={{sm:'3.6vw 4.3vw',md:'0.8vw 1.1vw'}}
+                  padding={{ sm: '3.6vw 4.3vw', md: '0.8vw 1.1vw' }}
                 >
                   <Box
                     className="chatFullText"
