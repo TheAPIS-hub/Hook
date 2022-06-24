@@ -79,8 +79,8 @@ export default function DateUploaded(props) {
               color: 'rgba(128,129,145,1)',
               fontSize: '14px',
               fontWeight: '700',
-              marginRight: '13vw',
             }}
+            marginRight={{ sm: '13vw', md: '6vw' }}
           >
             SORT
           </Text>
