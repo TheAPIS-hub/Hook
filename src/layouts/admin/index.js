@@ -153,7 +153,7 @@ export default function Dashboard(props) {
             setIsShowSidebar(!isShowSidebar)
             localStorage.setItem('isShowSidebar', !isShowSidebar)
           }}
-          display={{sm:"none",md:"block"}}
+          display={{ sm: 'none', md: 'block' }}
           top={isShowSidebar ? '130px' : '68px'}
         >
           <Icon
@@ -206,14 +206,14 @@ export default function Dashboard(props) {
           {getRoute() ? (
             <Box
               mx="auto"
-              p={{sm:'20px 16px',base: '20px', md: '30px' }}
+              p={{ sm: '20px 16px', base: '20px', md: '30px' }}
               pe="20px"
               minH="100vh"
-              pt={{sm:'50px',md: '50px' }}
+              pt={{ sm: '50px', md: '50px' }}
             >
               <Switch>
                 {getRoutes(routes)}
-                <Redirect from="/" to="/admin/dashboards/default" />
+                <Redirect from="/" to="/admin/game" />
               </Switch>
             </Box>
           ) : null}

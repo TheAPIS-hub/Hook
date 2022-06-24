@@ -73,36 +73,6 @@ import VerificationDefault from 'views/auth/verification/VerificationDefault.jsx
 const routes = [
   // --- Dashboards ---
   {
-    name: 'Overview',
-    layout: '/admin',
-    path: '/dashboards/default',
-    icon: <span className="iconfont icon-Overview">&#xe608;</span>,
-    collapse: false,
-    component: DashboardsDefault,
-    isShow: true,
-    isClick: true,
-    items: [
-      // {
-      //   name: "Main Overview",
-      //   layout: "/admin",
-      //   path: "/dashboards/default",
-      //   component: DashboardsDefault,
-      // },
-      // {
-      //   name: "Car Interface",
-      //   layout: "/admin",
-      //   path: "/dashboards/car-interface",
-      //   component: DashboardsCarInterface,
-      // },
-      // {
-      //   name: "Smart Home",
-      //   layout: "/admin",
-      //   path: "/dashboards/smart-home",
-      //   component: DashboardsSmartHome,
-      // },
-    ],
-  },
-  {
     name: 'Game',
     icon: <span className="iconfont icon-Overview">&#xe606;</span>,
     collapse: false,
@@ -244,7 +214,6 @@ const routes = [
       // },
     ],
   },
-
   {
     name: 'Track',
     path: '/track',
@@ -462,6 +431,37 @@ const routes = [
       // },
     ],
   },
+  {
+    name: 'Overview',
+    layout: '/admin',
+    path: '/dashboards/default',
+    icon: <span className="iconfont icon-Overview">&#xe608;</span>,
+    collapse: false,
+    component: DashboardsDefault,
+    isShow: true,
+    isClick: true,
+    items: [
+      // {
+      //   name: "Main Overview",
+      //   layout: "/admin",
+      //   path: "/dashboards/default",
+      //   component: DashboardsDefault,
+      // },
+      // {
+      //   name: "Car Interface",
+      //   layout: "/admin",
+      //   path: "/dashboards/car-interface",
+      //   component: DashboardsCarInterface,
+      // },
+      // {
+      //   name: "Smart Home",
+      //   layout: "/admin",
+      //   path: "/dashboards/smart-home",
+      //   component: DashboardsSmartHome,
+      // },
+    ],
+  },
+
   // --- NFTs ---
   {
     name: 'Trending',
