@@ -375,7 +375,34 @@ export default function Track(props) {
         prevEl: '.swiper-button-prev',
       },
     })
+    if (isMobile()) {
+      new Swiper('.swiper-container2', {
+        loop: true,
+        // speed: 1000,
+        // autoplay: {
+        //   delay: 3000,
+        // },
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 80,
+          depth: 200,
+          modifier: 1,
+          slideShadows: false,
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      })
+    }
   }
+  const [isShowCreate, setIsShowCreate] = useState(false)
 
   useEffect(() => {
     swiper()
@@ -388,12 +415,12 @@ export default function Track(props) {
   return (
     <>
       {isMobile() ? (
-        <>
+        <Box className="MGames">
           <Box className="MGameTitle">Game</Box>
           <Box className="MGaming">Games and Beyond</Box>
           <Flex justifyContent="center">
             <Box
-              className="swiper-container1"
+              className="swiper-container2"
               style={{
                 width: '1000px',
                 display: 'flex',
@@ -420,7 +447,7 @@ export default function Track(props) {
                         >
                           <Box>
                             <Image
-                              width="249px"
+                              //   width="249px"
                               borderRadius="26px"
                               height="238px"
                               src={item.imgs[0].url}
@@ -511,7 +538,12 @@ export default function Track(props) {
                               >
                                 View
                               </Box>
-                              <Box className="MaCreateBtn">
+                              <Box
+                                className="MaCreateBtn"
+                                onClick={() => {
+                                  setIsShowCreate(true)
+                                }}
+                              >
                                 <Box className="iconfont MCreateBtn">
                                   &#xe726;
                                 </Box>
@@ -523,6 +555,60 @@ export default function Track(props) {
                     )
                   })}
               </Box>
+              {isShowCreate ? (
+                <Box className="MShowCreate">
+                  <Flex justifyContent="flex-end" p="5px 10px">
+                    <Box
+                      className="iconfont"
+                      onClick={() => {
+                        setIsShowCreate(false)
+                      }}
+                      color="#F0F3F6"
+                      textAlign="right"
+                      fontSize="28px"
+                      w="32px"
+                      h="32px"
+                    >
+                      &#xe61a;
+                    </Box>
+                  </Flex>
+                  <Text
+                    style={{
+                      textAlign: 'center',
+                      color: '#000',
+                      fontSize: '17px',
+                      fontFamily: 'Poppins',
+                      fontWeight: 500,
+                      lineHeight: '23px',
+                    }}
+                  >
+                    Create Project
+                  </Text>
+                  <Link
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdGpIutxIjaaC3i_wnli1B3_wY5rU91o7UpNqpeISbz2AHnrg/viewform"
+                    marginRight="35px"
+                  >
+                    <Box
+                      className="VIewBtn"
+                      style={{
+                        width: '84px',
+                        height: '53px',
+                        lineHeight: '53px',
+                        borderRadius: '24px',
+                        fontWeight: '600',
+                        textAlign: 'center',
+                        background: 'rgba(117,81,255,1)',
+                        margin: '0 auto',
+                        marginTop: '22px',
+                      }}
+                    >
+                      Yes
+                    </Box>
+                  </Link>
+                </Box>
+              ) : (
+                <></>
+              )}
             </Box>
           </Flex>
           <Link href="#/admin/profile/allGame" marginRight="35px">
@@ -545,7 +631,7 @@ export default function Track(props) {
               Explore all games
             </Box>
           </Link>
-        </>
+        </Box>
       ) : (
         <Box
           className="swipperBox"
