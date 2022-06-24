@@ -11,6 +11,7 @@ import {
   Avatar,
   Badge,
   Icon,
+  Image,
   Flex,
   Table,
   Tbody,
@@ -29,7 +30,7 @@ import Menu from 'components/menu/MainMenu'
 import { MdCached } from 'react-icons/md'
 // Assets
 import { MdLanguage } from 'react-icons/md'
-
+import Etherscan from '../../../../../../assets/img/logo/Etherscan.png'
 function ManagementTable(props) {
   const { columnsData, tableData } = props
   const columns = useMemo(() => columnsData, [columnsData])
@@ -163,11 +164,19 @@ function ManagementTable(props) {
                     } else if (cell.column.Header === 'Link') {
                       data = (
                         <Flex cursor="pointer" h="max-content" w="max-content">
-                          <Icon
+                          {/* <Icon
                             color="secondaryGray.500"
                             as={MdLanguage}
                             w="20px"
                             h="20px"
+                            onClick={() => {
+                              window.open(cell.value)
+                            }}
+                          /> */}
+                          <Image
+                            src={Etherscan}
+                            width="20px"
+                            height="20px"
                             onClick={() => {
                               window.open(cell.value)
                             }}
