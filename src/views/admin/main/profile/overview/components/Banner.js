@@ -135,6 +135,7 @@ export default function Banner(props) {
         >
           Etherscan
         </Text>
+
         <Text
           cursor="pointer"
           onClick={() => {
