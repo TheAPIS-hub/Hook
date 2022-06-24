@@ -26,9 +26,7 @@ export default function Track(props) {
     <Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
       <Image src={backLogo} alt="Horizon UI" height="250px" w="100%" />
       <Box className="PortfolioText">Portfolio Track</Box>
-      <Box className="VisualizeText">
-        Visualize crypto assets, recent activities and more.
-      </Box>
+      <Box className="VisualizeText">You can search any wallets you want.</Box>
       <InputGroup
         w={{ base: '100%', md: '860px' }}
         borderRadius="20px"
@@ -102,6 +100,5 @@ export default function Track(props) {
         />
       </InputGroup>
     </Box>
- 
   )
 }

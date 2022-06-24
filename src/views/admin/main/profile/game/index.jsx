@@ -19,6 +19,8 @@ import gameThree from '../../../../../assets/img/logo/gameThree.png'
 import AllGamePage from '../allGame/index'
 import { getGameItemsDatas } from '../../../../../hook/hook'
 import { formatNumber } from '../../../../../hook/untils'
+import { isMobile } from '../gameDetail/compoments/until.js'
+
 export default function Track(props) {
   const { variant, background, children, placeholder, borderRadius, ...rest } =
     props
@@ -384,197 +386,346 @@ export default function Track(props) {
     })
   }, [])
   return (
-    <Box
-      className="swipperBox"
-      transform={{sm:"scale(0.9)",md:"scale(0.8)"}}
-      marginTop={{sm:"44px",md:"-20px"}}
-      position="relative"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-    >
-      <Box
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          margin: 'auto',
-          position: 'relative',
-          width: '100%',
-        }}
-      >
-        <Box className="Gaming">GAMES and beyond</Box>
-        <Box
-          className="CreateBtn"
-          style={{
-            width: '114px',
-            height: '48px',
-            borderRadius: '14px',
-            background: 'rgba(207,200,255,1)',
-            color: 'rgba(95,117,238,1)',
-            fontSize: '13px',
-            fontWeight: '400',
-            textAlign: 'center',
-            lineHeight: '48px',
-            // marginBottom: '48px',
-            position: 'absolute',
-            right: '10px',
-          }}
-          top={{sm:"-27%",md:"initial"}}
-        >
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGpIutxIjaaC3i_wnli1B3_wY5rU91o7UpNqpeISbz2AHnrg/viewform">
-            Create Project
-          </a>
-        </Box>
-      </Box>
+    <>
+      {isMobile() ? (
+        <>
+          <Box className="MGameTitle">Game</Box>
+          <Box className="MGaming">Games and Beyond</Box>
+          <Flex justifyContent="center">
+            <Box
+              className="swiper-container1"
+              style={{
+                width: '1000px',
+                display: 'flex',
+                // marginLeft: ' 212px',
+                overflow: 'hidden',
+                position: 'relative',
+                // left: '3vw',
+              }}
+            >
+              <Box className="swiper-wrapper">
+                {swiperData.length &&
+                  swiperData.map((item, index) => {
+                    return (
+                      <Box className="swiper-slide">
+                        <Box
+                          style={{
+                            height: '467px',
+                            width: '266px',
+                            borderRadius: '26px',
+                            backgroundColor: '#111C44',
+                            padding: '12px',
+                            boxSizing: 'border-box',
+                          }}
+                        >
+                          <Box>
+                            <Image
+                              width="249px"
+                              borderRadius="26px"
+                              height="238px"
+                              src={item.imgs[0].url}
+                              alt=""
+                            />
+                          </Box>
 
-      <Box className=" challenge">From GAME to GAMES and beyond.</Box>
-      <Box className=" challengeText">
-        Takes you on a journey to explore bigger crypto game worlds, all in one.
-      </Box>
-      <Flex justifyContent="center">
-        <Box
-          className="swiper-container1"
-          style={{
-            width: '1000px',
-            display: 'flex',
-            // marginLeft: ' 212px',
-            overflow: 'hidden',
-            position: 'relative',
-            // left: '3vw',
-          }}
-        >
-          <Box className="swiper-wrapper">
-            {swiperData.length &&
-              swiperData.map((item, index) => {
-                return (
-                  <Box className="swiper-slide">
-                    <Box
-                      style={{
-                        height: '467px',
-                        width: '266px',
-                        borderRadius: '26px',
-                        backgroundColor: '#111C44',
-                        padding: '12px',
-                        boxSizing: 'border-box',
-                      }}
-                    >
-                      <Box>
-                        <Image
-                          width="249px"
-                          borderRadius="26px"
-                          height="238px"
-                          src={item.imgs[0].url}
-                          alt=""
-                        />
-                      </Box>
-
-                      <Box style={{ padding: '35px', boxSizing: 'border-box' }}>
-                        <Box
-                          style={{
-                            width: '96px',
-                            height: '26px',
-                            borderRadius: '8px',
-                            background: '#6C5DD3',
-                            color: '#beb9ff',
-                            fontSize: '14px',
-                            textAlign: ' center',
-                            lineHeight: ' 26px',
-                            fontWeight: ' 400',
-                          }}
-                        >
-                          {item.genres}
-                        </Box>
-                        <Box
-                          style={{
-                            color: '#FFFFFF',
-                            fontSize: '20px',
-                            fontWeight: '500',
-                            textAlign: 'left',
-                            marginTop: '12px',
-                          }}
-                        >
-                          {item.name}
-                        </Box>
-                        <Box
-                          style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            marginTop: '12px',
-                          }}
-                        >
                           <Box
-                            style={{
-                              width: '8px',
-                              height: '8px',
-                              background: '#5CF54F',
-                              borderRadius: '50%',
-                              marginRight: '8px',
-                            }}
-                          ></Box>
-                          <Box
-                            style={{
-                              color: '#808191',
-                              fontWeight: '400',
-                              fontSize: '12px',
-                            }}
+                            style={{ padding: '35px', boxSizing: 'border-box' }}
                           >
-                            {formatNumber(item.twitterFollower)} followers
+                            <Box
+                              style={{
+                                width: '96px',
+                                height: '26px',
+                                borderRadius: '8px',
+                                background: '#6C5DD3',
+                                color: '#beb9ff',
+                                fontSize: '14px',
+                                textAlign: ' center',
+                                lineHeight: ' 26px',
+                                fontWeight: ' 400',
+                              }}
+                            >
+                              {item.genres}
+                            </Box>
+                            <Box
+                              style={{
+                                color: '#FFFFFF',
+                                fontSize: '20px',
+                                fontWeight: '500',
+                                textAlign: 'left',
+                                marginTop: '12px',
+                              }}
+                            >
+                              {item.name}
+                            </Box>
+                            <Box
+                              style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                marginTop: '12px',
+                              }}
+                            >
+                              <Box
+                                style={{
+                                  width: '8px',
+                                  height: '8px',
+                                  background: '#5CF54F',
+                                  borderRadius: '50%',
+                                  marginRight: '8px',
+                                }}
+                              ></Box>
+                              <Box
+                                style={{
+                                  color: '#808191',
+                                  fontWeight: '400',
+                                  fontSize: '12px',
+                                }}
+                              >
+                                {formatNumber(item.twitterFollower)} followers
+                              </Box>
+                            </Box>
+                            <Flex className="ViewAndMaCreateBtn">
+                              <Box
+                                className="VIewBtn"
+                                style={{
+                                  width: '130px',
+                                  height: '52px',
+                                  borderRadius: ' 18px',
+                                  background: '#7551FF',
+                                  color: 'rgba(255,255,255,1)',
+                                  fontSize: '16px',
+                                  fontWeight: '900',
+                                  textAlign: ' center',
+                                  lineHeight: '52px',
+                                  cursor: 'pointer',
+                                }}
+                                onClick={() => {
+                                  localStorage.setItem(
+                                    'game',
+                                    JSON.stringify(item)
+                                  )
+
+                                  history.push({
+                                    pathname: '/admin/profile/gameDetail',
+                                  })
+                                }}
+                              >
+                                View
+                              </Box>
+                              <Box className="MaCreateBtn">
+                                <Box className="iconfont MCreateBtn">
+                                  &#xe726;
+                                </Box>
+                              </Box>
+                            </Flex>
                           </Box>
                         </Box>
-                        <Box
-                          className="VIewBtn"
-                          style={{
-                            width: '130px',
-                            height: '52px',
-                            borderRadius: ' 18px',
-                            background: '#7551FF',
-                            color: 'rgba(255,255,255,1)',
-                            fontSize: '16px',
-                            fontWeight: '900',
-                            textAlign: ' center',
-                            lineHeight: '52px',
-                            marginTop: '13px',
-                            cursor: 'pointer',
-                          }}
-                          onClick={() => {
-                            localStorage.setItem('game', JSON.stringify(item))
+                      </Box>
+                    )
+                  })}
+              </Box>
+            </Box>
+          </Flex>
+        </>
+      ) : (
+        <Box
+          className="swipperBox"
+          transform={{ sm: 'scale(0.9)', md: 'scale(0.8)' }}
+          marginTop={{ sm: '44px', md: '-20px' }}
+          position="relative"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+        >
+          <Box
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: 'auto',
+              position: 'relative',
+              width: '100%',
+            }}
+          >
+            <Box className="Gaming">GAMES and Beyond</Box>
+            <Box
+              className="CreateBtn"
+              style={{
+                width: '114px',
+                height: '48px',
+                borderRadius: '14px',
+                background: 'rgba(207,200,255,1)',
+                color: 'rgba(95,117,238,1)',
+                fontSize: '13px',
+                fontWeight: '400',
+                textAlign: 'center',
+                lineHeight: '48px',
+                // marginBottom: '48px',
+                position: 'absolute',
+                right: '10px',
+              }}
+              top={{ sm: '-27%', md: 'initial' }}
+            >
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGpIutxIjaaC3i_wnli1B3_wY5rU91o7UpNqpeISbz2AHnrg/viewform">
+                Create Project
+              </a>
+            </Box>
+          </Box>
 
-                            history.push({
-                              pathname: '/admin/profile/gameDetail',
-                            })
+          <Box className=" challenge">From GAME to GAMES and beyond.</Box>
+          <Box className=" challengeText">
+            Takes you on a journey to explore bigger crypto game worlds, all in
+            one.
+          </Box>
+          <Flex justifyContent="center">
+            <Box
+              className="swiper-container1"
+              style={{
+                width: '1000px',
+                display: 'flex',
+                // marginLeft: ' 212px',
+                overflow: 'hidden',
+                position: 'relative',
+                // left: '3vw',
+              }}
+            >
+              <Box className="swiper-wrapper">
+                {swiperData.length &&
+                  swiperData.map((item, index) => {
+                    return (
+                      <Box className="swiper-slide">
+                        <Box
+                          style={{
+                            height: '467px',
+                            width: '266px',
+                            borderRadius: '26px',
+                            backgroundColor: '#111C44',
+                            padding: '12px',
+                            boxSizing: 'border-box',
                           }}
                         >
-                          View
+                          <Box>
+                            <Image
+                              width="249px"
+                              borderRadius="26px"
+                              height="238px"
+                              src={item.imgs[0].url}
+                              alt=""
+                            />
+                          </Box>
+
+                          <Box
+                            style={{ padding: '35px', boxSizing: 'border-box' }}
+                          >
+                            <Box
+                              style={{
+                                width: '96px',
+                                height: '26px',
+                                borderRadius: '8px',
+                                background: '#6C5DD3',
+                                color: '#beb9ff',
+                                fontSize: '14px',
+                                textAlign: ' center',
+                                lineHeight: ' 26px',
+                                fontWeight: ' 400',
+                              }}
+                            >
+                              {item.genres}
+                            </Box>
+                            <Box
+                              style={{
+                                color: '#FFFFFF',
+                                fontSize: '20px',
+                                fontWeight: '500',
+                                textAlign: 'left',
+                                marginTop: '12px',
+                              }}
+                            >
+                              {item.name}
+                            </Box>
+                            <Box
+                              style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                marginTop: '12px',
+                              }}
+                            >
+                              <Box
+                                style={{
+                                  width: '8px',
+                                  height: '8px',
+                                  background: '#5CF54F',
+                                  borderRadius: '50%',
+                                  marginRight: '8px',
+                                }}
+                              ></Box>
+                              <Box
+                                style={{
+                                  color: '#808191',
+                                  fontWeight: '400',
+                                  fontSize: '12px',
+                                }}
+                              >
+                                {formatNumber(item.twitterFollower)} followers
+                              </Box>
+                            </Box>
+                            <Box
+                              className="VIewBtn"
+                              style={{
+                                width: '130px',
+                                height: '52px',
+                                borderRadius: ' 18px',
+                                background: '#7551FF',
+                                color: 'rgba(255,255,255,1)',
+                                fontSize: '16px',
+                                fontWeight: '900',
+                                textAlign: ' center',
+                                lineHeight: '52px',
+                                marginTop: '13px',
+                                cursor: 'pointer',
+                              }}
+                              onClick={() => {
+                                localStorage.setItem(
+                                  'game',
+                                  JSON.stringify(item)
+                                )
+
+                                history.push({
+                                  pathname: '/admin/profile/gameDetail',
+                                })
+                              }}
+                            >
+                              View
+                            </Box>
+                          </Box>
                         </Box>
                       </Box>
-                    </Box>
-                  </Box>
-                )
-              })}
-          </Box>
+                    )
+                  })}
+              </Box>
+            </Box>
+          </Flex>
+          <Link href="#/admin/profile/allGame" marginRight="35px">
+            <Box
+              className="VIewBtn"
+              style={{
+                width: '244px',
+                height: '71.76px',
+                borderRadius: '24.959999084472656px',
+                background: 'rgba(117,81,255,1)',
+                margin: 'auto',
+                color: ' rgba(255,255,255,1)',
+                fontSize: ' 21.84px',
+                fontWeight: '600',
+                textAlign: 'center',
+                lineHeight: '71.76px',
+                marginTop: '113.24px',
+              }}
+            >
+              Explore all games
+            </Box>
+          </Link>
         </Box>
-      </Flex>
-      <Link href="#/admin/profile/allGame" marginRight="35px">
-        <Box
-          className="VIewBtn"
-          style={{
-            width: '244px',
-            height: '71.76px',
-            borderRadius: '24.959999084472656px',
-            background: 'rgba(117,81,255,1)',
-            margin: 'auto',
-            color: ' rgba(255,255,255,1)',
-            fontSize: ' 21.84px',
-            fontWeight: '600',
-            textAlign: 'center',
-            lineHeight: '71.76px',
-            marginTop: '113.24px',
-          }}
-        >
-          Explore all games
-        </Box>
-      </Link>
-    </Box>
+      )}
+    </>
   )
 }

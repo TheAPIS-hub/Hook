@@ -5,13 +5,51 @@
   text-align: center;
   letter-spacing: -0.765px;
   color: #ffffff;
+  font-family: 'Inter';
   margin-right: 10px;
+}
+.MGaming {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 19px;
+}
+.MGameTitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  margin-top: 80px;
 }
 .CreateBtn {
   transition: All 0.4s ease-in-out;
   -webkit-transition: All 0.4s ease-in-out;
   -moz-transition: All 0.4s ease-in-out;
   -o-transition: All 0.4s ease-in-out;
+}
+.ViewAndMaCreateBtn {
+  display: 'flex';
+  margin-top: 13px;
+  width: 206px;
+  justify-content: space-between;
+  align-items: center;
+}
+.MCreateBtn {
+  font-size: 24px !important;
+  text-align: center;
+  line-height: 48px;
+}
+.MaCreateBtn {
+  width: 48px;
+  height: 48px;
+  background: rgba(228, 228, 228, 0.25);
+  border-radius: 16px;
 }
 .CreateBtn:hover {
   background: rgba(207, 200, 255, 0.7) !important;
@@ -25,7 +63,6 @@
   text-align: center;
   color: #8d8cab;
   margin: auto;
-  max-width: 100%;
 }
 .challengeText {
   width: 421px;
@@ -37,7 +74,7 @@
   color: #8d8cab;
   margin: auto;
   margin-bottom: 46px;
-  max-width: 100%;
+  font-family: 'Helvetica';
 }
 .VIewBtn {
   transition: All 0.4s ease-in-out;

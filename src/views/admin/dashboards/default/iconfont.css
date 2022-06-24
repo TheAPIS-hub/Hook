@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3377203 */
-  src: url('iconfont.woff2?t=1655190476323') format('woff2'),
-       url('iconfont.woff?t=1655190476323') format('woff'),
-       url('iconfont.ttf?t=1655190476323') format('truetype');
+  src: url('iconfont.woff2?t=1656054676860') format('woff2'),
+       url('iconfont.woff?t=1656054676860') format('woff'),
+       url('iconfont.ttf?t=1656054676860') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jiahao:before {
+  content: "\e726";
 }
 
 .icon-caidan:before {

@@ -5,14 +5,52 @@
   text-align: center;
   letter-spacing: -0.765px;
   color: #ffffff;
+  font-family: 'Inter';
   //   margin-bottom: 45px;
   margin-right: 10px;
+}
+.MGaming {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 19px;
+}
+.MGameTitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  margin-top: 80px;
 }
 .CreateBtn {
   transition: All 0.4s ease-in-out;
   -webkit-transition: All 0.4s ease-in-out;
   -moz-transition: All 0.4s ease-in-out;
   -o-transition: All 0.4s ease-in-out;
+}
+.ViewAndMaCreateBtn {
+  display: 'flex';
+  margin-top: 13px;
+  width: 206px;
+  justify-content: space-between;
+  align-items: center;
+}
+.MCreateBtn {
+  font-size: 24px !important;
+  text-align: center;
+  line-height: 48px;
+}
+.MaCreateBtn {
+  width: 48px;
+  height: 48px;
+  background: rgba(228, 228, 228, 0.25);
+  border-radius: 16px;
 }
 .CreateBtn:hover {
   background: rgba(207, 200, 255, 0.7) !important;
@@ -37,6 +75,7 @@
   color: #8d8cab;
   margin: auto;
   margin-bottom: 46px;
+  font-family: 'Helvetica';
 }
 .VIewBtn {
   transition: All 0.4s ease-in-out;
@@ -47,14 +86,15 @@
 .VIewBtn:hover {
   background: rgba(117, 81, 255, 0.7) !important;
 }
-.swiper-wrapper{
-  .swiper-slide-active{
-    &>div{
+.swiper-wrapper {
+  .swiper-slide-active {
+    & > div {
       filter: drop-shadow(rgb(55, 76, 159) 0px 2px 18px);
     }
   }
-  .swiper-slide-prev, .swiper-slide-next{
-    &>div{
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    & > div {
       filter: drop-shadow(0px 2px 18px rgba(55, 76, 159, 0.330228));
     }
   }
