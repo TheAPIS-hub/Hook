@@ -55,17 +55,17 @@ export default function AdminNavbar(props) {
     <Box
       position={navbarPosition}
       boxShadow={navbarShadow}
-      bg={{sm:"#0B1437",md:navbarBg}}
-      borderColor={{mb:navbarBorder}}
+      bg={{ sm: '#0B1437', md: navbarBg }}
+      borderColor={{ mb: navbarBorder }}
       filter={navbarFilter}
       backdropFilter={navbarBackdrop}
       backgroundPosition="center"
       backgroundSize="cover"
       borderRadius={{
-        sm: "0",
+        sm: '0',
         md: '16px',
       }}
-      borderWidth={{sm:"0",md:"1.5"}}
+      borderWidth={{ sm: '0', md: '1.5' }}
       borderStyle="solid"
       transitionDelay="0s, 0s, 0s, 0s"
       transitionDuration=" 0.25s, 0.25s, 0.25s, 0s"
@@ -74,7 +74,7 @@ export default function AdminNavbar(props) {
       alignItems={{ xl: 'center' }}
       display={secondary ? 'block' : 'flex'}
       minH={{
-        sm: "96px",
+        sm: '96px',
         md: '75px',
       }}
       justifyContent={{ xl: 'center' }}
@@ -91,32 +91,32 @@ export default function AdminNavbar(props) {
         xl: '12px',
       }}
       pt="8px"
-      top={{sm:'0', base: '12px', md: '16px', xl: '18px' }}
-      left={{sm:'0',md: 'initial'}}
-      ml={{sm:'0',md: 'initial'}}
+      top={{ sm: '0', base: '12px', md: '16px', xl: '18px' }}
+      left={{ sm: '0', md: 'initial' }}
+      ml={{ sm: '0', md: 'initial' }}
       paddingLeft="0px !important"
       w={
         !isShowSidebar
           ? {
               sm: '100%',
-              base: '87vw',
-              md: '87vw',
-              lg: '87vw',
-              xl: '88vw',
-              '2xl': '91vw',
+              base: '85vw',
+              md: '85vw',
+              lg: '85vw',
+              xl: '85vw',
+              '2xl': '85vw',
             }
-          : { 
+          : {
               sm: '100%',
-              base: 'calc(100vw - 6%)',
-              md: 'calc(100vw - 8%)',
-              lg: 'calc(100vw - 6%)',
+              base: 'calc(100vw -350px)',
+              md: 'calc(100vw - 350px)',
+              lg: 'calc(100vw - 350px)',
               xl: 'calc(100vw - 350px)',
               '2xl': 'calc(100vw - 365px)',
             }
       }
       //   background="yellow"
       zIndex="9"
-      borderBottom={{sm:"1px solid rgba(225, 225, 225, 0.2)",md:"0px"}}
+      borderBottom={{ sm: '1px solid rgba(225, 225, 225, 0.2)', md: '0px' }}
     >
       <Flex
         w="100%"
@@ -167,13 +167,13 @@ export default function AdminNavbar(props) {
               onClick={() => {
                 window.history.back()
               }}
-              display={{sm:"none",md:"block"}}
+              display={{ sm: 'none', md: 'block' }}
             >
               <b className="iconfont">&#xe6a7;</b>
             </Box>
           )}
         </Box>
-        <Box ms="auto" w={{ sm: '100%', md: 'unset' }} >
+        <Box ms="auto" w={{ sm: '100%', md: 'unset' }}>
           <AdminNavbarLinks
             onOpen={props.onOpen}
             logoText={props.logoText}

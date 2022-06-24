@@ -615,8 +615,8 @@ export default function Track(props) {
             <Box
               className="VIewBtn"
               style={{
-                width: '244px',
-                height: '71.76px',
+                width: '240px',
+                height: '60px',
                 borderRadius: '24.959999084472656px',
                 background: 'rgba(117,81,255,1)',
                 margin: 'auto',
@@ -624,8 +624,8 @@ export default function Track(props) {
                 fontSize: ' 21.84px',
                 fontWeight: '600',
                 textAlign: 'center',
-                lineHeight: '71.76px',
-                marginTop: '113.24px',
+                lineHeight: '60px',
+                marginTop: '38px',
               }}
             >
               Explore all games
