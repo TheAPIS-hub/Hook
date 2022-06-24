@@ -95,25 +95,14 @@ export default function AdminNavbar(props) {
       left={{ sm: '0', md: 'initial' }}
       ml={{ sm: '0', md: 'initial' }}
       paddingLeft="0px !important"
-      w={
-        !isShowSidebar
-          ? {
-              sm: '100%',
-              base: '85vw',
-              md: '85vw',
-              lg: '85vw',
-              xl: '85vw',
-              '2xl': '85vw',
-            }
-          : {
-              sm: '100%',
-              base: 'calc(100vw -350px)',
-              md: 'calc(100vw - 350px)',
-              lg: 'calc(100vw - 350px)',
-              xl: 'calc(100vw - 350px)',
-              '2xl': 'calc(100vw - 365px)',
-            }
-      }
+      w={{
+        sm: '100%',
+        base: 'calc(100vw -350px)',
+        md: 'calc(100vw - 350px)',
+        lg: 'calc(100vw - 350px)',
+        xl: 'calc(100vw - 350px)',
+        '2xl': 'calc(100vw - 365px)',
+      }}
       //   background="yellow"
       zIndex="9"
       borderBottom={{ sm: '1px solid rgba(225, 225, 225, 0.2)', md: '0px' }}
