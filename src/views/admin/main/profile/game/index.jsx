@@ -39,25 +39,31 @@ export default function Track(props) {
       version: 'Beta',
       tokenHash: '0x3Dd98C8A089dBCFF7e8FC8d4f532BD493501Ab7F',
       initialReleaseDate: 1582905600000,
-      twitterFollower: 361843,
-      activeUsers: 42884,
+      twitterFollower: 373400,
+      activeUsers: 14536,
       gameStudio: 'Gala Games',
       volume: '160107',
       gameIntroduction:
         'Farming with a Competitive Twist!\r\nTown Star is a competitive farming game from one of the co-founders of Zynga, the company behind Farmville. Each week, the top players on the leaderboard win big prizes, and every day, players complete challenges to unlock and collect TownCoin play-to-earn rewards! The goal is to grow, gather and craft your way to building the most efficient and productive town imaginable. Will you be a Town Star?\r\n\r\nThe Power of Blockchain\r\nTown Star is the flagship game of Gala Games, built on Gala’s decentralized network and utilizing the Ethereum blockchain. Player-owned NFTs offering in-game advantages can be purchased and traded on secondary markets!',
-      totalNFT: 0,
+      totalNFT: '0',
       gameUrl: 'https://townstar.com/',
-      dataUrl: '',
-      liked: 0,
+      imgUrl: 'https://s2.coinmarketcap.com/static/img/coins/64x64/13503.png',
+      liked: 19,
       ngmi: 0,
-      moon: 0,
+      moon: 19,
       twtter: 'GoGalaGames',
       backPeriod: 8,
       openseaName: 'town-star',
+      type: 'ERC20',
+      species: 'defi',
+      gameUserIcon:
+        'https://img0.baidu.com/it/u=686928946,1069813836&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
+      price: '0.0354',
+      circulatingSupply: '0',
       videos: [
         {
           gfId: '38de21951f2549988bd88fc4d4b88d7e',
-          url: 'https://static.gala.games/images/town-star/videos/ts_P2E_vid.mp4',
+          url: 'https://www.youtube.com/embed/ewtbKY7ltqg',
           type: 1,
           name: 'Town Star',
         },
@@ -65,7 +71,7 @@ export default function Track(props) {
       imgs: [
         {
           gfId: '18945661741446e5a7c41e9545bca434',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/TownStar4.webp',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/bdc0cd1cb414ae99a62d4e30ae53a2c.png',
           type: 2,
           name: 'Town Star',
         },
@@ -96,21 +102,27 @@ export default function Track(props) {
       version: '3.10.3',
       tokenHash: '0x0f5d2fb29fb7d3cfee444a200298f468908cc942',
       initialReleaseDate: 1582128000000,
-      twitterFollower: 629546,
-      activeUsers: 245767,
+      twitterFollower: 632227,
+      activeUsers: 252384,
       gameStudio: 'Decentraland Foundation',
-      volume: '353602828',
+      volume: '532654237',
       gameIntroduction:
         'Explore LANDs owned by users to experience incredible scenes and structures. From a space adventure to a medieval dungeon maze to entire villages crafted from the minds of community members.',
-      totalNFT: 90601,
+      totalNFT: '90601',
       gameUrl: 'https://decentraland.org/',
-      dataUrl: 'https://dappradar.com/ethereum/marketplaces/decentraland',
-      liked: 0,
+      imgUrl: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1966.png',
+      liked: 8,
       ngmi: 0,
-      moon: 0,
+      moon: 8,
       twtter: 'decentraland',
       backPeriod: 6,
       openseaName: 'decentraland',
+      type: 'ERC20',
+      species: 'defi',
+      gameUserIcon:
+        'https://img0.baidu.com/it/u=686928946,1069813836&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
+      price: '0.523',
+      circulatingSupply: '0',
       videos: [
         {
           gfId: '29534c5e582e4e8d8174b0d7b078d3ce',
@@ -122,7 +134,7 @@ export default function Track(props) {
       imgs: [
         {
           gfId: '93729aca515b4e0aa26badf66887e0f6',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Decentraland4.png.lin.png',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/c3d204ee530429c1dfac81830ab0b1b.png',
           type: 2,
           name: 'Decentral land',
         },
@@ -153,84 +165,33 @@ export default function Track(props) {
       ],
     },
     {
-      gpId: '49a058ab1e184ddfa723e9050e7ed84f',
-      name: 'Thetan arena',
-      genres: 'MOBA',
-      version: '320',
-      tokenHash: '0x9fd87aefe02441b123c3c32466cd9db4c578618f',
-      initialReleaseDate: 1601395200000,
-      twitterFollower: 350545,
-      activeUsers: 8991,
-      gameStudio: 'Wolffun',
-      volume: '907636',
-      gameIntroduction:
-        'Earn your NFTs item by playing the game and sell it on the marketplace to make money',
-      totalNFT: 0,
-      gameUrl: 'https://thetanarena.com/',
-      dataUrl: '',
-      liked: 0,
-      ngmi: 0,
-      moon: 0,
-      twtter: 'ThetanArena',
-      backPeriod: 9,
-      openseaName: 'thetan-arena',
-      videos: [
-        {
-          gfId: '93ffcdf58a854fc2b55d1c35e5f678fb',
-          url: 'https://www.youtube.com/embed/YlP8C390SsQ',
-          type: 1,
-          name: 'Thetan arena',
-        },
-      ],
-      imgs: [
-        {
-          gfId: 'df99e2432a4448cda810d9b946eaaa28',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Thetan%20arena4.png.lin.png',
-          type: 2,
-          name: 'Thetan arena',
-        },
-        {
-          gfId: '046342ec8ff54b59b13c1edca8aa3628',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Thetan%20arena2.jpeg.lin.jpeg',
-          type: 2,
-          name: 'Thetan arena',
-        },
-        {
-          gfId: '958b1a4bd1d94db9b5a802d0e7b6be0f',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Thetan%20arena3.png.lin.png',
-          type: 2,
-          name: 'Thetan arena',
-        },
-        {
-          gfId: 'b210bbf4c3294071b4909d85c7e63f91',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Thetan%20arena1.png.lin.png',
-          type: 2,
-          name: 'Thetan arena',
-        },
-      ],
-    },
-    {
       gpId: '6eabe3204a8b4da69bbe04eacf023309',
       name: 'illuvium',
       genres: 'Sandbox',
       version: 'Beta',
       tokenHash: '0x767fe9edc9e0df98e07454847909b5e959d7ca0e',
       initialReleaseDate: 0,
-      twitterFollower: 302638,
-      activeUsers: 18652,
+      twitterFollower: 336126,
+      activeUsers: 18885,
       gameStudio: 'Illuvium',
-      volume: '21909050',
+      volume: '8560622.61760896',
       gameIntroduction:
         'Join the fight for ETH\r\nWelcome to the world of Illuvium.',
-      totalNFT: 0,
+      totalNFT: '7000000.0',
       gameUrl: 'https://www.illuvium.io/',
-      dataUrl: '',
-      liked: 0,
+      imgUrl: 'https://s2.coinmarketcap.com/static/img/coins/64x64/8719.png',
+      liked: 3,
       ngmi: 0,
-      moon: 0,
+      moon: 3,
       twtter: 'illuviumio',
       backPeriod: 12,
       openseaName: 'illuvium',
+      type: 'ERC20',
+      species: 'defi',
+      gameUserIcon:
+        'https://img0.baidu.com/it/u=686928946,1069813836&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
+      price: '306.67',
+      circulatingSupply: '650861.11822608',
       videos: [
         {
           gfId: '975aa07dc84245a680132af5c903b2fd',
@@ -242,7 +203,7 @@ export default function Track(props) {
       imgs: [
         {
           gfId: '1fcc186139704278af270189d914dd28',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/illuvium1.webp',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/0d62ef908167a76f2dcd3f6d2ddf150.png',
           type: 2,
           name: 'illuvium',
         },
@@ -267,21 +228,27 @@ export default function Track(props) {
       version: '1.2.3',
       tokenHash: '0xbb0e17ef65f82ab018d8edd776e8dd940327b28b',
       initialReleaseDate: 1521475200000,
-      twitterFollower: 956470,
-      activeUsers: 51963,
+      twitterFollower: 949727,
+      activeUsers: 53564,
       gameStudio: 'Sky Mavis',
-      volume: '169383579',
+      volume: '2.2343490490139267E8',
       gameIntroduction:
         'Build unstoppable teams of Axies and conquer your enemies!\r\nEach Axie has unique strengths and weaknesses based on its genes. With billions of possible genetic combinations, the possibilities are truly infinite!',
-      totalNFT: 695862,
+      totalNFT: '2.7E8',
       gameUrl: 'https://axieinfinity.com/ ',
-      dataUrl: 'https://marketplace.axieinfinity.com/',
+      imgUrl: 'https://s2.coinmarketcap.com/static/img/coins/64x64/6783.png',
       liked: 0,
       ngmi: 0,
       moon: 0,
       twtter: 'AxieInfinity',
       backPeriod: 18,
       openseaName: 'sky-mavis',
+      type: 'ERC20',
+      species: 'defi',
+      gameUserIcon:
+        'https://img0.baidu.com/it/u=686928946,1069813836&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
+      price: '24.82',
+      circulatingSupply: '8.209303039806911E7',
       videos: [
         {
           gfId: '85c8fa283394406c858a870b6f23fa23',
@@ -293,7 +260,7 @@ export default function Track(props) {
       imgs: [
         {
           gfId: '042ad0b923624749b29f8ed0a2d64cd2',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/axie%20infinity%203.png.lin.png',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/9e7f4fe14ba04a13b74f4ac3230e729.png',
           type: 2,
           name: 'Axie infinity',
         },
@@ -311,8 +278,68 @@ export default function Track(props) {
         },
       ],
     },
+    {
+      gpId: 'dlf5183b72b245e7ad02ef36225a56a4',
+      name: 'Evaverse',
+      genres: 'Simulation',
+      version: 'Beta',
+      tokenHash: '',
+      initialReleaseDate: 1629475200000,
+      twitterFollower: 32159,
+      activeUsers: 0,
+      gameStudio: 'BATTLEBOUND',
+      volume: '0',
+      gameIntroduction:
+        'The Evaverse video game is a multiplayer social platform built for the NFT Community. The game is currently available for all players on PC through the Steam store. Players can create servers, meet other collectors, and show off their Opensea NFTs while playing mini-games and hanging out with other community members in an immersive 3d environment. The long-term vision is to expand the Evaverse game alongside the NFT community. Evaverse NFT holders will propose game updates and future design mechanics as we build out the Evaverse into a massive play-to-earn world.',
+      totalNFT: '0',
+      gameUrl: 'https://www.evaverse.com/',
+      imgUrl: 'https://storage.googleapis.com/bimboss/hook_game_img/Eva3.jpeg',
+      liked: 2,
+      ngmi: 0,
+      moon: 2,
+      twtter: 'Evaverse_NFT',
+      backPeriod: 18,
+      openseaName: 'evaverse',
+      type: 'ERC20',
+      species: 'nft',
+      gameUserIcon:
+        'https://img0.baidu.com/it/u=686928946,1069813836&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
+      price: '0',
+      circulatingSupply: '0',
+      videos: [
+        {
+          gfId: '4f52e2432a4448cda810d9b946eaaa28',
+          url: 'https://www.youtube.com/embed/l3o_aSQZ9ts',
+          type: 1,
+          name: 'Evaverse',
+        },
+      ],
+      imgs: [
+        {
+          gfId: '4444e2432a4448cda810d9b946eaaa28',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/dc212554bbe700708950e110f856642.png',
+          type: 2,
+          name: 'Evaverse',
+        },
+        {
+          gfId: '5555e2432a4448cda810d9b946eaaa28',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Eva1.jpeg',
+          type: 2,
+          name: 'Evaverse',
+        },
+        {
+          gfId: '6666e2432a4448cda810d9b946eaaa28',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Eva3.jpeg',
+          type: 2,
+          name: 'Evaverse',
+        },
+      ],
+    },
   ])
   const swiper = () => {
+    if (swiperData.length <= 0) {
+      return
+    }
     // new Swiper('.swiper-container1', {
     //   effect: 'coverflow',
     //   loop: true,
@@ -377,7 +404,7 @@ export default function Track(props) {
     })
     if (isMobile()) {
       new Swiper('.swiper-container2', {
-        loop: true,
+        // loop: true,
         // speed: 1000,
         // autoplay: {
         //   delay: 3000,
