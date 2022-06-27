@@ -11,7 +11,8 @@ import {
 } from '@chakra-ui/react'
 import LineChart from 'components/charts/LineChart'
 import { useHistory } from 'react-router-dom'
-import Vector from '../../../assets/img/logo/Vector.png'
+import Vector from '../../../assets/img/logo/passImg.png'
+import '../../../views/admin/dashboards/default/iconfont.css'
 // Custom components
 export default function SidebarDocs() {
   const bgColor = 'linear-gradient(135deg, #868CFF 0%, #4318FF 100%)'
@@ -36,19 +37,18 @@ export default function SidebarDocs() {
       }}
     >
       <Flex
-        width="94px"
-        height="94px"
-        background="linear-gradient(135deg, #868CFF 0%, #4318FF 100%)"
+        width="160px"
+        height="100px"
         position="absolute"
-        border="5px solid #111C44"
-        borderRadius="50%"
         top="-50px"
+        boxShadow="0px -1px 17px 7px #060d2b8c"
+        className="passImg"
       >
         <Image
           src={Vector}
           alt="Horizon UI"
-          width="41px"
-          height="41px"
+          width="160px"
+          height="100px"
           margin="auto"
         />
       </Flex>
