@@ -8,6 +8,10 @@ export const tableColumnsMostVisited = [
     accessor: 'name',
   },
   {
+    Header: 'id',
+    accessor: 'id',
+  },
+  {
     Header: 'Price',
     accessor: 'price',
   },

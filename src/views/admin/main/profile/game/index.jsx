@@ -34,13 +34,13 @@ export default function Track(props) {
   const [swiperData, setSwiperData] = useState([
     {
       gpId: '07dc32c1d5564f8cb4e59c7916ed41e0',
-      name: 'Town star',
+      name: 'Town Star',
       genres: 'Simulation',
       version: 'Beta',
       tokenHash: '0x3Dd98C8A089dBCFF7e8FC8d4f532BD493501Ab7F',
       initialReleaseDate: 1582905600000,
-      twitterFollower: 373400,
-      activeUsers: 14536,
+      twitterFollower: 373556,
+      activeUsers: 14548,
       gameStudio: 'Gala Games',
       volume: '160107',
       gameIntroduction:
@@ -70,40 +70,30 @@ export default function Track(props) {
       ],
       imgs: [
         {
+          gfId: '1e75292aa1f943c9983a86b72cba6bbf',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/1cd15289a27c7c4c28ff1c9c3309624.png',
+          type: 2,
+          name: 'Town Star',
+        },
+      ],
+      icon: [
+        {
           gfId: '18945661741446e5a7c41e9545bca434',
           url: 'https://storage.googleapis.com/bimboss/hook_game_img/bdc0cd1cb414ae99a62d4e30ae53a2c.png',
-          type: 2,
-          name: 'Town Star',
-        },
-        {
-          gfId: 'c0172c971b3d404bb2209cbf3033e13c',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/TownStar1.jpeg.lin.jpeg',
-          type: 2,
-          name: 'Town Star',
-        },
-        {
-          gfId: '1e75292aa1f943c9983a86b72cba6bbf',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/TownStar3.jpeg.lin.jpeg',
-          type: 2,
-          name: 'Town Star',
-        },
-        {
-          gfId: '92412b55af584392bea47a5072e3f08a',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/TownStar2.jpeg.lin.jpeg',
-          type: 2,
+          type: 3,
           name: 'Town Star',
         },
       ],
     },
     {
       gpId: '1acf6c9c34a7427f83a84ef34a4e3c02',
-      name: 'Decentral land',
+      name: 'Decentral Land',
       genres: 'Sandbox',
       version: '3.10.3',
       tokenHash: '0x0f5d2fb29fb7d3cfee444a200298f468908cc942',
       initialReleaseDate: 1582128000000,
-      twitterFollower: 632227,
-      activeUsers: 252384,
+      twitterFollower: 632655,
+      activeUsers: 252637,
       gameStudio: 'Decentraland Foundation',
       volume: '532654237',
       gameIntroduction:
@@ -133,48 +123,32 @@ export default function Track(props) {
       ],
       imgs: [
         {
+          gfId: '24d8ad1cc8dc433f9dd2f772ed1d8dcf',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/da9d5bedd586e47d08a7dc67e0adf04.png',
+          type: 2,
+          name: 'Decentral land',
+        },
+      ],
+      icon: [
+        {
           gfId: '93729aca515b4e0aa26badf66887e0f6',
           url: 'https://storage.googleapis.com/bimboss/hook_game_img/c3d204ee530429c1dfac81830ab0b1b.png',
-          type: 2,
-          name: 'Decentral land',
-        },
-        {
-          gfId: 'c1d0ac92ebd74f37b853b699a9148aa4',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/decentraland%203.png.lin.png',
-          type: 2,
-          name: 'Decentral land',
-        },
-        {
-          gfId: '9fd0c23b31d64a4098a5d9cf9e49a41d',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Decentraland2.png.lin.png',
-          type: 2,
-          name: 'Decentral land',
-        },
-        {
-          gfId: '24d8ad1cc8dc433f9dd2f772ed1d8dcf',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/decentraland%201.jpeg.lin.jpeg',
-          type: 2,
-          name: 'Decentral land',
-        },
-        {
-          gfId: 'd468856df69e448ba4b73d4ef3390618',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/decentraland4.jpeg.lin.jpeg',
-          type: 2,
+          type: 3,
           name: 'Decentral land',
         },
       ],
     },
     {
       gpId: '6eabe3204a8b4da69bbe04eacf023309',
-      name: 'illuvium',
+      name: 'Illuvium',
       genres: 'Sandbox',
       version: 'Beta',
       tokenHash: '0x767fe9edc9e0df98e07454847909b5e959d7ca0e',
       initialReleaseDate: 0,
-      twitterFollower: 336126,
-      activeUsers: 18885,
+      twitterFollower: 336081,
+      activeUsers: 18894,
       gameStudio: 'Illuvium',
-      volume: '8560622.61760896',
+      volume: '7100776.93771469',
       gameIntroduction:
         'Join the fight for ETH\r\nWelcome to the world of Illuvium.',
       totalNFT: '7000000.0',
@@ -202,21 +176,17 @@ export default function Track(props) {
       ],
       imgs: [
         {
+          gfId: '8700882a27184cd289ee4c9b9c1e7a89',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/da2a785609e2af3fe3021b9f6ee8a05.png',
+          type: 2,
+          name: 'illuvium',
+        },
+      ],
+      icon: [
+        {
           gfId: '1fcc186139704278af270189d914dd28',
           url: 'https://storage.googleapis.com/bimboss/hook_game_img/0d62ef908167a76f2dcd3f6d2ddf150.png',
-          type: 2,
-          name: 'illuvium',
-        },
-        {
-          gfId: 'cdfe5e8dcf1640e797544ffe80be170f',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/illuvium2.jpeg.lin.jpeg',
-          type: 2,
-          name: 'illuvium',
-        },
-        {
-          gfId: '8700882a27184cd289ee4c9b9c1e7a89',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/image.webp',
-          type: 2,
+          type: 3,
           name: 'illuvium',
         },
       ],
@@ -228,10 +198,10 @@ export default function Track(props) {
       version: '1.2.3',
       tokenHash: '0xbb0e17ef65f82ab018d8edd776e8dd940327b28b',
       initialReleaseDate: 1521475200000,
-      twitterFollower: 949727,
-      activeUsers: 53564,
+      twitterFollower: 949375,
+      activeUsers: 53644,
       gameStudio: 'Sky Mavis',
-      volume: '2.2343490490139267E8',
+      volume: '1.6128213941319478E8',
       gameIntroduction:
         'Build unstoppable teams of Axies and conquer your enemies!\r\nEach Axie has unique strengths and weaknesses based on its genes. With billions of possible genetic combinations, the possibilities are truly infinite!',
       totalNFT: '2.7E8',
@@ -248,7 +218,7 @@ export default function Track(props) {
       gameUserIcon:
         'https://img0.baidu.com/it/u=686928946,1069813836&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
       price: '24.82',
-      circulatingSupply: '8.209303039806911E7',
+      circulatingSupply: '8.209307742659941E7',
       videos: [
         {
           gfId: '85c8fa283394406c858a870b6f23fa23',
@@ -259,21 +229,17 @@ export default function Track(props) {
       ],
       imgs: [
         {
+          gfId: '721a8511d17044b7b7d05d22e821e5e8',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/65bbec23e04313514e8c26f6ce8ae5c.png',
+          type: 2,
+          name: 'Axie infinity',
+        },
+      ],
+      icon: [
+        {
           gfId: '042ad0b923624749b29f8ed0a2d64cd2',
           url: 'https://storage.googleapis.com/bimboss/hook_game_img/9e7f4fe14ba04a13b74f4ac3230e729.png',
-          type: 2,
-          name: 'Axie infinity',
-        },
-        {
-          gfId: 'b26a2049ae6641e9a2226cf660c6a280',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Axie%20infinity%201.png.lin.png',
-          type: 2,
-          name: 'Axie infinity',
-        },
-        {
-          gfId: '721a8511d17044b7b7d05d22e821e5e8',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/axie%20infinity%202.png.lin.png',
-          type: 2,
+          type: 3,
           name: 'Axie infinity',
         },
       ],
@@ -285,7 +251,7 @@ export default function Track(props) {
       version: 'Beta',
       tokenHash: '',
       initialReleaseDate: 1629475200000,
-      twitterFollower: 32159,
+      twitterFollower: 32126,
       activeUsers: 0,
       gameStudio: 'BATTLEBOUND',
       volume: '0',
@@ -316,21 +282,17 @@ export default function Track(props) {
       ],
       imgs: [
         {
+          gfId: '5555e2432a4448cda810d9b946eaaa28',
+          url: 'https://storage.googleapis.com/bimboss/hook_game_img/f00a7cad2b6f82e75b083b3c11c855c.png',
+          type: 2,
+          name: 'Evaverse',
+        },
+      ],
+      icon: [
+        {
           gfId: '4444e2432a4448cda810d9b946eaaa28',
           url: 'https://storage.googleapis.com/bimboss/hook_game_img/dc212554bbe700708950e110f856642.png',
-          type: 2,
-          name: 'Evaverse',
-        },
-        {
-          gfId: '5555e2432a4448cda810d9b946eaaa28',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Eva1.jpeg',
-          type: 2,
-          name: 'Evaverse',
-        },
-        {
-          gfId: '6666e2432a4448cda810d9b946eaaa28',
-          url: 'https://storage.googleapis.com/bimboss/hook_game_img/Eva3.jpeg',
-          type: 2,
+          type: 3,
           name: 'Evaverse',
         },
       ],
@@ -477,7 +439,7 @@ export default function Track(props) {
                               //   width="249px"
                               borderRadius="26px"
                               height="238px"
-                              src={item.imgs[0].url}
+                              src={item.icon[0].url}
                               alt=""
                             />
                           </Box>

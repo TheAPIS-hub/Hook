@@ -34,6 +34,7 @@ import './index.css'
 export default function Default() {
   const [nftVolumeData, setNftVolumData] = useState(1)
   const [defiVolumData, setDefiVolumData] = useState(1)
+  const [metaVolumData, setMetaVolumData] = useState(1)
   const [searchData, setSearchData] = useState([])
   const [chartData, setChartData] = useState([])
   const [nftRank, setNftRank] = useState([])
@@ -46,6 +47,12 @@ export default function Default() {
     })
     getMarketCapAndVolume('DEFI').then((res) => {
       setDefiVolumData(res.data.data)
+    })
+    getMarketCapAndVolume('DEFI').then((res) => {
+      setDefiVolumData(res.data.data)
+    })
+    getMarketCapAndVolume('metaverse').then((res) => {
+      setMetaVolumData(res.data.data)
     })
     getGraphData('1d').then((res) => {
       if (res.data.code === '200') {
@@ -88,14 +95,15 @@ export default function Default() {
       })
       setNftRank(nftArr)
     })
-    getCmcDatas(5, 1, 'Defi').then((res) => {
-      const defiData = res.data.data.Defi.data.cryptoCurrencyList
+    getCmcDatas(5, 1, 'metaverse').then((res) => {
+      const defiData = res.data.data.Metaverse.data.cryptoCurrencyList
       const returnDate = defiData.map((item) => {
         return {
           name: item.symbol,
           oneDay: item.quotes[2].percentChange24h,
           volume: item.quotes[2].volume24h,
           price: item.quotes[2].price,
+          id: item.id,
         }
       })
       setDefiRank(returnDate)
@@ -242,59 +250,59 @@ export default function Default() {
                 >
                   <MiniStatistics
                     growth={
-                      nftVolumeData?.marketCapRatio?.toFixed(2) > 0
-                        ? `+${new BigNumber(nftVolumeData?.marketCapRatio || 0)
+                      metaVolumData?.marketCapRatio?.toFixed(2) > 0
+                        ? `+${new BigNumber(metaVolumData?.marketCapRatio || 0)
                             .times(100)
                             .toFixed(2)}%`
-                        : new BigNumber(nftVolumeData?.marketCapRatio || 0)
+                        : new BigNumber(metaVolumData?.marketCapRatio || 0)
                             .times(100)
                             .toFixed(2) + '%'
                     }
                     name="Market Cap"
-                    value={'$' + nftVolumeData?.marketCap?.toLocaleString()}
+                    value={'$' + metaVolumData?.marketCap?.toLocaleString()}
                     fontColor={
-                      nftVolumeData?.marketCapRatio > 0
+                      metaVolumData?.marketCapRatio > 0
                         ? 'green.500'
                         : 'red.500'
                     }
                   />
                   <MiniStatistics
                     growth={
-                      nftVolumeData?.volumeRatio?.toFixed(2) > 0
-                        ? `+${new BigNumber(nftVolumeData?.volumeRatio || 0)
+                      metaVolumData?.volumeRatio?.toFixed(2) > 0
+                        ? `+${new BigNumber(metaVolumData?.volumeRatio || 0)
                             .times(100)
                             .toFixed(2)}%`
-                        : new BigNumber(nftVolumeData?.volumeRatio || 0)
+                        : new BigNumber(metaVolumData?.volumeRatio || 0)
                             .times(100)
                             .toFixed(2) + '%'
                     }
                     fontColor={
-                      nftVolumeData?.volumeRatio > 0 ? 'green.500' : 'red.500'
+                      metaVolumData?.volumeRatio > 0 ? 'green.500' : 'red.500'
                     }
                     name="Volume"
-                    value={'$' + nftVolumeData?.volume?.toLocaleString()}
+                    value={'$' + metaVolumData?.volume?.toLocaleString()}
                   />
                   <MiniStatistics
                     growth={
-                      nftVolumeData?.circulatingSupplyRatio?.toFixed(2) > 0
+                      metaVolumData?.circulatingSupplyRatio?.toFixed(2) > 0
                         ? `+${new BigNumber(
-                            nftVolumeData?.circulatingSupplyRatio || 0
+                            metaVolumData?.circulatingSupplyRatio || 0
                           )
                             .times(100)
                             .toFixed(2)}%`
                         : new BigNumber(
-                            nftVolumeData?.circulatingSupplyRatio || 0
+                            metaVolumData?.circulatingSupplyRatio || 0
                           )
                             .times(100)
                             .toFixed(2) + '%'
                     }
                     name="Sales"
                     fontColor={
-                      nftVolumeData?.circulatingSupplyRatio > 0
+                      metaVolumData?.circulatingSupplyRatio > 0
                         ? 'green.500'
                         : 'red.500'
                     }
-                    value={nftVolumeData?.circulatingSupply?.toLocaleString()}
+                    value={metaVolumData?.circulatingSupply?.toLocaleString()}
                   />
                 </SimpleGrid>
               </TabPanel>

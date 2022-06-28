@@ -26,8 +26,9 @@ import Headers from '../../../../../../assets/img/logo/Header.png'
 import gameThree from '../../../../../../assets/img/logo/gameThree.png'
 import { useHistory } from 'react-router-dom'
 import { getGameItemsDatas } from '../../../../../../hook/hook'
-import { formatNumber } from '../../../../../../hook/untils'
+import { formatNumber, formatDate } from '../../../../../../hook/untils'
 import { MdHelpOutline, MdKeyboardArrowDown } from 'react-icons/md'
+
 import Masonry from 'react-masonry-css'
 export default function GameCard({ gameData }) {
   const [GameCardData, setGameCardData] = useState(gameData)
@@ -387,7 +388,10 @@ export default function GameCard({ gameData }) {
                               fontSize="sm"
                               fontWeight="700"
                             >
-                              Initial release date：March 2018
+                              Initial release date：{' '}
+                              {formatDate(
+                                item.initialReleaseDate || 1582905600000
+                              )}
                             </Text>
                           </Flex>
                         </MenuList>

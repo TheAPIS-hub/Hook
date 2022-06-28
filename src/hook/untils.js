@@ -32,3 +32,36 @@ export function dateDiff(hisTime, nowTime) {
   else result = 'soon'
   return result
 }
+export function formatDate(millinSeconds) {
+  var date = new Date(millinSeconds)
+  var monthArr = new Array(
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Spt',
+    'Oct',
+    'Nov',
+    'Dec'
+  )
+  var suffix = new Array('st', 'nd', 'rd', 'th')
+
+  var year = date.getFullYear()
+  var month = monthArr[date.getMonth()]
+  var ddate = date.getDate()
+
+  if (ddate % 10 < 1 || ddate % 10 > 3) {
+    ddate = ddate + suffix[3]
+  } else if (ddate % 10 == 1) {
+    ddate = ddate + suffix[0]
+  } else if (ddate % 10 == 2) {
+    ddate = ddate + suffix[1]
+  } else {
+    ddate = ddate + suffix[2]
+  }
+  return month + ' ' + year
+}

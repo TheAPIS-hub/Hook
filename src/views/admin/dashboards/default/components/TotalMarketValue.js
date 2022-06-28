@@ -97,23 +97,27 @@ function TotalMarketValue(props) {
           <Thead>
             {headerGroups.map((headerGroup, index) => (
               <Tr {...headerGroup.getHeaderGroupProps()} key={index}>
-                {headerGroup.headers.map((column, index) => (
-                  <Th
-                    {...column.getHeaderProps(column.getSortByToggleProps())}
-                    pe="10px"
-                    key={index}
-                    borderColor="transparent"
-                  >
-                    <Flex
-                      justify="space-between"
-                      align="center"
-                      fontSize={{ sm: '10px', lg: '12px' }}
-                      color="gray.400"
+                {headerGroup.headers.map((column, index) =>
+                  column.render('Header') != 'id' ? (
+                    <Th
+                      {...column.getHeaderProps(column.getSortByToggleProps())}
+                      pe="10px"
+                      key={index}
+                      borderColor="transparent"
                     >
-                      {column.render('Header')}
-                    </Flex>
-                  </Th>
-                ))}
+                      <Flex
+                        justify="space-between"
+                        align="center"
+                        fontSize={{ sm: '10px', lg: '12px' }}
+                        color="gray.400"
+                      >
+                        {column.render('Header')}
+                      </Flex>
+                    </Th>
+                  ) : (
+                    ''
+                  )
+                )}
               </Tr>
             ))}
           </Thead>
@@ -124,6 +128,7 @@ function TotalMarketValue(props) {
               return (
                 <Tr {...row.getRowProps()} key={idx}>
                   {row.cells.map((cell, index) => {
+                    console.log(cell, row)
                     let data = ''
                     if (cell.column.Header === '#') {
                       data = (
@@ -141,7 +146,7 @@ function TotalMarketValue(props) {
                       data = (
                         <Flex alignItems="center">
                           <Avatar
-                            src={avatar}
+                            src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${row.values.id}.png`}
                             h="24px"
                             w="24px"
                             marginRight="8px"
@@ -152,6 +157,7 @@ function TotalMarketValue(props) {
                             fontWeight="600"
                           >
                             {cell.value}
+                            {row.values.id}
                           </Text>
                         </Flex>
                       )
@@ -178,7 +184,7 @@ function TotalMarketValue(props) {
                         </Text>
                       )
                     }
-                    return (
+                    return cell.column.Header != 'id' ? (
                       <Td
                         {...cell.getCellProps()}
                         key={index}
@@ -190,6 +196,8 @@ function TotalMarketValue(props) {
                       >
                         {data}
                       </Td>
+                    ) : (
+                      ''
                     )
                   })}
                 </Tr>
