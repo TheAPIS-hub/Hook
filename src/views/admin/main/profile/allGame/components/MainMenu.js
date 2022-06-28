@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // Chakra imports
 import {
@@ -52,6 +52,7 @@ export default function DateUploaded(props) {
     onClose: onClose1,
   } = useDisclosure()
 
+  const [showText, setShowText] = useState('SORT')
   return (
     <Menu isOpen={isOpen1} onClose={onClose1}>
       <MenuButton
@@ -80,9 +81,10 @@ export default function DateUploaded(props) {
               fontSize: '14px',
               fontWeight: '700',
             }}
-            marginRight={{ sm: '13vw', md: '6vw' }}
+            width="144px"
+            textAlign=" left"
           >
-            SORT
+            {showText}
           </Text>
           <Icon as={MdKeyboardArrowDown} color={iconColor} w="24px" h="24px" />
         </Flex>
@@ -112,7 +114,8 @@ export default function DateUploaded(props) {
           mb="10px"
           p="0 15px"
           onClick={() => {
-            chooseSort('like')
+            chooseSort('liked')
+            setShowText('LIKE')
           }}
         >
           <Flex align="center">
@@ -136,6 +139,7 @@ export default function DateUploaded(props) {
           p="0 15px"
           onClick={() => {
             chooseSort('initialReleaseDate')
+            setShowText('INITIALRELEASE DATE')
           }}
         >
           <Flex align="center">
