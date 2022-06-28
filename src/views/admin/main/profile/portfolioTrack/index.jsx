@@ -27,36 +27,36 @@ export default function Track(props) {
   const inputText = useColorModeValue('gray.700', 'gray.100')
   const [inputValue, setInputValue] = useState('')
   const [TrendingData, setTrendingData] = useState([
-    {
-      rank: '0',
-      heat: '1',
-      searchName: '0xcb6985e04ab3cacdf8e0a83...',
-    },
-    {
-      rank: '1',
-      heat: '1',
-      searchName: '0xcb6985e04ab3cacdf8e0a83...',
-    },
-    {
-      rank: '2',
-      heat: '1',
-      searchName: '0xcb6985e04ab3cacdf8e0a83...',
-    },
-    {
-      rank: '3',
-      heat: '1',
-      searchName: '0xcb6985e04ab3cacdf8e0a83...',
-    },
-    {
-      rank: '4',
-      heat: '1',
-      searchName: '0xcb6985e04ab3cacdf8e0a83...',
-    },
-    {
-      rank: '5',
-      heat: '1',
-      searchName: '0xcb6985e04ab3cacdf8e0a83...',
-    },
+    // {
+    //   rank: '0',
+    //   heat: '1',
+    //   searchName: '0xcb6985e04ab3cacdf8e0a83...',
+    // },
+    // {
+    //   rank: '1',
+    //   heat: '1',
+    //   searchName: '0xcb6985e04ab3cacdf8e0a83...',
+    // },
+    // {
+    //   rank: '2',
+    //   heat: '1',
+    //   searchName: '0xcb6985e04ab3cacdf8e0a83...',
+    // },
+    // {
+    //   rank: '3',
+    //   heat: '1',
+    //   searchName: '0xcb6985e04ab3cacdf8e0a83...',
+    // },
+    // {
+    //   rank: '4',
+    //   heat: '1',
+    //   searchName: '0xcb6985e04ab3cacdf8e0a83...',
+    // },
+    // {
+    //   rank: '5',
+    //   heat: '1',
+    //   searchName: '0xcb6985e04ab3cacdf8e0a83...',
+    // },
   ])
   const history = useHistory()
   useEffect(() => {

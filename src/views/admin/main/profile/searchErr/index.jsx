@@ -44,6 +44,10 @@ export default function Track(props) {
       </Text>
       <Box
         className="VIewBtn"
+        cursor="pointer"
+        onClick={() => {
+          history.push({ pathname: '/profile/searcherr' })
+        }}
         style={{
           width: '300px',
           height: '84',
