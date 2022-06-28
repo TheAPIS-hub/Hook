@@ -57,7 +57,7 @@ export default function Footer() {
                 </Text>
 
                 <Text as="span" fontWeight="500" ms="4px">
-                  Help Web2 Gamers play to Web3 Games.
+                  Help Web2 Gamers play Web3 Games.
                 </Text>
               </Flex>
               <Flex>
@@ -201,7 +201,7 @@ export default function Footer() {
               </Text>
 
               <Text as="span" fontWeight="500" ms="4px">
-                Help Web2 Gamers play to Web3 Games.
+                Help Web2 Gamers play Web3 Games.
               </Text>
             </Flex>
             <Flex>

@@ -1,5 +1,5 @@
 .css-11fb1j9 {
-  background-color: #3F8CFF !important;
+  background-color: #3f8cff !important;
 }
 @font-face {
   font-family: 'Inter-SemiBold';
@@ -28,11 +28,11 @@
 .yscroll::-webkit-scrollbar-thumb {
   width: 8px;
   height: 78px !important;
-  background: #6656FF;
+  background: #6656ff;
   border-radius: 4px;
 }
 .symbol {
-  background: #FFFFFF;
+  background: #ffffff;
   width: 7px;
   height: 2px;
   margin: 2px 0;
@@ -77,7 +77,7 @@ em-emoji-picker {
   line-height: 28px;
   text-align: center;
   border-radius: 6px;
-  background: #1B1D21;
+  background: #1b1d21;
   margin-bottom: 16px;
   position: absolute;
   top: -44px;
@@ -91,7 +91,7 @@ em-emoji-picker {
   width: 0;
   height: 0;
   border-left: 4px solid transparent;
-  border-top: 4px solid #1B1D21;
+  border-top: 4px solid #1b1d21;
   border-right: 4px solid transparent;
   border-bottom: 0px solid transparent;
 }
@@ -118,4 +118,26 @@ em-emoji-picker {
 video {
   height: 100px;
   width: 100px;
+}
+.CoreNftImg:hover .CoreNftHover {
+  display: block;
+}
+.CoreNftHover {
+  background: #3f8cff;
+  border-radius: 2.736px 13.68px 13.68px 13.68px;
+  width: 178px;
+  height: 118px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left;
+  position: absolute;
+  display: none;
+  left: 30px;
+  margin-top: 10px;
 }

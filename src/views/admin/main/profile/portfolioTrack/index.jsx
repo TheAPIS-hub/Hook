@@ -68,7 +68,7 @@ export default function Track(props) {
     <Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
       <Image src={backLogo} alt="Horizon UI" height="250px" w="100%" />
       <Box className="PortfolioText">Portfolio Track</Box>
-      <Box className="VisualizeText">You can search any wallets you want.</Box>
+      <Box className="VisualizeText">Track any wallets you want.</Box>
       <InputGroup
         w={{ base: '100%', md: '860px' }}
         borderRadius="20px"
@@ -197,11 +197,35 @@ export default function Track(props) {
                 )}
               </Box>
               <Box>
-                <Link
+                <Box
                   fontWeight="400"
                   color="#3899D0"
                   letterSpacing="-0.36px"
-                  href="https://app.gitbook.com/o/dHoRYUVnGdpDW6kzvwKH/s/8MYNEydsCb1yG0qhMpJZ/products/hook"
+                  onClick={(e) => {
+                    // console.log()
+                    getSearchDatas(e.target.innerText.toLowerCase()).then(
+                      (searchRes) => {
+                        if (searchRes.data.code == 200) {
+                          if (searchRes.data.data.tokenBalance.code == 1) {
+                            localStorage.setItem(
+                              'searchData',
+                              JSON.stringify(searchRes.data.data)
+                            )
+                            localStorage.setItem(
+                              'searchAddress',
+                              e.target.innerText.toLowerCase()
+                            )
+                            setSearchHeats(e.target.innerText.toLowerCase())
+                            history.push({ pathname: '/admin/info' })
+                          } else {
+                            history.push({
+                              pathname: '/admin/profile/searcherr',
+                            })
+                          }
+                        }
+                      }
+                    )
+                  }}
                   _hover={{ color: '#4264a1' }}
                   width="271px"
                   overflow="hidden"
@@ -209,9 +233,10 @@ export default function Track(props) {
                   wordBreak="keep-all"
                   whiteSpace="nowrap"
                   textOverflow="ellipsis"
+                  cursor="pointer"
                 >
                   {item.searchName}
-                </Link>
+                </Box>
               </Box>
             </Flex>
           )

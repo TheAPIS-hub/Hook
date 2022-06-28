@@ -26,9 +26,9 @@ import { getUserInfo, userIsLogin, userLogout } from '../../hook/hook'
 import '../../views/admin/dashboards/default/iconfont.css'
 import React, { useEffect, useState } from 'react'
 // Assets
-import navImage from 'assets/img/layout/Navbar.png'
+// import navImage from 'assets/img/layout/Navbar.png'
 import logo from 'assets/img/logo/logo.png'
-import newsIcon from 'assets/img/users/newsIcon.png'
+// import newsIcon from 'assets/img/users/newsIcon.png'
 import {
   MdNotificationsNone,
   MdInfoOutline,
@@ -186,7 +186,7 @@ export default function HeaderLinks(props) {
       </Flex> */}
       <SidebarResponsive routes={routes} />
       <Menu>
-        <MenuButton
+        {/* <MenuButton
           p="0px"
           position={{ sm: 'absolute', md: 'inherit' }}
           right="31.4vw"
@@ -207,7 +207,7 @@ export default function HeaderLinks(props) {
             w="24px"
             height="24px"
           ></Image>
-        </MenuButton>
+        </MenuButton> */}
         <MenuList
           boxShadow={shadow}
           p="20px"
@@ -497,14 +497,14 @@ export default function HeaderLinks(props) {
           Sign In
         </Button>
       )}
-      <Image
+      {/* <Image
         src={logo}
         position="absolute"
         right="22px"
         top="26px"
         w="42px"
         display={{ md: 'none' }}
-      ></Image>
+      ></Image> */}
     </Flex>
   )
 }
