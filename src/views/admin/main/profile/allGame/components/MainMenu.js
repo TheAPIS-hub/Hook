@@ -44,7 +44,7 @@ export default function DateUploaded(props) {
     { bg: 'secondaryGray.300' },
     { bg: 'whiteAlpha.100' }
   )
-
+  const [downData, setDownData] = useState(false)
   // Ellipsis modals
   const {
     isOpen: isOpen1,
@@ -64,7 +64,10 @@ export default function DateUploaded(props) {
         w={{ sm: '150px', md: '200px' }}
         h="56px"
         lineHeight="100%"
-        onClick={onOpen1}
+        onClick={() => {
+          onOpen1()
+          setDownData(!downData)
+        }}
         borderRadius="16px"
         {...rest}
       >
@@ -74,6 +77,8 @@ export default function DateUploaded(props) {
             alignItems: 'center',
             margin: ' auto',
           }}
+          justifyContent="space-between"
+          w="100%"
         >
           <Text
             style={{
@@ -86,7 +91,23 @@ export default function DateUploaded(props) {
           >
             {showText}
           </Text>
-          <Icon as={MdKeyboardArrowDown} color={iconColor} w="24px" h="24px" />
+          <Icon
+            as={MdKeyboardArrowDown}
+            color={iconColor}
+            w={{
+              base: '24px',
+              md: '18px',
+              xl: '24px',
+              '2xl': '48px',
+            }}
+            h={{
+              base: '24px',
+              md: '18px',
+              xl: '24px',
+              '2xl': '48px',
+            }}
+            transform={downData ? 'rotate(180deg)' : 'rotate(0deg)'}
+          />
         </Flex>
       </MenuButton>
       <MenuList
