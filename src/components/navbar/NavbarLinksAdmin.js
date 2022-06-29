@@ -138,11 +138,12 @@ export default function HeaderLinks(props) {
       alignItems="center"
       flexDirection="row"
       bg={{ sm: '#0B1437', md: menuBg }}
-      flexWrap={secondary ? { base: 'wrap', md: 'nowrap' } : 'unset'}
+      //   flexWrap={secondary ? { base: 'wrap', md: 'nowrap' } : 'unset'}
       p="10px"
       borderRadius="30px"
       boxShadow={{ sm: ' ', md: shadow }}
       className="HeaderSearchBar"
+      justifyContent={{ sm: 'flex-end', xl: '' }}
     >
       <SearchBar
         mb={secondary ? { base: '10px', md: 'unset' } : 'unset'}
@@ -150,64 +151,9 @@ export default function HeaderLinks(props) {
         borderRadius="30px"
         display={{ sm: 'none', md: 'block' }}
       />
-      {/* <Flex
-        bg={ethBg}
-        display={secondary ? 'flex' : 'none'}
-        borderRadius="30px"
-        p="6px"
-        align="center"
-        me="6px"
-        ms="auto"
-      >
-        <Flex
-          align="center"
-          justify="center"
-          bg={ethBox}
-          h="29px"
-          w="29px"
-          borderRadius="30px"
-          me="7px"
-        >
-          <Icon color={ethColor} w="9px" h="14px" as={FaEthereum} />
-        </Flex>
-        <Text
-          w="max-content"
-          color={ethColor}
-          fontSize="sm"
-          fontWeight="700"
-          me="6px"
-        >
-          1,924
-          <Text as="span" display={{ base: 'none', md: 'unset' }}>
-            {' '}
-            ETH
-          </Text>
-        </Text>
-      </Flex> */}
+
       <SidebarResponsive routes={routes} />
       <Menu>
-        {/* <MenuButton
-          p="0px"
-          position={{ sm: 'absolute', md: 'inherit' }}
-          right="31.4vw"
-          top="36px"
-        >
-          <Icon
-            display="flex"
-            as={MdNotificationsNone}
-            color={navbarIcon}
-            w="18px"
-            h="18px"
-            me="10px"
-            display={{ sm: 'none', md: 'block' }}
-          />
-          <Image
-            display={{ md: 'none' }}
-            src={newsIcon}
-            w="24px"
-            height="24px"
-          ></Image>
-        </MenuButton> */}
         <MenuList
           boxShadow={shadow}
           p="20px"
@@ -256,67 +202,6 @@ export default function HeaderLinks(props) {
         </MenuList>
       </Menu>
 
-      {/* <Menu>
-        <MenuButton p="0px">
-          <Icon
-            display="flex"
-            as={MdInfoOutline}
-            color={navbarIcon}
-            w="18px"
-            h="18px"
-            me="10px"
-          />
-        </MenuButton>
-        <MenuList
-          boxShadow={shadow}
-          p="20px"
-          me={{ base: '30px', md: 'unset' }}
-          borderRadius="20px"
-          bg={menuBg}
-          border="none"
-          mt="22px"
-          minW={{ base: 'unset' }}
-          maxW={{ base: '360px', md: 'unset' }}
-        >
-          <Image src={navImage} borderRadius="16px" mb="28px" />
-          <Flex flexDirection="column">
-            <Link w="100%" href="https://horizon-ui.com/pro">
-              <Button w="100%" h="44px" mb="10px" variant="brand">
-                Buy Horizon UI PRO
-              </Button>
-            </Link>
-            <Link
-              w="100%"
-              href="https://horizon-ui.com/documentation/docs/introduction"
-            >
-              <Button
-                w="100%"
-                h="44px"
-                mb="10px"
-                border="1px solid"
-                bg="transparent"
-                borderColor={borderButton}
-              >
-                See Documentation
-              </Button>
-            </Link>
-            <Link
-              w="100%"
-              href="https://github.com/horizon-ui/horizon-ui-chakra"
-            >
-              <Button
-                w="100%"
-                h="44px"
-                variant="no-hover"
-                color={textColor}
-                bg="transparent"
-              >
-                Try Horizon Free
-              </Button>
-            </Link>
-          </Flex>
-        </MenuList>
-      </Menu> */}
       <Box
         marginRight="10px"
         borderRadius="30px"
@@ -372,24 +257,7 @@ export default function HeaderLinks(props) {
           {gasPrice}
         </Text>
       </Box>
-      {/* <Button
-        variant="no-hover"
-        bg="transparent"
-        p="0px"
-        minW="unset"
-        minH="unset"
-        h="18px"
-        w="max-content"
-        onClick={toggleColorMode}
-      >
-        <Icon
-          me="10px"
-          h="18px"
-          w="18px"
-          color={navbarIcon}
-          as={colorMode === "light" ? IoMdMoon : IoMdSunny}
-        />
-      </Button> */}
+
       {isLogin ? (
         <Menu>
           <MenuButton p="0px" display={{ sm: 'none', md: 'block' }}>
@@ -427,23 +295,6 @@ export default function HeaderLinks(props) {
               </Text>
             </Flex>
             <Flex flexDirection="column" p="10px">
-              {/* <MenuItem
-                _hover={{ bg: 'none' }}
-                _focus={{ bg: 'none' }}
-                borderRadius="8px"
-                px="14px"
-              >
-                <Text fontSize="sm">0X2FA...948</Text>
-                <Icon as={MdFilterNone} boxSize={16} color="red.500" />
-              </MenuItem> */}
-              {/* <MenuItem
-                _hover={{ bg: 'none' }}
-                _focus={{ bg: 'none' }}
-                borderRadius="8px"
-                px="14px"
-              >
-                <Text fontSize="sm">Newsletter Settings</Text>
-              </MenuItem> */}
               <MenuItem
                 _hover={{ bg: 'none' }}
                 _focus={{ bg: 'none' }}
@@ -492,19 +343,11 @@ export default function HeaderLinks(props) {
           _webkitTransition="All 0.2s ease-in-out"
           _mozTransition=" All 0.2s ease-in-out"
           _oTransition=" All 0.2s ease-in-out"
-          display={{ sm: 'none', md: 'block' }}
+          display="block"
         >
           Sign In
         </Button>
       )}
-      {/* <Image
-        src={logo}
-        position="absolute"
-        right="22px"
-        top="26px"
-        w="42px"
-        display={{ md: 'none' }}
-      ></Image> */}
     </Flex>
   )
 }
