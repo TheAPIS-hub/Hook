@@ -76,6 +76,8 @@ export default function DateUploaded(props) {
             display: 'flex',
             alignItems: 'center',
             margin: ' auto',
+            padding: '0px 13px',
+            boxSizing: 'border-box',
           }}
           justifyContent="space-between"
           w="100%"
