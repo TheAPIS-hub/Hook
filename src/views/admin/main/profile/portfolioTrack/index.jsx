@@ -182,6 +182,7 @@ export default function Track(props) {
                 fontWeight="600"
                 fontSize="18px"
                 lineHeight="24px"
+                color="#A3AED0"
               >
                 {index === 0 ? (
                   //   <Image src={hot} width="17px" height="24px" />

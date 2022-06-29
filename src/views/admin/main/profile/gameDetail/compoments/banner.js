@@ -36,7 +36,7 @@ import likedIcon from 'assets/img/users/liked.png'
 import { likedStatus } from '../../../../../../hook/hook'
 import BigNumber from 'bignumber.js'
 import { isMobile } from './until.js'
-import CoreNfts from '../../../../../../assets/img/logo/gameThree.png'
+import CoreNfts from '../../../../../../assets/img/logo/CoreLogo.png'
 import '../index.css'
 export default function Banner(props) {
   const { game } = props
