@@ -33,7 +33,7 @@ export default function SidebarDocs() {
       //   marginTop='240px'
       cursor="pointer"
       onClick={() => {
-        history.push({ pathname: '/pass' })
+        history.push({ pathname: '/admin/pass' })
       }}
     >
       <Flex

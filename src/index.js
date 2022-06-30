@@ -5,7 +5,6 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
 import AuthLayout from 'layouts/auth'
 import AdminLayout from 'layouts/admin'
-import Pass from './views/pass'
 import { BrowserRouter } from 'react-router-dom'
 // Chakra imports
 import { ChakraProvider } from '@chakra-ui/react'
@@ -19,7 +18,6 @@ ReactDOM.render(
           <Switch>
             <Route path={`/auth`} component={AuthLayout} />
             <Route path={`/admin`} component={AdminLayout} />
-            <Route path={`/pass`} component={Pass} />
             <Redirect from="/" to="/admin" />
           </Switch>
         </HashRouter>
