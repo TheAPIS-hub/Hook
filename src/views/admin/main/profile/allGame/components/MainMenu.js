@@ -100,13 +100,13 @@ export default function DateUploaded(props) {
               base: '24px',
               md: '18px',
               xl: '24px',
-              '2xl': '48px',
+              '2xl': '24px',
             }}
             h={{
               base: '24px',
               md: '18px',
               xl: '24px',
-              '2xl': '48px',
+              '2xl': '24px',
             }}
             transform={downData ? 'rotate(180deg)' : 'rotate(0deg)'}
           />
