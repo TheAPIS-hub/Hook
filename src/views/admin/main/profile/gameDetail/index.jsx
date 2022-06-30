@@ -23,10 +23,10 @@ export default function GameDetail(props) {
       {isMobile() ? (
         <div>
           <Banner game={game}></Banner>
-          <Earn gpId={game.gpId}></Earn>
+          <Earn gpId={game.top[0].gpId}></Earn>
           <Vote game={game}></Vote>
-          <Comments gpId={game.gpId}></Comments>
-          <BuyAxie address={game.tokenHash}></BuyAxie>
+          <Comments gpId={game.top[0].gpId}></Comments>
+          <BuyAxie address={game.top[0].tokenHash}></BuyAxie>
         </div>
       ) : (
         <Grid
@@ -41,14 +41,14 @@ export default function GameDetail(props) {
           >
             <Banner game={game}></Banner>
             <Vote game={game}></Vote>
-            <Comments gpId={game.gpId}></Comments>
+            <Comments gpId={game.top[0].gpId}></Comments>
           </Flex>
           <Flex
             flexDirection="column"
             gridArea={{ xl: '1 / 3 / 2 / 4', '2xl': '1 / 2 / 2 / 3' }}
           >
-            <Earn gpId={game.gpId}></Earn>
-            <BuyAxie address={game.tokenHash}></BuyAxie>
+            <Earn gpId={game.top[0].gpId}></Earn>
+            <BuyAxie address={game.top[0].tokenHash}></BuyAxie>
           </Flex>
         </Grid>
       )}

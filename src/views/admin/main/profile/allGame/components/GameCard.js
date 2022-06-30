@@ -229,7 +229,7 @@ export default function GameCard({ gameData }) {
                         }}
                         fontSize={{ sm: '3.2vw', md: '0.6vw' }}
                       >
-                        {formatNumber(item.activeUsers)} players
+                        {formatNumber(item.top[0].activeUsers)} players
                       </Box>
                     </Box>
                     <Box

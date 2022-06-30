@@ -53,7 +53,8 @@ export default function Vote(props) {
   return (
     <div>
       {isMobile() ? (
-        <Grid gridTemplateColumns="repeat(2, 1fr)"
+        <Grid
+          gridTemplateColumns="repeat(2, 1fr)"
           background="rgba(228, 228, 228, 0.1)"
           borderRadius="4.69vw"
           mt="13.86vw"
@@ -66,7 +67,12 @@ export default function Vote(props) {
           >
             <Text fontSize="12px" color="#808191">
               <Flex>
-                <Image width="16px" height="16px" mr="8px" src={saleIcon}></Image>
+                <Image
+                  width="16px"
+                  height="16px"
+                  mr="8px"
+                  src={saleIcon}
+                ></Image>
                 <Text fontSize="3.52vw" color="#808191">
                   Price
                 </Text>
@@ -77,15 +83,21 @@ export default function Vote(props) {
                 fontWeight="600"
                 fontFamily="Poppins"
                 letterSpacing="-1px"
-                color='#fff'
+                color="#fff"
               >
                 {toThousands(game.price)}
               </Text>
-            </Text></Flex>
+            </Text>
+          </Flex>
           <Flex height="38.93vw" padding="6.9vw 2vw 10vw 4.46vw">
             <Text fontSize="3.52vw" color="#808191">
               <Flex>
-                <Image width="16px" height="16px" mr="8px" src={volumeIcon}></Image>
+                <Image
+                  width="16px"
+                  height="16px"
+                  mr="8px"
+                  src={volumeIcon}
+                ></Image>
                 <Text fontSize="3.52vw" color="#808191">
                   Volume
                 </Text>
@@ -96,16 +108,11 @@ export default function Vote(props) {
                 fontWeight="600"
                 letterSpacing="-1px"
                 fontFamily="Poppins"
-                color='#fff'
+                color="#fff"
               >
-                Ξ {toThousands(new BigNumber(game.volume).toFixed(2))}
-                <Text
-                  as="p"
-                  fontSize="4.1vw"
-                  fontWeight="600"
-                  color="#808191"
-                >
-                  ${toThousands((game.volume / 1000).toFixed(2))}K
+                Ξ {toThousands(new BigNumber(game.top[0].volume).toFixed(2))}
+                <Text as="p" fontSize="4.1vw" fontWeight="600" color="#808191">
+                  ${toThousands((game.top[0].volume / 1000).toFixed(2))}K
                 </Text>
               </Text>
             </Text>
@@ -124,7 +131,9 @@ export default function Vote(props) {
               letterSpacing="-1px"
               fontFamily="Poppins"
             >
-              {toThousands(new BigNumber(game.circulatingSupply).toFixed(2))}
+              {toThousands(
+                new BigNumber(game.top[0].circulatingSupply).toFixed(2)
+              )}
             </Text>
           </Box>
           <Flex
@@ -132,16 +141,13 @@ export default function Vote(props) {
             padding="6.9vw 2vw 10vw 4.46vw"
             borderLeft="1px solid rgba(228, 228, 228, 0.1)"
             borderTop="1px solid rgba(228, 228, 228, 0.1)"
-            mt="-1px" ml="-1px" zIndex="1"
-          >
-          </Flex>
+            mt="-1px"
+            ml="-1px"
+            zIndex="1"
+          ></Flex>
         </Grid>
       ) : (
-        <Flex
-          bg="rgba(228, 228, 228, 0.1)"
-          margin="62px 0"
-          borderRadius="16px"
-        >
+        <Flex bg="rgba(228, 228, 228, 0.1)" margin="62px 0" borderRadius="16px">
           <Box
             width={{
               base: '100%',
@@ -171,7 +177,7 @@ export default function Vote(props) {
               fontFamily="Poppins"
               letterSpacing="-1px"
             >
-              {toThousands(game.price)}
+              {toThousands(game.top[0].price)}
             </Text>
           </Box>
           <Box
@@ -187,7 +193,12 @@ export default function Vote(props) {
             borderRight="1px solid rgba(228, 228, 228, 0.1)"
           >
             <Flex>
-              <Image width="16px" height="16px" mr="8px" src={volumeIcon}></Image>
+              <Image
+                width="16px"
+                height="16px"
+                mr="8px"
+                src={volumeIcon}
+              ></Image>
               <Text fontSize="12px" color="#808191">
                 Volume
               </Text>
@@ -203,7 +214,7 @@ export default function Vote(props) {
               letterSpacing="-1px"
               fontFamily="Poppins"
             >
-              Ξ {toThousands(new BigNumber(game.volume).toFixed(2))}
+              Ξ {toThousands(new BigNumber(game.top[0].volume).toFixed(2))}
               <Text
                 as="span"
                 fontSize="18px"
@@ -211,7 +222,7 @@ export default function Vote(props) {
                 color="#808191"
                 ml="18px"
               >
-                ${toThousands((game.volume / 1000).toFixed(2))}K
+                ${toThousands((game.top[0].volume / 1000).toFixed(2))}K
               </Text>
             </Text>
           </Box>
@@ -243,12 +254,13 @@ export default function Vote(props) {
               letterSpacing="-1px"
               fontFamily="Poppins"
             >
-              {toThousands(new BigNumber(game.circulatingSupply).toFixed(2))}
+              {toThousands(
+                new BigNumber(game.top[0].circulatingSupply).toFixed(2)
+              )}
             </Text>
           </Box>
         </Flex>
-      )
-      }
+      )}
       <Flex
         borderTop="1px solid rgba(228, 228, 228, 0.1)"
         borderRight="0px"
@@ -259,18 +271,23 @@ export default function Vote(props) {
           base: '25px 0 20px',
           '2xl': '39px 0',
         }}
-        mt={{ sm: "13.86vw", md: "0" }}
+        mt={{ sm: '13.86vw', md: '0' }}
         justifyContent="space-between"
-        flexDirection={{ sm: "column", md: "initial" }}
+        flexDirection={{ sm: 'column', md: 'initial' }}
       >
         {isVote ? (
-          <Box width={{ sm: "80%", md: "48%" }}>
+          <Box width={{ sm: '80%', md: '48%' }}>
             <Text
-              mb={{ sm: "18vw", md: "0" }}
-              fontSize={{ sm: "8.53vw", md: "18px" }}
+              mb={{ sm: '18vw', md: '0' }}
+              fontSize={{ sm: '8.53vw', md: '18px' }}
               className="font-Inter-SemiBold"
               fontWeight="600"
-              lineHeight={{ sm: "10.13vw", md: "24px" }}>Your‘ve voted <br/>- {choosMoon ? ('👍To da moon') : (
+              lineHeight={{ sm: '10.13vw', md: '24px' }}
+            >
+              Your‘ve voted <br />-{' '}
+              {choosMoon ? (
+                '👍To da moon'
+              ) : (
                 <Box>
                   <Text
                     as="span"
@@ -284,14 +301,23 @@ export default function Vote(props) {
                 </Box>
               )}
             </Text>
-            <Text fontSize="13px" color="#B2B3BD" width="80%" lineHeight="25px" display={{ sm: "none", md: "block" }}>
+            <Text
+              fontSize="13px"
+              color="#B2B3BD"
+              width="80%"
+              lineHeight="25px"
+              display={{ sm: 'none', md: 'block' }}
+            >
               Your vote for 24 hours. In order to update how you feel about{' '}
               {game.name},come back tomorrow!
             </Text>
           </Box>
         ) : (
-          <Box width={{ sm: "100%", md: "48%" }} margin={{sm:"0",md:"14px 0"}}>
-            <Text fontSize={{ sm: "24px", md: "18px" }}>
+          <Box
+            width={{ sm: '100%', md: '48%' }}
+            margin={{ sm: '0', md: '14px 0' }}
+          >
+            <Text fontSize={{ sm: '24px', md: '18px' }}>
               How do you feel about {game.name} today？
             </Text>
             <Text fontSize="13px" color="#B2B3BD" width="80%">
@@ -300,7 +326,12 @@ export default function Vote(props) {
           </Box>
         )}
         {isVote ? (
-          <Box width={{ sm: "100%", md: "48%" }} fontSize="13px" color="#B2B3BD" pt="10px">
+          <Box
+            width={{ sm: '100%', md: '48%' }}
+            fontSize="13px"
+            color="#B2B3BD"
+            pt="10px"
+          >
             <Flex mb="20px">
               <Box
                 height="1px"
@@ -309,9 +340,7 @@ export default function Vote(props) {
                 bgColor="#FF9A7B"
                 position="relative"
               >
-                <Box className="per-tips" >
-                  {good}
-                </Box>
+                <Box className="per-tips">{good}</Box>
               </Box>
               <Box
                 height="1px"
@@ -320,7 +349,13 @@ export default function Vote(props) {
                 bgColor="#6C5DD3"
               ></Box>
             </Flex>
-            <Text fontSize="12px" color="#B2B3BD" width="80%" lineHeight="16px" display={{ sm: "block", md: "none" }}>
+            <Text
+              fontSize="12px"
+              color="#B2B3BD"
+              width="80%"
+              lineHeight="16px"
+              display={{ sm: 'block', md: 'none' }}
+            >
               Your vote for 24 hours. In order to update how you feel about{' '}
               {game.name},come back tomorrow!
             </Text>
@@ -328,7 +363,7 @@ export default function Vote(props) {
               justifyContent="space-between"
               fontSize="13px"
               color="#B2B3BD"
-              display={{ sm: "none", md: "block" }}
+              display={{ sm: 'none', md: 'block' }}
             >
               <Text> {good} To da moon&nbsp;👍 </Text>
               <Text>
@@ -345,7 +380,12 @@ export default function Vote(props) {
             </Flex>
           </Box>
         ) : (
-          <Box width={{ sm: "100%", md: "48%" }} fontSize="13px" color="#B2B3BD" pt="10px">
+          <Box
+            width={{ sm: '100%', md: '48%' }}
+            fontSize="13px"
+            color="#B2B3BD"
+            pt="10px"
+          >
             <Flex
               justifyContent="end"
               fontSize="14px"
@@ -402,7 +442,6 @@ export default function Vote(props) {
                   likedStatus(game.gpId, uId, 1).then((res) => {
                     setchoosMoon(false)
                     voteFun(!isVote)
-
                   })
                 }}
               >
@@ -419,6 +458,6 @@ export default function Vote(props) {
           </Box>
         )}
       </Flex>
-    </div >
+    </div>
   )
 }

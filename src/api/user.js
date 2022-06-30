@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const DefaultUrl = 'https://hook.cool/api'
-// const DefaultUrl = 'https://192.168.31.23:8898'
+// const DefaultUrl = 'https://hook.cool/api'
+const DefaultUrl = 'https://192.168.31.23:8898'
 // const DefaultUrl = 'http://devhook.natapp1.cc/'
 export async function register(params) {
   return await axios.post(`${DefaultUrl}/user/register`, {

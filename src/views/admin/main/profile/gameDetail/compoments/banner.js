@@ -46,31 +46,14 @@ export default function Banner(props) {
   const [good, setGood] = useState('')
   const [bad, setBad] = useState('')
   const [isLike, setIsLike] = useState(false)
-  const [CoreData, setCoreData] = useState([
-    {
-      CoreNft: CoreNfts,
-      BackersNft: CoreNfts,
-    },
-    {
-      CoreNft: CoreNfts,
-      BackersNft: CoreNfts,
-    },
-    {
-      CoreNft: CoreNfts,
-      BackersNft: CoreNfts,
-    },
-    {
-      CoreNft: CoreNfts,
-      BackersNft: CoreNfts,
-    },
-    {
-      CoreNft: CoreNfts,
-      BackersNft: CoreNfts,
-    },
-  ])
+  const [CoreData, setCoreData] = useState([])
+  const [defiData, setDefiData] = useState([])
   useEffect(() => {
     setGood(((moon / (moon + ngmi)) * 100).toFixed(0) + '%')
     setBad(((ngmi / (moon + ngmi)) * 100).toFixed(0) + '%')
+    console.log(game)
+    setCoreData(game.nfts)
+    setDefiData(game.defis)
   }, [])
   const [isVote, voteFun] = useState(false)
   const toast = useToast()
@@ -269,7 +252,7 @@ export default function Banner(props) {
                       {formatNumber(game.twitterFollower)} followers
                     </Text>
                     <Text as="span" ml="24px">
-                      {formatNumber(game.activeUsers)} players
+                      {formatNumber(game.top[0].activeUsers)} players
                     </Text>
                   </Box>
                 </Box>
@@ -411,7 +394,7 @@ export default function Banner(props) {
                 xl: '300px',
                 '2xl': '468px',
               }}
-              justifyContent="space-between"
+              //   justifyContent="space-between"
               marginTop="30px"
             >
               {CoreData.map((item, index) => {
@@ -422,14 +405,12 @@ export default function Banner(props) {
                     cursor="pointer"
                   >
                     <Image
-                      src={item.CoreNft}
+                      src={item.imgUrl}
                       w={{ xl: '47px', '2xl': '72px' }}
                       h={{ xl: '47px', '2xl': '72px' }}
                     />
                     <Box className="CoreNftHover">
-                      Each Axie NFT has unique strengths and weaknesses due to
-                      its genes and you can even breed Axies to create
-                      offspring.
+                      {item.introductionCurrency}
                     </Box>
                   </Box>
                 )
@@ -447,16 +428,12 @@ export default function Banner(props) {
             >
               Backers
             </Text>
-            <Flex
-              w={{ xl: '260px', '2xl': '300px' }}
-              justifyContent="space-between"
-              marginTop="34px"
-            >
-              {CoreData.map((item, index) => {
+            <Flex w={{ xl: '260px', '2xl': '300px' }} marginTop="34px">
+              {defiData.map((item, index) => {
                 return (
-                  <Box>
+                  <Box className="defiItem">
                     <Image
-                      src={item.BackersNft}
+                      src={item.imgUrl}
                       w={{ xl: '38px', '2xl': '47px' }}
                       h={{ xl: '38px', '2xl': '47px' }}
                     />

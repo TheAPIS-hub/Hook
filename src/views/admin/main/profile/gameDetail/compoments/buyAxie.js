@@ -24,6 +24,7 @@ import BigNumber from 'bignumber.js'
 import { getGameNormal, tokenTokentrans } from '../../../../../../hook/hook'
 import { isMobile } from './until.js'
 export default function BuyAxie(props) {
+  console.log(props, 'props')
   const textColorSecondary = useColorModeValue('secondaryGray.700', 'white')
 
   const { address } = props
@@ -33,7 +34,7 @@ export default function BuyAxie(props) {
     setInterval(() => {
       setEthPrice(localStorage.getItem('ethPrice') ?? 0)
     }, 10000)
-    tokenTokentrans(isMobile()?3:9, 1, address).then((res) => {
+    tokenTokentrans(isMobile() ? 3 : 9, 1, address).then((res) => {
       setNormalDate(res.data.data.data)
     })
   }, [])
@@ -45,10 +46,10 @@ export default function BuyAxie(props) {
         fontWeight=" 500"
         textAlign="left"
         lineHeight="32px"
-        margin={{base:"45px 0 26px 0","2xl":"55px 0 30px 0"}}
+        margin={{ base: '45px 0 26px 0', '2xl': '55px 0 30px 0' }}
         className="font-Inter-SemiBold"
       >
-        Trading Activies 
+        Trading Activies
       </Text>
       <Card direction="column" w="100%" p="0px" bgColor="transparent">
         {normalDate.length > 0 &&
@@ -61,13 +62,17 @@ export default function BuyAxie(props) {
               w="100%"
               mb="12px"
               borderRadius="16px"
-              height={{sm:'80px',base: '68px', '2xl': '80px' }}
+              height={{ sm: '80px', base: '68px', '2xl': '80px' }}
               pr="4"
               pl="4"
             >
               <Flex>
                 {item.imageUrl ? (
-                  <Image width={{ base: '40px', '2xl': '50px' }} height={{ base: '40px', '2xl': '50px' }} src={item.imageUrl} />
+                  <Image
+                    width={{ base: '40px', '2xl': '50px' }}
+                    height={{ base: '40px', '2xl': '50px' }}
+                    src={item.imageUrl}
+                  />
                 ) : (
                   ''
                 )}
@@ -110,15 +115,14 @@ export default function BuyAxie(props) {
                       <Text className="symbol"></Text>
                       <Text className="symbol"></Text>
                     </Box>
-                    <Text >
-                      {new BigNumber(item.ethValue).toFixed(2)}
-                    </Text>
+                    <Text>{new BigNumber(item.ethValue).toFixed(2)}</Text>
                   </Flex>
                   <Text color="#B2B3BD">
                     $
                     {toThousands(
                       new BigNumber(new BigNumber(item.ethValue).toFixed(2))
-                        .times(ethPrice).toFixed(2)
+                        .times(ethPrice)
+                        .toFixed(2)
                         .toString()
                     )}
                     {/* {ethPrice} */}
@@ -127,8 +131,8 @@ export default function BuyAxie(props) {
                     {dateDiff(item.time * 1000, null)}
                   </Text>
                 </Flex>
-                <Image 
-                  src={arrow} 
+                <Image
+                  src={arrow}
                   w="20px"
                   height="20px"
                   ml="2"
@@ -136,7 +140,7 @@ export default function BuyAxie(props) {
                   onClick={() => {
                     window.open(`https://etherscan.io/tx/${item.txid}`)
                   }}
-                 ></Image>
+                ></Image>
               </Flex>
               {/* <Flex>
                 <Text

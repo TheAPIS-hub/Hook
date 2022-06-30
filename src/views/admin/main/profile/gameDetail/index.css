@@ -119,14 +119,20 @@ video {
   height: 100px;
   width: 100px;
 }
+.CoreNftImg,
+.defiItem {
+  margin-left: 10px;
+}
+.CoreNftImg:first-child,
+.defiItem:first-child {
+  margin-left: 0px;
+}
 .CoreNftImg:hover .CoreNftHover {
   display: block;
 }
 .CoreNftHover {
   background: #3f8cff;
   border-radius: 2.736px 13.68px 13.68px 13.68px;
-  width: 178px;
-  height: 118px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
