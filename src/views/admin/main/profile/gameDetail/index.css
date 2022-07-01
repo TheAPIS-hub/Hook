@@ -134,8 +134,9 @@ video {
   display: block;
 }
 .CoreNftHover {
-  background: #3f8cff;
+  background: #0b1437;
   border-radius: 2.736px 13.68px 13.68px 13.68px;
+  box-shadow: 1px 1px 6px #0202025e;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
