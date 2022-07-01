@@ -415,6 +415,24 @@ export default function Banner(props) {
                   </Box>
                 )
               })}
+              {defiData.map((item, index) => {
+                return (
+                  <Box
+                    className="defiItem"
+                    position="relative"
+                    cursor="pointer"
+                  >
+                    <Image
+                      src={item.imgUrl}
+                      w={{ xl: '47px', '2xl': '72px' }}
+                      h={{ xl: '47px', '2xl': '72px' }}
+                    />
+                    <Box className="CoreNftHover">
+                      {item.introductionCurrency}
+                    </Box>
+                  </Box>
+                )
+              })}
             </Flex>
           </Box>
           <Box>
@@ -429,7 +447,7 @@ export default function Banner(props) {
               Backers
             </Text>
             <Flex w={{ xl: '260px', '2xl': '300px' }} marginTop="34px">
-              {defiData.map((item, index) => {
+              {/* {defiData.map((item, index) => {
                 return (
                   <Box className="defiItem">
                     <Image
@@ -439,7 +457,7 @@ export default function Banner(props) {
                     />
                   </Box>
                 )
-              })}
+              })} */}
             </Flex>
           </Box>
         </Flex>

@@ -37,7 +37,7 @@ export default function Track(props) {
       <Text fontSize="48px" fontWeight={800}>
         Search not found
       </Text>
-      <Text width="500px" mt="20px" mb="40px" fontSize="14px">
+      <Text width="500px" mt="20px" mb="40px" fontSize="14px" color="#b9bec7">
         Oops! The search string you entered was: asdasd adqewDqw Sorry! <br />
         This isan invalid search string.
         <br /> If you think this is a problem with us, please tell us.
