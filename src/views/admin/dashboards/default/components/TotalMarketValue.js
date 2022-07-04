@@ -157,7 +157,6 @@ function TotalMarketValue(props) {
                             fontWeight="600"
                           >
                             {cell.value}
-                            {row.values.id}
                           </Text>
                         </Flex>
                       )
