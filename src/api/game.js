@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const DefaultUrl = 'https://hook.cool/api'
+const DefaultUrl = 'https://test.hook.cool/api'
 // const DefaultUrl = 'http://devhook.natapp1.cc'
 // const DefaultUrl = 'http://192.168.31.23:8898/'
 
