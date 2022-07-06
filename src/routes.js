@@ -432,7 +432,7 @@ const routes = [
     ],
   },
   {
-    name: 'WalletScan',
+    name: 'MarketData',
     layout: '/admin',
     path: '/dashboards/default',
     icon: <span className="iconfont icon-Overview">&#xe608;</span>,
