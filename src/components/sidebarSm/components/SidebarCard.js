@@ -64,7 +64,7 @@ export default function SidebarDocs() {
           fontWeight="500"
           letterSpacing="-0.28px"
         >
-          To get access to all features! Connect with Hook!{' '}
+          To get access to all features, learn more here!{' '}
         </Text>
       </Flex>
     </Flex>
