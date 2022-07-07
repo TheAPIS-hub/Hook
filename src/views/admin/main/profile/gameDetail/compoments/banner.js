@@ -48,12 +48,14 @@ export default function Banner(props) {
   const [isLike, setIsLike] = useState(false)
   const [CoreData, setCoreData] = useState([])
   const [defiData, setDefiData] = useState([])
+  const [BackersData, setBackersData] = useState([])
   useEffect(() => {
     setGood(((moon / (moon + ngmi)) * 100).toFixed(0) + '%')
     setBad(((ngmi / (moon + ngmi)) * 100).toFixed(0) + '%')
-    console.log(game)
+    console.log(game, 'ssssssssssss')
     setCoreData(game.nfts)
     setDefiData(game.defis)
+    setBackersData(game.backers)
   }, [])
   const [isVote, voteFun] = useState(false)
   const toast = useToast()
@@ -208,9 +210,9 @@ export default function Banner(props) {
             justifyContent="space-between"
             flexDirection={{ base: 'column', xl: 'row' }}
             background="#111C44"
-            borderRadius="24px"
+            borderRadius="24px 24px 0 0"
             padding={{ sm: '7vw 1.4vw 7vw 4.4vw', md: '0' }}
-            m={{ sm: '8.5vw 0 12vw', md: '0' }}
+            m={{ sm: '8.5vw 0 0', md: '0' }}
             position="relative"
           >
             <Flex
@@ -259,35 +261,39 @@ export default function Banner(props) {
               </Flex>
 
               <Box>
-                <Button
-                  width={{
-                    base: '144px',
-                    sm: '120px',
-                    xl: '144px',
-                    '2xl': '194px',
-                  }}
-                  bgColor="#6C5DD3"
-                  height="2.8vw"
-                  h={{
-                    base: '54px',
-                    sm: '50px',
-                    xl: '54px',
-                    '2xl': '72px',
-                  }}
-                  fontWeight="500"
-                  fontSize={{
-                    base: '1.3vw',
-                    sm: '20px',
-                  }}
-                  onClick={() => {
-                    window.open(game.gameUrl)
-                  }}
-                  _hover={{
-                    bgColor: 'rgba(108,93,211 ,0.6)',
-                  }}
-                >
-                  Play Now!
-                </Button>
+                {isMobile() ? (
+                  <></>
+                ) : (
+                  <Button
+                    width={{
+                      base: '144px',
+                      sm: '120px',
+                      xl: '144px',
+                      '2xl': '194px',
+                    }}
+                    bgColor="#6C5DD3"
+                    height="2.8vw"
+                    h={{
+                      base: '54px',
+                      sm: '50px',
+                      xl: '54px',
+                      '2xl': '72px',
+                    }}
+                    fontWeight="500"
+                    fontSize={{
+                      base: '1.3vw',
+                      sm: '20px',
+                    }}
+                    onClick={() => {
+                      window.open(game.gameUrl)
+                    }}
+                    _hover={{
+                      bgColor: 'rgba(108,93,211 ,0.6)',
+                    }}
+                  >
+                    Play Now!
+                  </Button>
+                )}
               </Box>
             </Flex>
           </Flex>
@@ -373,94 +379,180 @@ export default function Banner(props) {
             /> */}
         {/* </Stack> */}
         {/* </Flex> */}
-        <Flex
-          justifyContent="space-between"
-          w="100%"
-          padding="12px 49px 31px 32px"
-        >
-          <Box>
-            <Text
-              fontFamily="Poppins"
-              fontStyle="normal"
-              fontWeight="500"
-              fontSize="18px"
-              lineHeight="24px"
-              color="#FFFFFF"
+        {isMobile() ? (
+          <>
+            <Box
+              w="100%"
+              padding="0 1.4vw 7vw 4.4vw"
+              background="#111C44"
+              borderRadius=" 0 0 24px 24px"
+              marginBottom="94px"
             >
-              Core Asset
-            </Text>
-            <Flex
-              width={{
-                xl: '300px',
-                '2xl': '468px',
-              }}
-              //   justifyContent="space-between"
-              marginTop="30px"
-            >
-              {CoreData.map((item, index) => {
-                return (
-                  <Box
-                    position="relative"
-                    className="CoreNftImg"
-                    cursor="pointer"
-                  >
-                    <Image
-                      src={item.imgUrl}
-                      w={{ xl: '47px', '2xl': '72px' }}
-                      h={{ xl: '47px', '2xl': '72px' }}
-                    />
-                    <Box className="CoreNftHover">
-                      {item.introductionCurrency}
+              <Box>
+                <Text
+                  fontFamily="Poppins"
+                  fontStyle="normal"
+                  fontWeight="500"
+                  fontSize="18px"
+                  lineHeight="24px"
+                  color="#FFFFFF"
+                >
+                  Core Asset
+                </Text>
+                <Flex
+                  width={{
+                    sm: '300px',
+                  }}
+                  justifyContent="space-between"
+                  marginTop="5px"
+                >
+                  {CoreData.map((item, index) => {
+                    return (
+                      <Box
+                        position="relative"
+                        className="CoreNftImg"
+                        cursor="pointer"
+                      >
+                        <Image src={item.imgUrl} w="42px" h="42px" />
+                        <Box className="CoreNftHover">
+                          {item.introductionCurrency}
+                        </Box>
+                      </Box>
+                    )
+                  })}
+                  {defiData.map((item, index) => {
+                    return (
+                      <Box
+                        className="defiItem"
+                        position="relative"
+                        cursor="pointer"
+                      >
+                        <Image src={item.imgUrl} w="42px" h="42px" />
+                        <Box className="CoreNftHover">
+                          {item.introductionCurrency}
+                        </Box>
+                      </Box>
+                    )
+                  })}
+                </Flex>
+              </Box>
+              <Box>
+                <Text
+                  fontFamily="Poppins"
+                  fontStyle="normal"
+                  fontWeight="500"
+                  fontSize="18px"
+                  lineHeight="24px"
+                  color="#FFFFFF"
+                  paddingTop="6px"
+                >
+                  Backers
+                </Text>
+                <Flex
+                  w={{ xl: '260px', '2xl': '300px', sm: '300px' }}
+                  marginTop="5px"
+                >
+                  {BackersData.map((item, index) => {
+                    return (
+                      <Box className="backericon">
+                        <Image src={item.backericon} w="33px" h="33px" />
+                      </Box>
+                    )
+                  })}
+                </Flex>
+              </Box>
+            </Box>
+          </>
+        ) : (
+          <Flex
+            justifyContent="space-between"
+            w="100%"
+            padding="12px 49px 31px 32px"
+          >
+            <Box>
+              <Text
+                fontFamily="Poppins"
+                fontStyle="normal"
+                fontWeight="500"
+                fontSize="18px"
+                lineHeight="24px"
+                color="#FFFFFF"
+              >
+                Core Asset
+              </Text>
+              <Flex
+                width={{
+                  xl: '300px',
+                  '2xl': '468px',
+                }}
+                //   justifyContent="space-between"
+                marginTop="30px"
+              >
+                {CoreData.map((item, index) => {
+                  return (
+                    <Box
+                      position="relative"
+                      className="CoreNftImg"
+                      cursor="pointer"
+                    >
+                      <Image
+                        src={item.imgUrl}
+                        w={{ xl: '47px', '2xl': '72px' }}
+                        h={{ xl: '47px', '2xl': '72px' }}
+                      />
+                      <Box className="CoreNftHover">
+                        {item.introductionCurrency}
+                      </Box>
                     </Box>
-                  </Box>
-                )
-              })}
-              {defiData.map((item, index) => {
-                return (
-                  <Box
-                    className="defiItem"
-                    position="relative"
-                    cursor="pointer"
-                  >
-                    <Image
-                      src={item.imgUrl}
-                      w={{ xl: '47px', '2xl': '72px' }}
-                      h={{ xl: '47px', '2xl': '72px' }}
-                    />
-                    <Box className="CoreNftHover">
-                      {item.introductionCurrency}
+                  )
+                })}
+                {defiData.map((item, index) => {
+                  return (
+                    <Box
+                      className="defiItem"
+                      position="relative"
+                      cursor="pointer"
+                    >
+                      <Image
+                        src={item.imgUrl}
+                        w={{ xl: '47px', '2xl': '72px' }}
+                        h={{ xl: '47px', '2xl': '72px' }}
+                      />
+                      <Box className="CoreNftHover">
+                        {item.introductionCurrency}
+                      </Box>
                     </Box>
-                  </Box>
-                )
-              })}
-            </Flex>
-          </Box>
-          <Box>
-            <Text
-              fontFamily="Poppins"
-              fontStyle="normal"
-              fontWeight="500"
-              fontSize="18px"
-              lineHeight="24px"
-              color="#FFFFFF"
-            >
-              Backers
-            </Text>
-            <Flex w={{ xl: '260px', '2xl': '300px' }} marginTop="34px">
-              {/* {defiData.map((item, index) => {
-                return (
-                  <Box className="defiItem">
-                    <Image
-                      src={item.imgUrl}
-                      w={{ xl: '38px', '2xl': '47px' }}
-                      h={{ xl: '38px', '2xl': '47px' }}
-                    />
-                  </Box>
-                )
-              })} */}
-            </Flex>
-          </Box>
-        </Flex>
+                  )
+                })}
+              </Flex>
+            </Box>
+            <Box>
+              <Text
+                fontFamily="Poppins"
+                fontStyle="normal"
+                fontWeight="500"
+                fontSize="18px"
+                lineHeight="24px"
+                color="#FFFFFF"
+              >
+                Backers
+              </Text>
+              <Flex w={{ xl: '260px', '2xl': '300px' }} marginTop="34px">
+                {BackersData.map((item, index) => {
+                  return (
+                    <Box className="backericon">
+                      <Image
+                        src={item.backericon}
+                        w={{ xl: '38px', '2xl': '47px' }}
+                        h={{ xl: '38px', '2xl': '47px' }}
+                      />
+                    </Box>
+                  )
+                })}
+              </Flex>
+            </Box>
+          </Flex>
+        )}
       </Box>
     </div>
   )

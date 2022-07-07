@@ -31,12 +31,12 @@ export default function TrendingGames({ gameData }) {
           lineHeight: '32px',
           // marginBottom: '32px',
         }}
-        marginBottom={{sm:"28px",md:"32px"}}
+        marginBottom={{ sm: '28px', md: '32px' }}
         className="font-Inter-SemiBold"
       >
         Ranking
       </Box>
-      <Box overflowY="auto" height={{sm:'127vw',md:'34vw'}}>
+      <Box overflowY="auto" height={{ sm: '127vw', md: '34vw' }}>
         {gameData.map((item, index) => {
           return (
             <Box
@@ -46,16 +46,16 @@ export default function TrendingGames({ gameData }) {
                 // alignItems: 'center',
                 // width: '491px',
               }}
-              height={{sm:'26.6vw',md:'4.8vw'}}
-              marginBottom={{sm:'6.4vw',md:'0.9vw'}}
+              height={{ sm: '26.6vw', md: '4.8vw' }}
+              marginBottom={{ sm: '6.4vw', md: '0.9vw' }}
             >
               <Box>
                 <Image
                   style={{
                     borderRadius: '12px',
                   }}
-                  width={{sm:'28.8vw',md:"5.5vw"}}
-                  height={{sm:'26.6vw',md:"4.7vw"}}
+                  width={{ sm: '28.8vw', md: '5.5vw' }}
+                  height={{ sm: '26.6vw', md: '4.7vw' }}
                   src={item.imgs[0].url}
                   alt=""
                 />
@@ -65,7 +65,7 @@ export default function TrendingGames({ gameData }) {
                   pandingTop: '0.6vw',
                   // marginLeft: '0.7vw',
                 }}
-                ml={{sm:'6.95vw',md:"0.7vw"}}
+                ml={{ sm: '6.95vw', md: '0.7vw' }}
               >
                 <Box
                   style={{
@@ -75,7 +75,7 @@ export default function TrendingGames({ gameData }) {
                     lineHeight: '18px',
                   }}
                   marginBottom="8px"
-                  fontSize={{sm:"3.47vw",md:"0.8vw"}}
+                  fontSize={{ sm: '3.47vw', md: '0.8vw' }}
                 >
                   {item.gameStudio}®
                 </Box>
@@ -88,8 +88,8 @@ export default function TrendingGames({ gameData }) {
                     lineClamp: 3,
                     overflow: 'hidden',
                   }}
-                  width={{sm:"42vw",md:"15vw"}}
-                  fontSize={{sm:"3.2vw",md:"0.6vw"}}
+                  width={{ sm: '42vw', md: '15vw', xl: '18vw' }}
+                  fontSize={{ sm: '3.2vw', md: '0.6vw' }}
                   //   overflow="hidden"
                   //   //   maxH="2.3vw"
                   //   textOverflow="ellipsis"

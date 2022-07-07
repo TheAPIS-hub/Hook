@@ -65,17 +65,27 @@ export default function GameCard({ gameData }) {
         marginBottom="32px"
         flexDirection={{ sm: 'column-reverse', md: 'initial' }}
       >
-        <Text
-          style={{
-            color: ' rgba(255,255,255,1)',
-            fontSize: '24px',
-            fontWeight: ' 500',
-            textAlign: 'left',
-          }}
-          className="font-Inter-SemiBold"
-        >
-          Trending games
-        </Text>
+        <Flex>
+          <Text
+            style={{
+              color: ' rgba(255,255,255,1)',
+              fontSize: '24px',
+              fontWeight: ' 500',
+              textAlign: 'left',
+            }}
+            className="font-Inter-SemiBold"
+          >
+            Trending games
+          </Text>
+          <Text
+            className="font-Inter-SemiBold gameMore"
+            onClick={() => {
+              history.push({ pathname: '/admin/Games' })
+            }}
+          >
+            (more)
+          </Text>
+        </Flex>
 
         <DateUploaded
           chooseSort={chooseSort}

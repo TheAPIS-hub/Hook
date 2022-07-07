@@ -151,3 +151,13 @@ video {
   left: 30px;
   margin-top: 10px;
 }
+.gameMore {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: left;
+  position: inherit;
+}
+.gameMore:hover {
+  color: #9356a5;
+}
