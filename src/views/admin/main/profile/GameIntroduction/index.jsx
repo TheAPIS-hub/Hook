@@ -31,9 +31,9 @@ export default function GameIntroduction({}) {
   return (
     <Box pt={{ base: '130px', md: '80px', xl: '80px', sm: '72px' }}>
       <Box
-        width={{ sm: '1400px', md: '1716px' }}
+        width="89.5vw"
         margin="auto"
-        height={{ sm: '400px', md: '600px' }}
+        height={{ sm: '400px', md: '600px', xl: '600px' }}
         //  borderRadius="22px"
         //  background="rgba(228,228,228,0.1)"
         overflow="hidden"

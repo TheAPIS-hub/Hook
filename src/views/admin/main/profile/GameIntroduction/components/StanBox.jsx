@@ -56,11 +56,22 @@ export default function Sandbox() {
   const [isHover, setHover] = useState(false)
   const [idx, setIdx] = useState(null)
   return (
-    <Box margin="auto" width="1711px">
+    <Box
+      margin="auto"
+      width={{ md: '1236px', xl: '1236px', '2xl': '1711px' }}
+      paddingTop="39px"
+    >
       <Tabs variant="soft-rounded" colorScheme="green">
         <TabList>
           {GameNameData.map((item, index) => {
-            return <Tab className="TabName">{item.GameName}</Tab>
+            return (
+              <Tab
+                className="TabName"
+                w={{ md: '149px', xl: '149px', '2xl': '195px' }}
+              >
+                {item.GameName}
+              </Tab>
+            )
           })}
         </TabList>
 
@@ -82,8 +93,18 @@ export default function Sandbox() {
                           setIdx(index)
                         }}
                         onMouseOut={() => setHover(false)}
-                        w="312px"
-                        h="340px"
+                        w={{
+                          sm: '136px',
+                          md: '224px',
+                          xl: '224px',
+                          '2xl': '312px',
+                        }}
+                        h={{
+                          sm: '150px',
+                          md: '245px',
+                          xl: '245px',
+                          '2xl': '340px',
+                        }}
                       >
                         {isHover & (index == idx) ? (
                           <Image src={item.GameChangCardImg} />
