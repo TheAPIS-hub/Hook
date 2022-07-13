@@ -50,3 +50,6 @@ export async function tokenTokentransData(params) {
 export async function delSetGameIcon(params) {
   return await axios.post(`${DefaultUrl}/game/delUserSetGameIcon`, params)
 }
+export async function getGameType(params) {
+  return await axios.get(`${DefaultUrl}/game/getGameType`, params)
+}

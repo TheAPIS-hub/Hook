@@ -40,6 +40,7 @@ import {
   commentLiked,
   tokenTokentransData,
   delSetGameIcon,
+  getGameType,
 } from '../api/game'
 // overview
 export const getMarketCapAndVolume = (type) => {
@@ -173,4 +174,7 @@ export const delUserSetGameIcon = (giId, giuId, gpId, uid) => {
 }
 export const resetPasswords = (uId, password) => {
   return resetPassword({ uId, password })
+}
+export const getGameTypes = () => {
+  return getGameType({})
 }
